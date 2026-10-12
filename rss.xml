@@ -1,16 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
   <channel>
-    <title>EDMliveset.com — Podcasts &amp; Radio Shows</title>
-    <link>https://www.edmliveset.com/podcasts-radio-shows/</link>
-    <description>Newest 50 radio shows from EDMliveset.com; test feed.</description>
+    <title>RadioShows Podcast</title>
+    <description>DJ mixes, podcasts and live sets from the best DJs around the world.</description>
     <language>en</language>
     <lastBuildDate>Mon, 12 Oct 2026 10:40:43 +0000</lastBuildDate>
-    <generator>RadioShows Podcast RSS Builder</generator>
     <image>
       <url>https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/podcast-cover.jpg</url>
-      <title>EDMliveset.com — Podcasts &amp; Radio Shows</title>
-      <link>https://www.edmliveset.com/podcasts-radio-shows/</link>
+      <title>RadioShows Podcast</title>
     </image>
     <itunes:image href="https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/podcast-cover.jpg" />
     <item>
