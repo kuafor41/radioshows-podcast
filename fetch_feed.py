@@ -14,7 +14,7 @@ OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
 
-def txt(n): return re.sub(r"\\s+"," ",n.get_text(" ",strip=True)).strip() if n else ""
+def txt(n): return re.sub(r"\s+"," ",n.get_text(" ",strip=True)).strip() if n else ""
 def url(u,b=BASE):
     if not u:return ""
     u=urljoin(b,str(u).strip())
@@ -45,7 +45,7 @@ def discover():
             if not nxt2:
                 pages=[]
                 for a in soup.select("a[href]"):
-                    u=url(a.get("href"),r.url); m=re.search(r"/page/(\\d+)/?$",urlparse(u).path)
+                    u=url(a.get("href"),r.url); m=re.search(r"/page/(\d+)/?$",urlparse(u).path)
                     if m and u not in seen: pages.append((int(m.group(1)),u))
                 pages=sorted((n,u) for n,u in pages if n>pg)
                 if pages:nxt2=pages[0][1]
@@ -59,13 +59,13 @@ def fields(soup):
         t=txt(n)
         if len(t)>1500:continue
         for k in d:
-            m=re.match(r"^"+k+r"\\s*:\\s*(.+)$",t,re.I)
+            m=re.match(r"^"+k+r"\s*:\s*(.+)$",t,re.I)
             if m and not d[k]: d[k]=m.group(1).strip()
     for n in soup.find_all(["strong","b"]):
         k=txt(n).rstrip(":").lower()
         if k in d and not d[k] and n.parent:
-            d[k]=re.sub(r"^"+k+r"\\s*:\\s*","",txt(n.parent),flags=re.I)
-    return {k:re.sub(r"\\s+"," ",v).strip() for k,v in d.items()}
+            d[k]=re.sub(r"^"+k+r"\s*:\s*","",txt(n.parent),flags=re.I)
+    return {k:re.sub(r"\s+"," ",v).strip() for k,v in d.items()}
 def dateval(v):
     for f in ("%B %d, %Y","%b %d, %Y","%d %B %Y","%Y-%m-%d","%m/%d/%Y"):
         try:return datetime.strptime(v,f).replace(tzinfo=timezone.utc)
@@ -91,9 +91,9 @@ def parse(u):
     for n in soup.select("audio[src],audio source[src],iframe[src],meta[property='og:audio'],meta[property='og:audio:url']"):
         u2=url(n.get("src") or n.get("content"),r.url)
         if u2:candidates.append(u2)
-    candidates += [url(x,r.url) for x in re.findall(r'https?://[^"\\'\\s<>]+\\.mp3(?:\\?[^"\\'\\s<>]*)?',r.text,re.I)]
+    candidates += [url(x,r.url) for x in re.findall(r"https?://[^\\s<>\"']+\\.mp3(?:\\?[^\\s<>\"']*)?",r.text,re.I)]
     candidates=list(dict.fromkeys(candidates))
-    audio=next((x for x in candidates if re.search(r"\\.mp3(?:\\?|$)",x,re.I)),"")
+    audio=next((x for x in candidates if re.search(r"\.mp3(?:\?|$)",x,re.I)),"")
     if not audio:audio=next((x for x in candidates if "hearthis.at" in urlparse(x).netloc and "/listen" in urlparse(x).path),"")
     return {"title":title,"url":canonical,"guid":canonical,**d,"audio_url":audio,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
 def probe(u):
