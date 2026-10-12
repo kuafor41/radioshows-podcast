@@ -28,7 +28,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      FEED_MODE: incremental
+      FEED_MODE: ${{ inputs.mode || 'incremental' }}
     steps:
       - uses: actions/checkout@v6
         with:
