@@ -12,7 +12,7 @@ ARCHIVE=BASE+"/radio/"
 DATA=Path("data"); DATA.mkdir(exist_ok=True)
 OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
 CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
-MAX_ARCHIVE_PAGES=500
+MAX_ARCHIVE_PAGES=2000
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
 
