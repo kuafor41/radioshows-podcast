@@ -204,7 +204,7 @@ def cache_episode_covers(items):
         if not content_type.startswith("image/") or len(data)<100:
             return False
         # Check actual image signatures, not only the server's Content-Type header.
-        return (data.startswith(b"\\x89PNG\\r\\n\\x1a\\n") or data.startswith(b"\\xff\\xd8\\xff")
+        return (data.startswith(b"\x89PNG\r\n\x1a\n") or data.startswith(b"\xff\xd8\xff")
                 or data.startswith((b"GIF87a",b"GIF89a")) or
                 (len(data)>=12 and data[:4]==b"RIFF" and data[8:12]==b"WEBP"))
     for x in items:
@@ -291,7 +291,7 @@ def cache_episode_covers(items):
     return {"downloaded":downloaded,"reused":reused,"series_cached":len(cover_map),"failed":failed}
 
 def description(x):
-    e=lambda s:html.escape(re.sub(r"\\bEDMliveset\\.com\\b","",s or "",flags=re.I).strip(),quote=True)
+    e=lambda s:html.escape(re.sub(r"\bEDMliveset\.com\b","",s or "",flags=re.I).strip(),quote=True)
     parts=[f"<p><b>{k.title()}:</b> {e(x[k.lower()])}</p>" for k in ("Artist","Show","Serie","Added","Genre")]
     # Show the text after FREE DOWNLOAD as it appears on the episode page.
     # Paragraphs (not an ordered list) preserve line breaks without auto-numbering.
