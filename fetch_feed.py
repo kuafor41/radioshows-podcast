@@ -113,8 +113,12 @@ def description(x):
     parts.append('<p><a href="'+e(x["url"])+'">Source page</a></p>')
     return "".join(parts)
 def build(items):
-    root=ET.Element("rss",{"version":"2.0"}); ch=ET.SubElement(root,"channel")
+    ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
+    root=ET.Element("rss",{"version":"2.0","xmlns:itunes":"http://www.itunes.com/dtds/podcast-1.0.dtd"}); ch=ET.SubElement(root,"channel")
     for tag,val in [("title","EDMliveset.com — Podcasts & Radio Shows"),("link",ARCHIVE),("description","Newest 50 radio shows from EDMliveset.com; test feed."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
+    cover_url="https://kuafor41.github.io/radioshows-podcast/data/podcast-cover.jpg"
+    image=ET.SubElement(ch,"image"); ET.SubElement(image,"url").text=cover_url; ET.SubElement(image,"title").text="EDMliveset.com — Podcasts & Radio Shows"; ET.SubElement(image,"link").text=ARCHIVE
+    ET.SubElement(ch,"itunes:image",{"href":cover_url})
     for x in sorted(items,key=lambda z:z["pubdate"],reverse=True):
         it=ET.SubElement(ch,"item"); ET.SubElement(it,"title").text=x["title"]; ET.SubElement(it,"link").text=x["url"]
         ET.SubElement(it,"guid",{"isPermaLink":"false"}).text=x["guid"]
