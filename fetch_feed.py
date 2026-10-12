@@ -52,27 +52,37 @@ def discover(full_archive=False):
             soup=BeautifulSoup(r.text,"html.parser")
             page_links=links_from(soup,r.url)
             DISCOVERY_STATS["pages_scanned"]=pg
-            stop_after_page=False
+            page_has_old=False; page_has_recent=False; page_has_unknown=False
             for u in page_links:
                 if u in found: continue
                 if full_archive:
-                    # Each episode's own Added field determines the historical cutoff.
+                    # Use episode Added dates, and inspect the whole archive page before
+                    # stopping so an old sidebar/related link cannot end the backfill early.
                     try:
                         episode=parse(u)
                         added=dateval(episode.get("added",""))
+                        PREPARSED[u]=episode
                         if added:
                             DISCOVERY_STATS["oldest_added_checked"]=episode["added"]
-                        PREPARSED[u]=episode
-                        if added and added<CUTOFF:
-                            DISCOVERY_STATS["cutoff_reached"]=True
-                            print(f"Archive cutoff reached on page {pg}: Added {episode['added']} | {episode['title']}")
-                            stop_after_page=True
-                            break
+                            if added<CUTOFF:
+                                page_has_old=True
+                                continue
+                            page_has_recent=True
+                        else:
+                            page_has_unknown=True
+                            found.append(u)  # Keep unclassified entries visible in diagnostics.
+                            continue
                     except Exception as episode_error:
                         errors.append({"page":pg,"url":u,"error":f"Episode date precheck failed: {episode_error}"})
+                        page_has_unknown=True
+                        found.append(u)
+                        continue
                 found.append(u)
                 if not full_archive and len(found)>=LIMIT: break
-            if stop_after_page: break
+            if full_archive and page_has_old and not page_has_recent and not page_has_unknown:
+                DISCOVERY_STATS["cutoff_reached"]=True
+                print(f"Archive cutoff confirmed on page {pg}; all checked episode Added dates are before 2025-01-01")
+                break
             nxt2=""
             for a in soup.select("a[href]"):
                 label=txt(a).lower(); rel=" ".join(a.get("rel",[])).lower(); u=url(a.get("href"),r.url)
@@ -91,9 +101,8 @@ def discover(full_archive=False):
             nxt=nxt2; print("Archive",pg,"links",len(found)); time.sleep(.2)
         except Exception as e:
             errors.append({"page":pg,"url":nxt,"error":str(e)}); print("Archive error",e); break
-    else:
-        if full_archive and DISCOVERY_STATS["pages_scanned"]>=MAX_ARCHIVE_PAGES and not DISCOVERY_STATS["cutoff_reached"]:
-            DISCOVERY_STATS["page_limit_reached"]=True
+    if full_archive and DISCOVERY_STATS["pages_scanned"]>=page_limit and not DISCOVERY_STATS["cutoff_reached"]:
+        DISCOVERY_STATS["page_limit_reached"]=True
     return (found if full_archive else found[:LIMIT]),errors
 def fields(soup):
     d={k:"" for k in ("artist","show","serie","added","genre")}
