@@ -150,8 +150,9 @@ def description(x):
     e=lambda s:html.escape(s or "",quote=True)
     parts=[f"<p><b>{k.title()}:</b> {e(x[k.lower()])}</p>" for k in ("Artist","Show","Serie","Added","Genre")]
     parts.append("<p><b>Tracklist</b></p>")
-    parts.append("<ol>"+ "".join("<li>"+e(t)+"</li>" for t in x["tracklist"])+"</ol>" if x["tracklist"] else "<p>Tracklist not found on source page.</p>")
-    parts.append('<p><a href="'+e(x["url"])+'">Source page</a></p>')
+    # Render each source line as a plain paragraph: ordered lists add numbers
+    # that are not present on EDMliveset's page.
+    parts.append("".join("<p>"+e(t)+"</p>" for t in x["tracklist"]) if x["tracklist"] else "<p>Tracklist not found on source page.</p>")
     return "".join(parts)
 def build(items):
     ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
