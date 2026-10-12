@@ -247,35 +247,38 @@ def cache_episode_covers(items):
         candidates=list(dict.fromkeys(candidates))
         success=None
         errors=[]
-        for candidate in candidates:
-            for referer in (x.get("url",BASE+"/"),BASE+"/"):
-                try:
-                    headers={
-                        "Referer":referer,
-                        "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
-                        "Accept":"image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-                        "Sec-Fetch-Dest":"image",
-                        "Sec-Fetch-Mode":"no-cors",
-                        "Sec-Fetch-Site":"same-site",
-                    }
-                    response=S.get(candidate,headers=headers,timeout=TIMEOUT,allow_redirects=True)
-                    response.raise_for_status()
-                    content_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
-                    data=response.content
-                    if not valid_image(data,content_type):
-                        raise ValueError(f"Invalid image payload: type={content_type}, bytes={len(data)}")
-                    digest=hashlib.sha256(data).hexdigest()
-                    # Reject the identical warning image and any response matching a known duplicate.
-                    other_names=existing_hashes.get(digest,[])
-                    if digest in duplicated_hashes or any(name!=local_name for name in other_names):
-                        raise ValueError("Response matches a duplicated cached image (likely hotlink-warning placeholder)")
-                    ext_map={"image/jpeg":".jpg","image/png":".png","image/webp":".webp","image/gif":".gif","image/avif":".avif"}
-                    ext=ext_map.get(content_type) or (Path(urlparse(response.url).path).suffix.lower() if Path(urlparse(response.url).path).suffix.lower() in (".jpg",".jpeg",".png",".webp",".gif",".avif") else ".img")
-                    success=(data,content_type,candidate,ext,digest)
-                    break
-                except Exception as e:
-                    errors.append(f"{candidate} [{referer}]: {e}")
-            if success: break
+        # Keep retries bounded: the archive has many distinct shows and a protected host may stall.
+        attempts=[(c,x.get("url",BASE+"/")) for c in candidates[:1]]
+        attempts += [(c,BASE+"/") for c in candidates[1:]]
+        if len(candidates)>1:
+            attempts.append((candidates[0],BASE+"/"))
+        for candidate,referer in attempts:
+            try:
+                headers={
+                    "Referer":referer,
+                    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+                    "Accept":"image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                    "Sec-Fetch-Dest":"image",
+                    "Sec-Fetch-Mode":"no-cors",
+                    "Sec-Fetch-Site":"same-site",
+                }
+                response=S.get(candidate,headers=headers,timeout=(4,7),allow_redirects=True)
+                response.raise_for_status()
+                content_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
+                data=response.content
+                if not valid_image(data,content_type):
+                    raise ValueError(f"Invalid image payload: type={content_type}, bytes={len(data)}")
+                digest=hashlib.sha256(data).hexdigest()
+                # Reject the identical warning image and any response matching a known duplicate.
+                other_names=existing_hashes.get(digest,[])
+                if digest in duplicated_hashes or any(name!=local_name for name in other_names):
+                    raise ValueError("Response matches a duplicated cached image (likely hotlink-warning placeholder)")
+                ext_map={"image/jpeg":".jpg","image/png":".png","image/webp":".webp","image/gif":".gif","image/avif":".avif"}
+                ext=ext_map.get(content_type) or (Path(urlparse(response.url).path).suffix.lower() if Path(urlparse(response.url).path).suffix.lower() in (".jpg",".jpeg",".png",".webp",".gif",".avif") else ".img")
+                success=(data,content_type,candidate,ext,digest)
+                break
+            except Exception as e:
+                errors.append(f"{candidate} [{referer}]: {e}")
         if success:
             data,content_type,used_source,ext,digest=success
             safe_name=key+ext
