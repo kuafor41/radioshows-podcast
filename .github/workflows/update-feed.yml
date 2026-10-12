@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "Build newest 50 episode test feed"
+        description: "Run the archive backfill or incremental update"
         required: true
         type: choice
-        default: test
-        options: [test]
+        default: incremental
+        options: [archive, incremental]
   schedule:
-    - cron: "15 */4 * * *"
+    - cron: "50 * * * *"
   push:
     branches: ["main"]
     paths: ["fetch_feed.py", "requirements.txt", "data/podcast-cover.jpg", ".github/workflows/update-feed.yml"]
@@ -28,7 +28,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      FEED_MODE: test
+      FEED_MODE: incremental
     steps:
       - uses: actions/checkout@v6
         with:
@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add rss.xml data/items.json data/test-report.json data/episode-checks.csv data/retry-queue.json data/cover-map.json data/covers
+          git add rss.xml data/items.json data/test-report.json data/episode-checks.csv data/retry-queue.json data/cover-map.json data/covers data/archive-backfill-complete.json
           if git diff --cached --quiet; then
             echo "No output changes to commit."
           else
