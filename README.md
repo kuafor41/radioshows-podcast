@@ -1,6 +1,6 @@
 # RadioShows Podcast RSS
 
-Automated RSS builder for the latest radio shows listed on https://www.edmliveset.com/podcasts-radio-shows/.
+Latest radio shows.
 
 ## Initial test phase
 
