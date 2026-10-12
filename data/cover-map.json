@@ -14,11 +14,6 @@
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/03/MANDY-Mondays.webp",
     "file": "mandy-mondays.webp"
   },
-  "sorry-for-the-noise": {
-    "series": "Sorry For The Noise",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp",
-    "file": "sorry-for-the-noise.png"
-  },
   "full-moon-radio": {
     "series": "Full Moon Radio",
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/10/Full-Moon-Radio.webp",
@@ -49,20 +44,10 @@
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/03/Night-Owl-Radio.webp",
     "file": "night-owl-radio.webp"
   },
-  "intake-radio-show": {
-    "series": "iNTAKE Radio Show",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/04/Daniel-Nicoara-iNTAKE-Radio-Show.webp",
-    "file": "intake-radio-show.png"
-  },
   "lucas-steve-radio": {
     "series": "Lucas & Steve Radio",
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Lucas-Steve-Radio.webp",
     "file": "lucas-steve-radio.webp"
-  },
-  "jacked-radio": {
-    "series": "Jacked Radio",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/JACKED-Radio.webp",
-    "file": "jacked-radio.png"
   },
   "magna-recordings-radio-show": {
     "series": "Magna Recordings Radio Show",
@@ -98,11 +83,6 @@
     "series": "terminal-v",
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Terminal-‪V‬.webp",
     "file": "terminal-v.webp"
-  },
-  "dharma-radio": {
-    "series": "Dharma Radio",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/02/Dharma-Radio.webp",
-    "file": "dharma-radio.png"
   },
   "v-recordings-podcast": {
     "series": "v-recordings-podcast",
@@ -143,11 +123,6 @@
     "series": "Delirium",
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Delirium.webp",
     "file": "delirium.webp"
-  },
-  "the-global-warm-up": {
-    "series": "The Global Warm Up",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/The-Global-Warm-Up.webp",
-    "file": "the-global-warm-up.png"
   },
   "deep-state-radio": {
     "series": "Deep State Radio",
@@ -214,21 +189,6 @@
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Planet-Perfecto-Podcast.webp",
     "file": "planet-perfecto.webp"
   },
-  "sugar-radio": {
-    "series": "Sugar Radio",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Sugar-Radio-Show.webp",
-    "file": "sugar-radio.png"
-  },
-  "extrema": {
-    "series": "Extrema",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Extrema.webp",
-    "file": "extrema.png"
-  },
-  "find-your-harmony-radioshow": {
-    "series": "Find Your Harmony Radioshow",
-    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Find-Your-Harmony.webp",
-    "file": "find-your-harmony-radioshow.png"
-  },
   "odd-one-out-radio": {
     "series": "Odd One Out Radio",
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/06/Odd-One-Out-Radio.webp",
@@ -248,5 +208,53 @@
     "series": "Hysteria Radio",
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/05/Hysteria-Radio.webp",
     "file": "hysteria-radio.webp"
+  },
+  "sorry-for-the-noise": {
+    "series": "Sorry For The Noise",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp",
+    "file": "sorry-for-the-noise.webp",
+    "sha256": "a5f9a0a97e0382f73c6db26d887afdbddd2bb2ad1d0a79fb9ff931c263a11e10"
+  },
+  "intake-radio-show": {
+    "series": "iNTAKE Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/04/Daniel-Nicoara-iNTAKE-Radio-Show.webp",
+    "file": "intake-radio-show.webp",
+    "sha256": "8b67ae53e497aa9a56a459e1c317dfba15c37f183e5b2188a6b666a1de6f7577"
+  },
+  "jacked-radio": {
+    "series": "Jacked Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/JACKED-Radio.webp",
+    "file": "jacked-radio.webp",
+    "sha256": "6581ecf100d66e6da3bce648846993c74a8df93f12258b3748fbd328f0a69141"
+  },
+  "dharma-radio": {
+    "series": "Dharma Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/02/Dharma-Radio.webp",
+    "file": "dharma-radio.webp",
+    "sha256": "3f767270a1ab5a80f9a8ff5d7f3e47111b51217e7931c9f8de02b735e97e5f7a"
+  },
+  "the-global-warm-up": {
+    "series": "The Global Warm Up",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/The-Global-Warm-Up.webp",
+    "file": "the-global-warm-up.webp",
+    "sha256": "3a245d8b7cc0dc6d937d39e664585be611e67afba8430bc95afad7c961858c1d"
+  },
+  "sugar-radio": {
+    "series": "Sugar Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Sugar-Radio-Show.webp",
+    "file": "sugar-radio.webp",
+    "sha256": "eba948e3909205484369a9c2406ac3c3bf40f0f7b8a5b6dbf885502959386931"
+  },
+  "extrema": {
+    "series": "Extrema",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Extrema.webp",
+    "file": "extrema.webp",
+    "sha256": "a7dc213db1dadce0be46a36ef2a1a5a6dccaad2636753b7f2cd490b63fdb976a"
+  },
+  "find-your-harmony-radioshow": {
+    "series": "Find Your Harmony Radioshow",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Find-Your-Harmony.webp",
+    "file": "find-your-harmony-radioshow.webp",
+    "sha256": "932fa307cdcd9ecfae92e669070b9fb991e9357c48a24ebcbe20e33d9c73d863"
   }
 }
