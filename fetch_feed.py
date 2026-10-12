@@ -26,7 +26,9 @@ def links_from(soup, page):
     for a in soup.select("a[href]"):
         u=url(a.get("href"),page); t=txt(a); p=urlparse(u).path.rstrip("/")
         if urlparse(u).netloc.lower() not in ("edmliveset.com","www.edmliveset.com"): continue
-        if re.search(r"/radio/[^/]+",p,re.I) and t.lower() not in ("download","free download","listen","read more"): out.append(u)
+        # Do not mistake archive pagination (/radio/page/2/) for an episode.
+        if re.fullmatch(r"/radio/page/\d+",p,re.I): continue
+        if re.fullmatch(r"/radio/[^/]+",p,re.I) and t.lower() not in ("download","free download","listen","read more"): out.append(u)
     return list(dict.fromkeys(out))
 def discover():
     found=[]; errors=[]; nxt=ARCHIVE; seen=set()
@@ -131,6 +133,7 @@ def parse(u):
                 if n.name=="li" and n.find("p"): continue
                 t=txt(n)
                 if not t: continue
+                if re.match(r"^Dive into the vibrant world of electronic dance music",t,re.I): break
                 if re.search(r"podcast.*embedded on this page|all files, descriptions|share this article|more .* episodes|your ultimate edm",t,re.I): break
                 if t not in body_lines: body_lines.append(t)
     heading=next((h for h in soup.find_all(["h2","h3","h4","strong"]) if "tracklist" in txt(h).lower()),None)
@@ -139,20 +142,34 @@ def parse(u):
         for n in heading.find_all_next(["li","p"]):
             if n.name in ("h2","h3") and n is not heading:break
             t=txt(n)
+            # Stop before the site's promotional footer; exclude that paragraph and everything below it.
+            if re.match(r"^Dive into the vibrant world of electronic dance music",t,re.I): break
             if t and "tracklist" not in t.lower() and t not in tracks:tracks.append(t)
     tracks=[t for t in tracks if not re.search(r"podcast.*embedded on this page|all files, descriptions",t,re.I)]
-    candidates=[]
+    candidates=[]; player_urls=[]
+    media_ext=r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])"
     for a in soup.select("a[href]"):
         label=txt(a).lower(); u2=url(a.get("href"),r.url)
-        if u2 and ("download" in label or ".mp3" in u2.lower()):candidates.append(u2)
-    for n in soup.select("audio[src],audio source[src],iframe[src],meta[property='og:audio'],meta[property='og:audio:url']"):
+        if not u2: continue
+        if re.search(media_ext,u2,re.I):
+            candidates.append(u2)
+        elif "download" in label:
+            candidates.append(u2)
+    for n in soup.select("audio[src],audio source[src],source[src],meta[property='og:audio'],meta[property='og:audio:url']"):
         u2=url(n.get("src") or n.get("content"),r.url)
         if u2:candidates.append(u2)
-    # Audio URLs are collected from explicit links, player sources and audio metadata above.
+    for n in soup.select("iframe[src]"):
+        u2=url(n.get("src"),r.url)
+        if u2: player_urls.append(u2)
+    # Some players keep the real media URL in inline JSON/JavaScript rather than
+    # in an <audio> element or a visible download link.
+    for raw in re.findall(r"""https?://[^"'\\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\\s<>]*)?""",r.text,re.I):
+        u2=url(raw.replace("\\/", "/"),r.url)
+        if u2:candidates.append(u2)
     candidates=list(dict.fromkeys(candidates))
-    audio=next((x for x in candidates if re.search(r"\.mp3(?:\?|$)",x,re.I)),"")
-    if not audio:audio=next((x for x in candidates if "hearthis.at" in urlparse(x).netloc and "/listen" in urlparse(x).path),"")
-    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":audio,"body_lines":body_lines,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
+    # Try direct media links first, then player-provided sources and download redirects.
+    candidates.sort(key=lambda x: (0 if re.search(media_ext,x,re.I) else 1))
+    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":"","audio_candidates":candidates,"player_urls":list(dict.fromkeys(player_urls)),"body_lines":body_lines,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
 def probe(u):
     if not u:return False,u,0,"No direct audio URL found"
     try:
@@ -192,9 +209,40 @@ def main():
     urls,errors=discover(); items=[]; rows=[]; retry=[]
     for i,u in enumerate(urls,1):
         try:
-            x=parse(u); ok,final,size,err=probe(x["audio_url"])
-            x["audio_url"]=final if ok else x["audio_url"]; x["audio_length"]=size
-            x["audio_type"]="audio/mpeg" if x["audio_url"].lower().split("?")[0].endswith(".mp3") else "audio/mpeg"
+            x=parse(u)
+            ok=False; final=""; size=0; err="No direct audio URL found"
+            # First try the Free Download / linked media URLs and player sources.
+            for candidate in x.get("audio_candidates",[]):
+                candidate_ok,candidate_final,candidate_size,candidate_err=probe(candidate)
+                if candidate_ok:
+                    ok=True; final=candidate_final; size=candidate_size; err=""; break
+                err=candidate_err
+            # If direct links fail, inspect embedded player pages and try their audio sources.
+            if not ok:
+                for player_url in x.get("player_urls",[]):
+                    try:
+                        player_response=get(player_url)
+                        player_soup=BeautifulSoup(player_response.text,"html.parser")
+                        player_candidates=[]
+                        for node in player_soup.select("audio[src],audio source[src],source[src],meta[property='og:audio'],meta[property='og:audio:url'],a[href]"):
+                            raw=node.get("src") or node.get("content") or node.get("href")
+                            candidate=url(raw,player_response.url)
+                            if candidate and re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])",candidate,re.I):
+                                player_candidates.append(candidate)
+                        for raw in re.findall(r"""https?://[^"'\\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\\s<>]*)?""",player_response.text,re.I):
+                            candidate=url(raw.replace("\\/", "/"),player_response.url)
+                            if candidate: player_candidates.append(candidate)
+                        for candidate in dict.fromkeys(player_candidates):
+                            candidate_ok,candidate_final,candidate_size,candidate_err=probe(candidate)
+                            if candidate_ok:
+                                ok=True; final=candidate_final; size=candidate_size; err=""; break
+                            err=candidate_err
+                        if ok: break
+                    except Exception as player_error:
+                        err=f"Player fallback failed: {player_error}"
+            x["audio_url"]=final if ok else ""
+            x["audio_length"]=size
+            x["audio_type"]="audio/mpeg"
             x["status"]="success" if ok and x["tracklist"] else "warning"; x["error"]=err or ("" if x["tracklist"] else "Tracklist not extracted")
             if not ok:retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
             items.append(x); rows.append({"index":i,"title":x["title"],"page_url":x["url"],"audio_url":x["audio_url"],"audio_ok":ok,"track_count":len(x["tracklist"]),"status":x["status"],"error":x["error"]})
