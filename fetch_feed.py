@@ -192,6 +192,7 @@ def cache_episode_covers(items):
     podcast_cover=raw_base.replace("data/covers/","data/")+"podcast-cover.jpg"
     downloaded=reused=0
     failed=[]
+    failed_keys={}
     # The previously cached hotlink warning was identical across multiple show names.
     # Fingerprint existing files so that identical placeholder responses are rejected.
     existing_hashes={}
@@ -211,6 +212,10 @@ def cache_episode_covers(items):
         source=x.get("source_image_url") or x.get("image_url","")
         series=(x.get("serie") or x.get("show") or x.get("title") or "unknown").strip()
         key=re.sub(r"[^a-z0-9]+","-",series.casefold()).strip("-") or "unknown"
+        if key in failed_keys:
+            x["image_url"]=podcast_cover
+            x["source_image_url"]=source
+            continue
         entry=cover_map.get(key,{})
         local_name=entry.get("file","")
         local_path=cover_dir/local_name if local_name else None
@@ -285,7 +290,9 @@ def cache_episode_covers(items):
             # Never publish a known warning graphic or the protected source URL as episode art.
             x["source_image_url"]=source
             x["image_url"]=podcast_cover
-            failed.append({"series":series,"source_url":source,"reason":"; ".join(errors[-4:]) or "No candidate returned a verified image"})
+            reason="; ".join(errors[-4:]) or "No candidate returned a verified image"
+            failed.append({"series":series,"source_url":source,"reason":reason})
+            failed_keys[key]=reason
             print(f"Artwork unavailable; using podcast-level cover | series={series} | {errors[-1] if errors else 'no image'}")
     map_path.write_text(json.dumps(cover_map,ensure_ascii=False,indent=2),encoding="utf-8")
     return {"downloaded":downloaded,"reused":reused,"series_cached":len(cover_map),"failed":failed}
