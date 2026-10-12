@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import csv, html, json, os, re, time, xml.etree.ElementTree as ET
+import csv, hashlib, html, json, os, re, time, xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
@@ -180,7 +180,7 @@ def probe(u):
         return ok,final,size,"" if ok else f"Not confirmed audio: HTTP {status}, type={typ}"
     except Exception as e:return False,u,0,f"{type(e).__name__}: {e}"
 def cache_episode_covers(items):
-    """Persist one local artwork file per radio-show series and reuse it forever."""
+    """Cache one verified artwork per series; reject known hotlink placeholder images."""
     cover_dir=DATA/"covers"
     cover_dir.mkdir(parents=True,exist_ok=True)
     map_path=DATA/"cover-map.json"
@@ -189,51 +189,109 @@ def cache_episode_covers(items):
     except (OSError,ValueError):
         cover_map={}
     raw_base="https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/covers/"
-    downloaded=0
-    reused=0
+    podcast_cover=raw_base.replace("data/covers/","data/")+"podcast-cover.jpg"
+    downloaded=reused=0
     failed=[]
+    # The previously cached hotlink warning was identical across multiple show names.
+    # Fingerprint existing files so that identical placeholder responses are rejected.
+    existing_hashes={}
+    for path in cover_dir.iterdir():
+        if path.is_file() and path.stat().st_size>100:
+            digest=hashlib.sha256(path.read_bytes()).hexdigest()
+            existing_hashes.setdefault(digest,[]).append(path.name)
+    duplicated_hashes={h for h,names in existing_hashes.items() if len(set(names))>1}
+    def valid_image(data,content_type):
+        if not content_type.startswith("image/") or len(data)<100:
+            return False
+        # Check actual image signatures, not only the server's Content-Type header.
+        return (data.startswith(b"\\x89PNG\\r\\n\\x1a\\n") or data.startswith(b"\\xff\\xd8\\xff")
+                or data.startswith((b"GIF87a",b"GIF89a")) or
+                (len(data)>=12 and data[:4]==b"RIFF" and data[8:12]==b"WEBP"))
     for x in items:
-        source=x.get("image_url","")
+        source=x.get("source_image_url") or x.get("image_url","")
         series=(x.get("serie") or x.get("show") or x.get("title") or "unknown").strip()
         key=re.sub(r"[^a-z0-9]+","-",series.casefold()).strip("-") or "unknown"
         entry=cover_map.get(key,{})
         local_name=entry.get("file","")
         local_path=cover_dir/local_name if local_name else None
         if local_path and local_path.is_file() and local_path.stat().st_size>100:
-            x["source_image_url"]=entry.get("source_url",source)
-            x["image_url"]=raw_base+local_name
-            reused+=1
-            continue
+            local_data=local_path.read_bytes()
+            local_hash=hashlib.sha256(local_data).hexdigest()
+            # A file duplicated across unrelated show names is the known hotlink placeholder.
+            if local_hash not in duplicated_hashes:
+                x["source_image_url"]=entry.get("source_url",source)
+                x["image_url"]=raw_base+local_name
+                reused+=1
+                continue
+            print(f"Rejected cached duplicate artwork | series={series} | file={local_name}")
+            try: local_path.unlink()
+            except OSError: pass
+            cover_map.pop(key,None)
         source=entry.get("source_url") or source
         if not source:
             failed.append({"series":series,"reason":"No source image URL"})
+            x["image_url"]=podcast_cover
             continue
-        try:
-            response=S.get(source,headers={"Referer":x.get("url",BASE+"/")},timeout=TIMEOUT,allow_redirects=True)
-            response.raise_for_status()
-            content_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
-            data=response.content
-            if not content_type.startswith("image/") or len(data)<100:
-                raise ValueError(f"Not a valid image response (type={content_type}, bytes={len(data)})")
-            ext_map={"image/jpeg":".jpg","image/png":".png","image/webp":".webp","image/gif":".gif","image/avif":".avif"}
-            ext=ext_map.get(content_type) or (Path(urlparse(response.url).path).suffix.lower() if Path(urlparse(response.url).path).suffix.lower() in (".jpg",".jpeg",".png",".webp",".gif",".avif") else ".img")
+        parsed=urlparse(source)
+        candidates=[source]
+        if parsed.hostname and parsed.hostname.lower()=="cdn.edmliveset.com":
+            candidates.extend([
+                parsed._replace(netloc="www.edmliveset.com").geturl(),
+                parsed._replace(netloc="edmliveset.com").geturl(),
+            ])
+        candidates=list(dict.fromkeys(candidates))
+        success=None
+        errors=[]
+        for candidate in candidates:
+            for referer in (x.get("url",BASE+"/"),BASE+"/"):
+                try:
+                    headers={
+                        "Referer":referer,
+                        "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+                        "Accept":"image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                        "Sec-Fetch-Dest":"image",
+                        "Sec-Fetch-Mode":"no-cors",
+                        "Sec-Fetch-Site":"same-site",
+                    }
+                    response=S.get(candidate,headers=headers,timeout=TIMEOUT,allow_redirects=True)
+                    response.raise_for_status()
+                    content_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
+                    data=response.content
+                    if not valid_image(data,content_type):
+                        raise ValueError(f"Invalid image payload: type={content_type}, bytes={len(data)}")
+                    digest=hashlib.sha256(data).hexdigest()
+                    # Reject the identical warning image and any response matching a known duplicate.
+                    other_names=existing_hashes.get(digest,[])
+                    if digest in duplicated_hashes or any(name!=local_name for name in other_names):
+                        raise ValueError("Response matches a duplicated cached image (likely hotlink-warning placeholder)")
+                    ext_map={"image/jpeg":".jpg","image/png":".png","image/webp":".webp","image/gif":".gif","image/avif":".avif"}
+                    ext=ext_map.get(content_type) or (Path(urlparse(response.url).path).suffix.lower() if Path(urlparse(response.url).path).suffix.lower() in (".jpg",".jpeg",".png",".webp",".gif",".avif") else ".img")
+                    success=(data,content_type,candidate,ext,digest)
+                    break
+                except Exception as e:
+                    errors.append(f"{candidate} [{referer}]: {e}")
+            if success: break
+        if success:
+            data,content_type,used_source,ext,digest=success
             safe_name=key+ext
             (cover_dir/safe_name).write_bytes(data)
-            cover_map[key]={"series":series,"source_url":source,"file":safe_name}
-            x["source_image_url"]=source
+            cover_map[key]={"series":series,"source_url":used_source,"file":safe_name,"sha256":digest}
+            existing_hashes.setdefault(digest,[]).append(safe_name)
+            x["source_image_url"]=used_source
             x["image_url"]=raw_base+safe_name
             downloaded+=1
-            print(f"Artwork cached | series={series} | file={safe_name}")
-        except Exception as e:
+            print(f"Artwork verified and cached | series={series} | file={safe_name} | bytes={len(data)}")
+        else:
+            # Never publish a known warning graphic or the protected source URL as episode art.
             x["source_image_url"]=source
-            x["image_url"]=source
-            failed.append({"series":series,"source_url":source,"reason":str(e)})
-            print(f"Artwork cache failed | series={series} | {e}")
+            x["image_url"]=podcast_cover
+            failed.append({"series":series,"source_url":source,"reason":"; ".join(errors[-4:]) or "No candidate returned a verified image"})
+            print(f"Artwork unavailable; using podcast-level cover | series={series} | {errors[-1] if errors else 'no image'}")
     map_path.write_text(json.dumps(cover_map,ensure_ascii=False,indent=2),encoding="utf-8")
     return {"downloaded":downloaded,"reused":reused,"series_cached":len(cover_map),"failed":failed}
 
 def description(x):
-    e=lambda s:html.escape(s or "",quote=True)
+    e=lambda s:html.escape(re.sub(r"\\bEDMliveset\\.com\\b","",s or "",flags=re.I).strip(),quote=True)
     parts=[f"<p><b>{k.title()}:</b> {e(x[k.lower()])}</p>" for k in ("Artist","Show","Serie","Added","Genre")]
     # Show the text after FREE DOWNLOAD as it appears on the episode page.
     # Paragraphs (not an ordered list) preserve line breaks without auto-numbering.
