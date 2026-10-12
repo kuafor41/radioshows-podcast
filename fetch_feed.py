@@ -52,7 +52,13 @@ def discover():
             nxt2=""
             for a in soup.select("a[href]"):
                 label=txt(a).lower(); rel=" ".join(a.get("rel",[])).lower(); u=url(a.get("href"),r.url)
-                if u and ("next" in rel.split() or label in ("next","older posts","→","»","›")): nxt2=u; break
+                # Follow the actual pagination control (e.g. "Next →"), not
+                # just exact text "Next". This supports normal WordPress links
+                # and themes that append arrows or accessibility labels.
+                is_next = ("next" in rel.split() or bool(re.match(r"^next\b", label, re.I)) or label in ("older posts","→","»","›"))
+                if u and is_next:
+                    nxt2=u
+                    break
             if not nxt2:
                 pages=[]
                 for a in soup.select("a[href]"):
