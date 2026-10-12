@@ -11,6 +11,8 @@ BASE="https://www.edmliveset.com"
 ARCHIVE=BASE+"/radio/"
 DATA=Path("data"); DATA.mkdir(exist_ok=True)
 OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
+CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
+MAX_ARCHIVE_PAGES=500
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
 
@@ -30,10 +32,11 @@ def links_from(soup, page):
         if re.fullmatch(r"/radio/page/\d+",p,re.I): continue
         if re.fullmatch(r"/radio/[^/]+",p,re.I) and t.lower() not in ("download","free download","listen","read more"): out.append(u)
     return list(dict.fromkeys(out))
-def discover():
+def discover(full_archive=False):
     found=[]; errors=[]; nxt=ARCHIVE; seen=set()
-    for pg in range(1,16):
-        if not nxt or nxt in seen or len(found)>=LIMIT: break
+    page_limit=MAX_ARCHIVE_PAGES if full_archive else 3
+    for pg in range(1,page_limit+1):
+        if not nxt or nxt in seen or (not full_archive and len(found)>=LIMIT): break
         seen.add(nxt)
         try:
             try:
@@ -50,7 +53,7 @@ def discover():
             soup=BeautifulSoup(r.text,"html.parser")
             for u in links_from(soup,r.url):
                 if u not in found: found.append(u)
-                if len(found)>=LIMIT: break
+                if not full_archive and len(found)>=LIMIT: break
             nxt2=""
             for a in soup.select("a[href]"):
                 label=txt(a).lower(); rel=" ".join(a.get("rel",[])).lower(); u=url(a.get("href"),r.url)
@@ -74,7 +77,7 @@ def discover():
             nxt=nxt2; print("Archive",pg,"links",len(found)); time.sleep(.2)
         except Exception as e:
             errors.append({"page":pg,"url":nxt,"error":str(e)}); print("Archive error",e); break
-    return found[:LIMIT],errors
+    return (found if full_archive else found[:LIMIT]),errors
 def fields(soup):
     d={k:"" for k in ("artist","show","serie","added","genre")}
     for n in soup.find_all(["li","p","div","span","strong","b"]):
@@ -92,7 +95,7 @@ def dateval(v):
     for f in ("%B %d, %Y","%b %d, %Y","%d %B %Y","%Y-%m-%d","%m/%d/%Y"):
         try:return datetime.strptime(v,f).replace(tzinfo=timezone.utc)
         except (ValueError,TypeError):pass
-    return datetime.now(timezone.utc)
+    return None
 def parse(u):
     r=get(u); soup=BeautifulSoup(r.text,"html.parser")
     can=soup.find("link",rel="canonical"); canonical=url(can.get("href"),r.url) if can else r.url
@@ -169,7 +172,7 @@ def parse(u):
     candidates=list(dict.fromkeys(candidates))
     # Try direct media links first, then player-provided sources and download redirects.
     candidates.sort(key=lambda x: (0 if re.search(media_ext,x,re.I) else 1))
-    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":"","audio_candidates":candidates,"player_urls":list(dict.fromkeys(player_urls)),"body_lines":body_lines,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
+    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":"","audio_candidates":candidates,"player_urls":list(dict.fromkeys(player_urls)),"body_lines":body_lines,"tracklist":tracks,"pubdate":(dateval(d["added"]) or datetime(1970,1,1,tzinfo=timezone.utc)).isoformat()}
 def probe(u):
     if not u:return False,u,0,"No direct audio URL found"
     try:
@@ -311,7 +314,7 @@ def description(x):
 def build(items):
     ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
     root=ET.Element("rss",{"version":"2.0"}); ch=ET.SubElement(root,"channel")
-    for tag,val in [("title","EDMliveset.com — Podcasts & Radio Shows"),("link",ARCHIVE),("description","Newest 50 radio shows from EDMliveset.com; test feed."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
+    for tag,val in [("title","EDMliveset.com — Podcasts & Radio Shows"),("link",ARCHIVE),("description","Radio shows published on or after January 1, 2025."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
     cover_url="https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/podcast-cover.jpg"
     image=ET.SubElement(ch,"image"); ET.SubElement(image,"url").text=cover_url; ET.SubElement(image,"title").text="EDMliveset.com — Podcasts & Radio Shows"; ET.SubElement(image,"link").text=ARCHIVE
     ET.SubElement(ch,"{http://www.itunes.com/dtds/podcast-1.0.dtd}image",{"href":cover_url})
@@ -327,60 +330,72 @@ def build(items):
         if x["genre"]:ET.SubElement(it,"category").text=x["genre"]
     ET.indent(root,space="  "); data=ET.tostring(root,encoding="utf-8",xml_declaration=True); ET.fromstring(data); return data
 def main():
-    urls,errors=discover(); items=[]; rows=[]; retry=[]
+    items_path=DATA/"items.json"
+    try: previous=json.loads(items_path.read_text(encoding="utf-8"))
+    except (OSError,ValueError): previous=[]
+    previous_by_url={x.get("url"):x for x in previous if x.get("url")}
+    full_archive=not bool(previous_by_url)
+    urls,errors=discover(full_archive=full_archive)
+    if not full_archive: urls=[u for u in urls if u not in previous_by_url]
+    items=[] if full_archive else list(previous_by_url.values())
+    rows=[]; retry=[]
     for i,u in enumerate(urls,1):
         try:
-            x=parse(u)
+            x=parse(u); added=dateval(x.get("added",""))
+            if not added:
+                err="Could not parse Added date; excluded until date can be verified."
+                rows.append({"index":i,"title":x["title"],"page_url":x["url"],"audio_url":"","audio_ok":False,"track_count":len(x["tracklist"]),"status":"warning","error":err})
+                retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
+                continue
+            x["pubdate"]=added.isoformat()
+            if added<CUTOFF:
+                print(f"Reached archive cutoff at {x['added']}: {x['title']}")
+                if full_archive: break
+                continue
             ok=False; final=""; size=0; err="No direct audio URL found"
-            # First try the Free Download / linked media URLs and player sources.
             for candidate in x.get("audio_candidates",[]):
-                candidate_ok,candidate_final,candidate_size,candidate_err=probe(candidate)
-                if candidate_ok:
-                    ok=True; final=candidate_final; size=candidate_size; err=""; break
+                good,final_url,nbytes,candidate_err=probe(candidate)
+                if good: ok=True; final=final_url; size=nbytes; err=""; break
                 err=candidate_err
-            # If direct links fail, inspect embedded player pages and try their audio sources.
             if not ok:
                 for player_url in x.get("player_urls",[]):
                     try:
-                        player_response=get(player_url)
-                        player_soup=BeautifulSoup(player_response.text,"html.parser")
-                        player_candidates=[]
-                        for node in player_soup.select("audio[src],audio source[src],source[src],meta[property='og:audio'],meta[property='og:audio:url'],a[href]"):
-                            raw=node.get("src") or node.get("content") or node.get("href")
-                            candidate=url(raw,player_response.url)
-                            if candidate and re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])",candidate,re.I):
-                                player_candidates.append(candidate)
-                        for raw in re.findall(r"""https?://[^"'\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\s<>]*)?""",player_response.text,re.I):
-                            candidate=url(raw.replace("\\/", "/"),player_response.url)
-                            if candidate: player_candidates.append(candidate)
-                        for candidate in dict.fromkeys(player_candidates):
-                            candidate_ok,candidate_final,candidate_size,candidate_err=probe(candidate)
-                            if candidate_ok:
-                                ok=True; final=candidate_final; size=candidate_size; err=""; break
+                        pr=get(player_url); ps=BeautifulSoup(pr.text,"html.parser"); candidates=[]
+                        for node in ps.select("audio[src],audio source[src],source[src],meta[property='og:audio'],meta[property='og:audio:url'],a[href]"):
+                            raw=node.get("src") or node.get("content") or node.get("href"); candidate=url(raw,pr.url)
+                            if candidate and re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])",candidate,re.I): candidates.append(candidate)
+                        for candidate in dict.fromkeys(candidates):
+                            good,final_url,nbytes,candidate_err=probe(candidate)
+                            if good: ok=True; final=final_url; size=nbytes; err=""; break
                             err=candidate_err
                         if ok: break
-                    except Exception as player_error:
-                        err=f"Player fallback failed: {player_error}"
-            x["audio_url"]=final if ok else ""
-            x["audio_length"]=size
-            x["audio_type"]="audio/mpeg"
-            x["status"]="success" if ok and x["tracklist"] else "warning"; x["error"]=err or ("" if x["tracklist"] else "Tracklist not extracted")
-            if not ok:retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
-            items.append(x); rows.append({"index":i,"title":x["title"],"page_url":x["url"],"audio_url":x["audio_url"],"audio_ok":ok,"track_count":len(x["tracklist"]),"status":x["status"],"error":x["error"]})
-            print(f"[{i}/{len(urls)}] {x['status']} | tracks={len(x['tracklist'])} | audio={ok} | {x['title']}")
+                    except Exception as pe: err=f"Player fallback failed: {pe}"
+            x["audio_url"]=final if ok else ""; x["audio_length"]=size; x["audio_type"]="audio/mpeg"
+            x["status"]="success" if ok and x["tracklist"] else "warning"
+            x["error"]=err or ("" if x["tracklist"] else "Tracklist not extracted")
+            if not ok: retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
+            if ok: items.append(x)
+            rows.append({"index":i,"title":x["title"],"page_url":x["url"],"audio_url":x["audio_url"],"audio_ok":ok,"track_count":len(x["tracklist"]),"status":x["status"],"error":x["error"]})
+            print(f"[{i}/{len(urls)}] {x['status']} | added={x['added']} | audio={ok} | {x['title']}")
         except Exception as e:
-            err=f"{type(e).__name__}: {e}"; rows.append({"index":i,"title":"","page_url":u,"audio_url":"","audio_ok":False,"track_count":0,"status":"failed","error":err}); retry.append({"url":u,"error":err})
+            err=f"{type(e).__name__}: {e}"
+            rows.append({"index":i,"title":"","page_url":u,"audio_url":"","audio_ok":False,"track_count":0,"status":"failed","error":err})
+            retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
             print("Episode failed:",u,err)
         time.sleep(.15)
+    merged={x.get("url"):x for x in items if x.get("url")}
+    if not full_archive:
+        for x in previous: merged.setdefault(x.get("url"),x)
+    items=[x for x in merged.values() if x.get("audio_url") and (dateval(x.get("added","")) or datetime(1970,1,1,tzinfo=timezone.utc))>=CUTOFF]
+    items.sort(key=lambda x:(dateval(x.get("added","")) or datetime(1970,1,1,tzinfo=timezone.utc)),reverse=True)
     cover_stats=cache_episode_covers(items)
-    publish=[x for x in items if x["audio_url"]]
-    if not urls:raise SystemExit("No episodes discovered; not publishing an empty feed.")
-    OUT.write_bytes(build(publish))
-    Path("data/items.json").write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
+    OUT.write_bytes(build(items))
+    items_path.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
-    report={"mode":os.getenv("FEED_MODE","test"),"source":ARCHIVE,"run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"parsed":len(items),"published":len(publish),"audio_confirmed":sum(r["audio_ok"] for r in rows),"tracklists_found":sum(bool(x["tracklist"]) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"episodes":rows,"rss_xml_valid":True}
+    report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"episodes":rows,"rss_xml_valid":True}
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     with open("data/episode-checks.csv","w",newline="",encoding="utf-8-sig") as f:
         w=csv.DictWriter(f,fieldnames=["index","title","page_url","audio_url","audio_ok","track_count","status","error"]); w.writeheader(); w.writerows(rows)
-    print(json.dumps({k:report[k] for k in ("discovered","parsed","published","audio_confirmed","tracklists_found","rss_xml_valid")},ensure_ascii=False))
+    print(json.dumps({k:report[k] for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","rss_xml_valid")},ensure_ascii=False))
+
 if __name__=="__main__":main()
