@@ -8,7 +8,7 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE="https://www.edmliveset.com"
-ARCHIVE=BASE+"/podcasts-radio-shows/"
+ARCHIVE=BASE+"/radio/"
 DATA=Path("data"); DATA.mkdir(exist_ok=True)
 OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
 S=requests.Session()
@@ -34,7 +34,18 @@ def discover():
         if not nxt or nxt in seen or len(found)>=LIMIT: break
         seen.add(nxt)
         try:
-            r=get(nxt); soup=BeautifulSoup(r.text,"html.parser")
+            try:
+                r=get(nxt)
+            except requests.HTTPError as page_error:
+                # The visible Podcasts & Radio Shows pagination links lead to
+                # /podcasts-radio-shows/page/N/, which returns 404. The working
+                # paginated archive is /radio/page/N/, so retry that route.
+                fallback=BASE+f"/radio/page/{pg}/"
+                if pg == 1 or urlparse(nxt).path.rstrip("/") == urlparse(fallback).path.rstrip("/"):
+                    raise
+                print(f"Archive URL failed ({nxt}); trying {fallback}: {page_error}")
+                r=get(fallback)
+            soup=BeautifulSoup(r.text,"html.parser")
             for u in links_from(soup,r.url):
                 if u not in found: found.append(u)
                 if len(found)>=LIMIT: break
@@ -49,6 +60,9 @@ def discover():
                     if m and u not in seen: pages.append((int(m.group(1)),u))
                 pages=sorted((n,u) for n,u in pages if n>pg)
                 if pages:nxt2=pages[0][1]
+            if not nxt2 and len(found)<LIMIT:
+                # Fallback when pagination is JavaScript-driven or has no usable next href.
+                nxt2=BASE+f"/radio/page/{pg+1}/"
             nxt=nxt2; print("Archive",pg,"links",len(found)); time.sleep(.2)
         except Exception as e:
             errors.append({"page":pg,"url":nxt,"error":str(e)}); print("Archive error",e); break
