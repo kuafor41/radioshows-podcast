@@ -32,6 +32,8 @@ def links_from(soup, page):
         if re.fullmatch(r"/radio/page/\d+",p,re.I): continue
         if re.fullmatch(r"/radio/[^/]+",p,re.I) and t.lower() not in ("download","free download","listen","read more"): out.append(u)
     return list(dict.fromkeys(out))
+PREPARSED={}
+DISCOVERY_STATS={"pages_scanned":0,"cutoff_reached":False,"oldest_added_checked":"","page_limit_reached":False}
 def discover(full_archive=False):
     found=[]; errors=[]; nxt=ARCHIVE; seen=set()
     page_limit=MAX_ARCHIVE_PAGES if full_archive else 3
@@ -42,41 +44,56 @@ def discover(full_archive=False):
             try:
                 r=get(nxt)
             except requests.HTTPError as page_error:
-                # The visible Podcasts & Radio Shows pagination links lead to
-                # /podcasts-radio-shows/page/N/, which returns 404. The working
-                # paginated archive is /radio/page/N/, so retry that route.
                 fallback=BASE+f"/radio/page/{pg}/"
                 if pg == 1 or urlparse(nxt).path.rstrip("/") == urlparse(fallback).path.rstrip("/"):
                     raise
                 print(f"Archive URL failed ({nxt}); trying {fallback}: {page_error}")
                 r=get(fallback)
             soup=BeautifulSoup(r.text,"html.parser")
-            for u in links_from(soup,r.url):
-                if u not in found: found.append(u)
+            page_links=links_from(soup,r.url)
+            DISCOVERY_STATS["pages_scanned"]=pg
+            stop_after_page=False
+            for u in page_links:
+                if u in found: continue
+                if full_archive:
+                    # Each episode's own Added field determines the historical cutoff.
+                    try:
+                        episode=parse(u)
+                        added=dateval(episode.get("added",""))
+                        if added:
+                            DISCOVERY_STATS["oldest_added_checked"]=episode["added"]
+                        PREPARSED[u]=episode
+                        if added and added<CUTOFF:
+                            DISCOVERY_STATS["cutoff_reached"]=True
+                            print(f"Archive cutoff reached on page {pg}: Added {episode['added']} | {episode['title']}")
+                            stop_after_page=True
+                            break
+                    except Exception as episode_error:
+                        errors.append({"page":pg,"url":u,"error":f"Episode date precheck failed: {episode_error}"})
+                found.append(u)
                 if not full_archive and len(found)>=LIMIT: break
+            if stop_after_page: break
             nxt2=""
             for a in soup.select("a[href]"):
                 label=txt(a).lower(); rel=" ".join(a.get("rel",[])).lower(); u=url(a.get("href"),r.url)
-                # Follow the actual pagination control (e.g. "Next →"), not
-                # just exact text "Next". This supports normal WordPress links
-                # and themes that append arrows or accessibility labels.
-                is_next = ("next" in rel.split() or bool(re.match(r"^next\b", label, re.I)) or label in ("older posts","→","»","›"))
+                is_next=("next" in rel.split() or bool(re.match(r"^next\\b",label,re.I)) or label in ("older posts","→","»","›"))
                 if u and is_next:
-                    nxt2=u
-                    break
+                    nxt2=u; break
             if not nxt2:
                 pages=[]
                 for a in soup.select("a[href]"):
-                    u=url(a.get("href"),r.url); m=re.search(r"/page/(\d+)/?$",urlparse(u).path)
+                    u=url(a.get("href"),r.url); m=re.search(r"/page/(\\d+)/?$",urlparse(u).path)
                     if m and u not in seen: pages.append((int(m.group(1)),u))
                 pages=sorted((n,u) for n,u in pages if n>pg)
                 if pages:nxt2=pages[0][1]
             if not nxt2 and len(found)<LIMIT:
-                # Fallback when pagination is JavaScript-driven or has no usable next href.
                 nxt2=BASE+f"/radio/page/{pg+1}/"
             nxt=nxt2; print("Archive",pg,"links",len(found)); time.sleep(.2)
         except Exception as e:
             errors.append({"page":pg,"url":nxt,"error":str(e)}); print("Archive error",e); break
+    else:
+        if full_archive and DISCOVERY_STATS["pages_scanned"]>=MAX_ARCHIVE_PAGES and not DISCOVERY_STATS["cutoff_reached"]:
+            DISCOVERY_STATS["page_limit_reached"]=True
     return (found if full_archive else found[:LIMIT]),errors
 def fields(soup):
     d={k:"" for k in ("artist","show","serie","added","genre")}
@@ -336,14 +353,13 @@ def main():
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
     marker=DATA/"archive-backfill-complete.json"
     full_archive=(not marker.exists()) or os.getenv("FEED_MODE")=="archive"
-    cutoff_reached=False
     urls,errors=discover(full_archive=full_archive)
     if not full_archive: urls=[u for u in urls if u not in previous_by_url]
     items=[] if full_archive else list(previous_by_url.values())
     rows=[]; retry=[]
     for i,u in enumerate(urls,1):
         try:
-            x=parse(u); added=dateval(x.get("added",""))
+            x=PREPARSED.get(u) or parse(u); added=dateval(x.get("added",""))
             if not added:
                 err="Could not parse Added date; excluded until date can be verified."
                 rows.append({"index":i,"title":x["title"],"page_url":x["url"],"audio_url":"","audio_ok":False,"track_count":len(x["tracklist"]),"status":"warning","error":err})
@@ -387,8 +403,8 @@ def main():
             retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
             print("Episode failed:",u,err)
         time.sleep(.15)
-    if full_archive and cutoff_reached:
-        marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"cutoff":"2025-01-01"},indent=2),encoding="utf-8")
+    if full_archive and DISCOVERY_STATS["cutoff_reached"] and not DISCOVERY_STATS["page_limit_reached"]:
+        marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"cutoff":"2025-01-01","pages_scanned":DISCOVERY_STATS["pages_scanned"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"]},indent=2),encoding="utf-8")
     merged={x.get("url"):x for x in items if x.get("url")}
     if not full_archive:
         for x in previous: merged.setdefault(x.get("url"),x)
@@ -398,7 +414,7 @@ def main():
     OUT.write_bytes(build(items))
     items_path.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
-    report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"episodes":rows,"rss_xml_valid":True}
+    report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     csv_path=DATA/"episode-checks.csv"
     if not full_archive and csv_path.exists():
@@ -412,6 +428,6 @@ def main():
         except (OSError,csv.Error): pass
     with open(csv_path,"w",newline="",encoding="utf-8-sig") as f:
         w=csv.DictWriter(f,fieldnames=["index","title","page_url","audio_url","audio_ok","track_count","status","error"]); w.writeheader(); w.writerows(rows)
-    print(json.dumps({k:report[k] for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","rss_xml_valid")},ensure_ascii=False))
+    print(json.dumps({k:report[k] for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","pages_scanned","cutoff_reached","oldest_added_checked","page_limit_reached","rss_xml_valid")},ensure_ascii=False))
 
 if __name__=="__main__":main()
