@@ -91,7 +91,7 @@ def parse(u):
     for n in soup.select("audio[src],audio source[src],iframe[src],meta[property='og:audio'],meta[property='og:audio:url']"):
         u2=url(n.get("src") or n.get("content"),r.url)
         if u2:candidates.append(u2)
-    candidates += [url(x,r.url) for x in re.findall(r"https?://[^\\s<>\"']+\\.mp3(?:\\?[^\\s<>\"']*)?",r.text,re.I)]
+    # Audio URLs are collected from explicit links, player sources and audio metadata above.
     candidates=list(dict.fromkeys(candidates))
     audio=next((x for x in candidates if re.search(r"\.mp3(?:\?|$)",x,re.I)),"")
     if not audio:audio=next((x for x in candidates if "hearthis.at" in urlparse(x).netloc and "/listen" in urlparse(x).path),"")
