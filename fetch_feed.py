@@ -400,7 +400,17 @@ def main():
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
     report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"episodes":rows,"rss_xml_valid":True}
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
-    with open("data/episode-checks.csv","w",newline="",encoding="utf-8-sig") as f:
+    csv_path=DATA/"episode-checks.csv"
+    if not full_archive and csv_path.exists():
+        try:
+            with open(csv_path,newline="",encoding="utf-8-sig") as f:
+                prior_rows=list(csv.DictReader(f))
+            by_page={r.get("page_url"):r for r in prior_rows if r.get("page_url")}
+            for r in rows: by_page[r.get("page_url")]=r
+            rows=list(by_page.values())
+            for n,r in enumerate(rows,1): r["index"]=n
+        except (OSError,csv.Error): pass
+    with open(csv_path,"w",newline="",encoding="utf-8-sig") as f:
         w=csv.DictWriter(f,fieldnames=["index","title","page_url","audio_url","audio_ok","track_count","status","error"]); w.writeheader(); w.writerows(rows)
     print(json.dumps({k:report[k] for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","rss_xml_valid")},ensure_ascii=False))
 
