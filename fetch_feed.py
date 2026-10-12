@@ -163,7 +163,7 @@ def parse(u):
         if u2: player_urls.append(u2)
     # Some players keep the real media URL in inline JSON/JavaScript rather than
     # in an <audio> element or a visible download link.
-    for raw in re.findall(r"""https?://[^"'\\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\\s<>]*)?""",r.text,re.I):
+    for raw in re.findall(r"""https?://[^"'\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\s<>]*)?""",r.text,re.I):
         u2=url(raw.replace("\\/", "/"),r.url)
         if u2:candidates.append(u2)
     candidates=list(dict.fromkeys(candidates))
@@ -229,7 +229,7 @@ def main():
                             candidate=url(raw,player_response.url)
                             if candidate and re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])",candidate,re.I):
                                 player_candidates.append(candidate)
-                        for raw in re.findall(r"""https?://[^"'\\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\\s<>]*)?""",player_response.text,re.I):
+                        for raw in re.findall(r"""https?://[^"'\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\s<>]*)?""",player_response.text,re.I):
                             candidate=url(raw.replace("\\/", "/"),player_response.url)
                             if candidate: player_candidates.append(candidate)
                         for candidate in dict.fromkeys(player_candidates):
