@@ -95,6 +95,27 @@ def parse(u):
     r=get(u); soup=BeautifulSoup(r.text,"html.parser")
     can=soup.find("link",rel="canonical"); canonical=url(can.get("href"),r.url) if can else r.url
     title=txt(soup.find("h1")) or txt(soup.title); d=fields(soup)
+    # Prefer each episode's own social/featured image, not the podcast-wide cover.
+    image_url=""
+    for selector, attr in [
+        ("meta[property='og:image']", "content"),
+        ("meta[property='og:image:secure_url']", "content"),
+        ("meta[name='twitter:image']", "content"),
+        ("meta[name='twitter:image:src']", "content"),
+    ]:
+        node=soup.select_one(selector)
+        candidate=url(node.get(attr),r.url) if node else ""
+        if candidate:
+            image_url=candidate
+            break
+    if not image_url:
+        for selector in ["article img.wp-post-image", "article img.attachment-post-thumbnail",
+                         ".post-thumbnail img", ".featured-image img", "article img"]:
+            node=soup.select_one(selector)
+            candidate=url(node.get("src") or node.get("data-src") or node.get("data-lazy-src"),r.url) if node else ""
+            if candidate and not re.search(r"logo|avatar|icon",urlparse(candidate).path,re.I):
+                image_url=candidate
+                break
     d["show"]=d["show"] or title; d["artist"]=d["artist"] or "Unknown"; d["serie"]=d["serie"] or d["show"]
     heading=next((h for h in soup.find_all(["h2","h3","h4","strong"]) if "tracklist" in txt(h).lower()),None)
     tracks=[]
@@ -115,7 +136,7 @@ def parse(u):
     candidates=list(dict.fromkeys(candidates))
     audio=next((x for x in candidates if re.search(r"\.mp3(?:\?|$)",x,re.I)),"")
     if not audio:audio=next((x for x in candidates if "hearthis.at" in urlparse(x).netloc and "/listen" in urlparse(x).path),"")
-    return {"title":title,"url":canonical,"guid":canonical,**d,"audio_url":audio,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
+    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":audio,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
 def probe(u):
     if not u:return False,u,0,"No direct audio URL found"
     try:
@@ -144,6 +165,9 @@ def build(items):
         ET.SubElement(it,"guid",{"isPermaLink":"false"}).text=x["guid"]
         ET.SubElement(it,"pubDate").text=format_datetime(datetime.fromisoformat(x["pubdate"]))
         ET.SubElement(it,"description").text=description(x)
+        # Podcast Addict can use item-level itunes:image as episode artwork.
+        if x.get("image_url"):
+            ET.SubElement(it,"{http://www.itunes.com/dtds/podcast-1.0.dtd}image",{"href":x["image_url"]})
         ET.SubElement(it,"enclosure",{"url":x["audio_url"],"length":str(x["audio_length"]),"type":x["audio_type"]})
         if x["genre"]:ET.SubElement(it,"category").text=x["genre"]
     ET.indent(root,space="  "); data=ET.tostring(root,encoding="utf-8",xml_declaration=True); ET.fromstring(data); return data
