@@ -334,7 +334,9 @@ def main():
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
     except (OSError,ValueError): previous=[]
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
-    full_archive=not bool(previous_by_url)
+    marker=DATA/"archive-backfill-complete.json"
+    full_archive=(not marker.exists()) or os.getenv("FEED_MODE")=="archive"
+    cutoff_reached=False
     urls,errors=discover(full_archive=full_archive)
     if not full_archive: urls=[u for u in urls if u not in previous_by_url]
     items=[] if full_archive else list(previous_by_url.values())
@@ -350,7 +352,9 @@ def main():
             x["pubdate"]=added.isoformat()
             if added<CUTOFF:
                 print(f"Reached archive cutoff at {x['added']}: {x['title']}")
-                if full_archive: break
+                if full_archive:
+                    cutoff_reached=True
+                    break
                 continue
             ok=False; final=""; size=0; err="No direct audio URL found"
             for candidate in x.get("audio_candidates",[]):
@@ -383,6 +387,8 @@ def main():
             retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
             print("Episode failed:",u,err)
         time.sleep(.15)
+    if full_archive and cutoff_reached:
+        marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"cutoff":"2025-01-01"},indent=2),encoding="utf-8")
     merged={x.get("url"):x for x in items if x.get("url")}
     if not full_archive:
         for x in previous: merged.setdefault(x.get("url"),x)
