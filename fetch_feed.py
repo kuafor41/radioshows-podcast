@@ -117,6 +117,22 @@ def parse(u):
                 image_url=candidate
                 break
     d["show"]=d["show"] or title; d["artist"]=d["artist"] or "Unknown"; d["serie"]=d["serie"] or d["show"]
+    # Capture the actual article text after the FREE DOWNLOAD link in source order.
+    # Keep these lines separate so the RSS description can mirror the page without
+    # inventing numbering or adding a "Source page" line.
+    body_lines=[]
+    article=soup.select_one("article .entry-content") or soup.select_one("article .post-content") or soup.select_one("article")
+    if article:
+        descendants=article.find_all(True)
+        download_idx=next((i for i,n in enumerate(descendants) if n.name=="a" and txt(n).strip().lower()=="free download"),-1)
+        if download_idx>=0:
+            for n in descendants[download_idx+1:]:
+                if n.name not in ("h2","h3","h4","p","li"): continue
+                if n.name=="li" and n.find("p"): continue
+                t=txt(n)
+                if not t: continue
+                if re.search(r"podcast.*embedded on this page|all files, descriptions|share this article|more .* episodes|your ultimate edm",t,re.I): break
+                if t not in body_lines: body_lines.append(t)
     heading=next((h for h in soup.find_all(["h2","h3","h4","strong"]) if "tracklist" in txt(h).lower()),None)
     tracks=[]
     if heading:
@@ -136,7 +152,7 @@ def parse(u):
     candidates=list(dict.fromkeys(candidates))
     audio=next((x for x in candidates if re.search(r"\.mp3(?:\?|$)",x,re.I)),"")
     if not audio:audio=next((x for x in candidates if "hearthis.at" in urlparse(x).netloc and "/listen" in urlparse(x).path),"")
-    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":audio,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
+    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":audio,"body_lines":body_lines,"tracklist":tracks,"pubdate":dateval(d["added"]).isoformat()}
 def probe(u):
     if not u:return False,u,0,"No direct audio URL found"
     try:
@@ -149,10 +165,10 @@ def probe(u):
 def description(x):
     e=lambda s:html.escape(s or "",quote=True)
     parts=[f"<p><b>{k.title()}:</b> {e(x[k.lower()])}</p>" for k in ("Artist","Show","Serie","Added","Genre")]
-    parts.append("<p><b>Tracklist</b></p>")
-    # Render each source line as a plain paragraph: ordered lists add numbers
-    # that are not present on EDMliveset's page.
-    parts.append("".join("<p>"+e(t)+"</p>" for t in x["tracklist"]) if x["tracklist"] else "<p>Tracklist not found on source page.</p>")
+    # Show the text after FREE DOWNLOAD as it appears on the episode page.
+    # Paragraphs (not an ordered list) preserve line breaks without auto-numbering.
+    lines=x.get("body_lines") or (["Tracklist"]+x["tracklist"] if x["tracklist"] else ["Tracklist not found on source page."])
+    parts.append("".join("<p>"+e(t)+"</p>" for t in lines))
     return "".join(parts)
 def build(items):
     ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
