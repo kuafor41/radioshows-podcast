@@ -1,19 +1,13 @@
 {
   "mode": "test",
-  "source": "https://www.edmliveset.com/podcasts-radio-shows/",
-  "run_at": "2026-10-12T10:40:43.883584+00:00",
-  "discovered": 12,
-  "parsed": 12,
-  "published": 12,
-  "audio_confirmed": 12,
-  "tracklists_found": 12,
-  "discovery_errors": [
-    {
-      "page": 2,
-      "url": "https://www.edmliveset.com/podcasts-radio-shows/page/2/",
-      "error": "404 Client Error: Not Found for url: https://www.edmliveset.com/podcasts-radio-shows/page/2/"
-    }
-  ],
+  "source": "https://www.edmliveset.com/radio/",
+  "run_at": "2026-10-12T10:57:12.085248+00:00",
+  "discovered": 50,
+  "parsed": 50,
+  "published": 44,
+  "audio_confirmed": 44,
+  "tracklists_found": 47,
+  "discovery_errors": [],
   "episodes": [
     {
       "index": 1,
@@ -29,7 +23,7 @@
       "index": 2,
       "title": "Hernan Cattaneo – Resident 805",
       "page_url": "https://www.edmliveset.com/radio/hernan-cattaneo-resident-805/",
-      "audio_url": "https://s353.podbean.com/pb/c18970881c1bf62894b620e645b9ed25/6acc243d/data1/fs80/274700/uploads/805-HernanCattaneo-2026-10-10.mp3?pbss=aac037bd-1607-5771-8cba-165a2c0e6e16",
+      "audio_url": "https://s364.podbean.com/pb/c18970881c1bf62894b620e645b9ed25/6acc243d/data1/fs80/274700/uploads/805-HernanCattaneo-2026-10-10.mp3?pbss=56f43c2d-fff5-5304-a5c6-2288b2520aba",
       "audio_ok": true,
       "track_count": 10,
       "status": "success",
@@ -69,7 +63,7 @@
       "index": 6,
       "title": "Glaskin – HATE Podcast 508",
       "page_url": "https://www.edmliveset.com/radio/glaskin-hate-podcast-508/",
-      "audio_url": "https://cf-media.sndcdn.com/BBXH1kDDQMEg.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vQkJYSDFrRERRTUVnLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA2MzYyfX19XX0_&Signature=aDTm6aXi8ErM5vGjq2Z524qfMNfs31XBqiL~T9ogQSzG8~nc9-CERqX3jkyMdihw6aLe79nbMV-WtCqpFtNLX9vfB8wr63EI7UO2QU509HhJYe~4E~7K1neGACioiHDrrLs1hCApTvuaGLn6iH968zqfkbN6hU9DaOI8VtZIazC-3fc9CVCsA8cAOkdpFKmSUgpjh-QbDey94mQvuaOeXOOzdiU4Ih6kIqORtcxJmBgbNw4BXhodeconwXNS70NOMKNfkAm9hK~fnBnbkkgW3vQ-~tr0YDr~QX~s-~G72i3nsdaqGxBiNHFVN7dl9hgf3QxYbWpTZnXnLkpy359zmQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_url": "https://cf-media.sndcdn.com/BBXH1kDDQMEg.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vQkJYSDFrRERRTUVnLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA3MjkzfX19XX0_&Signature=Go-RiPVPOCC514qLf73O~sweSZG3ltki2ybYak2n6523JcD7QeWGRBs16GIHk4fLgTUS1TwhgjGP8rQCBLhs3r9cwo8Ei7I0jtLwvFD4NrvfJWE-YrrjqATRYezgtmCJXRHj-tbMFjXAQHXeRMumHs9u1TnuVDAfvhKELOUvXWXRHvtkJFJMhvuxMhchlcEvL1q2487M19-~AXROqYxu-2qHPBAPMrUCct8McmKT21Micy99LvN78F~0aPbze4ewwFP-z2ZDNWw5O5uyZfwV6GUtJmdtMzxsHHO72~OUIOx8c4h3oAuIcRytwmuPLwmCH6ikrZgFPSqxeWkW~qywzg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
       "audio_ok": true,
       "track_count": 14,
       "status": "success",
@@ -89,7 +83,7 @@
       "index": 8,
       "title": "The Boom Room 633 – Selected",
       "page_url": "https://www.edmliveset.com/radio/the-boom-room-633-selected/",
-      "audio_url": "https://cf-media.sndcdn.com/FGY2bGzyxu3I.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vRkdZMmJHenl4dTNJLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA3NzcxfX19XX0_&Signature=CSj89vWHHC8JCg~EcNvW7uLB9kN6ISQJzSZL~aLxrU5ACx6RXaJPPMHi3YwTxdu6iqHlI7y3i4ul81GIogXVyOtVDliM1LDYwpGrOdK~z7ogfTsLWCQbzPAyYDoJN7t5MO1QoMewztDcO7VTGScuEZb4f42J2DhHBVmzhc3U78VEdC1fQyWsV8ccYSzUR7LdckpbW9hKTOIrf2KgJO9eVQ0o5Qwdi1nCkmf5PNJLqDEEZRWNXzCrelG7TXYzGWlg1xzVYX9hJYPDZ8-rM5Y-2-7-21kmrIvfGI2N2OE-zssPoL-LDcWz5eUxvCYHwebyhrj6Y72SjBVDDw8vZ~0b4w__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_url": "https://cf-media.sndcdn.com/FGY2bGzyxu3I.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vRkdZMmJHenl4dTNJLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA4NzAyfX19XX0_&Signature=WVEO0l2Kv04Co7-QjOS~Z5I7voBy17PJ2EX8t4jjxNW87UAavL5H1hyYeANzC4xe1cnLag~b0V6HPN2WeGFuVWYAj73gXmbUAxQ3O8iOZrJZ7UfCT5uWIp0IB7inrmmEHsCNvLbxLHrfauOGb3mYT1ft2XAEK7z0o-mBdnx68ZTRUYQJMmzZevACOuSbOuPGQyqr4kR1BKTKmFDng7L6RsvLGMfy-UY1ruIDVa1aum5odtsWXj2EAe7fpyask0WlqWFHN3Huxm1UaaeN9kkWwoR6AnyMzx1kgCTn3AF36sZUSYFtaFjYCVWWpuF~aOGBAvP-9dPQYONyD7cpmmt9Bg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
       "audio_ok": true,
       "track_count": 10,
       "status": "success",
@@ -99,7 +93,7 @@
       "index": 9,
       "title": "Steve Aoki – AOKIS HOUSE 687",
       "page_url": "https://www.edmliveset.com/radio/steve-aoki-aokis-house-687/",
-      "audio_url": "https://content.libsyn.com/p/8/a/e/8ae2a3f16727214d/Aokis_House_Podcast_688_EP_766_Air_Date_10.07.26_-_Podcast.mp3?c_id=207200298&cs_id=207200298&response-content-type=audio%2Fmpeg&Expires=1791806415&Signature=daREP0JBWzdYkT8sbT73Hi2rDVTAxwqffmhsavHbp~0ooDMoRNXXB0yl4htMDKlGIML~4Ovhz1BM9iy9jj205jPMgc5rn6ISfoGRsiElhvfM0UWwIznl7nnoAzCkKt9eZbs0Tnj3xuABRXpKBGNKfYh79cVrAb~b6eN0Ttck89wnt3SOLGuOF5e6sK2IdCKpbyroow~QZUmogQtc5zDwSfX0GeFQLIOUb-8za5xyEo9j~l7leIUtQreCyaZP75yrYUmvbAvbNifJsVlal33-tTf6yqEFDqOk6kokTBLXWmRyNbPdGut~hMiMb9jTFbXgDoGAiPArt1kJ5JpNtUF5pA__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_url": "https://content.libsyn.com/p/8/a/e/8ae2a3f16727214d/Aokis_House_Podcast_688_EP_766_Air_Date_10.07.26_-_Podcast.mp3?c_id=207200298&cs_id=207200298&response-content-type=audio%2Fmpeg&Expires=1791807346&Signature=TX484u18DIXEgWcMeFKF228WaQDnlNhawURQ-4QMWgr0-hDXOsex7jFc3oePt5tfHhe2Q5uv4FrRTZSYanX5MeHNFtX9VrF7r5JtFyvczSNV4pEDM6hv0UmKUrfKHoje8yVpT1NnjthMFRmQTij8vS2APgYIHXqYevTEgKrqkRE3aQyiYR9sb6R43EEt5kZl~g0tPTX37XB4159lnMn1UwqoaZ0dkg0QN7bxfe0idUmqOMkVOP9r6xNquQYa8H1zKNmOO5oI5Z~U5nM7YEKr-s3xfVhThmYRsvvceZRhtDKoXUYEQdsNunEQHil7gVNpmbKWBn5Cs4FJdX488zaQTg__&Key-Pair-Id=K1YS7LZGUP96OI",
       "audio_ok": true,
       "track_count": 11,
       "status": "success",
@@ -119,7 +113,7 @@
       "index": 11,
       "title": "Daniel Nicoara – iNTAKE Radio Show 160",
       "page_url": "https://www.edmliveset.com/radio/daniel-nicoara-intake-radio-show-160/",
-      "audio_url": "https://cf-media.sndcdn.com/vozQO1dupg1p.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vdm96UU8xZHVwZzFwLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA1MzYyfX19XX0_&Signature=CEmdjAIbxHxtIFEaTJg3YBYlrEQ~R20hlA7zOcd-vsmzVsFhs7dDisemdHwNGmy-bZ6UKa5R8har1PV7EVgA8wsfrRykguIcDutUccG1sbYiDRvEAk70Jw9BeFh-yGo4dK8AyVaZw5GKE3TJp8KDogOWFpzQojEIHTvwUDtNmchYUE0XKTBJlXBKLD4ZtM3ag3tiGa1CkQzU2e-NyrweE2LrcTatoobQDroVf0XLHUfHkQ2CZI5IaW5YtMTJfv~37-rWHMHr7tYxHhWPt~v3ZG~rLgok6gD06bnnpPayyyANfL4HY-dznKmkTweVQiznprn0RJFqWdLKyKhgougx1g__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_url": "https://cf-media.sndcdn.com/vozQO1dupg1p.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vdm96UU8xZHVwZzFwLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA2Mjk0fX19XX0_&Signature=X85Gu-4PxigDZHjkAyzhsJzs9DXBRm3twPzqoWasaUSCOT7qf5aNUSNzQRR6wDltg2V~hH0SXaWt5EzuO4nDdZH8gZXcZWAPdMb2PxoZL4Qd6amlLi0X-ik6rSxm6B8EG6udNwgCtqZns4j0HdHe3F9589KTDGZmHjZPts0m9BQh0yhkjhk8wUCzYemZmoVViFcjeVBI7NjhbgKAhwoEjtTJfxe-TKUDML62swnCoXZFQEuIbZS2IvgnopiDgE7O3~wzzcSffQtqA3WxWtioewRCVqPJ2IVONCgnPOZ-OYJyy8QUKrt5OC4XUE0X361s0gPXwurBw4DVEkSJVFT2ew__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
       "audio_ok": true,
       "track_count": 11,
       "status": "success",
@@ -129,9 +123,389 @@
       "index": 12,
       "title": "Lucas & Steve – Lucas & Steve Radio 172",
       "page_url": "https://www.edmliveset.com/radio/lucas-steve-radio-172/",
-      "audio_url": "https://content.libsyn.com/p/f/9/6/f96cc27f9989fa1f/Lucas__Steve_Radio_172_ENG.mp3?c_id=207335818&cs_id=207335818&response-content-type=audio%2Fmpeg&Expires=1791806432&Signature=aLc47PkZ9kmzbswfEbqhgbnCENikY8W8VET7l7sGvMv26ZyNPFzODw~5mdZJvWxoFNlXsN4LbeR1caDquJTVwpAfGg7PAvtMM5YF~IhughKtNsj6PplNVZ45jKQNoXBrRorXMCttI7cB-wJfciFum9AWnUff3RvWrPlSLYjOryfEmMGVCiqnxzoSquqRAGrxhwr06mH9krnm32W4FyPLtemfi9uLU7IjLOT54bK7MXKxslnGZnl0vUjOOTRFf-tduLpYf962CLYsu3LyLu4d4P83myKHVKSvMy3-meBI-XJUuuNYItyi91DnQqM5Ayvtmx0CfcCVRMYLr0IOox0lVw__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_url": "https://content.libsyn.com/p/f/9/6/f96cc27f9989fa1f/Lucas__Steve_Radio_172_ENG.mp3?c_id=207335818&cs_id=207335818&response-content-type=audio%2Fmpeg&Expires=1791807364&Signature=M71jSCBAwT8u9GFj1M4VUFRCzIsGlXLk4aN8rsKyRuFYusY0tvWJ7CO4OMGD1cMsxk1RSK9Epnp4q~lIUFJjFjJtLG8Ij7pULQTdPKBzB-Ze0P0B7b2aCI4MbEkxUu5b3z5rt6WrQHDEcR8MpUKi0TDXsdg8Ll5ffbiIdFw4AU1F8Jvi41AhlRolVK~IGm2Ac0iaG8DHFLFolNM4endky7v2hHTmPZwxP2zo~vhGmt2riKmY2ZkzOfFojhpOcU6diGUUk8N1iRxvGni7e1TPMSjhA-jm1boSpvCwIv36Rj1-GlTVVFj7Rv1BnCF7LufWcctstgNox8PM7dQgTqVOFg__&Key-Pair-Id=K1YS7LZGUP96OI",
       "audio_ok": true,
       "track_count": 28,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 13,
+      "title": "Archives: Radio",
+      "page_url": "https://www.edmliveset.com/radio/page/2/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
+      "index": 14,
+      "title": "Afrojack – JACKED RADIO 781",
+      "page_url": "https://www.edmliveset.com/radio/afrojack-jacked-radio-781/",
+      "audio_url": "https://cdn.podtoo.com/syndication/2026/10/1791389853733full_episode_JACKED-RADIO--781--WORLD-.mp3",
+      "audio_ok": true,
+      "track_count": 27,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 15,
+      "title": "Magna Recordings Radio Show 442 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-442-carlos-manaca/",
+      "audio_url": "https://ed.podomatic.net/e/magnarecordingsradioshow.podomatic.com/2026-10-10T02_00_00-07_00.mp3",
+      "audio_ok": true,
+      "track_count": 24,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 16,
+      "title": "Kanedo – Lounge Life 214 (Deep Edition)",
+      "page_url": "https://www.edmliveset.com/radio/kanedo-lounge-life-214-deep-edition/",
+      "audio_url": "https://cf-media.sndcdn.com/6HB3YovZ14F4?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vNkhCM1lvdloxNEY0KiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTgwMjcwMH19fV19&Signature=WEG8ML1LaqqvVeq7-3Q42lylOD4ckdHTPB05XtDIAtNMTeQiITwHcWjhnUQA7Fqg2d2ASXAzhxszsJ5~t64U5zY7GMFyx87DN1lAOGFLUOEmZIY-2jtSinbMWcxixgEzSDEiupmd6zflgFkQl8rjmyYkhr~b~SgipYlF2SHwPtLvvW-vOXPsbuvGrH5m5~ej5cApIBhi6tPJlr2EUBs5~z8Va8wPkB0XKGnaa9JAUYslGC67Sybh2iB-axGWaJqjJTmJeuPvOQBgIJ4LW0eFO5mry66KYK1sfElXpl0DRy49~lzcb69we4HvmVrqQeLIT9Wv78if6wSkZ7N6xvyIiA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 11,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 17,
+      "title": "David Penn – Urbana Podcast 755",
+      "page_url": "https://www.edmliveset.com/radio/david-penn-urbana-podcast-755/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 10,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
+      "index": 18,
+      "title": "Morgan Page – In The Air 723",
+      "page_url": "https://www.edmliveset.com/radio/morgan-page-in-the-air-723/",
+      "audio_url": "https://content.libsyn.com/p/8/5/a/85a979f37312360b/Morgan_Page_-_In_The_Air_-_723.mp3?c_id=207350423&cs_id=207350423&response-content-type=audio%2Fmpeg&Expires=1791807533&Signature=TzwS6NxNbpvjRf9c6Dy5P0M03ZTPY1~ktYUiR7DPgbi0cMKl3NdfdHeoLB2C1IBwOAH93-SPnBtOgXaWA2FSO3pyUJsZLbL1p6fw-BhagrupreoulZzvPyQoL6V33FHvUyS4WOMzb0NwP5oM7O~J5yT4qYOaGR3lvggjTUh07YOovDD80sicx~dZtaY4Jx35U6h1XWZCJG9ZnbZHxcB5HvIvw6v~yXFgZ0yn3aCc-1VUjGDLj9yEhkdIKy65DZFgnje1HIRYdL6tuMjPyNrd9R0vJ4imHR1WViNGKCnuZVYduowyH~EKRN8gX1Xig2-CKRiuUzppZ6fDCCxrMLV9Lg__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 36,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 19,
+      "title": "XiJaro & Pitch – Chasing Dreams 241",
+      "page_url": "https://www.edmliveset.com/radio/xijaro-pitch-chasing-dreams-241/",
+      "audio_url": "https://episodes.castos.com/61d5a5bcd164d1-45037098/2651088/c1e-zp1r6i3q6vwhd16kr-25ogzvzgtdvg-1g7syf.mp3",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 20,
+      "title": "Cosmic Gate – Wake Your Mind Radio 652",
+      "page_url": "https://www.edmliveset.com/radio/cosmic-gate-wake-your-mind-radio-652/",
+      "audio_url": "https://cosmic-gate.de/podcast/CG-WYM-EP652.mp3",
+      "audio_ok": true,
+      "track_count": 22,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 21,
+      "title": "Terminal V Podcast 130 – Aphøtic",
+      "page_url": "https://www.edmliveset.com/radio/terminal-v-podcast-130-aphotic/",
+      "audio_url": "https://cf-media.sndcdn.com/xYw3U2dJTFTz.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20veFl3M1UyZEpURlR6LjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA4MTMxfX19XX0_&Signature=IaKg8Bemy71kU~QjhDfJBcKOMKR33x5x-RgaNraMp6lz58UQirp75TwwhDl5dgaZf7rNgxrh85jgxYo4mhdtVAqq8Ht2WF2~V8kgJ84aU8KqfQKU9W~Beit4AXPFbe9Dirk1S4xbZvmyJmMA0tLSt3bLNZUGIJ6CDe~jpYYgGCzadaFYKW9BBW2DEt5R2BFYec7EkQnNviYWJ-BwHzC9UihtpQ7myKiNS7ZUpWgDtMXNmSGBpT1hbXn5Bys4nqHKy0TIoiaB-ul788~vHMG7Y80OnKYnPP5uG~a5r3pc6cBQhcMJ5WvXMM4Bo5ufkiWBEvcJtI5Bpx~qlHjXDCxcqA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 12,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 22,
+      "title": "KSHMR – DHARMA RADIO 071",
+      "page_url": "https://www.edmliveset.com/radio/kshmr-dharma-radio-071/",
+      "audio_url": "https://cdn.podtoo.com/syndication/2026/10/1791513904829full_episode_DHARMA-RADIO--071--WORLD-.mp3",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 23,
+      "title": "V Podcast 183 – Bryan Gee",
+      "page_url": "https://www.edmliveset.com/radio/v-podcast-183-bryan-gee/",
+      "audio_url": "https://www.vrecordings.com/podcast/v-podcast-183-october.mp3",
+      "audio_ok": true,
+      "track_count": 13,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 24,
+      "title": "Lars Behrenroth – Deeper Shades of House 970",
+      "page_url": "https://www.edmliveset.com/radio/lars-behrenroth-deeper-shades-of-house-970/",
+      "audio_url": "https://audio.deepershades.net/podcast/dsoh970I_LB.mp3",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 25,
+      "title": "Enhanced Sessions 869 with Morgin Madison – Hosted by PARTS",
+      "page_url": "https://www.edmliveset.com/radio/enhanced-sessions-869-with-morgin-madison-hosted-by-parts/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 39,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
+      "index": 26,
+      "title": "Archives: Radio",
+      "page_url": "https://www.edmliveset.com/radio/page/3/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
+      "index": 27,
+      "title": "Defected Radio Show Hosted by Sam Divine 09.10.26",
+      "page_url": "https://www.edmliveset.com/radio/defected-radio-show-hosted-by-sam-divine-09-10-26/",
+      "audio_url": "https://cf-media.sndcdn.com/X3mkdJFmomle?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vWDNta2RKRm1vbWxlKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTgwMjcxN319fV19&Signature=P~-juZyRYhkP1uTdRF8zU0TzhnOQImawRh1UWPwPGk7O4XlmdyI7SmClrbbSbK~cvUkluLkanGwe8Tu-uIbEK-rAn-DbwQuBQCeRS5HSCD6Zg9Y2AzkNiDJTlabGQwsg9H9duUQetuQbZHfrGK6Vl7wlgQ7aOjy6A-2L120YGpzgDk2VozSEC2pB1WKadpXwCHOa5K~Qd4C39T2kTz68eapclZhSXabImDKpbotC5EZR155ycEaJFB8TgOoPJw0GGcbdlvSOeeVPAIA~oF08wpXL~mGlZ~bSxO0bDgUaquScmJ6g3~etnUJKYVIZQa2AaTJ-kqb5ewy2DMWAe2dnKg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 11,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 28,
+      "title": "Sam Feldt – Heartfeldt Radio 562",
+      "page_url": "https://www.edmliveset.com/radio/sam-feldt-heartfeldt-radio-562/",
+      "audio_url": "https://cf-media.sndcdn.com/hGY5GlUngv9M?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vaEdZNUdsVW5ndjlNKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTgwMjcxOH19fV19&Signature=WJD~5XZIOPLUIi1LiMHpNlwS7digwomCT-Y6l5OpTwiGalY5dGYnZo22Fr7NnS6~y-a1Rtd1KE-khBE6sEaJ6qeBoOJ5HZTebBI~4J8EKMG8Ixn77trb7uOvmIEOTGjBdiQXpYPLTK0bjT0581FTLr61FFVpIWmTdFUddkYb2ACITELLkwlTB7A07jAYAtT1Miw3gAR5IPLSxN~NBE9wPMUmMtE-HyZbKBbY~8ujHXsWsw0I29U3mkCfGV-bNngD~KjOQm1KNcX-oaUU4KpBSNuX1zwMxXWbvF4~4zaAsDYu0efxIF5LjhExTsll8j2rrADDBmpZjy1ZCNd5sgO~0Q__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 11,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 29,
+      "title": "Lilly Palmer – Spannung Radio Show 077",
+      "page_url": "https://www.edmliveset.com/radio/lilly-palmer-spannung-radio-show-077/",
+      "audio_url": "https://cf-media.sndcdn.com/Av3sMFrbM6UV?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vQXYzc01GcmJNNlVWKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTgwMjcxOX19fV19&Signature=WFsQwLqwOuw~F-dHRVlbPmubhj-qGV4NNPoMK8EhKcm7ANprh3skWU-nW3oibVe4c2Y4cAhmXCD2lcAGu7GXxjtyVEgmZ3HXBpFk4zt1Oc1j0q~mxRNJ7ykxu1q8Dm7JWx7oWBfMKYtUEH1fsdtEqUZrQWscxvpHRAXnCn8beEtaRhDyiWP-pUkyVgqDwY614tnXt-r1ZIKVNoG58bqiqpI0S1CpFBrv-Uco2y5aFAVdpJDp55D1lrJS7yG~jWtc7y~x5B63mB~ETISqOqSQoa8EIpQg0RUPs6DkNV16fnYcpSYooFjb3RnolgyATD66TgwJq61BckYbyPUkfHLAdw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 30,
+      "title": "PRISMATIC by Tiësto 040",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-040/",
+      "audio_url": "https://stitcher2.acast.com/livestitches/d357bdf580b6d3a7b25c88480a3f88c7.mp3?aid=6ac4fb13e361f9e2fbc2fa44&chid=593eded1acfa040562f3480b&ci=so9fMJ3hyBAdfmQeu-VsFuXX8L3CM7fVYnv0bXQ6HMC-3x03VbaZ7g%3D%3D&pf=rss&range=bytes%3D0-1023&src=7bfff47a19254c1bf0dde2914a154cf1%2F128-2.mp3&sv=sphinx%401.280.4&uid=c5f966ab55c3340265b0aa4cbd763e6d&Expires=1791814302&Key-Pair-Id=K38CTQXUSD0VVB&Signature=OXazjZbfuZgWrRORQrKd0VNw82GBt4ymp--6g8KmLGTeO6ah~IPcNl0bja4c2Bq8CbEnyexMKwU4jZFkvVujN4zJzDrNItUIhDZd0Hrpk~jzUm7142GahZC6U6iDqpxQDMQiZEmQVhRvoHXy-gQSnvThDkgOhh-DUwYs78p0ili5YHVo6Rh6CRPerlq6xCX-xqXD0~yxySZCj74xRuCWKN31ctIhQ~rc~5f82wtHFqYvd31Jn4rB6Efaoi3g2SK5yOTrh1VLpmq-V97Vhf19gwddbZsjEPwTG5QN9KKM0JZdRE3Po4MOlesxINE2VIGOwfgpERuru6zKYd1gxxUAiA__",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 31,
+      "title": "Dave Pearce – Delirium 681 (The Space Brothers Guestmix)",
+      "page_url": "https://www.edmliveset.com/radio/dave-pearce-delirium-681-the-space-brothers-guestmix/",
+      "audio_url": "https://ed.podomatic.net/e/davepearce.podomatic.com/2026-10-09T06_53_44-07_00.mp3",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 32,
+      "title": "Judge Jules – The Global Warm Up 1179",
+      "page_url": "https://www.edmliveset.com/radio/judge-jules-the-global-warm-up-1179/",
+      "audio_url": "https://ed.podomatic.net/e/judgejules.podomatic.com/2026-10-09T04_02_45-07_00.mp3",
+      "audio_ok": true,
+      "track_count": 46,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 33,
+      "title": "Grum – Deep State Radio 055",
+      "page_url": "https://www.edmliveset.com/radio/grum-deep-state-radio-055/",
+      "audio_url": "https://stitcher2.acast.com/livestitches/65337270abd084fd86e1298648912378.mp3?aid=6ac8c34d3b4184313724728f&chid=65e5b90e5c6699001750c5ae&ci=M9JOs7Zt6uhsgDak3E8wgX4De0haR2es9PfaQJYMk24nZUDKp1KE8w%3D%3D&pf=rss&range=bytes%3D0-1023&src=ff5bd66b285c6e4f414338b6b91f2e95%2F128-2.mp3&sv=sphinx%401.280.4&uid=4eda975efcb5884fcaf2bc18a1cdee3a&Expires=1791814306&Key-Pair-Id=K38CTQXUSD0VVB&Signature=VjzW-Ho2cDiALPFRnf91qQr6J7Zqt~04yTB92dhnFsTWOT1r2fGP2d3kLW2HiCUi~9-w3l7gDS~T0jMzkr78Ms-dPQMxjZFdAEZrp2AvJnEcuoeE6a2Mo9l2PkKxjBGU5c84SCG6QKoug1xulaGickDIMcx~6r0C8LTQmUPedtBqr9ow6lwEFTMB-25g7uc~SyqGD9rwTH2VqqqoosjlAXACgCFUpKAJOTMAbMFgagzvAOTxZWatY~byTj1J5PfRP3vWbLIwnEGwIx-WalKaNNnKqqsYSy9QtTEqYIBvqzGgj41gEFAHESu21y6EJmT79PYA8weYfKQO-5xXsqJKOw__",
+      "audio_ok": true,
+      "track_count": 22,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 34,
+      "title": "Super8 & Tab – SuperTab Radio 289",
+      "page_url": "https://www.edmliveset.com/radio/super8-tab-supertab-radio-289/",
+      "audio_url": "https://radio.super8andtab.com/radio/audio/Supertab289.mp3",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 35,
+      "title": "AVIRA – The Sound Gallery 114",
+      "page_url": "https://www.edmliveset.com/radio/avira-the-sound-gallery-114/",
+      "audio_url": "https://cf-media.sndcdn.com/qrpvdvd43qyT.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vcXJwdmR2ZDQzcXlULjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA2MzI5fX19XX0_&Signature=WQHG10deGA4~aS2iC80jv7zkxDcGtMvi1dlECvfWroL1PTcC2V-oIMHVbJu12psElnVXqUKUyBEQvjrXk5nQjaIJA5pxn0ornc7C6cHEF6f1366SGLhzEhmGn44kuyY64eWaKiTaRNzdbFTOPNOqTs3MbWMUw7FUU1PZTUWmJDCzg62PtbFeO04fjl5vujbNSlhGgLZvKl56TxZSPSi3tD3icmlXyY5VD2Mm0jHJlfZiBfIw4YjJGjhGoDq8qVLxg-~zLcopkICD-sfVMeldektVUVu8j6ohUHuQbe8xPq96ID~Fwd2SpyLjG6kGqLNs9kATjJN2Y3N94aN4l4YWlQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 15,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 36,
+      "title": "Eric Prydz – EPIC RADIO 040",
+      "page_url": "https://www.edmliveset.com/radio/eric-prydz-epic-radio-040/",
+      "audio_url": "https://cdn.podtoo.com/syndication/2026/10/full_episode_1791505260018.mp3",
+      "audio_ok": true,
+      "track_count": 21,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 37,
+      "title": "Bonzai Basik Beats 840 – DJ Brian.D",
+      "page_url": "https://www.edmliveset.com/radio/bonzai-basik-beats-840-dj-brian-d/",
+      "audio_url": "https://app.syndicast.co.uk/download/itunes/uploads/audios/84/840-1.mp3",
+      "audio_ok": true,
+      "track_count": 12,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 38,
+      "title": "Digital Punk – Unleashed 164",
+      "page_url": "https://www.edmliveset.com/radio/digital-punk-unleashed-164/",
+      "audio_url": "https://content.libsyn.com/p/1/f/3/1f38e5773de3084e/UNLEASHED_E164_ZATOX_AANGEPAST.mp3?c_id=207300358&cs_id=207300358&response-content-type=audio%2Fmpeg&Expires=1791807562&Signature=eRKoFIZtNd4-1BhaYyxD1iJ91uDLVxaVEkhsIoGlujhyqoS~0JGFgRDNYvI~dhJ5uOTjPKKh72vurQQF5T9BvYqfnc7j~gGR4AiXoVVOlYz4yzwiOUdr~4ANK1WC9UQJ6lIm2mylfkowhNFI41ld7cEVv81XSpdRWVrPJTGtzQfU5daKmKnOdauBI6cOBkEX1O3N0O9R2F~54A4ZVl8wcudB34VVMkIfws~pQ3MiD3-QRP1YtsYgAuX0ntJCgYjufSoz3hGtAxjD1UBnwdp507-lnIkEC3vPFemPnZ8oyRCiPvBEDrPD~QuhSTmyyrz7~m1LA9Gt2Wu9JjTAPLklrQ__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 30,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 39,
+      "title": "Archives: Radio",
+      "page_url": "https://www.edmliveset.com/radio/page/4/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
+      "index": 40,
+      "title": "Tomorrowland Friendship Mix with The Bausa – October, 2026",
+      "page_url": "https://www.edmliveset.com/radio/tomorrowland-friendship-mix-with-the-bausa-october-2026/",
+      "audio_url": "https://cf-media.sndcdn.com/NESLZGhRft9l?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vTkVTTFpHaFJmdDlsKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTgwMjczN319fV19&Signature=YZACj5oNFsB-grNEtH8ASpHDmm-mrKNfP0yWCryccEE4yVXB5Yusm537YAfagblpuMCV7NdJIH5ddz7qrXfELO6Ld-nRmh-p5NAPUuZKmp2xUaLJhmlrrUyXu-k8xhSk6eWvNaggfN0yCrpLKHdG17tu8kr9DTJlaVODhW4LQG8Wi3VGe72kymiKiw-Rwmlwr~P9PZvMFctaAlJ7ZJzw0JDMeNq1W8RVPtwhbIpKma6fX1EVTy-1xeNtfZlRgMQC2LUXabrwQFRaMnC29qkATRsDzFStipDyxsWR0ypRcFNXPDYDfhsT6Q4Hx36zQlUZEDnqUcaSGF44zmdbfWWeOw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 41,
+      "title": "Global DJ Broadcast – Markus Schulz and Sander van Doorn (Oct 8 2026)",
+      "page_url": "https://www.edmliveset.com/radio/global-dj-broadcast-markus-schulz-and-sander-van-doorn-oct-8-2026/",
+      "audio_url": "https://s362.podbean.com/pb/4048f2e6758ea4d91b084d53925b2c92/6acc2ec7/data1/fs179/753195/uploads/GDJB_Oct_8_2026_Markus_Schulz_and_Sander_van_Doorn.mp3?pbss=110bdef3-e1ef-51f3-8e1b-afb2f9d13542",
+      "audio_ok": true,
+      "track_count": 47,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 42,
+      "title": "Stephani B – Drumbox Radio 088",
+      "page_url": "https://www.edmliveset.com/radio/stephani-b-drumbox-radio-088/",
+      "audio_url": "https://cf-media.sndcdn.com/wTu3GVjbsXif.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vd1R1M0dWamJzWGlmLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODA2MzI5fX19XX0_&Signature=HL1B9cZHTK~Y~e~dEAtkW0AjbvhfShYlmkwvYMJWlwp-UcFS3D8LvNk5BZ5d8FXjzURQaHA26ns0w6dd6gsoSbK0X1kbbqXNHLAy1lNB4OM-y95BmlK6NDlJlS-6uXtVMBAMvEAaqFGsaRKly88ccMld4kmsb3Vn12FMlVsI3IzSR5iQ0vzdQfDOCLsfjNpE-UKFfyDuC3MCSNbgKFRo86MIjWDi9F831X-OtKobeZt7CBKEsdczzP9s5xykKK~UVKgUFrO3BTcJPeHYvGo28GxgX9aisB1wIw6bYAFZHkwQpM2OLIDNE9bzkr~oFk6~oSU38If6YY8F512pCUnSGQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 11,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 43,
+      "title": "Nicky Romero – Protocol Radio 739",
+      "page_url": "https://www.edmliveset.com/radio/nicky-romero-protocol-radio-739/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 26,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
+      "index": 44,
+      "title": "Joris Voorn – Spectrum Radio 493",
+      "page_url": "https://www.edmliveset.com/radio/joris-voorn-spectrum-radio-493/",
+      "audio_url": "https://content.libsyn.com/p/b/e/7/be7e5436a3d77b06/Spectrum_Radio_493__Joris_Voorn_sc_v2.mp3?c_id=207175803&cs_id=207175803&response-content-type=audio%2Fmpeg&Expires=1791807575&Signature=QAaC3fd57U5loe~igdQSXzKEw48tVSXnA1ZJLf4JIHX14UuuYMadS6o~PvZ2cQ4HevF9cg4j3osQnCGLUdcGWmabOI2KKIPBTA8Rg0EGg16xrnUuq-NKdWrnC-45-pcz0crBbpvUIu3zyPSLqoX3R1QFOghtzC89Pj-Fz63adQ5jqivd~irlZgeOcd92~dsnUCJr37CJ6HlKuUek-3pzGiuA6UVpQ9~diMjWCLtm-m~48uCii40vLzASZUcF4OrmYIC~A-Yu0pBBrFdSaK8aJqs~8O8MonS3wtiqKduSohi2qm9-9mHv1sckvnvG~euquYOQJPqdvx5KPVFcuknd7w__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 45,
+      "title": "Armin van Buuren – A State of Trance 1298 (Paul Oakenfold Guestmix)",
+      "page_url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1298-paul-oakenfold-guestmix/",
+      "audio_url": "https://stream18.hearthis.at/c2a7995fc54d2140130610e3149a6577.mp3",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 46,
+      "title": "Paul Oakenfold – Planet Perfecto Podcast 832",
+      "page_url": "https://www.edmliveset.com/radio/paul-oakenfold-planet-perfecto-podcast-832/",
+      "audio_url": "https://content.libsyn.com/p/3/3/5/335b808d94368cc6/PlanetPerfecto_PaulOakenfold_832.mp3?c_id=207091868&cs_id=207091868&response-content-type=audio%2Fmpeg&Expires=1791807255&Signature=L3FdVTiXyvPEcPOuL922PjqZzbLpm1JEywwlJaHV4VgVgkUafO3HjQNxCrMLZW5vjWKFAx3Qf6yZ89w8VD9IzDjHdagMie8Mse4LkVIYY7xnGeaOA5vo5uh79iVO1YFv2qtMucmKsXrl9cA~A8aKPJ4mtlUHtOuUdifY49DPk02PNdfFG6~lmuUlJ5WXNPHMHqo0Y4rJVzVfJ99-cf2LXxR7AE5WRgEe0Uu~k~P5mXSnkqsvFxmCPTJ4Uvvzv9lyyCcvY-WVwv~mMU-FcTsryAVH9TEgFi-su58B6jwSOj3LQ7pd7SQXRjTlsCvSY66~NJkiySwHo6NzhafLYHgk~Q__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 24,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 47,
+      "title": "Robin Schulz – Sugar Radio Show 562",
+      "page_url": "https://www.edmliveset.com/radio/robin-schulz-sugar-radio-show-562/",
+      "audio_url": "https://app.syndicast.co.uk/download/itunes/uploads/audios/56/562-7.mp3",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 48,
+      "title": "Manuel Le Saux – Extrema 961",
+      "page_url": "https://www.edmliveset.com/radio/manuel-le-saux-extrema-961/",
+      "audio_url": "https://cf-media.sndcdn.com/6tWVUwCbP4Gj?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vNnRXVlV3Q2JQNEdqKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTgwMjc0OX19fV19&Signature=DzFjHcoDsQPjz21O~3agRWhNTxw-7QhTWt94zabNWdlbXGjBQCIB9v8cnsrLoD5l9breLzlR8YV-yYcGJFzkA~UIdQOimNwFe3UuI2XYHHIEBa3JUIntwmdmw06d1lGgsQlXmXRNSOx301iBPhgkFSVseTLLVeaJDR8QRRw1-TKtDVrm~EVp-bJ5FgJwMYzY59wW4eFLR2muj~~MueuYD~ONk-1iMTd9opC3DRP6KsEWMjGYHjugTh1gZXIW5lDxOCrtQVdRKcdio5Kl-XWdCS1uJRAsSTPr6yf1pT4Cqk9HPRgWLK5ZGe6EmUDms~-1JeeZGo7lRetVA6yZkse98A__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 10,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 49,
+      "title": "Andrew Rayel – Find Your Harmony 513",
+      "page_url": "https://www.edmliveset.com/radio/andrew-rayel-find-your-harmony-513/",
+      "audio_url": "https://s392.podbean.com/pb/265df0f00c493449710a774fe1ae9120/6acc0a70/data1/fs124/683689/uploads/Andrew_Rayel_-_Find_Your_Harmony_Episode_5138s59m.mp3?pbss=82bab012-304c-5fc2-9eff-cd2ab4faa1fb",
+      "audio_ok": true,
+      "track_count": 17,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 50,
+      "title": "Yotto – ODD ONE OUT 105",
+      "page_url": "https://www.edmliveset.com/radio/yotto-odd-one-out-105/",
+      "audio_url": "https://cdn.podtoo.com/syndication/2026/10/1791239419366full_episode_OOO--105--WORLDWIDE-.mp3",
+      "audio_ok": true,
+      "track_count": 23,
       "status": "success",
       "error": ""
     }
