@@ -86,17 +86,17 @@ def discover(full_archive=False):
             nxt2=""
             for a in soup.select("a[href]"):
                 label=txt(a).lower(); rel=" ".join(a.get("rel",[])).lower(); u=url(a.get("href"),r.url)
-                is_next=("next" in rel.split() or bool(re.match(r"^next\\b",label,re.I)) or label in ("older posts","→","»","›"))
+                is_next=("next" in rel.split() or bool(re.match(r"^next\b",label,re.I)) or label in ("older posts","→","»","›"))
                 if u and is_next:
                     nxt2=u; break
             if not nxt2:
                 pages=[]
                 for a in soup.select("a[href]"):
-                    u=url(a.get("href"),r.url); m=re.search(r"/page/(\\d+)/?$",urlparse(u).path)
+                    u=url(a.get("href"),r.url); m=re.search(r"/page/(\d+)/?$",urlparse(u).path)
                     if m and u not in seen: pages.append((int(m.group(1)),u))
                 pages=sorted((n,u) for n,u in pages if n>pg)
                 if pages:nxt2=pages[0][1]
-            if not nxt2 and len(found)<LIMIT:
+            if not nxt2 and (full_archive or len(found)<LIMIT):
                 nxt2=BASE+f"/radio/page/{pg+1}/"
             nxt=nxt2; print("Archive",pg,"links",len(found)); time.sleep(.2)
         except Exception as e:
