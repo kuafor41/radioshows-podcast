@@ -179,6 +179,59 @@ def probe(u):
         ok=status in (200,206) and (typ.startswith("audio/") or "octet-stream" in typ or final.lower().split("?")[0].endswith((".mp3",".m4a",".aac",".ogg",".opus",".wav")))
         return ok,final,size,"" if ok else f"Not confirmed audio: HTTP {status}, type={typ}"
     except Exception as e:return False,u,0,f"{type(e).__name__}: {e}"
+def cache_episode_covers(items):
+    """Persist one local artwork file per radio-show series and reuse it forever."""
+    cover_dir=DATA/"covers"
+    cover_dir.mkdir(parents=True,exist_ok=True)
+    map_path=DATA/"cover-map.json"
+    try:
+        cover_map=json.loads(map_path.read_text(encoding="utf-8"))
+    except (OSError,ValueError):
+        cover_map={}
+    raw_base="https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/covers/"
+    downloaded=0
+    reused=0
+    failed=[]
+    for x in items:
+        source=x.get("image_url","")
+        series=(x.get("serie") or x.get("show") or x.get("title") or "unknown").strip()
+        key=re.sub(r"[^a-z0-9]+","-",series.casefold()).strip("-") or "unknown"
+        entry=cover_map.get(key,{})
+        local_name=entry.get("file","")
+        local_path=cover_dir/local_name if local_name else None
+        if local_path and local_path.is_file() and local_path.stat().st_size>100:
+            x["source_image_url"]=entry.get("source_url",source)
+            x["image_url"]=raw_base+local_name
+            reused+=1
+            continue
+        source=entry.get("source_url") or source
+        if not source:
+            failed.append({"series":series,"reason":"No source image URL"})
+            continue
+        try:
+            response=S.get(source,headers={"Referer":x.get("url",BASE+"/")},timeout=TIMEOUT,allow_redirects=True)
+            response.raise_for_status()
+            content_type=response.headers.get("Content-Type","").split(";",1)[0].lower()
+            data=response.content
+            if not content_type.startswith("image/") or len(data)<100:
+                raise ValueError(f"Not a valid image response (type={content_type}, bytes={len(data)})")
+            ext_map={"image/jpeg":".jpg","image/png":".png","image/webp":".webp","image/gif":".gif","image/avif":".avif"}
+            ext=ext_map.get(content_type) or (Path(urlparse(response.url).path).suffix.lower() if Path(urlparse(response.url).path).suffix.lower() in (".jpg",".jpeg",".png",".webp",".gif",".avif") else ".img")
+            safe_name=key+ext
+            (cover_dir/safe_name).write_bytes(data)
+            cover_map[key]={"series":series,"source_url":source,"file":safe_name}
+            x["source_image_url"]=source
+            x["image_url"]=raw_base+safe_name
+            downloaded+=1
+            print(f"Artwork cached | series={series} | file={safe_name}")
+        except Exception as e:
+            x["source_image_url"]=source
+            x["image_url"]=source
+            failed.append({"series":series,"source_url":source,"reason":str(e)})
+            print(f"Artwork cache failed | series={series} | {e}")
+    map_path.write_text(json.dumps(cover_map,ensure_ascii=False,indent=2),encoding="utf-8")
+    return {"downloaded":downloaded,"reused":reused,"series_cached":len(cover_map),"failed":failed}
+
 def description(x):
     e=lambda s:html.escape(s or "",quote=True)
     parts=[f"<p><b>{k.title()}:</b> {e(x[k.lower()])}</p>" for k in ("Artist","Show","Serie","Added","Genre")]
@@ -251,12 +304,13 @@ def main():
             err=f"{type(e).__name__}: {e}"; rows.append({"index":i,"title":"","page_url":u,"audio_url":"","audio_ok":False,"track_count":0,"status":"failed","error":err}); retry.append({"url":u,"error":err})
             print("Episode failed:",u,err)
         time.sleep(.15)
+    cover_stats=cache_episode_covers(items)
     publish=[x for x in items if x["audio_url"]]
     if not urls:raise SystemExit("No episodes discovered; not publishing an empty feed.")
     OUT.write_bytes(build(publish))
     Path("data/items.json").write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
-    report={"mode":os.getenv("FEED_MODE","test"),"source":ARCHIVE,"run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"parsed":len(items),"published":len(publish),"audio_confirmed":sum(r["audio_ok"] for r in rows),"tracklists_found":sum(bool(x["tracklist"]) for x in items),"discovery_errors":errors,"episodes":rows,"rss_xml_valid":True}
+    report={"mode":os.getenv("FEED_MODE","test"),"source":ARCHIVE,"run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"parsed":len(items),"published":len(publish),"audio_confirmed":sum(r["audio_ok"] for r in rows),"tracklists_found":sum(bool(x["tracklist"]) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"episodes":rows,"rss_xml_valid":True}
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     with open("data/episode-checks.csv","w",newline="",encoding="utf-8-sig") as f:
         w=csv.DictWriter(f,fieldnames=["index","title","page_url","audio_url","audio_ok","track_count","status","error"]); w.writeheader(); w.writerows(rows)
