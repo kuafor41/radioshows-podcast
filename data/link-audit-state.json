@@ -478,5 +478,125 @@
     "status": "failed",
     "audio_url": "https://content.libsyn.com/p/2/1/b/21bbe5f49fa66d09/Aokis_House_Podcast_687_EP_765_Air_Date_9.30.26_-_Podcast.mp3?c_id=206788053&cs_id=206788053&response-content-type=audio%2Fmpeg&Expires=1791894131&Signature=eMBUZJ~Xp3kdvgndhNiLUMLX5~XX95d4VAxFuk3l-QC~HIxtyEpdHUi0KXHaeX1~bMWQh1UjqQy24d8Q7ozjvmXwUdCZ6OXOucDBCc~1UzqWnVZBs0DMnXAaqCsFAzdlwXAltggA65jmgUVu7Tz7BaM2KeWonaFuL2DdJFfstUlRw~g46-L8F2jzTxlm~iXdznuM843ppN0nTgdyWsjW7Wt~RwJUeg7f5EkFGnFT2XNt1sbMNks1VsSGurX~7NsGOM~6c~a1nAgU5uJgwR0hQ9JKWa5Ht0oQT3jm1nZ2ft0uzZ5-SGAAD9pNnOj~aSfIntNh4URK3C0Va4VpkMoCtg__&Key-Pair-Id=K1YS7LZGUP96OI",
     "error": "Not confirmed audio: HTTP 403, type=text/xml"
+  },
+  "https://www.edmliveset.com/radio/lucas-steve-radio-171/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://content.libsyn.com/p/5/8/6/58626ee97739a76e/Lucas_and_Steve_Radio_171_ENG.mp3?c_id=207022793&cs_id=207022793&response-content-type=audio%2Fmpeg&Expires=1791894088&Signature=W2aKsueORAl1Bfb2BvArwHWcovGskHpGTnjkzWf8toiJ2ONXqljFjALtdpRSazwFR-~Bz1l-qIOf04m~FZMRurGhI2BssI8rPkmaBSNioHWBZ9ZC1NRhkRlT8H~jqOL80GEUHyrdqKSespCYQDR7aMgsp-DdbDr5Of5WZneDJMs0eggJ3hIUhi3KWGKJv6eX1Zyp87vdkiqu9K013erIP0QIwp~1bQXq5XZk50TGBQSTOHUT9GQDlg~y1~NXcIo3yclqkKEqCqSm9jVXlAbLWOoUYXT36b-B~TrTlo29DZK44AJCazfv88CcSDH2-eebtZmRvd1ouBiTSk~ZwleO1w__&Key-Pair-Id=K1YS7LZGUP96OI",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml"
+  },
+  "https://www.edmliveset.com/radio/night-owl-radio-581-ft-marie-vaunt-stello/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://cdn.podtoo.com/syndication/2026/10/1790884578254full_episode_NOR--581--WORLDWIDE-.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/538-dance-department-by-armin-van-buuren-october-3rd-2026-incl-hotmix-by-kaskade/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://stream75.hearthis.at/47ff64b447ecfd085e97982b87df993b.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/afrojack-jacked-radio-780/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://cdn.podtoo.com/syndication/2026/09/1790702767316full_episode_JACKED-RADIO--780--WORLD-.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/xijaro-pitch-chasing-dreams-240/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://episodes.castos.com/61d5a5bcd164d1-45037098/2641413/c1e-mw9z2h4rkvga3g6qk-ndj9o1nmi8gx-glppp5.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/brennan-heart-i-am-hardstyle-162/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://s352.podbean.com/pb/23a4dd837b4032bf28a8bb07a80960f5/6acd80a5/data1/fs191/8225458/uploads/IAHRADIO-E162-chapters.mp3?pbss=8585f866-8cd0-5c49-a256-8b43213e3c68",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/dirtybird-radio-547-dillon-marinez/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Dirtybird_Radio_547_-_Dillon_Marinez_192k-1790953658497304549-NDMxODUtODk2MTM4MzE=.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/sam-feldt-heartfeldt-radio-561/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/GdK0H0JVtRxp?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vR2RLMEgwSlZ0UnhwKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTg4OTQ2OX19fV19&Signature=VBvkFjUfwoZkDd1VnpKqphFmA4cGf9DutmdtO~rLj2BscgPxATXPJnU6SW8Zu-gpr7LN4t~9OLIxQ7CC6BkQXoKmJT3tDr0FT2kxkvC8gnyT38nJvyDpKWU2GfqQppvvVOSQNMQMBOasdcGB~TSLo4iPiDvTsuO0JRWIt2ZYNPh827H7yhY058Z0qqsRG84TaSa3uPDKQbhOABaWaQIkUN8OOmqZFbg5AiD1rZFwUBmQGGvWQ46~8TyjNzkWYRnJj-nKWAdr36wbLWGOBMDIFWGWuzHniOaWbguCWvUySDT-SPLjqRjXXYwU0wxNLqXUqukh5y~n26aX0YiA4EKwcg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1297-ferry-corsten-residency-mix/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://stream18.hearthis.at/935d2b748b2fec7c7a6b85c3479417b2.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/enhanced-sessions-868-with-dj-try-hosted-by-parts/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://enhancedsessions.radiopush.net/enhanced-sessions-868-with-dj-try-hosted-by-parts.m4a",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/mattn-full-moon-radio-123/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://stream77.hearthis.at/5adac03591beb654fcb9250667f36b66.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/glitterbox-radio-show-489/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Glitterbox_Radio_Show_02.10.26_192-1790946949795378010-NDMxODMtODY0MDM3MDk=.mp3",
+    "error": "ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+  },
+  "https://www.edmliveset.com/radio/prismatic-by-tiesto-039/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://stitcher2.acast.com/livestitches/7b7bff0be4d870c60d58af5bc3d83d0a.mp3?aid=6abe837d90f8a952d484ecba&chid=593eded1acfa040562f3480b&ci=QKCsLMnmruEb4L4v860NyIYlpbqfS4mvLi_bkzQlo0gjZB-HP6Ulzw%3D%3D&pf=rss&range=bytes%3D0-1023&src=172e6854b277ddfef7d2a7fcfd0c86b1%2F128-2.mp3&sv=sphinx%401.280.4&uid=383441f55c6556758f703003d072da08&Expires=1791901051&Key-Pair-Id=K38CTQXUSD0VVB&Signature=i8MHjAgUnalS1F2WlwsujCC~fidYRkwrgFMVKSmaUfYM6wp4oTcXLQ6YTQhJCC0Znza542-3j~VIP8eOhI7xGxVGIYdpizX-vOxzMDOcke5wgCtA4ExHs8YjlnfMxqlYMnJsaXeYCzxWTj3wZEiwfCibS0MERxQUhg9McPUptX9fQCv3aAF~TEQU81M6BVYYyyMujw4zxEqobUJ8Uj3471d8nCuV9WAfApdSKUzi1Pvh1xJIKod-U1TKp~H686-4tDQhwM49hNSIOgGzMRdzspUE47fsPsFKizyPNkdoGWdpsVOv-~GY0QblIBRyDqo6tF220EGgYMbJm3XtJc5h6Q__",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml"
+  },
+  "https://www.edmliveset.com/radio/mees-salome-distant-111/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/sqs2ygLRGkir.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vc3FzMnlnTFJHa2lyLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODkyOTc2fX19XX0_&Signature=BXnGWH~67vMA~hP8W8gG~Z4tdgMEYbWSa569HE7ahPQFfI41Z8KnZBnW5ISoiA3NoSpYj9LaybiiHs6Rxro2A-hVfFRJoPuvpkbY3t4o9kYZPXGi-8h1zTm9gJCj1XUnGq1TCAaMiNZlzPr0RBheQfYzOs81~bNt169T79uQ-Ibi39DusEQvTs1Z9jCmfxx~Bit7gcyg01RdrLvfJSpMRrb4aF3OAUNCXLEvSiOthGttk-X41sv2Y-sKOXEOztKo5HyiPNfJX5mAbSfZu3qcNgbKMOtDGnM11ReSaDIGpkCCwbHI0IDNXOarC2jyXl7y3-PTTMSVdaSvT-6BO5oJvQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/defected-radio-show-hosted-by-monki-02-10-26/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/rAJoYQ0vWG2a?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vckFKb1lRMHZXRzJhKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTg4OTQ3MX19fV19&Signature=VGJVtaJqMOGGfzAjTR9IMKVfDHryp3K3kipJPJmMrPXP-qQQ47k0SfbFTVvft2GR4lsiy0LNkbue9mgDmRikwYBmp7odaLdWIS3VLuMCj~r7g1QJk4L2MDgeNcX9rZf~tuTTzv0VTWFXHLppWAhbfC~0UrZ3R4pM2~HNN6fc5E3oxrA0AebYcT8rbRQ4DRrU~JZXasRkVaVpShe-~X00CCm-Fnzf96skd3oOQz7sKwuIn4Hmknn9X5mZ0RNyvOMsOVzCHhFXoy3Jm3Z7NC06nLxqO5O76V-FL8YaUCcCMCuE258F~VS4w7ZRTScbg5YtbISqNi4Jnf-QUwOuBmQ-Yw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/lilly-palmer-spannung-radio-show-076/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/smBfQGwZhyGD?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vc21CZlFHd1poeUdEKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTg4OTQ3MX19fV19&Signature=W7lfS3wX68h24QBRtb51p-8yitT4qH6PzKlEs3h-~c0aL56WPia4t0GYZfyN4W0TopgBjYt7CIAi9Eb~mYK5SZS5XPU81p9kL7DULuv2n0fJOuekMBwyJppQIxrdwsEB6n7Py8DAWTeRxi3HDZ93nHps44VDrbUvOi0FWq7~PfMu2LsqWZ58NSd6Rv0Mx4ZSQbv2t12voq32vq~hUEj46JG6QmTQ-jO~21dwMh8XsA1N8h1WB4f4ku8yHpOlyJUCP6aq0xnJI7dCYky9l5GOu6xikYs3BQeAeijFpmjMUAu4OvV-CBYcIJ3OzSffEJ1YQfpSv-zsFv1heWxmrt5UJA__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/chicane-sunsets-610/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/SunSets_610_Podcast-1790785224921854430-NDMxNjUtODcyMjkxMjU=.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/judge-jules-the-global-warm-up-1178/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://ed.podomatic.net/e/judgejules.podomatic.com/2026-10-02T02_41_01-07_00.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/avira-the-sound-gallery-113/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/BIwSrY5eFRhC.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vQkl3U3JZNWVGUmhDLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODkzMDcyfX19XX0_&Signature=O-snrXFqhJDhmtVMtzxb-AYuYFyOKpHzL1krb9uvu-E7bSfPIX3RUCyKbUfXICgybp7~Inxu8JQeqzULDUdK3g4InMui4iWyNyePPAVKTiRSrzqwyfDy6IvPfXaLNn~NgDjlgE8VFi-ffp1Q9AaGuYG6-FxNKti-x0~eMpV8kgmANYJUS0TewvryWvJVFz34crqZ4ZEqWXXvZ2zU93JYinR8sLrZ3V9SXBJ~d4DsGrFLy3go3FW2SKimBZxOQN7ZGdX6koI~UBqNVKwKB8EAjqtIni5bcbKdTx6fycs~1fPzTn76k9LcfaY~7v7YvE3Kpbg3PPSkxH1emZHRWIsatg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/korolova-captive-soul-102-carl-bee-guestmix/": {
+    "last_checked_at": "2026-10-13T17:05:03.357020+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Captive_Soul_102_192k-1790878540882998922-NDMxNzQtODY0MDIyNjQ=.mp3",
+    "error": ""
   }
 }
