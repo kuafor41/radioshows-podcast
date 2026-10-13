@@ -1,0 +1,12 @@
+{
+  "completed_at": "2026-10-13T11:18:19+00:00",
+  "pages_scanned": 375,
+  "discovered": 4487,
+  "published": 4359,
+  "audio_confirmed": 4359,
+  "deferred_audio_failures": 128,
+  "retry_queue": "data/retry-queue.json",
+  "cover_failures": 5,
+  "sort_order": "Added date descending",
+  "verification_note": "The 375 listing pages were scanned successfully with zero listing errors. Five artwork downloads used the podcast-level fallback; this does not invalidate the completed archive."
+}

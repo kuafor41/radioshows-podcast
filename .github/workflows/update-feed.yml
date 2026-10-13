@@ -2,18 +2,11 @@ name: Update Radio Shows Podcast RSS
 
 on:
   workflow_dispatch:
-    inputs:
-      mode:
-        description: "Run the archive backfill or incremental update"
-        required: true
-        type: choice
-        default: incremental
-        options: [archive, incremental]
   schedule:
-    - cron: "0 * * * *"
+    - cron: "50 * * * *"
   push:
     branches: ["main"]
-    paths: ["fetch_feed.py", "requirements.txt", "data/podcast-cover.jpg", ".github/workflows/update-feed.yml"]
+    paths: ["fetch_feed.py", "requirements.txt", "README.md", "data/podcast-cover.jpg", ".github/workflows/update-feed.yml"]
 
 permissions:
   contents: write
@@ -28,7 +21,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      FEED_MODE: ${{ inputs.mode || 'incremental' }}
+      FEED_MODE: incremental
       GITHUB_EVENT_NAME: ${{ github.event_name }}
       HOURLY_REPORT_ENABLED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
     steps:

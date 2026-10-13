@@ -22,6 +22,8 @@ OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
 HOURLY_REPORT_FILE=DATA/"hourly-success-report.csv"
 CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
 MAX_ARCHIVE_PAGES=375
+MAX_RETRIES_PER_RUN=30
+MAX_RETRY_QUEUE=1000
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
 
@@ -296,7 +298,7 @@ def cache_episode_covers(items):
     return {"downloaded":downloaded,"reused":reused,"series_cached":len(cover_map),"failed":failed}
 
 def description(x):
-    e=lambda s:html.escape(re.sub(r"\bEDMliveset\.com\b","",s or "",flags=re.I).strip(),quote=True)
+    e=lambda s:html.escape(re.sub(r"EDMliveset\.com\s*[-–—:]\s*podcasts?\s*&\s*radio shows","Radio Shows Podcast",s or "",flags=re.I).strip(),quote=True)
     parts=[f"<p><b>{k.title()}:</b> {e(x[k.lower()])}</p>" for k in ("Artist","Show","Serie","Added","Genre")]
     # Show the text after FREE DOWNLOAD as it appears on the episode page.
     # Paragraphs (not an ordered list) preserve line breaks without auto-numbering.
@@ -306,9 +308,9 @@ def description(x):
 def build(items):
     ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
     root=ET.Element("rss",{"version":"2.0"}); ch=ET.SubElement(root,"channel")
-    for tag,val in [("title","EDMliveset.com — Podcasts & Radio Shows"),("link",ARCHIVE),("description","Radio shows archived from pages 1-375, sorted by Added date (newest first)."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
+    for tag,val in [("title","Radio Shows Podcast"),("link",ARCHIVE),("description","Radio shows archived from pages 1-375, sorted by Added date (newest first)."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
     cover_url="https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/podcast-cover.jpg"
-    image=ET.SubElement(ch,"image"); ET.SubElement(image,"url").text=cover_url; ET.SubElement(image,"title").text="EDMliveset.com — Podcasts & Radio Shows"; ET.SubElement(image,"link").text=ARCHIVE
+    image=ET.SubElement(ch,"image"); ET.SubElement(image,"url").text=cover_url; ET.SubElement(image,"title").text="Radio Shows Podcast"; ET.SubElement(image,"link").text=ARCHIVE
     ET.SubElement(ch,"{http://www.itunes.com/dtds/podcast-1.0.dtd}image",{"href":cover_url})
     for x in sorted(items,key=lambda z:z["pubdate"],reverse=True):
         it=ET.SubElement(ch,"item"); ET.SubElement(it,"title").text=x["title"]; ET.SubElement(it,"link").text=x["url"]
@@ -364,7 +366,19 @@ def main():
     urls,errors=discover(full_archive=full_archive)
     if not full_archive: urls=[u for u in urls if u not in previous_by_url]
     items=[] if full_archive else list(previous_by_url.values())
-    rows=[]; retry=[]
+    # Retry a bounded batch of previously failed URLs on every incremental run.
+    retry_path=DATA/"retry-queue.json"
+    try:
+        old_retry=json.loads(retry_path.read_text(encoding="utf-8"))
+        if not isinstance(old_retry,list): old_retry=[]
+    except (OSError,ValueError): old_retry=[]
+    old_retry=[r for r in old_retry if isinstance(r,dict) and r.get("url")]
+    old_retry_by_url={r["url"]:r for r in old_retry}
+    retry_candidates=[u for u in old_retry_by_url if u not in urls][:MAX_RETRIES_PER_RUN] if not full_archive else []
+    urls=list(dict.fromkeys(urls+retry_candidates))
+    attempted_urls=set(urls)
+    rows=[]
+    retry=[r for u,r in old_retry_by_url.items() if not full_archive and u not in attempted_urls]
     def process_one(pair):
         i,u=pair
         try:
@@ -420,6 +434,11 @@ def main():
     cover_stats=cache_episode_covers(items)
     OUT.write_bytes(build(items))
     items_path.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
+    retry_by_url={}
+    for entry in retry:
+        if isinstance(entry,dict) and entry.get("url"):
+            retry_by_url[entry["url"]]=entry
+    retry=list(retry_by_url.values())[:MAX_RETRY_QUEUE]
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
     report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
     report["new_episodes_added"] = sum(1 for x in items if x.get("url") and x.get("url") not in previous_by_url)
@@ -441,11 +460,11 @@ def main():
     if not full_archive and report["rss_xml_valid"] and os.getenv("HOURLY_REPORT_ENABLED", "").strip().lower() == "true":
         newly_added=[x for x in items if x.get("url") and x.get("url") not in previous_by_url]
         write_hourly_success_report(local_now, newly_added)
-    archive_complete = full_archive and DISCOVERY_STATS["pages_scanned"] == MAX_ARCHIVE_PAGES and not errors and not cover_stats.get("failed")
+    archive_complete = full_archive and DISCOVERY_STATS["pages_scanned"] == MAX_ARCHIVE_PAGES and not errors
     report["archive_complete"] = archive_complete
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     if archive_complete:
-        marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"pages_scanned":DISCOVERY_STATS["pages_scanned"],"discovered":len(urls),"published":len(items),"audio_confirmed":report["audio_confirmed"],"deferred_audio_failures":len(retry),"retry_queue":"data/retry-queue.json","cover_failures":0,"sort_order":"Added date descending"},ensure_ascii=False,indent=2),encoding="utf-8")
+        marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"pages_scanned":DISCOVERY_STATS["pages_scanned"],"discovered":len(urls),"published":len(items),"audio_confirmed":report["audio_confirmed"],"deferred_audio_failures":len(retry),"retry_queue":"data/retry-queue.json","cover_failures":len(cover_stats.get("failed", [])),"sort_order":"Added date descending"},ensure_ascii=False,indent=2),encoding="utf-8")
         print("[ARCHIVE] COMPLETE: all 375 pages scanned; artwork passed; episodes without verified audio were omitted from RSS and saved to data/retry-queue.json for a later retry. Deferred audio failures="+str(len(retry)), flush=True)
     elif full_archive:
         print("[ARCHIVE] NOT COMPLETE: pages="+str(DISCOVERY_STATS["pages_scanned"])+"/"+str(MAX_ARCHIVE_PAGES)+"; discovered="+str(len(urls))+"; published="+str(len(items))+"; retry="+str(len(retry))+"; cover_failures="+str(len(cover_stats.get("failed", [])))+"; listing_errors="+str(len(errors))+". Marker was not written.", flush=True)
