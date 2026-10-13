@@ -890,13 +890,15 @@ def main():
             rows=list(by_page.values())
             for n,r in enumerate(rows,1): r["index"]=n
         except (OSError,csv.Error): pass
-    with open(csv_path,"w",newline="",encoding="utf-8-sig") as f:
-        w=csv.DictWriter(f,fieldnames=["index","title","page_url","audio_url","audio_ok","track_count","status","error"]); w.writeheader(); w.writerows(rows)
-    # Only successful scheduled incremental runs are added to the hourly history.
+    def write_episode_checks():
+        with open(csv_path,"w",newline="",encoding="utf-8-sig") as f:
+            w=csv.DictWriter(f,fieldnames=["index","title","page_url","audio_url","audio_ok","track_count","status","error"]); w.writeheader(); w.writerows(rows)
+    safe_report("episode checks CSV", write_episode_checks)
+    # Only successful scheduled/push incremental runs are added to the hourly history.
     # Archive backfills and manual runs do not create hourly entries.
     if not full_archive and report["rss_xml_valid"] and os.getenv("HOURLY_REPORT_ENABLED", "").strip().lower() == "true":
         newly_added=[x for x in items if x.get("url") and x.get("url") not in previous_by_url]
-        write_hourly_success_report(local_now, newly_added)
+        safe_report("hourly success history CSV", write_hourly_success_report, local_now, newly_added)
     archive_complete = full_archive and DISCOVERY_STATS["pages_scanned"] == MAX_ARCHIVE_PAGES and not errors
     report["archive_complete"] = archive_complete
     safe_report("run report CSV", append_run_report, report)
