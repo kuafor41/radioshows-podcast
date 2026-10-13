@@ -467,8 +467,11 @@ def main():
         if not value:return True
         try:return datetime.fromisoformat(value.replace("Z","+00:00")) <= now_utc
         except (ValueError,TypeError):return True
+    # Respect backoff even when a failed episode is still visible on a recent archive page.
+    if not full_archive:
+        urls=[u for u in urls if u not in old_retry_by_url or retry_is_due(old_retry_by_url[u])]
     retry_candidates=[u for u,entry in old_retry_by_url.items() if u not in urls and retry_is_due(entry)][:MAX_RETRIES_PER_RUN] if not full_archive else []
-    old_retry_attempted=set(retry_candidates)
+    old_retry_attempted={u for u in urls if u in old_retry_by_url and retry_is_due(old_retry_by_url[u])} | set(retry_candidates)
     print(f"[RETRY] queue_before={len(old_retry_by_url)}; eligible={sum(1 for e in old_retry_by_url.values() if retry_is_due(e))}; scheduled_now={len(retry_candidates)}",flush=True)
     urls=list(dict.fromkeys(urls+retry_candidates))
     attempted_urls=set(urls)
