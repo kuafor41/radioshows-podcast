@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup
 
@@ -17,6 +18,7 @@ BASE="https://www.edmliveset.com"
 ARCHIVE=BASE+"/radio/"
 DATA=Path("data"); DATA.mkdir(exist_ok=True)
 OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
+HOURLY_REPORT_FILE=DATA/"hourly-success-report.csv"
 CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
 MAX_ARCHIVE_PAGES=2000
 S=requests.Session()
@@ -365,11 +367,40 @@ def build(items):
         ET.SubElement(it,"enclosure",{"url":x["audio_url"],"length":str(x["audio_length"]),"type":x["audio_type"]})
         if x["genre"]:ET.SubElement(it,"category").text=x["genre"]
     ET.indent(root,space="  "); data=ET.tostring(root,encoding="utf-8",xml_declaration=True); ET.fromstring(data); return data
+
+def write_hourly_success_report(local_now, newly_added):
+    """Match GlobalDJMix: record successful scheduled checks, newest first."""
+    if os.getenv("HOURLY_REPORT_ENABLED", "").strip().lower() != "true":
+        return
+    report_header = ["date_turkey", "time_turkey", "added_count", "episode_titles"]
+    previous_rows = []
+    if HOURLY_REPORT_FILE.exists() and HOURLY_REPORT_FILE.stat().st_size > 0:
+        try:
+            with HOURLY_REPORT_FILE.open("r", encoding="utf-8-sig", newline="") as history_file:
+                previous_rows = list(csv.reader(history_file))
+        except (OSError, csv.Error):
+            previous_rows = []
+    old_entries = previous_rows[1:] if previous_rows and previous_rows[0] == report_header else []
+    new_entry = [
+        local_now.strftime("%Y-%m-%d"),
+        local_now.strftime("%H:%M:%S"),
+        str(len(newly_added)),
+        " | ".join(item.get("title") or item.get("url", "") for item in newly_added)
+        if newly_added else "Yeni bölüm eklenmedi",
+    ]
+    with HOURLY_REPORT_FILE.open("w", encoding="utf-8", newline="") as history_file:
+        writer = csv.writer(history_file)
+        writer.writerow(report_header)
+        writer.writerow(new_entry)
+        writer.writerows(old_entries)
+    print("Hourly success report updated (newest first):", str(HOURLY_REPORT_FILE))
+
 def main():
     items_path=DATA/"items.json"
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
     except (OSError,ValueError): previous=[]
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
+    local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
     marker=DATA/"archive-backfill-complete.json"
     full_archive=(not marker.exists()) or os.getenv("FEED_MODE")=="archive"
     urls,errors=discover(full_archive=full_archive)
@@ -434,6 +465,7 @@ def main():
     items_path.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
     report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
+    report["new_episodes_added"] = sum(1 for x in items if x.get("url") and x.get("url") not in previous_by_url)
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     csv_path=DATA/"episode-checks.csv"
     if not full_archive and csv_path.exists():
@@ -447,6 +479,11 @@ def main():
         except (OSError,csv.Error): pass
     with open(csv_path,"w",newline="",encoding="utf-8-sig") as f:
         w=csv.DictWriter(f,fieldnames=["index","title","page_url","audio_url","audio_ok","track_count","status","error"]); w.writeheader(); w.writerows(rows)
+    # Only successful scheduled incremental runs are added to the hourly history.
+    # Archive backfills and manual runs do not create hourly entries.
+    if not full_archive and report["rss_xml_valid"] and os.getenv("HOURLY_REPORT_ENABLED", "").strip().lower() == "true":
+        newly_added=[x for x in items if x.get("url") and x.get("url") not in previous_by_url]
+        write_hourly_success_report(local_now, newly_added)
     print(json.dumps({k:report[k] for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","pages_scanned","cutoff_reached","oldest_added_checked","page_limit_reached","rss_xml_valid")},ensure_ascii=False))
 
 if __name__=="__main__":main()
