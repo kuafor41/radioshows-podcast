@@ -72,15 +72,6 @@
     "next_retry_at": "2026-10-20T11:18:01.907538+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
-    "error": "No direct audio URL found",
-    "attempted_at": "2026-10-13T11:39:21.123497+00:00",
-    "error_type": "temporary_or_other",
-    "failure_count": 1,
-    "first_failed_at": "2026-10-13T11:39:21.123497+00:00",
-    "next_retry_at": "2026-10-13T12:39:21.123497+00:00"
-  },
-  {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-034/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "attempted_at": "2026-10-13T11:39:24.070506+00:00",
@@ -115,15 +106,6 @@
     "failure_count": 1,
     "first_failed_at": "2026-10-13T11:39:24.360704+00:00",
     "next_retry_at": "2026-10-20T11:39:24.360704+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/",
-    "error": "Not confirmed audio: HTTP 206, type=text/html",
-    "attempted_at": "2026-10-13T11:39:24.366136+00:00",
-    "error_type": "temporary_or_other",
-    "failure_count": 1,
-    "first_failed_at": "2026-10-13T11:39:24.366136+00:00",
-    "next_retry_at": "2026-10-13T12:39:24.366136+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/bloom-records-podcast-346-aman-anand/",
@@ -241,15 +223,6 @@
     "failure_count": 1,
     "first_failed_at": "2026-10-13T11:39:33.117853+00:00",
     "next_retry_at": "2026-10-20T11:39:33.117853+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-444/",
-    "error": "No direct audio URL found",
-    "attempted_at": "2026-10-13T11:39:34.053196+00:00",
-    "error_type": "temporary_or_other",
-    "failure_count": 1,
-    "first_failed_at": "2026-10-13T11:39:34.053196+00:00",
-    "next_retry_at": "2026-10-13T12:39:34.053196+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-025/",
@@ -1150,5 +1123,104 @@
     "first_failed_at": "2026-10-13T12:00:25.676009+00:00",
     "attempted_at": "2026-10-13T12:00:25.676009+00:00",
     "next_retry_at": "2026-10-20T12:00:25.676009+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
+    "error": "No direct audio URL found",
+    "error_type": "temporary_or_other",
+    "failure_count": 2,
+    "first_failed_at": "2026-10-13T11:39:21.123497+00:00",
+    "attempted_at": "2026-10-13T12:46:58.169643+00:00",
+    "next_retry_at": "2026-10-13T13:46:58.169643+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-444/",
+    "error": "No direct audio URL found",
+    "error_type": "temporary_or_other",
+    "failure_count": 2,
+    "first_failed_at": "2026-10-13T11:39:34.053196+00:00",
+    "attempted_at": "2026-10-13T12:46:59.249814+00:00",
+    "next_retry_at": "2026-10-13T13:46:59.249814+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/",
+    "error": "Not confirmed audio: HTTP 206, type=text/html",
+    "error_type": "temporary_or_other",
+    "failure_count": 2,
+    "first_failed_at": "2026-10-13T11:39:24.366136+00:00",
+    "attempted_at": "2026-10-13T12:47:00.106198+00:00",
+    "next_retry_at": "2026-10-13T13:47:00.106198+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/glaskin-hate-podcast-508/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:01.061209+00:00",
+    "next_retry_at": "2026-10-13T13:47:01.061209+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/the-boom-room-633-selected/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:02.524382+00:00",
+    "next_retry_at": "2026-10-13T13:47:02.524382+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/steve-aoki-aokis-house-687/",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:03.449133+00:00",
+    "next_retry_at": "2026-10-13T13:47:03.449133+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/daniel-nicoara-intake-radio-show-160/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:03.554185+00:00",
+    "next_retry_at": "2026-10-13T13:47:03.554185+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/lucas-steve-radio-172/",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:03.658348+00:00",
+    "next_retry_at": "2026-10-13T13:47:03.658348+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/kanedo-lounge-life-214-deep-edition/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:04.001918+00:00",
+    "next_retry_at": "2026-10-13T13:47:04.001918+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/morgan-page-in-the-air-723/",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:04.493948+00:00",
+    "next_retry_at": "2026-10-13T13:47:04.493948+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/terminal-v-podcast-130-aphotic/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T12:47:00.256931+00:00",
+    "attempted_at": "2026-10-13T12:47:05.474351+00:00",
+    "next_retry_at": "2026-10-13T13:47:05.474351+00:00"
   }
 ]
