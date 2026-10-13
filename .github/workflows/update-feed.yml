@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       FEED_MODE: incremental
       GITHUB_EVENT_NAME: ${{ github.event_name }}

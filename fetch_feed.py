@@ -298,7 +298,7 @@ def cache_episode_covers(items):
     return {"downloaded":downloaded,"reused":reused,"series_cached":len(cover_map),"failed":failed}
 
 def description(x):
-    e=lambda s:html.escape(re.sub(r"EDMliveset\.com\s*[-–—:]\s*podcasts?\s*&\s*radio shows","Radio Shows Podcast",s or "",flags=re.I).strip(),quote=True)
+    e=lambda s:html.escape(re.sub(r"EDMliveset\.com\s*[-–—:]\s*podcasts?\s*&\s*(?:radio\s*shows|radioshows)","RadioShows Podcast",s or "",flags=re.I).strip(),quote=True)
     parts=[f"<p><b>{k.title()}:</b> {e(x[k.lower()])}</p>" for k in ("Artist","Show","Serie","Added","Genre")]
     # Show the text after FREE DOWNLOAD as it appears on the episode page.
     # Paragraphs (not an ordered list) preserve line breaks without auto-numbering.
@@ -308,9 +308,10 @@ def description(x):
 def build(items):
     ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
     root=ET.Element("rss",{"version":"2.0"}); ch=ET.SubElement(root,"channel")
-    for tag,val in [("title","Radio Shows Podcast"),("link",ARCHIVE),("description","Radio shows archived from pages 1-375, sorted by Added date (newest first)."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
+    for tag,val in [("title","RadioShows Podcast"),("link",ARCHIVE),("description","Radio shows archived from pages 1-375, sorted by Added date (newest first)."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
     cover_url="https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/podcast-cover.jpg"
-    image=ET.SubElement(ch,"image"); ET.SubElement(image,"url").text=cover_url; ET.SubElement(image,"title").text="Radio Shows Podcast"; ET.SubElement(image,"link").text=ARCHIVE
+    image=ET.SubElement(ch,"image"); ET.SubElement(image,"url").text=cover_url; ET.SubElement(image,"title").text="RadioShows Podcast"; ET.SubElement(image,"link").text=ARCHIVE
+    ET.SubElement(ch,"{http://www.itunes.com/dtds/podcast-1.0.dtd}author").text="RadioShows Podcast"
     ET.SubElement(ch,"{http://www.itunes.com/dtds/podcast-1.0.dtd}image",{"href":cover_url})
     for x in sorted(items,key=lambda z:z["pubdate"],reverse=True):
         it=ET.SubElement(ch,"item"); ET.SubElement(it,"title").text=x["title"]; ET.SubElement(it,"link").text=x["url"]
