@@ -597,7 +597,6 @@ def refresh_expiring_audio(items_by_url):
             parsed = parse(page_url)
             candidates = list(parsed.get("audio_candidates", []))
             # If page markup doesn't expose a usable direct URL, inspect embedded players too.
-            candidate_ok = any(inspect_audio_url(candidate)["ok"] for candidate in [])
             for player_url in parsed.get("player_urls", []):
                 try:
                     player_response = get(player_url)
