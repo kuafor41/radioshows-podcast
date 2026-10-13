@@ -1092,153 +1092,153 @@
     "url": "https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/",
     "error": "No direct audio URL found",
     "error_type": "temporary_or_other",
-    "failure_count": 2,
-    "first_failed_at": "2026-10-13T11:47:04.058565+00:00",
-    "attempted_at": "2026-10-13T14:19:33.861179+00:00",
-    "next_retry_at": "2026-10-13T15:19:33.861179+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
-    "error": "No direct audio URL found",
-    "error_type": "temporary_or_other",
     "failure_count": 3,
-    "first_failed_at": "2026-10-13T11:39:21.123497+00:00",
-    "attempted_at": "2026-10-13T14:19:34.932064+00:00",
-    "next_retry_at": "2026-10-13T15:19:34.932064+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1267-ferry-corsten-residency-mix/",
-    "error": "Not confirmed audio: HTTP 200, type=text/html",
-    "error_type": "temporary_or_other",
-    "failure_count": 2,
-    "first_failed_at": "2026-10-13T11:47:08.412729+00:00",
-    "attempted_at": "2026-10-13T14:19:34.933269+00:00",
-    "next_retry_at": "2026-10-13T15:19:34.933269+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/tritonal-tritonia-531/",
-    "error": "No direct audio URL found",
-    "error_type": "temporary_or_other",
-    "failure_count": 2,
-    "first_failed_at": "2026-10-13T11:47:00.515449+00:00",
-    "attempted_at": "2026-10-13T14:19:35.006363+00:00",
-    "next_retry_at": "2026-10-13T15:19:35.006363+00:00"
+    "first_failed_at": "2026-10-13T11:47:04.058565+00:00",
+    "attempted_at": "2026-10-13T16:47:09.344073+00:00",
+    "next_retry_at": "2026-10-13T17:47:09.344073+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-444/",
     "error": "No direct audio URL found",
     "error_type": "temporary_or_other",
-    "failure_count": 3,
+    "failure_count": 4,
     "first_failed_at": "2026-10-13T11:39:34.053196+00:00",
-    "attempted_at": "2026-10-13T14:19:35.046848+00:00",
-    "next_retry_at": "2026-10-13T15:19:35.046848+00:00"
+    "attempted_at": "2026-10-13T16:47:10.335000+00:00",
+    "next_retry_at": "2026-10-13T17:47:10.335000+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/tritonal-tritonia-531/",
+    "error": "No direct audio URL found",
+    "error_type": "temporary_or_other",
+    "failure_count": 3,
+    "first_failed_at": "2026-10-13T11:47:00.515449+00:00",
+    "attempted_at": "2026-10-13T16:47:10.629035+00:00",
+    "next_retry_at": "2026-10-13T17:47:10.629035+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
+    "error": "No direct audio URL found",
+    "error_type": "temporary_or_other",
+    "failure_count": 4,
+    "first_failed_at": "2026-10-13T11:39:21.123497+00:00",
+    "attempted_at": "2026-10-13T16:47:10.698144+00:00",
+    "next_retry_at": "2026-10-13T17:47:10.698144+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1267-ferry-corsten-residency-mix/",
+    "error": "Not confirmed audio: HTTP 200, type=text/html",
+    "error_type": "temporary_or_other",
+    "failure_count": 3,
+    "first_failed_at": "2026-10-13T11:47:08.412729+00:00",
+    "attempted_at": "2026-10-13T16:47:10.885900+00:00",
+    "next_retry_at": "2026-10-13T17:47:10.885900+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/",
     "error": "Not confirmed audio: HTTP 206, type=text/html",
     "error_type": "temporary_or_other",
-    "failure_count": 3,
+    "failure_count": 4,
     "first_failed_at": "2026-10-13T11:39:24.366136+00:00",
-    "attempted_at": "2026-10-13T14:19:36.102091+00:00",
-    "next_retry_at": "2026-10-13T15:19:36.102091+00:00"
+    "attempted_at": "2026-10-13T16:47:12.139334+00:00",
+    "next_retry_at": "2026-10-13T17:47:12.139334+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/paul-oakenfold-planet-perfecto-podcast-802/",
     "error": "Not confirmed audio: HTTP 403, type=application/xml",
     "error_type": "temporary_or_other",
-    "failure_count": 2,
+    "failure_count": 3,
     "first_failed_at": "2026-10-13T11:47:05.767204+00:00",
-    "attempted_at": "2026-10-13T14:19:36.524419+00:00",
-    "next_retry_at": "2026-10-13T15:19:36.524419+00:00"
+    "attempted_at": "2026-10-13T16:47:13.203329+00:00",
+    "next_retry_at": "2026-10-13T17:47:13.203329+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/defected-radio-show-hosted-by-sam-divine-09-10-26/",
-    "error": "Not confirmed audio: HTTP 403, type=text/plain",
-    "error_type": "temporary_or_other",
-    "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:38.061214+00:00",
-    "next_retry_at": "2026-10-13T15:19:38.061214+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/sam-feldt-heartfeldt-radio-562/",
-    "error": "Not confirmed audio: HTTP 403, type=text/plain",
-    "error_type": "temporary_or_other",
-    "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:38.667919+00:00",
-    "next_retry_at": "2026-10-13T15:19:38.667919+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/lilly-palmer-spannung-radio-show-077/",
-    "error": "Not confirmed audio: HTTP 403, type=text/plain",
-    "error_type": "temporary_or_other",
-    "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:39.031056+00:00",
-    "next_retry_at": "2026-10-13T15:19:39.031056+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-040/",
+    "url": "https://www.edmliveset.com/radio/paul-oakenfold-planet-perfecto-podcast-832/",
     "error": "Not confirmed audio: HTTP 403, type=text/xml",
     "error_type": "temporary_or_other",
     "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:39.247916+00:00",
-    "next_retry_at": "2026-10-13T15:19:39.247916+00:00"
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:14.626343+00:00",
+    "next_retry_at": "2026-10-13T17:47:14.626343+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/avira-the-sound-gallery-114/",
+    "url": "https://www.edmliveset.com/radio/manuel-le-saux-extrema-961/",
     "error": "Not confirmed audio: HTTP 403, type=text/plain",
     "error_type": "temporary_or_other",
     "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:39.678207+00:00",
-    "next_retry_at": "2026-10-13T15:19:39.678207+00:00"
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:16.288361+00:00",
+    "next_retry_at": "2026-10-13T17:47:16.288361+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/grum-deep-state-radio-055/",
-    "error": "Not confirmed audio: HTTP 403, type=text/xml",
-    "error_type": "temporary_or_other",
-    "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:39.997905+00:00",
-    "next_retry_at": "2026-10-13T15:19:39.997905+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/tomorrowland-friendship-mix-with-the-bausa-october-2026/",
+    "url": "https://www.edmliveset.com/radio/pretty-pink-deep-woods-382/",
     "error": "Not confirmed audio: HTTP 403, type=text/plain",
     "error_type": "temporary_or_other",
     "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:41.562198+00:00",
-    "next_retry_at": "2026-10-13T15:19:41.562198+00:00"
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:16.393362+00:00",
+    "next_retry_at": "2026-10-13T17:47:16.393362+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/digital-punk-unleashed-164/",
+    "url": "https://www.edmliveset.com/radio/bingo-players-hysteria-radio-549/",
     "error": "Not confirmed audio: HTTP 403, type=text/xml",
     "error_type": "temporary_or_other",
     "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:41.830758+00:00",
-    "next_retry_at": "2026-10-13T15:19:41.830758+00:00"
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:17.674884+00:00",
+    "next_retry_at": "2026-10-13T17:47:17.674884+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/stephani-b-drumbox-radio-088/",
+    "url": "https://www.edmliveset.com/radio/sebastiaan-hooft-the-midnight-project-227/",
     "error": "Not confirmed audio: HTTP 403, type=text/plain",
     "error_type": "temporary_or_other",
     "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:41.935545+00:00",
-    "next_retry_at": "2026-10-13T15:19:41.935545+00:00"
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:18.712590+00:00",
+    "next_retry_at": "2026-10-13T17:47:18.712590+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/joris-voorn-spectrum-radio-493/",
+    "url": "https://www.edmliveset.com/radio/roger-sanchez-release-yourself-radio-show-1303/",
     "error": "Not confirmed audio: HTTP 403, type=text/xml",
     "error_type": "temporary_or_other",
     "failure_count": 1,
-    "first_failed_at": "2026-10-13T14:19:36.966266+00:00",
-    "attempted_at": "2026-10-13T14:19:42.375964+00:00",
-    "next_retry_at": "2026-10-13T15:19:42.375964+00:00"
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:18.878443+00:00",
+    "next_retry_at": "2026-10-13T17:47:18.878443+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/zeds-dead-deadbeats-radio-383/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:18.983126+00:00",
+    "next_retry_at": "2026-10-13T17:47:18.983126+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/dj-phalanx-uplifting-trance-sessions-820/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:19.087292+00:00",
+    "next_retry_at": "2026-10-13T17:47:19.087292+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/anthony-linell-bassiani-podcast-331/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:19.569501+00:00",
+    "next_retry_at": "2026-10-13T17:47:19.569501+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/radio-prospect-412-hollen/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-13T16:47:13.668982+00:00",
+    "attempted_at": "2026-10-13T16:47:19.674508+00:00",
+    "next_retry_at": "2026-10-13T17:47:19.674508+00:00"
   }
 ]
