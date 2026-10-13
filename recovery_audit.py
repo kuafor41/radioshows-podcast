@@ -53,16 +53,13 @@ def probe_candidates(urls):
     return "", 0, blocked, not_found, last_error
 
 def inspect_one(page_url):
-    download_candidates, player_candidates, player_urls, youtube_urls = [], [], [], []
+    download_candidates, page_player_media, player_urls, youtube_urls = [], [], [], []
     page_error = ""
     try:
-        parsed = ff.parse(page_url)
-        download_candidates.extend(parsed.get("audio_candidates", []))
-        player_urls.extend(parsed.get("player_urls", []))
-        # Independently inspect the article to classify the FREE DOWNLOAD route accurately.
+        # Inspect the article directly so player media is not mislabeled as a download-button recovery.
         response = ff.get(page_url)
         media, links, players, yt = candidates_from_response(response)
-        download_candidates.extend(media)
+        page_player_media.extend(media)
         download_candidates.extend(links)
         player_urls.extend(players)
         youtube_urls.extend(yt)
@@ -99,7 +96,7 @@ def inspect_one(page_url):
 
     # Second choice: player iframe/embed, inspect player HTML/JS configs and test extracted media.
     player_blocked = player_404 = False
-    media_candidates = []
+    media_candidates = list(dict.fromkeys(page_player_media))
     queue = list(dict.fromkeys(player_urls))
     visited = set()
     for _ in range(3):
