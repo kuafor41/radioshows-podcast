@@ -24,7 +24,7 @@ HOURLY_REPORT_FILE=DATA/"hourly-success-report.csv"
 CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
 MAX_ARCHIVE_PAGES=375
 MAX_RETRIES_PER_RUN=0  # Unlimited: retry every active queue entry each hourly run.
-MAX_RETRY_QUEUE=1000
+MAX_RETRY_QUEUE=0  # No truncation: retain every active failure until recovered or aged out.
 OLD_LINK_AUDIT_BATCH=20
 OLD_LINK_AUDIT_INTERVAL_SECONDS=7*24*60*60
 RETRY_ARCHIVE_AFTER_DAYS=45
@@ -819,7 +819,7 @@ def main():
     for entry in retry:
         if isinstance(entry,dict) and entry.get("url"):
             retry_by_url[entry["url"]]=entry
-    retry=list(retry_by_url.values())[:MAX_RETRY_QUEUE]
+    retry=list(retry_by_url.values())
     retry,moved_to_review=archive_expired_retries(retry)
     moved_to_review += expired_before_retry
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
