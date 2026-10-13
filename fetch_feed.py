@@ -24,6 +24,12 @@ CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
 MAX_ARCHIVE_PAGES=375
 MAX_RETRIES_PER_RUN=30
 MAX_RETRY_QUEUE=1000
+TEMPORARY_RETRY_SECONDS=60*60
+NOT_FOUND_RETRY_SECONDS=7*24*60*60
+LONG_QUEUE_SECONDS=7*24*60*60
+RUN_REPORT_FILE=DATA/"run-report.csv"
+RETRY_CSV_FILE=DATA/"retry-queue.csv"
+QUALITY_CSV_FILE=DATA/"rss-quality-checks.csv"
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
 
@@ -352,6 +358,84 @@ def write_hourly_success_report(local_now, newly_added):
         writer.writerows(old_entries)
     print("Hourly success report updated (newest first):", str(HOURLY_REPORT_FILE))
 
+def retry_metadata(url_value, error, previous_entry=None):
+    """Classify a failure and calculate its next eligible retry time."""
+    now = datetime.now(timezone.utc)
+    old = previous_entry or {}
+    error_text = str(error or "Unknown error")
+    is_not_found = bool(re.search(r"\\b404\\b|Not Found", error_text, re.I))
+    failure_count = int(old.get("failure_count", 0) or 0) + 1
+    delay = NOT_FOUND_RETRY_SECONDS if is_not_found else TEMPORARY_RETRY_SECONDS
+    return {
+        "url": url_value,
+        "error": error_text[:1500],
+        "error_type": "not_found" if is_not_found else "temporary_or_other",
+        "failure_count": failure_count,
+        "first_failed_at": old.get("first_failed_at") or now.isoformat(),
+        "attempted_at": now.isoformat(),
+        "next_retry_at": datetime.fromtimestamp(now.timestamp() + delay, timezone.utc).isoformat(),
+    }
+
+def write_quality_csv(checks):
+    with QUALITY_CSV_FILE.open("w", encoding="utf-8-sig", newline="") as f:
+        w=csv.DictWriter(f, fieldnames=["check","status","details"])
+        w.writeheader(); w.writerows(checks)
+
+def validate_rss(rss_bytes):
+    """Hard-fail publication on malformed XML, duplicate GUIDs, bad order or invalid enclosures."""
+    checks=[]
+    def record(name, passed, detail):
+        checks.append({"check":name,"status":"PASS" if passed else "FAIL","details":detail})
+    try:
+        root=ET.fromstring(rss_bytes)
+        channel=root.find("channel")
+        xml_items=channel.findall("item") if channel is not None else []
+        record("xml_parse",channel is not None,f"items={len(xml_items)}")
+    except ET.ParseError as exc:
+        record("xml_parse",False,str(exc)); write_quality_csv(checks)
+        raise RuntimeError(f"RSS XML quality check failed: {exc}")
+    guids=[(it.findtext("guid") or "").strip() for it in xml_items]
+    duplicate_guids=sorted({g for g in guids if g and guids.count(g)>1})
+    record("unique_guid",len(guids)==len(set(guids)) and all(guids),f"items={len(guids)}; duplicate_guids={len(duplicate_guids)}; empty_guids={sum(not g for g in guids)}")
+    titles=[(it.findtext("title") or "").strip() for it in xml_items]
+    record("nonempty_titles",all(titles),f"empty_titles={sum(not t for t in titles)}")
+    dates=[]; date_errors=0
+    for it in xml_items:
+        try: dates.append(datetime.strptime(it.findtext("pubDate"),"%a, %d %b %Y %H:%M:%S %z").astimezone(timezone.utc))
+        except (ValueError,TypeError): date_errors+=1
+    sorted_dates=all(dates[i]>=dates[i+1] for i in range(len(dates)-1))
+    record("pubdate_newest_first",sorted_dates and date_errors==0,f"items={len(xml_items)}; invalid_dates={date_errors}")
+    bad=[]
+    for it in xml_items:
+        enc=it.find("enclosure")
+        href=(enc.get("url") or "").strip() if enc is not None else ""
+        parsed=urlparse(href)
+        if not href or parsed.scheme!="https" or not parsed.netloc or not enc.get("type","").lower().startswith("audio/"):
+            bad.append(it.findtext("title") or "(untitled)")
+    record("valid_audio_enclosures",not bad,f"invalid_enclosures={len(bad)}")
+    write_quality_csv(checks)
+    failures=[c for c in checks if c["status"]=="FAIL"]
+    if failures: raise RuntimeError("RSS quality gate failed: "+"; ".join(c["check"]+": "+c["details"] for c in failures))
+    print(f"[QUALITY] PASS: {len(xml_items)} items; unique GUIDs, non-empty titles, newest-first dates and HTTPS audio enclosures.",flush=True)
+    return checks
+
+def append_run_report(report):
+    fields=["run_at","mode","discovered","newly_checked","published","retry_queue_remaining","old_links_retried","old_links_recovered","retry_failures","temporary_failures","not_found_failures","oldest_retry_age_days","quality_gate","archive_complete"]
+    row={k:report.get(k,"") for k in fields}; existing=[]
+    if RUN_REPORT_FILE.exists():
+        try:
+            with RUN_REPORT_FILE.open("r",encoding="utf-8-sig",newline="") as f: existing=list(csv.DictReader(f))
+        except (OSError,csv.Error): existing=[]
+    with RUN_REPORT_FILE.open("w",encoding="utf-8-sig",newline="") as f:
+        w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerow(row); w.writerows(existing[:999])
+    print("[REPORT] CSV updated: "+str(RUN_REPORT_FILE),flush=True)
+
+def write_retry_csv(retry_items):
+    fields=["url","error_type","failure_count","first_failed_at","attempted_at","next_retry_at","error"]
+    with RETRY_CSV_FILE.open("w",encoding="utf-8-sig",newline="") as f:
+        w=csv.DictWriter(f,fieldnames=fields); w.writeheader()
+        for r in sorted(retry_items,key=lambda x:x.get("next_retry_at","")): w.writerow({k:r.get(k,"") for k in fields})
+
 def main():
     items_path=DATA/"items.json"
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
@@ -375,7 +459,15 @@ def main():
     except (OSError,ValueError): old_retry=[]
     old_retry=[r for r in old_retry if isinstance(r,dict) and r.get("url")]
     old_retry_by_url={r["url"]:r for r in old_retry}
-    retry_candidates=[u for u in old_retry_by_url if u not in urls][:MAX_RETRIES_PER_RUN] if not full_archive else []
+    now_utc=datetime.now(timezone.utc)
+    def retry_is_due(entry):
+        value=entry.get("next_retry_at")
+        if not value:return True
+        try:return datetime.fromisoformat(value.replace("Z","+00:00")) <= now_utc
+        except (ValueError,TypeError):return True
+    retry_candidates=[u for u,entry in old_retry_by_url.items() if u not in urls and retry_is_due(entry)][:MAX_RETRIES_PER_RUN] if not full_archive else []
+    old_retry_attempted=set(retry_candidates)
+    print(f"[RETRY] queue_before={len(old_retry_by_url)}; eligible={sum(1 for e in old_retry_by_url.values() if retry_is_due(e))}; scheduled_now={len(retry_candidates)}",flush=True)
     urls=list(dict.fromkeys(urls+retry_candidates))
     attempted_urls=set(urls)
     rows=[]
@@ -411,14 +503,14 @@ def main():
             x["audio_url"]=final if ok else ""; x["audio_length"]=size; x["audio_type"]="audio/mpeg"
             x["status"]="success" if ok and x["tracklist"] else "warning"
             x["error"]=err or ("" if x["tracklist"] else "Tracklist not extracted")
-            if not ok: retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
+            if not ok: retry.append(retry_metadata(u,err,old_retry_by_url.get(u)))
             if ok: items.append(x)
             rows.append({"index":i,"title":x["title"],"page_url":x["url"],"audio_url":x["audio_url"],"audio_ok":ok,"track_count":len(x["tracklist"]),"status":x["status"],"error":x["error"]})
             print(f"[{i}/{len(urls)}] {x['status']} | added={x['added']} | audio={ok} | {x['title']}")
         except Exception as e:
             err=f"{type(e).__name__}: {e}"
             rows.append({"index":i,"title":"","page_url":u,"audio_url":"","audio_ok":False,"track_count":0,"status":"failed","error":err})
-            retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
+            retry.append(retry_metadata(u,err,old_retry_by_url.get(u)))
             print("Episode failed:",u,err)
         time.sleep(.15)
 
@@ -433,7 +525,9 @@ def main():
     items.sort(key=lambda x:(dateval(x.get("added","")) or datetime(1970,1,1,tzinfo=timezone.utc)),reverse=True)
     print(f"[RSS] Preparing artwork for {len(items)} audio-verified episodes...", flush=True)
     cover_stats=cache_episode_covers(items)
-    OUT.write_bytes(build(items))
+    rss_bytes=build(items)
+    quality_checks=validate_rss(rss_bytes)
+    OUT.write_bytes(rss_bytes)
     items_path.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
     retry_by_url={}
     for entry in retry:
@@ -441,8 +535,26 @@ def main():
             retry_by_url[entry["url"]]=entry
     retry=list(retry_by_url.values())[:MAX_RETRY_QUEUE]
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
+    write_retry_csv(retry)
     report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
     report["new_episodes_added"] = sum(1 for x in items if x.get("url") and x.get("url") not in previous_by_url)
+    retry_urls={r.get("url") for r in retry if r.get("url")}
+    report["retry_queue_remaining"]=len(retry_urls)
+    report["old_links_retried"]=len(old_retry_attempted)
+    published_urls={x.get("url") for x in items}
+    report["old_links_recovered"]=sum(1 for u in old_retry_attempted if u not in retry_urls and u in published_urls)
+    report["retry_failures"]=sum(1 for r in retry if r.get("url") in old_retry_attempted)
+    report["temporary_failures"]=sum(1 for r in retry if r.get("error_type") != "not_found")
+    report["not_found_failures"]=sum(1 for r in retry if r.get("error_type") == "not_found")
+    oldest=[]
+    for entry in retry:
+        try: oldest.append(datetime.fromisoformat(entry.get("first_failed_at","").replace("Z","+00:00")))
+        except (ValueError,TypeError): pass
+    report["oldest_retry_age_days"]=round(max(0,(datetime.now(timezone.utc)-min(oldest)).total_seconds()/86400),2) if oldest else 0
+    if oldest and (datetime.now(timezone.utc)-min(oldest)).total_seconds() >= LONG_QUEUE_SECONDS:
+        print(f"::warning title=Long retry queue::Oldest unresolved episode is {report['oldest_retry_age_days']} days old; queue={len(retry)}",flush=True)
+    report["quality_gate"]="PASS"
+    append_run_report(report)
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     csv_path=DATA/"episode-checks.csv"
     if not full_archive and csv_path.exists():
