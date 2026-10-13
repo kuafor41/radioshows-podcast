@@ -2,20 +2,20 @@
   "mode": "incremental",
   "source": "https://www.edmliveset.com/radio/",
   "cutoff": "2025-01-01",
-  "run_at": "2026-10-13T12:47:10.640740+00:00",
-  "discovered": 3,
-  "newly_checked": 3,
-  "archived_total": 4359,
-  "published": 4359,
-  "audio_confirmed": 4359,
+  "run_at": "2026-10-13T14:19:47.891266+00:00",
+  "discovered": 15,
+  "newly_checked": 15,
+  "archived_total": 4360,
+  "published": 4360,
+  "audio_confirmed": 4360,
   "old_links_audited": 20,
-  "old_links_still_valid": 12,
-  "old_links_degraded": 8,
+  "old_links_still_valid": 10,
+  "old_links_degraded": 10,
   "moved_to_review": 0,
-  "tracklists_found": 4358,
+  "tracklists_found": 4359,
   "cover_cache": {
     "downloaded": 0,
-    "reused": 4353,
+    "reused": 4354,
     "series_cached": 219,
     "failed": [
       {
@@ -52,12 +52,42 @@
   "page_limit_reached": false,
   "episodes": [
     {
+      "index": 2995,
+      "title": "MDLBEAST Radio Selects 174",
+      "page_url": "https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 3,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
       "index": 274,
       "title": "Firebeatz – Ignite Radio 458",
       "page_url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
+      "status": "warning",
+      "error": "No direct audio URL found"
+    },
+    {
+      "index": 3142,
+      "title": "Armin van Buuren – A State of Trance 1267 (Ferry Corsten Residency Mix)",
+      "page_url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1267-ferry-corsten-residency-mix/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 2,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 200, type=text/html"
+    },
+    {
+      "index": 2691,
+      "title": "Tritonal – Tritonia 531",
+      "page_url": "https://www.edmliveset.com/radio/tritonal-tritonia-531/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 15,
       "status": "warning",
       "error": "No direct audio URL found"
     },
@@ -72,6 +102,26 @@
       "error": "No direct audio URL found"
     },
     {
+      "index": 3,
+      "title": "Glaskin – HATE Podcast 508",
+      "page_url": "https://www.edmliveset.com/radio/glaskin-hate-podcast-508/",
+      "audio_url": "https://cf-media.sndcdn.com/BBXH1kDDQMEg.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vQkJYSDFrRERRTUVnLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxOTA1OTAyfX19XX0_&Signature=XpfvnlpX6BwkD2bFtQbmvLLQ8d~eMgjweDT4sccBUKPi3OzhndoT69aCvX5Xo5583355Da9Byq6yU0u8Qrfz0eCtOojUOPt3b8befnBgRpzMUR7Ac8viJRSSbLhsT7cgw3Xq5NZ2TJH79CVljXSqjpaKHkoYdD4dk3xMjaW4zNBNhxaMRA7wXwuZn4cOGC~-wxLzoyIbk7NE2ATA0cglo2r~umwiBxFTz~hOiLMYfKiBNsVbHm9pF2XwlyTIqpSVNC6eJZYx2ARbDk1wqcCosl0EJGGFPoZywVrFbQSFrtZNWbuRAe~lUWjwX332nZ9mxYLysW9C8sZdpTcTlamcfw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 6,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 2,
+      "title": "The Boom Room 633 – Selected",
+      "page_url": "https://www.edmliveset.com/radio/the-boom-room-633-selected/",
+      "audio_url": "https://cf-media.sndcdn.com/FGY2bGzyxu3I.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vRkdZMmJHenl4dTNJLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxOTA3MzA5fX19XX0_&Signature=cqiWYHnO97vcPjU8BYFWsz1V702G1KNms9NmYvzWW3oixxeKsfKUnBlUYraDDiXM-RmAaNNG3H5z2fFdohs5NfhFXp9ZcHiP~FZEq1p2Xvj9BFF1x-zr8c14KuFVdOlGek2jsQnsF2QN4u1yeWeKfh2cgeMaGmYc8zF35QZSb71qPoBinl3OmouV00B3Sq352TfiNxwwBumvvPJh65FDrA5TqTtDQU1efhIf~UWzFy020SkaUyaTYePxj6I7L92obTV8qi6BhcV0ESOWjL-derPC~jdvlFZQ~OkoxEKaeYHL5i3xII7zl0B5XF12giDqdSOHWtwdXXlqlSlLixh4tg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
       "index": 461,
       "title": "Armin van Buuren – A State of Trance 1293 (Ferry Corsten Residency Mix)",
       "page_url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/",
@@ -80,17 +130,87 @@
       "track_count": 2,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 206, type=text/html"
+    },
+    {
+      "index": 9,
+      "title": "Steve Aoki – AOKIS HOUSE 687",
+      "page_url": "https://www.edmliveset.com/radio/steve-aoki-aokis-house-687/",
+      "audio_url": "https://content.libsyn.com/p/8/a/e/8ae2a3f16727214d/Aokis_House_Podcast_688_EP_766_Air_Date_10.07.26_-_Podcast.mp3?c_id=207200298&cs_id=207200298&response-content-type=audio%2Fmpeg&Expires=1791905952&Signature=ckBwsp6-olLdlSwz-2ib31OCOEuFIor2yu~YGz3ZRt8~gAQtlsq~6rLCHUl0tAMny6aJZRDcm84tANvS2tGdJwvMQYlOK2f4s3HYr~iAfJORFF4wZK1buE8-vtaXNxdPozh3Lgc0Kpgxz~Sh30~xACqKlvKgdIr8yQjNfJAjQlir0NiRRu~U5auerd5ZjhISI56bavbegdUO4EB6hfqbi8QDaf2cOwSHjsjZ7dxDPK2k7Xp6Sp22uojs33ArgwCcADjBpekvpGhK6Zt0104DdKD~APnNOUSjCuzx9pyvUDYqAcjtmrULID3~LH8~XiFm82h6nI~LaDopo~0GBxNpRg__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 3,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 10,
+      "title": "Daniel Nicoara – iNTAKE Radio Show 160",
+      "page_url": "https://www.edmliveset.com/radio/daniel-nicoara-intake-radio-show-160/",
+      "audio_url": "https://cf-media.sndcdn.com/vozQO1dupg1p.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vdm96UU8xZHVwZzFwLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxOTA0ODk2fX19XX0_&Signature=D2Upa5ZfUrE35tts9NxMnQelB-R3hZuy0k6dTjPr3esGfWI1deO5kBj26ayVsEkOpj36YPM21TdTth8dhYtZMgY3CGg67QvJv2cGxpJOCP-uwjqQLMTFwyrx4GcBmWlU99UIA-1~TKDHDzjzjQxufYwtR-B1QlW861jYTngPx6j9O7ecfWR73cQ6wyLTtX67-QRdFA5CLg2o5g3cgTcsEYmFfmBpPRpJB0WLSnX2eUq4Ms40NyOSnJpx-bqfwinQLj4wKbLV9wbyjMxuMcJ2EvG-ENmbJUoytVH1OgGgyq4gOAaBVcfygkM31DWTQU7H75TZ6ASLeX2LNzlyGRmZlg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 3,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 11,
+      "title": "Lucas & Steve – Lucas & Steve Radio 172",
+      "page_url": "https://www.edmliveset.com/radio/lucas-steve-radio-172/",
+      "audio_url": "https://content.libsyn.com/p/f/9/6/f96cc27f9989fa1f/Lucas__Steve_Radio_172_ENG.mp3?c_id=207335818&cs_id=207335818&response-content-type=audio%2Fmpeg&Expires=1791905965&Signature=El3ZWWWSnRuki7iXjT27ByAn9jNfxzeSK9R7cjoaq6SDkNXxiggT1cLhfNySV6P9aY6mBydhSsIrivIRJA47gos4RmDE6~qSozLLqYiLKjbx1mFwL~jX9MO2P~Li5iVrVQi4ideXEbdnt4mMO41JBGTMKAYK2SlL5RAHrd8iqeCatrabz0xLMl-3-yTvwfImVQ4jtSdi7nRDgZFNFT8~6VylPRVWLflw-JDvtsDeLly9zV-LOOQjyRct-a2jMcjBQBz1RIhpAAsS9MK2HJMfLkcbA8EYGPdfAaLD2ZcKwyVca-l0NsWflAdirVjkuZPh7lw9mCMtIYmHC2j2XTia7Q__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 20,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 13,
+      "title": "Kanedo – Lounge Life 214 (Deep Edition)",
+      "page_url": "https://www.edmliveset.com/radio/kanedo-lounge-life-214-deep-edition/",
+      "audio_url": "https://cf-media.sndcdn.com/6HB3YovZ14F4?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vNkhCM1lvdloxNEY0KiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTkwMTI5Nn19fV19&Signature=ZHS~JYBTrV6nVkv5k1pzOExDvM-KnSaozS192bWi3NyS7k7l0Z4sn~CK1P9BUifWKt6Out2-pTNuKNQrt2MvnM1tGbU22ROh6nhw0cgJxQmp-38DSOzuACpmwmuEHMtOIEniqWidcKalWyq3ERydau8VVRkFsS1S1-zLvKacKLKqrRdgcT~H-d2o53bctbQsegeWvBX6xNkKS1vtUIzwKSEBvbUqQqj2VjNbzjd0uOr1zfyzPx9uI4StqPRZVoZnHB6xvVuxkJAEaGrJl6t9cy080TIUGHNa~z2yFC2TYkzV4LrWPhpNRe3Rdcuy2h4TM1v8cqaikjnVWlVut0dgWg__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 3,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 2928,
+      "title": "Paul Oakenfold – Planet Perfecto Podcast 802",
+      "page_url": "https://www.edmliveset.com/radio/paul-oakenfold-planet-perfecto-podcast-802/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 14,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 403, type=application/xml"
+    },
+    {
+      "index": 15,
+      "title": "Morgan Page – In The Air 723",
+      "page_url": "https://www.edmliveset.com/radio/morgan-page-in-the-air-723/",
+      "audio_url": "https://content.libsyn.com/p/8/5/a/85a979f37312360b/Morgan_Page_-_In_The_Air_-_723.mp3?c_id=207350423&cs_id=207350423&response-content-type=audio%2Fmpeg&Expires=1791906126&Signature=Jkixv~m7zR7w37uLooBcY96P-9YmQ8mG~HWvyRINQXgs~dUeoSJI~dCSzOGg1sgBu0vXgo~b7qufQEsgNQTCmZjsZAqAFWne-DDIjdC~28E7ER~ZUnKZ5FoDyqku66CFGrymC2RT80~jBvDB6srnIKU6oNoeveRAuRyNHYD~6yUnFHUZMexWRTrfYfbxsDNtCFhmxEQc8T3GcEz9tYo51Is8FJWMX9L5dhw0o5M30NwDCeCBaHh16gnptkRlUjJ0-GvE2A8NfF6x8erH3rPFgdDg5NifHmldv1RnS3xiV2nzZdB0h1qEvtpEO6BofbIyRhjhILAHrkbI6CBjDH5nBQ__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 28,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 19,
+      "title": "Terminal V Podcast 130 – Aphøtic",
+      "page_url": "https://www.edmliveset.com/radio/terminal-v-podcast-130-aphotic/",
+      "audio_url": "https://cf-media.sndcdn.com/xYw3U2dJTFTz.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20veFl3M1UyZEpURlR6LjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxOTA2NzE5fX19XX0_&Signature=AX51A0lZubaItWCIZvdASWL3N4HqcQ8vr6C08w0L62c4fEt0qztxb0DcuQ~8tx7reJTXQKXiiuMa1sQ5-k4-Z6hc-T391TMsVdhQ6H96QoGGdxQ8AJexgoMJZ2TyZ61hKPciZFLHCfuDnWu3yVjL96Ff5Kooa-eEF~XFWZhhRL6JDk9oSK51afG~AFQYXtcRYnd5biEd72isHVsvbRSKAS9zohcLe6Ph8KOhSe8B3SUGJByup3xSTvN0~uvtLfKvoyFxKkly8fDMiXDGqMeuBmTTTPHtIyDISvVR0mEdeul2XKXCzgESuLy6qrSI1VVGW2JXHU95b-tLb2Ob9nu0GQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 4,
+      "status": "success",
+      "error": ""
     }
   ],
   "rss_xml_valid": true,
   "new_episodes_added": 0,
-  "retry_queue_remaining": 136,
-  "old_links_retried": 3,
-  "old_links_recovered": 0,
-  "retry_failures": 3,
-  "temporary_failures": 15,
+  "retry_queue_remaining": 138,
+  "old_links_retried": 15,
+  "old_links_recovered": 8,
+  "retry_failures": 7,
+  "temporary_failures": 17,
   "not_found_failures": 121,
-  "oldest_retry_age_days": 0.06,
+  "oldest_retry_age_days": 0.13,
   "quality_gate": "PASS",
   "archive_complete": false
 }
