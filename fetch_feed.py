@@ -412,7 +412,7 @@ def validate_rss(rss_bytes):
         enc=it.find("enclosure")
         href=(enc.get("url") or "").strip() if enc is not None else ""
         parsed=urlparse(href)
-        if not href or parsed.scheme!="https" or not parsed.netloc or not enc.get("type","").lower().startswith("audio/"):
+        if not href or parsed.scheme not in ("http","https") or not parsed.netloc or not enc.get("type","").lower().startswith("audio/"):
             bad.append(it.findtext("title") or "(untitled)")
     record("valid_audio_enclosures",not bad,f"invalid_enclosures={len(bad)}")
     write_quality_csv(checks)
