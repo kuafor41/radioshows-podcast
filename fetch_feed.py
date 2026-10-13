@@ -438,11 +438,24 @@ def append_run_report(report):
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerow(row); w.writerows(existing[:999])
     print("[REPORT] CSV updated: "+str(RUN_REPORT_FILE),flush=True)
 
-def write_retry_csv(retry_items):
-    fields=["url","error_type","failure_count","first_failed_at","attempted_at","next_retry_at","error"]
+def write_retry_csv(retry_items, now=None):
+    """Write each active failure with a human-readable age and days remaining in its 45-day window."""
+    now=now or datetime.now(timezone.utc)
+    fields=["url","error_type","failure_count","first_failed_at","attempted_at","next_retry_at","retry_age_days","days_until_archive","error"]
     with RETRY_CSV_FILE.open("w",encoding="utf-8-sig",newline="") as f:
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader()
-        for r in sorted(retry_items,key=lambda x:x.get("next_retry_at","")): w.writerow({k:r.get(k,"") for k in fields})
+        for entry in sorted(retry_items,key=lambda x:x.get("next_retry_at","")):
+            try:
+                first=datetime.fromisoformat(str(entry.get("first_failed_at","")).replace("Z","+00:00"))
+                if first.tzinfo is None: first=first.replace(tzinfo=timezone.utc)
+                age_seconds=max(0,(now-first).total_seconds())
+                age_days=int(age_seconds // 86400)
+            except (ValueError,TypeError):
+                age_days=0
+            row={k:entry.get(k,"") for k in fields}
+            row["retry_age_days"]=age_days
+            row["days_until_archive"]=max(0,RETRY_ARCHIVE_AFTER_DAYS-age_days)
+            w.writerow(row)
 
 def archive_expired_retries(retry_items, now=None):
     """Move failures unresolved for 45 days to a review CSV; never silently discard them."""
