@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import csv, hashlib, html, json, os, re, sys, time, xml.etree.ElementTree as ET
+from collections import Counter
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
@@ -363,7 +364,7 @@ def retry_metadata(url_value, error, previous_entry=None):
     now = datetime.now(timezone.utc)
     old = previous_entry or {}
     error_text = str(error or "Unknown error")
-    is_not_found = bool(re.search(r"\\b404\\b|Not Found", error_text, re.I))
+    is_not_found = bool(re.search(r"\b404\b|Not Found", error_text, re.I))
     failure_count = int(old.get("failure_count", 0) or 0) + 1
     delay = NOT_FOUND_RETRY_SECONDS if is_not_found else TEMPORARY_RETRY_SECONDS
     return {
@@ -395,7 +396,8 @@ def validate_rss(rss_bytes):
         record("xml_parse",False,str(exc)); write_quality_csv(checks)
         raise RuntimeError(f"RSS XML quality check failed: {exc}")
     guids=[(it.findtext("guid") or "").strip() for it in xml_items]
-    duplicate_guids=sorted({g for g in guids if g and guids.count(g)>1})
+    guid_counts=Counter(guids)
+    duplicate_guids=[g for g,n in guid_counts.items() if g and n>1]
     record("unique_guid",len(guids)==len(set(guids)) and all(guids),f"items={len(guids)}; duplicate_guids={len(duplicate_guids)}; empty_guids={sum(not g for g in guids)}")
     titles=[(it.findtext("title") or "").strip() for it in xml_items]
     record("nonempty_titles",all(titles),f"empty_titles={sum(not t for t in titles)}")
@@ -554,7 +556,6 @@ def main():
     if oldest and (datetime.now(timezone.utc)-min(oldest)).total_seconds() >= LONG_QUEUE_SECONDS:
         print(f"::warning title=Long retry queue::Oldest unresolved episode is {report['oldest_retry_age_days']} days old; queue={len(retry)}",flush=True)
     report["quality_gate"]="PASS"
-    append_run_report(report)
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     csv_path=DATA/"episode-checks.csv"
     if not full_archive and csv_path.exists():
@@ -575,6 +576,7 @@ def main():
         write_hourly_success_report(local_now, newly_added)
     archive_complete = full_archive and DISCOVERY_STATS["pages_scanned"] == MAX_ARCHIVE_PAGES and not errors
     report["archive_complete"] = archive_complete
+    append_run_report(report)
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     if archive_complete:
         marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"pages_scanned":DISCOVERY_STATS["pages_scanned"],"discovered":len(urls),"published":len(items),"audio_confirmed":report["audio_confirmed"],"deferred_audio_failures":len(retry),"retry_queue":"data/retry-queue.json","cover_failures":len(cover_stats.get("failed", [])),"sort_order":"Added date descending"},ensure_ascii=False,indent=2),encoding="utf-8")
