@@ -25,11 +25,17 @@ CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
 MAX_ARCHIVE_PAGES=375
 MAX_RETRIES_PER_RUN=30
 MAX_RETRY_QUEUE=1000
+OLD_LINK_AUDIT_BATCH=20
+OLD_LINK_AUDIT_INTERVAL_SECONDS=7*24*60*60
+RETRY_ARCHIVE_AFTER_DAYS=45
 TEMPORARY_RETRY_SECONDS=60*60
 NOT_FOUND_RETRY_SECONDS=7*24*60*60
 LONG_QUEUE_SECONDS=7*24*60*60
 RUN_REPORT_FILE=DATA/"run-report.csv"
 RETRY_CSV_FILE=DATA/"retry-queue.csv"
+RETRY_ARCHIVE_CSV_FILE=DATA/"retry-queue-archive.csv"
+SUMMARY_REPORT_FILE=DATA/"summary-report.csv"
+LINK_AUDIT_STATE_FILE=DATA/"link-audit-state.json"
 QUALITY_CSV_FILE=DATA/"rss-quality-checks.csv"
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
@@ -438,6 +444,57 @@ def write_retry_csv(retry_items):
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader()
         for r in sorted(retry_items,key=lambda x:x.get("next_retry_at","")): w.writerow({k:r.get(k,"") for k in fields})
 
+def archive_expired_retries(retry_items, now=None):
+    """Move failures unresolved for 45 days to a review CSV; never silently discard them."""
+    now=now or datetime.now(timezone.utc)
+    fields=["url","error_type","failure_count","first_failed_at","attempted_at","next_retry_at","error","archived_at","age_days"]
+    archived=[]
+    if RETRY_ARCHIVE_CSV_FILE.exists():
+        try:
+            with RETRY_ARCHIVE_CSV_FILE.open("r",encoding="utf-8-sig",newline="") as f: archived=list(csv.DictReader(f))
+        except (OSError,csv.Error): archived=[]
+    archived_urls={r.get("url") for r in archived}
+    remaining=[]; moved=0
+    for entry in retry_items:
+        try: first=datetime.fromisoformat(str(entry.get("first_failed_at","")).replace("Z","+00:00"))
+        except (ValueError,TypeError): first=now
+        age=max(0,(now-first).total_seconds()/86400)
+        if age >= RETRY_ARCHIVE_AFTER_DAYS:
+            if entry.get("url") not in archived_urls:
+                archived.append({**entry,"archived_at":now.isoformat(),"age_days":f"{age:.2f}"})
+                archived_urls.add(entry.get("url")); moved+=1
+        else: remaining.append(entry)
+    if moved or not RETRY_ARCHIVE_CSV_FILE.exists():
+        with RETRY_ARCHIVE_CSV_FILE.open("w",encoding="utf-8-sig",newline="") as f:
+            w=csv.DictWriter(f,fieldnames=fields); w.writeheader()
+            for entry in archived: w.writerow({k:entry.get(k,"") for k in fields})
+    if moved: print(f"[RETRY-ARCHIVE] Moved {moved} item(s) older than {RETRY_ARCHIVE_AFTER_DAYS} days to {RETRY_ARCHIVE_CSV_FILE}",flush=True)
+    return remaining,moved
+
+def write_summary_report(report, queue_before, queue_after):
+    """One-row newest-first operational summary, separate from hourly-success-report.csv."""
+    fields=["run_at","new_episodes_added","old_links_audited","old_links_still_valid","old_links_degraded","old_links_recovered","retry_queue_before","retry_queue_after","retry_queue_change","moved_to_review"]
+    row={k:v for k,v in {
+        "run_at":report.get("run_at",""),
+        "new_episodes_added":report.get("new_episodes_added",0),
+        "old_links_audited":report.get("old_links_audited",0),
+        "old_links_still_valid":report.get("old_links_still_valid",0),
+        "old_links_degraded":report.get("old_links_degraded",0),
+        "old_links_recovered":report.get("old_links_recovered",0),
+        "retry_queue_before":queue_before,
+        "retry_queue_after":queue_after,
+        "retry_queue_change":queue_after-queue_before,
+        "moved_to_review":report.get("moved_to_review",0),
+    }.items()}
+    existing=[]
+    if SUMMARY_REPORT_FILE.exists():
+        try:
+            with SUMMARY_REPORT_FILE.open("r",encoding="utf-8-sig",newline="") as f: existing=list(csv.DictReader(f))
+        except (OSError,csv.Error): existing=[]
+    with SUMMARY_REPORT_FILE.open("w",encoding="utf-8-sig",newline="") as f:
+        w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerow(row); w.writerows(existing[:999])
+    print("[SUMMARY] CSV updated: "+str(SUMMARY_REPORT_FILE),flush=True)
+
 def main():
     items_path=DATA/"items.json"
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
@@ -473,6 +530,7 @@ def main():
             entry["first_failed_at"]=entry.get("first_failed_at") or attempted.isoformat()
             delay=NOT_FOUND_RETRY_SECONDS if is_404 else TEMPORARY_RETRY_SECONDS
             entry["next_retry_at"]=datetime.fromtimestamp(attempted.timestamp()+delay,timezone.utc).isoformat()
+    queue_before=len(old_retry)
     old_retry_by_url={r["url"]:r for r in old_retry}
     now_utc=datetime.now(timezone.utc)
     def retry_is_due(entry):
@@ -536,6 +594,46 @@ def main():
     # independent episodes concurrently while keeping ordered page discovery/logging.
     with ThreadPoolExecutor(max_workers=8) as pool:
         list(pool.map(process_one, enumerate(urls,1)))
+
+    # Audit a small rotating batch of previously published audio URLs.
+    try:
+        audit_state=json.loads(LINK_AUDIT_STATE_FILE.read_text(encoding="utf-8"))
+        if not isinstance(audit_state,dict): audit_state={}
+    except (OSError,ValueError): audit_state={}
+    queued_now={r.get("url") for r in retry if r.get("url")}
+    audit_now=datetime.now(timezone.utc)
+    eligible=[]
+    for old_item in previous:
+        old_url=old_item.get("url",""); media_url=old_item.get("audio_url","")
+        if not old_url or not media_url or old_url in queued_now: continue
+        state=audit_state.get(old_url,{})
+        try:
+            last=datetime.fromisoformat(str(state.get("last_checked_at","")).replace("Z","+00:00"))
+            if (audit_now-last).total_seconds() < OLD_LINK_AUDIT_INTERVAL_SECONDS: continue
+        except (ValueError,TypeError,AttributeError): pass
+        eligible.append(old_item)
+    eligible.sort(key=lambda x:audit_state.get(x.get("url",""),{}).get("last_checked_at",""))
+    audit_batch=eligible[:OLD_LINK_AUDIT_BATCH]
+    audit_ok=audit_failed=0
+    degraded_urls=set()
+    for old_item in audit_batch:
+        old_url=old_item["url"]; media_url=old_item["audio_url"]
+        good,final_url,size,error=probe(media_url)
+        audit_state[old_url]={"last_checked_at":audit_now.isoformat(),"status":"ok" if good else "failed","audio_url":final_url if good else media_url,"error":"" if good else error}
+        if good:
+            audit_ok+=1
+            if final_url and final_url != media_url:
+                old_item["audio_url"]=final_url
+                if size: old_item["audio_length"]=size
+        else:
+            audit_failed+=1; degraded_urls.add(old_url)
+            retry.append(retry_metadata(old_url,error,old_retry_by_url.get(old_url) or {"first_failed_at":audit_now.isoformat()}))
+            print(f"[OLD-LINK-AUDIT] Degraded link queued for retry: {old_url} | {error}",flush=True)
+        time.sleep(.1)
+    LINK_AUDIT_STATE_FILE.write_text(json.dumps(audit_state,ensure_ascii=False,indent=2),encoding="utf-8")
+    items=[x for x in items if x.get("url") not in degraded_urls]
+    print(f"[OLD-LINK-AUDIT] checked={len(audit_batch)} valid={audit_ok} degraded={audit_failed} eligible_remaining={max(0,len(eligible)-len(audit_batch))}",flush=True)
+
     merged={x.get("url"):x for x in items if x.get("url")}
     if not full_archive:
         for x in previous: merged.setdefault(x.get("url"),x)
@@ -552,9 +650,10 @@ def main():
         if isinstance(entry,dict) and entry.get("url"):
             retry_by_url[entry["url"]]=entry
     retry=list(retry_by_url.values())[:MAX_RETRY_QUEUE]
+    retry,moved_to_review=archive_expired_retries(retry)
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
     write_retry_csv(retry)
-    report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
+    report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"old_links_audited":len(audit_batch),"old_links_still_valid":audit_ok,"old_links_degraded":audit_failed,"moved_to_review":moved_to_review,"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
     report["new_episodes_added"] = sum(1 for x in items if x.get("url") and x.get("url") not in previous_by_url)
     retry_urls={r.get("url") for r in retry if r.get("url")}
     report["retry_queue_remaining"]=len(retry_urls)
@@ -593,6 +692,7 @@ def main():
     archive_complete = full_archive and DISCOVERY_STATS["pages_scanned"] == MAX_ARCHIVE_PAGES and not errors
     report["archive_complete"] = archive_complete
     append_run_report(report)
+    write_summary_report(report,queue_before,len(retry))
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     if archive_complete:
         marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"pages_scanned":DISCOVERY_STATS["pages_scanned"],"discovered":len(urls),"published":len(items),"audio_confirmed":report["audio_confirmed"],"deferred_audio_failures":len(retry),"retry_queue":"data/retry-queue.json","cover_failures":len(cover_stats.get("failed", [])),"sort_order":"Added date descending"},ensure_ascii=False,indent=2),encoding="utf-8")
