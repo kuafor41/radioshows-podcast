@@ -1,14 +1,12 @@
-# Radio Shows Podcast RSS
+# RadioShows Podcast RSS
 
 Automated RSS feed for radio shows and DJ podcasts published on [EDMliveset.com](https://www.edmliveset.com/radio/).
 
 ## Production feed
 
 - **RSS:** [rss.xml](https://kuafor41.github.io/radioshows-podcast/rss.xml)
-- **Source archive:** https://www.edmliveset.com/radio/
-- **Production archive:** 375 listing pages, verified on 13 October 2026
 - **Ordering:** newest first, using each episode page's `Added` date
-- **Scheduled check:** every hour at **:50, Europe/Istanbul local time**
+- **Scheduled check:** every hour at **:50, GMT+3 local time**
 - **Hosting/deployment:** GitHub Actions + GitHub Pages
 
 ## How an update works
@@ -48,7 +46,7 @@ GitHub Actions schedules are best-effort: a run can start a little later than it
 
 `hourly-success-report.csv` uses the same structure as the UniversalMixDJ project:
 
-`date_turkey,time_turkey,added_count,episode_titles`
+`date,time,added_count,episode_titles`
 
 Each successful scheduled incremental run adds a new row at the top. A run with no new episodes is still recorded with `added_count=0`. The per-episode CSV is retained separately for debugging.
 
