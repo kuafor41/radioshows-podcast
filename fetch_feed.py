@@ -6,6 +6,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from zoneinfo import ZoneInfo
 import requests
+from concurrent.futures import ThreadPoolExecutor
 from bs4 import BeautifulSoup
 
 # Make progress visible in GitHub Actions while the long archive scan is running.
@@ -360,7 +361,8 @@ def main():
     if not full_archive: urls=[u for u in urls if u not in previous_by_url]
     items=[] if full_archive else list(previous_by_url.values())
     rows=[]; retry=[]
-    for i,u in enumerate(urls,1):
+    def process_one(pair):
+        i,u=pair
         try:
             x=PREPARSED.get(u) or parse(u); added=dateval(x.get("added",""))
             # Archive every discovered item regardless of Added date.
@@ -400,6 +402,11 @@ def main():
             retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
             print("Episode failed:",u,err)
         time.sleep(.15)
+
+    # Detail-page parsing and audio verification are network-bound; process several
+    # independent episodes concurrently while keeping ordered page discovery/logging.
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        list(pool.map(process_one, enumerate(urls,1)))
     merged={x.get("url"):x for x in items if x.get("url")}
     if not full_archive:
         for x in previous: merged.setdefault(x.get("url"),x)
