@@ -17,7 +17,8 @@ permissions:
 
 concurrency:
   group: radioshows-podcast-feed
-  cancel-in-progress: true
+  # Queue important RSS runs instead of canceling a run that is already publishing.
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
