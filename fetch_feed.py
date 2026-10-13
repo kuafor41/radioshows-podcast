@@ -495,39 +495,177 @@ def write_summary_report(report, queue_before, queue_after):
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerow(row); w.writerows(existing[:999])
     print("[SUMMARY] CSV updated: "+str(SUMMARY_REPORT_FILE),flush=True)
 
-def refresh_expiring_audio(items_by_url):
-    """Refresh short-lived signed media URLs before publishing the feed."""
-    refreshed = 0
-    checked = 0
-    signed_pattern = re.compile(r"(?:[?&](?:Expires|Signature|Policy|Key-Pair-Id|X-Amz-Expires|X-Amz-Signature|X-Amz-Credential|time)=)", re.I)
-    for page_url, item in list(items_by_url.items()):
-        current_audio = str(item.get("audio_url", ""))
-        if not current_audio or not signed_pattern.search(current_audio):
-            continue
-        checked += 1
+def is_temporary_audio_url(value):
+    """Recognize common signed/expiring URL query parameters without assuming all URLs expire."""
+    return bool(re.search(
+        r"(?:[?&](?:Expires|Signature|Policy|Key-Pair-Id|X-Amz-[^=&]+|X-Goog-[^=&]+|"
+        r"se|sp|sv|sig|token|expires|expiry|expire|expiration|auth_key|hdnts|time|"
+        r"jwt|access_token|e)=)",
+        str(value or ""), re.I
+    ))
+
+def inspect_audio_url(value):
+    """Return real HTTP/audio diagnostics for a candidate URL."""
+    if not value:
+        return {"ok": False, "status": "", "content_type": "", "final_url": "",
+                "length": 0, "error": "No audio URL"}
+    try:
+        response = S.get(value, headers={"Range": "bytes=0-1023"}, timeout=TIMEOUT,
+                         stream=True, allow_redirects=True)
+        status = response.status_code
+        content_type = response.headers.get("Content-Type", "").split(";", 1)[0].lower()
         try:
+            length = int(response.headers.get("Content-Length", "0") or 0)
+        except (ValueError, TypeError):
+            length = 0
+        final_url = response.url
+        try:
+            next(response.iter_content(1024), b"")
+        finally:
+            response.close()
+        media_path = urlparse(final_url).path.lower()
+        ok = status in (200, 206) and (
+            content_type.startswith("audio/") or "octet-stream" in content_type or
+            media_path.endswith((".mp3", ".m4a", ".aac", ".ogg", ".opus", ".wav", ".flac"))
+        )
+        error = "" if ok else f"HTTP {status}; Content-Type={content_type or '(missing)'}; not confirmed audio"
+        return {"ok": ok, "status": status, "content_type": content_type,
+                "final_url": final_url, "length": length, "error": error}
+    except Exception as exc:
+        return {"ok": False, "status": "", "content_type": "", "final_url": value,
+                "length": 0, "error": f"{type(exc).__name__}: {exc}"[:1500]}
+
+def refresh_expiring_audio(items_by_url):
+    """Refresh expiring links and write per-episode audio-link diagnostics."""
+    report_path = DATA / "audio-link-diagnostics.csv"
+    fieldnames = [
+        "title", "source_page_url", "guid", "added_date", "current_audio_url",
+        "last_checked_at_utc", "http_status", "content_type", "temporary_url",
+        "refresh_result", "verified_audio_url", "error"
+    ]
+    old_rows = {}
+    if report_path.exists():
+        try:
+            with report_path.open("r", encoding="utf-8-sig", newline="") as f:
+                old_rows = {row.get("source_page_url", ""): row for row in csv.DictReader(f)
+                            if row.get("source_page_url")}
+        except (OSError, csv.Error):
+            old_rows = {}
+    now = datetime.now(timezone.utc).isoformat()
+    rows = []
+    refreshed = checked = 0
+    for page_url, item in list(items_by_url.items()):
+        current_audio = str(item.get("audio_url", "") or "")
+        temporary = is_temporary_audio_url(current_audio)
+        previous_row = old_rows.get(page_url, {})
+        row = {
+            "title": item.get("title", ""),
+            "source_page_url": page_url,
+            "guid": item.get("guid", ""),
+            "added_date": item.get("added", ""),
+            "current_audio_url": current_audio,
+            "last_checked_at_utc": previous_row.get("last_checked_at_utc", ""),
+            "http_status": previous_row.get("http_status", ""),
+            "content_type": previous_row.get("content_type", ""),
+            "temporary_url": "yes" if temporary else "no",
+            "refresh_result": previous_row.get("refresh_result", "NOT_CHECKED_NON_TEMPORARY"),
+            "verified_audio_url": previous_row.get("verified_audio_url", ""),
+            "error": previous_row.get("error", ""),
+        }
+        if not current_audio:
+            row.update({"last_checked_at_utc": now, "http_status": "",
+                        "content_type": "", "refresh_result": "NO_AUDIO_URL",
+                        "verified_audio_url": "", "error": item.get("error", "No audio URL")})
+            rows.append(row)
+            continue
+        # Avoid thousands of hourly media requests. Actively re-check signed/expiring URLs;
+        # retain the last real check for ordinary URLs and make the policy explicit.
+        if not temporary:
+            row["current_audio_url"] = current_audio
+            rows.append(row)
+            continue
+
+        checked += 1
+        row["last_checked_at_utc"] = now
+        current_check = inspect_audio_url(current_audio)
+        row["http_status"] = str(current_check["status"])
+        row["content_type"] = current_check["content_type"]
+        row["verified_audio_url"] = current_check["final_url"] if current_check["ok"] else ""
+        row["error"] = current_check["error"]
+        try:
+            # Prefer a freshly extracted download/media URL over reusing the stale RSS URL.
             parsed = parse(page_url)
-            fresh_url = ""
-            fresh_size = 0
-            errors = []
-            for candidate in parsed.get("audio_candidates", []):
-                good, final_url, size, err = probe(candidate)
-                if good:
-                    fresh_url, fresh_size = final_url, size
+            candidates = list(parsed.get("audio_candidates", []))
+            # If page markup doesn't expose a usable direct URL, inspect embedded players too.
+            candidate_ok = any(inspect_audio_url(candidate)["ok"] for candidate in [])
+            for player_url in parsed.get("player_urls", []):
+                try:
+                    player_response = get(player_url)
+                    player_soup = BeautifulSoup(player_response.text, "html.parser")
+                    for node in player_soup.select(
+                        "audio[src], audio source[src], source[src], "
+                        "meta[property='og:audio'], meta[property='og:audio:url'], a[href]"
+                    ):
+                        raw = node.get("src") or node.get("content") or node.get("href")
+                        candidate = url(raw, player_response.url)
+                        if candidate and re.search(
+                            r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate, re.I
+                        ):
+                            candidates.append(candidate)
+                except Exception as player_exc:
+                    row["error"] = (row["error"] + "; player: " + str(player_exc))[:1500]
+            candidates = list(dict.fromkeys(candidates))
+            candidates.sort(key=lambda candidate: (
+                0 if re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate, re.I) else 1
+            ))
+            chosen = None
+            candidate_errors = []
+            for candidate in candidates:
+                result = inspect_audio_url(candidate)
+                if result["ok"]:
+                    chosen = result
                     break
-                errors.append(err)
-            if fresh_url:
-                if fresh_url != current_audio:
-                    item["audio_url"] = fresh_url
-                    item["audio_length"] = fresh_size
-                    # Keep the article's original metadata and local cached artwork.
+                candidate_errors.append(
+                    f"{candidate}: HTTP {result['status'] or 'error'} "
+                    f"{result['content_type']} {result['error']}"
+                )
+            if chosen:
+                new_url = chosen["final_url"]
+                if new_url != current_audio:
+                    # Only the enclosure changes; preserve GUID, Added date, title, artwork and ordering.
+                    item["audio_url"] = new_url
+                    item["audio_length"] = chosen["length"]
                     refreshed += 1
+                    row["refresh_result"] = "REFRESHED"
                     print(f"[AUDIO-REFRESH] Updated temporary media URL: {item.get('title', page_url)}", flush=True)
+                else:
+                    row["refresh_result"] = "CHECKED_OK_NO_CHANGE"
+                row["http_status"] = str(chosen["status"])
+                row["content_type"] = chosen["content_type"]
+                row["verified_audio_url"] = new_url
+                row["error"] = ""
             else:
-                print(f"[AUDIO-REFRESH] No fresh direct media URL verified; preserving existing URL: {page_url}; {errors[-1] if errors else 'no candidates'}", flush=True)
+                row["refresh_result"] = "FAILED_REFRESH"
+                if candidate_errors:
+                    row["error"] = (row["error"] + "; candidates: " + " | ".join(candidate_errors[-3:]))[:1500]
+                elif not row["error"]:
+                    row["error"] = "No direct audio candidate found in Free Download/page/player"
+                print(f"[AUDIO-REFRESH] No verified replacement: {page_url}; {row['error']}", flush=True)
         except Exception as exc:
-            print(f"[AUDIO-REFRESH] Could not refresh {page_url}: {type(exc).__name__}: {exc}", flush=True)
-    print(f"[AUDIO-REFRESH] checked={checked}; refreshed={refreshed}", flush=True)
+            row["refresh_result"] = "FAILED_REFRESH"
+            row["error"] = f"{type(exc).__name__}: {exc}"[:1500]
+            print(f"[AUDIO-REFRESH] Could not refresh {page_url}: {row['error']}", flush=True)
+        row["current_audio_url"] = item.get("audio_url", current_audio)
+        row["temporary_url"] = "yes" if is_temporary_audio_url(row["current_audio_url"]) else "no"
+        rows.append(row)
+
+    # Include all archived episodes in the report, while clearly distinguishing URLs not probed hourly.
+    with report_path.open("w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f"[AUDIO-REFRESH] checked_temporary={checked}; refreshed={refreshed}; "
+          f"diagnostics_rows={len(rows)}; report={report_path}", flush=True)
     return refreshed
 
 def main():
@@ -535,7 +673,7 @@ def main():
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
     except (OSError,ValueError): previous=[]
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
-    # Signed SoundCloud/Libsyn/HearThis URLs expire quickly; refresh them before rebuilding RSS.\n    refresh_expiring_audio(previous_by_url)\n    local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
+    # Refresh signed/expiring audio URLs and write the per-episode diagnostics report.\n    refresh_expiring_audio(previous_by_url)\n    local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
     marker=DATA/"archive-backfill-complete.json"
     # Scheduled runs must never restart the backfill if the completion marker is absent.
     if os.getenv("GITHUB_EVENT_NAME") == "schedule" and not marker.exists():
