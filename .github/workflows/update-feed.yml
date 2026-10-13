@@ -9,6 +9,8 @@ on:
         type: choice
         default: incremental
         options: [archive, incremental]
+  schedule:
+    - cron: "0 * * * *"
   push:
     branches: ["main"]
     paths: ["fetch_feed.py", "requirements.txt", "data/podcast-cover.jpg", ".github/workflows/update-feed.yml"]
@@ -20,13 +22,14 @@ permissions:
 
 concurrency:
   group: radioshows-podcast-feed
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
       FEED_MODE: ${{ inputs.mode || 'incremental' }}
+      GITHUB_EVENT_NAME: ${{ github.event_name }}
       HOURLY_REPORT_ENABLED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v6
@@ -39,7 +42,7 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Validate Python syntax
         run: python -m py_compile fetch_feed.py
-      - name: Build and validate test RSS
+      - name: Build and validate RSS
         run: python fetch_feed.py
       - name: Commit feed and diagnostics
         run: |
@@ -49,7 +52,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No output changes to commit."
           else
-            git commit -m "Update radio shows podcast test feed"
+            git commit -m "Update radio shows podcast feed"
             git push
           fi
       - uses: actions/configure-pages@v6

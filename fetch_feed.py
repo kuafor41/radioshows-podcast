@@ -21,7 +21,7 @@ DATA=Path("data"); DATA.mkdir(exist_ok=True)
 OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
 HOURLY_REPORT_FILE=DATA/"hourly-success-report.csv"
 CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
-MAX_ARCHIVE_PAGES=1075
+MAX_ARCHIVE_PAGES=375
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
 
@@ -306,7 +306,7 @@ def description(x):
 def build(items):
     ET.register_namespace("itunes", "http://www.itunes.com/dtds/podcast-1.0.dtd")
     root=ET.Element("rss",{"version":"2.0"}); ch=ET.SubElement(root,"channel")
-    for tag,val in [("title","EDMliveset.com — Podcasts & Radio Shows"),("link",ARCHIVE),("description","Radio shows archived from pages 1-1075, sorted by Added date (newest first)."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
+    for tag,val in [("title","EDMliveset.com — Podcasts & Radio Shows"),("link",ARCHIVE),("description","Radio shows archived from pages 1-375, sorted by Added date (newest first)."),("language","en"),("lastBuildDate",format_datetime(datetime.now(timezone.utc))),("generator","RadioShows Podcast RSS Builder")]:ET.SubElement(ch,tag).text=val
     cover_url="https://raw.githubusercontent.com/kuafor41/radioshows-podcast/main/data/podcast-cover.jpg"
     image=ET.SubElement(ch,"image"); ET.SubElement(image,"url").text=cover_url; ET.SubElement(image,"title").text="EDMliveset.com — Podcasts & Radio Shows"; ET.SubElement(image,"link").text=ARCHIVE
     ET.SubElement(ch,"{http://www.itunes.com/dtds/podcast-1.0.dtd}image",{"href":cover_url})
@@ -356,6 +356,10 @@ def main():
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
     local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
     marker=DATA/"archive-backfill-complete.json"
+    # Scheduled runs must never restart the backfill if the completion marker is absent.
+    if os.getenv("GITHUB_EVENT_NAME") == "schedule" and not marker.exists():
+        print("[SCHEDULE] Skipping hourly check: the 375-page archive is not yet verified complete.", flush=True)
+        return
     full_archive=(not marker.exists()) or os.getenv("FEED_MODE")=="archive"
     urls,errors=discover(full_archive=full_archive)
     if not full_archive: urls=[u for u in urls if u not in previous_by_url]
@@ -442,7 +446,7 @@ def main():
     Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     if archive_complete:
         marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"pages_scanned":DISCOVERY_STATS["pages_scanned"],"discovered":len(urls),"published":len(items),"audio_confirmed":report["audio_confirmed"],"deferred_audio_failures":len(retry),"retry_queue":"data/retry-queue.json","cover_failures":0,"sort_order":"Added date descending"},ensure_ascii=False,indent=2),encoding="utf-8")
-        print("[ARCHIVE] COMPLETE: all 1075 pages scanned; artwork passed; episodes without verified audio were omitted from RSS and saved to data/retry-queue.json for a later retry. Deferred audio failures="+str(len(retry)), flush=True)
+        print("[ARCHIVE] COMPLETE: all 375 pages scanned; artwork passed; episodes without verified audio were omitted from RSS and saved to data/retry-queue.json for a later retry. Deferred audio failures="+str(len(retry)), flush=True)
     elif full_archive:
         print("[ARCHIVE] NOT COMPLETE: pages="+str(DISCOVERY_STATS["pages_scanned"])+"/"+str(MAX_ARCHIVE_PAGES)+"; discovered="+str(len(urls))+"; published="+str(len(items))+"; retry="+str(len(retry))+"; cover_failures="+str(len(cover_stats.get("failed", [])))+"; listing_errors="+str(len(errors))+". Marker was not written.", flush=True)
     print(json.dumps({k:report.get(k) for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","pages_scanned","archive_complete","page_limit_reached","rss_xml_valid")},ensure_ascii=False), flush=True)
