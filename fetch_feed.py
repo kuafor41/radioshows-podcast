@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-import csv, hashlib, html, json, os, re, time, xml.etree.ElementTree as ET
+import csv, hashlib, html, json, os, re, sys, time, xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
+
+# Make progress visible in GitHub Actions while the long archive scan is running.
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+except (AttributeError, OSError):
+    pass
 
 BASE="https://www.edmliveset.com"
 ARCHIVE=BASE+"/radio/"
@@ -40,6 +46,7 @@ def discover(full_archive=False):
     for pg in range(1,page_limit+1):
         if not nxt or nxt in seen or (not full_archive and len(found)>=LIMIT): break
         seen.add(nxt)
+        print(f"[ARCHIVE] Starting list page {pg}/{page_limit}: {nxt}", flush=True)
         try:
             try:
                 r=get(nxt)
@@ -52,10 +59,12 @@ def discover(full_archive=False):
             soup=BeautifulSoup(r.text,"html.parser")
             page_links=links_from(soup,r.url)
             DISCOVERY_STATS["pages_scanned"]=pg
+            print(f"[ARCHIVE] Page {pg}/{page_limit} loaded; {len(page_links)} episode links found. Checking episode Added dates...", flush=True)
             page_has_old=False; page_has_recent=False; page_has_unknown=False
-            for u in page_links:
+            for episode_index, u in enumerate(page_links, 1):
                 if u in found: continue
                 if full_archive:
+                    print(f"[ARCHIVE] Page {pg}/{page_limit} — episode {episode_index}/{len(page_links)}: checking Added date | {u}", flush=True)
                     # Use episode Added dates, and inspect the whole archive page before
                     # stopping so an old sidebar/related link cannot end the backfill early.
                     try:
@@ -79,6 +88,7 @@ def discover(full_archive=False):
                         continue
                 found.append(u)
                 if not full_archive and len(found)>=LIMIT: break
+            print(f"[ARCHIVE] Finished page {pg}/{page_limit}; cumulative unique links={len(found)}; oldest Added checked={DISCOVERY_STATS['oldest_added_checked'] or 'unknown'}", flush=True)
             if full_archive and page_has_old and not page_has_recent and not page_has_unknown:
                 DISCOVERY_STATS["cutoff_reached"]=True
                 print(f"Archive cutoff confirmed on page {pg}; all checked episode Added dates are before 2025-01-01")
@@ -98,7 +108,7 @@ def discover(full_archive=False):
                 if pages:nxt2=pages[0][1]
             if not nxt2 and (full_archive or len(found)<LIMIT):
                 nxt2=BASE+f"/radio/page/{pg+1}/"
-            nxt=nxt2; print("Archive",pg,"links",len(found)); time.sleep(.2)
+            nxt=nxt2; print(f"[ARCHIVE] Moving on from page {pg}; cumulative links={len(found)}; next={nxt or 'none'}", flush=True); time.sleep(.2)
         except Exception as e:
             errors.append({"page":pg,"url":nxt,"error":str(e)}); print("Archive error",e); break
     if full_archive and DISCOVERY_STATS["pages_scanned"]>=page_limit and not DISCOVERY_STATS["cutoff_reached"]:
