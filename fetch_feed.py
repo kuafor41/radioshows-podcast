@@ -400,13 +400,12 @@ def main():
             retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
             print("Episode failed:",u,err)
         time.sleep(.15)
-    if full_archive and DISCOVERY_STATS["cutoff_reached"] and not DISCOVERY_STATS["page_limit_reached"]:
-        marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"cutoff":"2025-01-01","pages_scanned":DISCOVERY_STATS["pages_scanned"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"]},indent=2),encoding="utf-8")
     merged={x.get("url"):x for x in items if x.get("url")}
     if not full_archive:
         for x in previous: merged.setdefault(x.get("url"),x)
     items=[x for x in merged.values() if x.get("audio_url")]
     items.sort(key=lambda x:(dateval(x.get("added","")) or datetime(1970,1,1,tzinfo=timezone.utc)),reverse=True)
+    print(f"[RSS] Preparing artwork for {len(items)} audio-verified episodes...", flush=True)
     cover_stats=cache_episode_covers(items)
     OUT.write_bytes(build(items))
     items_path.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
@@ -431,6 +430,14 @@ def main():
     if not full_archive and report["rss_xml_valid"] and os.getenv("HOURLY_REPORT_ENABLED", "").strip().lower() == "true":
         newly_added=[x for x in items if x.get("url") and x.get("url") not in previous_by_url]
         write_hourly_success_report(local_now, newly_added)
-    print(json.dumps({k:report[k] for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","pages_scanned","cutoff_reached","oldest_added_checked","page_limit_reached","rss_xml_valid")},ensure_ascii=False))
+    archive_complete = full_archive and DISCOVERY_STATS["pages_scanned"] == MAX_ARCHIVE_PAGES and not errors and not retry and not cover_stats.get("failed") and len(items) == len(urls)
+    report["archive_complete"] = archive_complete
+    Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
+    if archive_complete:
+        marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"pages_scanned":DISCOVERY_STATS["pages_scanned"],"discovered":len(urls),"published":len(items),"audio_confirmed":report["audio_confirmed"],"cover_failures":0,"sort_order":"Added date descending"},ensure_ascii=False,indent=2),encoding="utf-8")
+        print("[ARCHIVE] COMPLETE: all 1075 pages scanned; audio/artwork checks passed.", flush=True)
+    elif full_archive:
+        print("[ARCHIVE] NOT COMPLETE: pages="+str(DISCOVERY_STATS["pages_scanned"])+"/"+str(MAX_ARCHIVE_PAGES)+"; discovered="+str(len(urls))+"; published="+str(len(items))+"; retry="+str(len(retry))+"; cover_failures="+str(len(cover_stats.get("failed", [])))+"; listing_errors="+str(len(errors))+". Marker was not written.", flush=True)
+    print(json.dumps({k:report.get(k) for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","pages_scanned","archive_complete","page_limit_reached","rss_xml_valid")},ensure_ascii=False), flush=True)
 
 if __name__=="__main__":main()
