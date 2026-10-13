@@ -20,7 +20,7 @@ DATA=Path("data"); DATA.mkdir(exist_ok=True)
 OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
 HOURLY_REPORT_FILE=DATA/"hourly-success-report.csv"
 CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
-MAX_ARCHIVE_PAGES=2000
+MAX_ARCHIVE_PAGES=1075
 S=requests.Session()
 S.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
 
@@ -43,77 +43,30 @@ def links_from(soup, page):
 PREPARSED={}
 DISCOVERY_STATS={"pages_scanned":0,"cutoff_reached":False,"oldest_added_checked":"","page_limit_reached":False}
 def discover(full_archive=False):
-    found=[]; errors=[]; nxt=ARCHIVE; seen=set()
+    """Collect episode URLs without filtering by Added date."""
+    found=[]; errors=[]; seen_urls=set()
     page_limit=MAX_ARCHIVE_PAGES if full_archive else 3
     for pg in range(1,page_limit+1):
-        if not nxt or nxt in seen or (not full_archive and len(found)>=LIMIT): break
-        seen.add(nxt)
-        print(f"[ARCHIVE] Starting list page {pg}/{page_limit}: {nxt}", flush=True)
+        if not full_archive and len(found)>=LIMIT: break
+        page_url=ARCHIVE if pg==1 else BASE+f"/radio/page/{pg}/"
+        print(f"[ARCHIVE] Starting list page {pg}/{page_limit}: {page_url}", flush=True)
         try:
-            try:
-                r=get(nxt)
-            except requests.HTTPError as page_error:
-                fallback=BASE+f"/radio/page/{pg}/"
-                if pg == 1 or urlparse(nxt).path.rstrip("/") == urlparse(fallback).path.rstrip("/"):
-                    raise
-                print(f"Archive URL failed ({nxt}); trying {fallback}: {page_error}")
-                r=get(fallback)
+            r=get(page_url)
             soup=BeautifulSoup(r.text,"html.parser")
             page_links=links_from(soup,r.url)
+            unique_on_page=0
+            for u in page_links:
+                if u not in seen_urls:
+                    seen_urls.add(u); found.append(u); unique_on_page+=1
             DISCOVERY_STATS["pages_scanned"]=pg
-            print(f"[ARCHIVE] Page {pg}/{page_limit} loaded; {len(page_links)} episode links found. Checking episode Added dates...", flush=True)
-            page_has_old=False; page_has_recent=False; page_has_unknown=False
-            for episode_index, u in enumerate(page_links, 1):
-                if u in found: continue
-                if full_archive:
-                    print(f"[ARCHIVE] Page {pg}/{page_limit} — episode {episode_index}/{len(page_links)}: checking Added date | {u}", flush=True)
-                    # Use episode Added dates, and inspect the whole archive page before
-                    # stopping so an old sidebar/related link cannot end the backfill early.
-                    try:
-                        episode=parse(u)
-                        added=dateval(episode.get("added",""))
-                        PREPARSED[u]=episode
-                        if added:
-                            DISCOVERY_STATS["oldest_added_checked"]=episode["added"]
-                            if added<CUTOFF:
-                                page_has_old=True
-                                continue
-                            page_has_recent=True
-                        else:
-                            page_has_unknown=True
-                            found.append(u)  # Keep unclassified entries visible in diagnostics.
-                            continue
-                    except Exception as episode_error:
-                        errors.append({"page":pg,"url":u,"error":f"Episode date precheck failed: {episode_error}"})
-                        page_has_unknown=True
-                        found.append(u)
-                        continue
-                found.append(u)
-                if not full_archive and len(found)>=LIMIT: break
-            print(f"[ARCHIVE] Finished page {pg}/{page_limit}; cumulative unique links={len(found)}; oldest Added checked={DISCOVERY_STATS['oldest_added_checked'] or 'unknown'}", flush=True)
-            if full_archive and page_has_old and not page_has_recent and not page_has_unknown:
-                DISCOVERY_STATS["cutoff_reached"]=True
-                print(f"Archive cutoff confirmed on page {pg}; all checked episode Added dates are before 2025-01-01")
-                break
-            nxt2=""
-            for a in soup.select("a[href]"):
-                label=txt(a).lower(); rel=" ".join(a.get("rel",[])).lower(); u=url(a.get("href"),r.url)
-                is_next=("next" in rel.split() or bool(re.match(r"^next\b",label,re.I)) or label in ("older posts","→","»","›"))
-                if u and is_next:
-                    nxt2=u; break
-            if not nxt2:
-                pages=[]
-                for a in soup.select("a[href]"):
-                    u=url(a.get("href"),r.url); m=re.search(r"/page/(\d+)/?$",urlparse(u).path)
-                    if m and u not in seen: pages.append((int(m.group(1)),u))
-                pages=sorted((n,u) for n,u in pages if n>pg)
-                if pages:nxt2=pages[0][1]
-            if not nxt2 and (full_archive or len(found)<LIMIT):
-                nxt2=BASE+f"/radio/page/{pg+1}/"
-            nxt=nxt2; print(f"[ARCHIVE] Moving on from page {pg}; cumulative links={len(found)}; next={nxt or 'none'}", flush=True); time.sleep(.2)
+            print(f"[ARCHIVE] Page {pg}/{page_limit} loaded; links={len(page_links)}, new_unique={unique_on_page}, total_unique={len(found)}", flush=True)
+            if not full_archive and len(found)>=LIMIT: break
+            time.sleep(.05)
         except Exception as e:
-            errors.append({"page":pg,"url":nxt,"error":str(e)}); print("Archive error",e); break
-    if full_archive and DISCOVERY_STATS["pages_scanned"]>=page_limit and not DISCOVERY_STATS["cutoff_reached"]:
+            errors.append({"page":pg,"url":page_url,"error":str(e)})
+            print("[ARCHIVE] ERROR page "+str(pg)+"/"+str(page_limit)+": "+str(e), flush=True)
+            break
+    if full_archive and DISCOVERY_STATS["pages_scanned"] >= page_limit and not errors:
         DISCOVERY_STATS["page_limit_reached"]=True
     return (found if full_archive else found[:LIMIT]),errors
 def fields(soup):
@@ -410,18 +363,12 @@ def main():
     for i,u in enumerate(urls,1):
         try:
             x=PREPARSED.get(u) or parse(u); added=dateval(x.get("added",""))
+            # Archive every discovered item regardless of Added date.
             if not added:
-                err="Could not parse Added date; excluded until date can be verified."
-                rows.append({"index":i,"title":x["title"],"page_url":x["url"],"audio_url":"","audio_ok":False,"track_count":len(x["tracklist"]),"status":"warning","error":err})
-                retry.append({"url":u,"error":err,"attempted_at":datetime.now(timezone.utc).isoformat()})
-                continue
-            x["pubdate"]=added.isoformat()
-            if added<CUTOFF:
-                print(f"Reached archive cutoff at {x['added']}: {x['title']}")
-                if full_archive:
-                    cutoff_reached=True
-                    break
-                continue
+                x["pubdate"]=datetime(1970,1,1,tzinfo=timezone.utc).isoformat()
+                print("[WARNING] Added date not parsed; retaining episode: "+x.get("title",u), flush=True)
+            else:
+                x["pubdate"]=added.isoformat()
             ok=False; final=""; size=0; err="No direct audio URL found"
             for candidate in x.get("audio_candidates",[]):
                 good,final_url,nbytes,candidate_err=probe(candidate)
@@ -458,7 +405,7 @@ def main():
     merged={x.get("url"):x for x in items if x.get("url")}
     if not full_archive:
         for x in previous: merged.setdefault(x.get("url"),x)
-    items=[x for x in merged.values() if x.get("audio_url") and (dateval(x.get("added","")) or datetime(1970,1,1,tzinfo=timezone.utc))>=CUTOFF]
+    items=[x for x in merged.values() if x.get("audio_url")]
     items.sort(key=lambda x:(dateval(x.get("added","")) or datetime(1970,1,1,tzinfo=timezone.utc)),reverse=True)
     cover_stats=cache_episode_covers(items)
     OUT.write_bytes(build(items))
