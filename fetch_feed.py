@@ -540,8 +540,8 @@ def refresh_expiring_audio(items_by_url):
     report_path = DATA / "audio-link-diagnostics.csv"
     fieldnames = [
         "title", "source_page_url", "guid", "added_date", "current_audio_url",
-        "last_checked_at_utc", "http_status", "content_type", "temporary_url",
-        "refresh_result", "verified_audio_url", "error"
+        "last_checked_at_utc", "http_status", "content_type", "replacement_http_status",
+        "replacement_content_type", "temporary_url", "refresh_result", "verified_audio_url", "error"
     ]
     old_rows = {}
     if report_path.exists():
@@ -567,6 +567,8 @@ def refresh_expiring_audio(items_by_url):
             "last_checked_at_utc": previous_row.get("last_checked_at_utc", ""),
             "http_status": previous_row.get("http_status", ""),
             "content_type": previous_row.get("content_type", ""),
+            "replacement_http_status": previous_row.get("replacement_http_status", ""),
+            "replacement_content_type": previous_row.get("replacement_content_type", ""),
             "temporary_url": "yes" if temporary else "no",
             "refresh_result": previous_row.get("refresh_result", "NOT_CHECKED_NON_TEMPORARY"),
             "verified_audio_url": previous_row.get("verified_audio_url", ""),
@@ -639,8 +641,8 @@ def refresh_expiring_audio(items_by_url):
                     print(f"[AUDIO-REFRESH] Updated temporary media URL: {item.get('title', page_url)}", flush=True)
                 else:
                     row["refresh_result"] = "CHECKED_OK_NO_CHANGE"
-                row["http_status"] = str(chosen["status"])
-                row["content_type"] = chosen["content_type"]
+                row["replacement_http_status"] = str(chosen["status"])
+                row["replacement_content_type"] = chosen["content_type"]
                 row["verified_audio_url"] = new_url
                 row["error"] = ""
             else:
