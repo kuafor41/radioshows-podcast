@@ -1,0 +1,45 @@
+name: One-off Retry Queue Recovery Audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/recovery-audit.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radioshows-recovery-audit
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate recovery script
+        run: python -m py_compile recovery_audit.py fetch_feed.py
+      - name: Audit every queued episode and recover playable audio
+        run: python recovery_audit.py
+      - name: Commit audit report, recovered RSS items, and remaining queue
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/recovery-audit.csv data/retry-queue.csv data/items.json rss.xml
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "Audit retry queue and recover direct episode audio"
+            git push
+          fi
