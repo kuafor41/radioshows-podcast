@@ -316,5 +316,959 @@
     "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp",
     "file": "hardcore-will-never-die.webp",
     "sha256": "a5b31716df77c30079fb037de63a4cd9f45afdc2e7d5b279a50c1be2697ec642"
+  },
+  "radio-wonderland": {
+    "series": "Radio Wonderland",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Radio-Wonderland.webp",
+    "file": "radio-wonderland.webp",
+    "sha256": "75505e61050fd09e4fbb78378cb429ed259b0c38b45d1ec23f7c0f0095e397ca"
+  },
+  "darklight-sessions": {
+    "series": "Darklight Sessions",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Darklight-Sessions.webp",
+    "file": "darklight-sessions.webp",
+    "sha256": "eaf988f689de143a0c4fb97c6b0d5c9355a36a5a5ecff9a5dd07f3e105154171"
+  },
+  "process-radio": {
+    "series": "Process Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Process-Radio.webp",
+    "file": "process-radio.webp",
+    "sha256": "587d27e0a429c4807ebb324020169188a7260652323b9236d44312a1cc0b428d"
+  },
+  "les-pays-bass-radio": {
+    "series": "Les Pays Bass Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/04/Les-Pays-Bass-Radio.webp",
+    "file": "les-pays-bass-radio.webp",
+    "sha256": "9729f440930631c0a8cf0105e9a7884161dac30c68c406ad5413aa560650eaf8"
+  },
+  "rave-the-world-radio": {
+    "series": "Rave The World Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/08/Rave-The-World-Radio.webp",
+    "file": "rave-the-world-radio.webp",
+    "sha256": "7369011b736d2a8273738aa68147769dd843d0fcdd17ed0265a987499402478f"
+  },
+  "days-like-nights": {
+    "series": "DAYS like NIGHTS",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Days-Like-Nights-Radio.webp",
+    "file": "days-like-nights.webp",
+    "sha256": "9719decbd7cc7577c3862b20890a232cebd51f057968f1f3b8f60e5969037551"
+  },
+  "weiter-radio": {
+    "series": "Weiter Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Weiter-Radio.webp",
+    "file": "weiter-radio.png",
+    "sha256": "1cca498904b87c8b14e4100203f31d6bd9b9cac47da3b99ec80f6042c91b47f9"
+  },
+  "noisetalgia": {
+    "series": "NOISETALGIA",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/NOISETALGIA.webp",
+    "file": "noisetalgia.webp",
+    "sha256": "c8d4cca9764a32001429255d5d0dcff343b063006acf4a2a06309b62e0465d6b"
+  },
+  "clapcast": {
+    "series": "Clapcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Clapcast.webp",
+    "file": "clapcast.webp",
+    "sha256": "cc9633db83849d75e3a1c88b6a2fca5007ef5b22a580e425f056629c33eb5384"
+  },
+  "maxximize-on-air": {
+    "series": "Maxximize On Air",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/09/Maxximize-On-Air.webp",
+    "file": "maxximize-on-air.webp",
+    "sha256": "a8adde670a0b62645ef33440c74e98808fd72deae847aa0f4ca81d70ef6e027f"
+  },
+  "no-xcuses": {
+    "series": "No Xcuses",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/No-Xcuses.webp",
+    "file": "no-xcuses.webp",
+    "sha256": "fed26307d20cff0c870f7d19dbcad284441ba18d6e014cf8b80f80b101d6a8fb"
+  },
+  "cyb3rpvnk-radio": {
+    "series": "CYB3RPVNK Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/08/CYB3RPVNK-Radio.webp",
+    "file": "cyb3rpvnk-radio.webp",
+    "sha256": "4219ebe5f132fb803fe0877d57634f432e228cfb405468ade38c6a6004322492"
+  },
+  "purified-radio": {
+    "series": "Purified Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Purified-Radio.webp",
+    "file": "purified-radio.webp",
+    "sha256": "a288fd9d9310549a80d646272bc42213149c8ae6df4f9a66c56721b3e281e773"
+  },
+  "v-sessions": {
+    "series": "V Sessions",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/V-Sessions.webp",
+    "file": "v-sessions.webp",
+    "sha256": "1a7c894e5ac23bdda5a547e3121cf7c53c2caabe4b41cbe0b30a5b5eebced84a"
+  },
+  "heldeep-radio": {
+    "series": "Heldeep Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/12/Heldeep-Radio.webp",
+    "file": "heldeep-radio.webp",
+    "sha256": "c1abd2524de20cb8febe507a53f9314a69898641456f9a31971e4d2323cdceef"
+  },
+  "vonyc-sessions": {
+    "series": "Vonyc Sessions",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/02/VONYC-Sessions.webp",
+    "file": "vonyc-sessions.webp",
+    "sha256": "56799d54af703fd6deb838e7aecc7091c8498ca87bc49219cae83026f5d3a422"
+  },
+  "ignite-radio": {
+    "series": "Ignite Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/12/Ignite-Radio.webp",
+    "file": "ignite-radio.webp",
+    "sha256": "21183f9991b1dcb91f945a12088ba061835fc6a852344cf6fac5c4cec0edf438"
+  },
+  "capture-radio": {
+    "series": "Capture Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/10/Capture-Radio-by-Laura-van-Dam.webp",
+    "file": "capture-radio.webp",
+    "sha256": "609b449dca26480e07c75523c18c6b9cadc5903524001d21326d1aa6de89547e"
+  },
+  "the-martin-garrix-show": {
+    "series": "The Martin Garrix Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/The-Martin-Garrix-Show.webp",
+    "file": "the-martin-garrix-show.webp",
+    "sha256": "1c0a95d290f63a8d7f76003ac6868f9a9058a3e02cad73dd7522a24829d6995a"
+  },
+  "i-am-hardstyle": {
+    "series": "I AM HARDSTYLE",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/I-Am-Hardstyle-Radio.webp",
+    "file": "i-am-hardstyle.webp",
+    "sha256": "b008f8a26989a4494a99c4d3dee27225486f5f36cb2e229ceb0dad2cef653a77"
+  },
+  "dirtybird-radio": {
+    "series": "Dirtybird Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Dirtybird-Radio.webp",
+    "file": "dirtybird-radio.webp",
+    "sha256": "b777e45b56d11dc30ec2596eeccf3699cafd47c687701e9ed107a19e69543478"
+  },
+  "glitterbox-radio-show": {
+    "series": "Glitterbox Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/05/Glitterbox-Radio-Show-Hosted-By-Melvo-Baptiste.webp",
+    "file": "glitterbox-radio-show.webp",
+    "sha256": "27c111926cb7edee5555372bb6820f7e00b1622c7e06ef9aa022044742c3640d"
+  },
+  "distant": {
+    "series": "Distant",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Mees-Salome-Distant.webp",
+    "file": "distant.webp",
+    "sha256": "a8080bdfd047669862054d62ac04c59458cdc86d36f45eda0e332d6ea21e5ce3"
+  },
+  "sets": {
+    "series": "Sets",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/SunSets.webp",
+    "file": "sets.webp",
+    "sha256": "6f3a8e587df5affdf040476b82413ac5da0c54eb6adc374190ee2970b6e63aec"
+  },
+  "captive-soul": {
+    "series": "Captive Soul",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/04/Captive-Soul.webp",
+    "file": "captive-soul.webp",
+    "sha256": "2a591eccc94843eb079b3b334447c940d1c47467fb1cd9ce733b89e8aa708605"
+  },
+  "uplift": {
+    "series": "Uplift",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/10/Uplift.webp",
+    "file": "uplift.webp",
+    "sha256": "870c5d841ca45ffbf2cd83206da87681eff5e7719d6b5479112216c8add2f762"
+  },
+  "i-am-house-radio": {
+    "series": "I Am House Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/I-Am-House-Radio.webp",
+    "file": "i-am-house-radio.webp",
+    "sha256": "082e0288cb8524855b5cd86d1cf7b23746b18735550cfd524c2d7a735e5bfc5d"
+  },
+  "white-noise": {
+    "series": "White Noise",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/White-Noise.webp",
+    "file": "white-noise.webp",
+    "sha256": "aa954e461253bf7e6ef1b58ebe4e8797d87897bf00a93b4a76cd6a91f396358b"
+  },
+  "circoloco-radio": {
+    "series": "Circoloco Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Circoloco-Radio.webp",
+    "file": "circoloco-radio.webp",
+    "sha256": "0e0f2b1664771f56fd3d280dc787a3b4e002c170c5622df8690cc75ab5cfe365"
+  },
+  "lost-miracle": {
+    "series": "Lost Miracle",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/07/Lost-Miracle.webp",
+    "file": "lost-miracle.webp",
+    "sha256": "4d72c92c49241970d4603b2ae4f61c431367574bd4826cac422798c918985ed4"
+  },
+  "exploration": {
+    "series": "Exploration",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/09/Exploration.webp",
+    "file": "exploration.webp",
+    "sha256": "17f83db869f7325f79bad5edba7b7dc962a64a732f35812e3fb745414ac9bcc6"
+  },
+  "patterns": {
+    "series": "Patterns",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Patterns.webp",
+    "file": "patterns.webp",
+    "sha256": "f930807e3e6412977c7ef222a1b23bff28e51af74319b078fbb5bbe2c0e95967"
+  },
+  "hardwell-on-air": {
+    "series": "Hardwell On Air",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/11/Hardwell-On-Air.webp",
+    "file": "hardwell-on-air.webp",
+    "sha256": "15d5c4859215d24de8da4dd55fe8cc03af487eab2174a2af5e80b7b6ac61e097"
+  },
+  "balance-selections": {
+    "series": "Balance Selections",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/11/Balance-Selections.webp",
+    "file": "balance-selections.webp",
+    "sha256": "c94bea2d0e249622b5023a9bf0c2d0ba1517bd4902487a0d7c858667d7805f3a"
+  },
+  "gravity-radio": {
+    "series": "Gravity Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/10/Gravity-Radio.webp",
+    "file": "gravity-radio.webp",
+    "sha256": "e3c735368897f17fed50f893d11ededf0d1581e8495bfaffdf386b59e1b69b7d"
+  },
+  "feels-like-home-radio": {
+    "series": "Feels Like Home Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/10/FEELS-LIKE-HOME.webp",
+    "file": "feels-like-home-radio.webp",
+    "sha256": "43cf5fe63734b60ad17c53d77e755e5c68d0258610162313e5b1809197b96937"
+  },
+  "phoenix-radio": {
+    "series": "Phoenix Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/06/Phoenix-Radio.webp",
+    "file": "phoenix-radio.webp",
+    "sha256": "141039777856d1cf32f07202932d2b93045f9a1c7d0d72e8af0a2e75a181b36e"
+  },
+  "let-there-be-house": {
+    "series": "Let There Be House",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Let-There-Be-House.webp",
+    "file": "let-there-be-house.webp",
+    "sha256": "4f8618875c57a138fd08c9f20e9ea64a47990181791979449f2713e80a0a1b93"
+  },
+  "euphonic-sessions": {
+    "series": "Euphonic Sessions",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Euphonic-Sessions.webp",
+    "file": "euphonic-sessions.webp",
+    "sha256": "7539db96e189e1344a29933de595e86e8e09a4ff9895c668d4972fde2d4d8f68"
+  },
+  "mdlbeast-radio": {
+    "series": "MDLBEAST Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/MDLBEAST-Radio.webp",
+    "file": "mdlbeast-radio.webp",
+    "sha256": "c8485744faec6353aca5fe9ae6af05a4d3343dabea1709a121ba684ea85d984d"
+  },
+  "xttc-radio": {
+    "series": "XTTC Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/09/XTTC-Radio.webp",
+    "file": "xttc-radio.webp",
+    "sha256": "77323c47b0db1e9dbe4e4a1de1fd0f63367799ab26cf27429916721ad79997e7"
+  },
+  "pure-trance-radio": {
+    "series": "Pure Trance Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/11/Pure-Trance-Radio.webp",
+    "file": "pure-trance-radio.webp",
+    "sha256": "f9a0616f5ce034bb72268c81853fbdee6dfbfb4d07168d005d87eee0e2fb6037"
+  },
+  "monument-techno-podcast": {
+    "series": "Monument Techno Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Monument-Techno-Podcast.webp",
+    "file": "monument-techno-podcast.webp",
+    "sha256": "93fabaa1e55e876ac4e379edd7d312d21fcccf8a4c80dbb8d2ef95771b9c0151"
+  },
+  "club-room": {
+    "series": "Club Room",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/11/Club-Room.webp",
+    "file": "club-room.webp",
+    "sha256": "c7b14444d56c608bb21cf2cccc2454ca8cf5234771d992e1e4411eaed9ecf9dc"
+  },
+  "adesso-music-radio-show": {
+    "series": "Adesso Music Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Adesso-Music-Radio-Show.webp",
+    "file": "adesso-music-radio-show.webp",
+    "sha256": "b62510a2d52eb83cd40bb2379d562207299950aaa75931de245ed60161c52814"
+  },
+  "rave-culture-radio": {
+    "series": "Rave Culture Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/Rave-Culture-Radio.webp",
+    "file": "rave-culture-radio.webp",
+    "sha256": "e95956fc33e4fafd03deac28a1b0da4a13d4b273f200307e66b059f7eb1dc55d"
+  },
+  "stmpd-rcrds-radio": {
+    "series": "STMPD RCRDS Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/STMPD-RCRDS-Radio.webp",
+    "file": "stmpd-rcrds-radio.webp",
+    "sha256": "f3a4dddd6272089d5a6a868cc6905a5aa11ccfcabbaa551baaf1d243036d7087"
+  },
+  "colorcast": {
+    "series": "Colorcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp",
+    "file": "colorcast.webp",
+    "sha256": "1e4940954e2bc4f2ff53e99607b54629a52dd578ec81b26ee475d3e3dd0192bb"
+  },
+  "selador-sessions": {
+    "series": "Selador Sessions",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/11/Selador-Sessions.webp",
+    "file": "selador-sessions.webp",
+    "sha256": "98c600b9a7c5dd14daa1651efcad806ad65722b06d739f86c19707c41d7cc87b"
+  },
+  "the-legendary-radio-show": {
+    "series": "The Legendary Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/The-Legendary-Radio-Show.webp",
+    "file": "the-legendary-radio-show.webp",
+    "sha256": "621d2e901e5094578142aaeaa263d8edd3b3b15295874670517510dc6bf4a930"
+  },
+  "escape-radio": {
+    "series": "Escape Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/12/Romi-Lux-Escape-Radio.webp",
+    "file": "escape-radio.webp",
+    "sha256": "54295a7b68eaa06542cba8d88ff5b6f311faaf353445f2fcc8921464b5706917"
+  },
+  "paradox-radio": {
+    "series": "Paradox Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/04/Paradox-Radio.webp",
+    "file": "paradox-radio.webp",
+    "sha256": "3f6af54faa0682288e08e087a7b5c2efa61e1a6282cc761bfc596fdf0ab5703c"
+  },
+  "drumcode-live": {
+    "series": "Drumcode Live",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp",
+    "file": "drumcode-live.webp",
+    "sha256": "800a0a5b60288c85b95bc737119dcfb756940e836406aaa31beea9cc0910b6dd"
+  },
+  "proud-eagle-radio-show": {
+    "series": "Proud Eagle Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Proud-Eagle-Radio-Show.webp",
+    "file": "proud-eagle-radio-show.webp",
+    "sha256": "fe2aaee8e467f99419f636887d12615ad2b799e7322fcddcaf906b80cb197a17"
+  },
+  "crash-smile-in-dada-land": {
+    "series": "Crash & Smile In Dada Land",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/01/Crash-Smile-In-Dada-Land.webp",
+    "file": "crash-smile-in-dada-land.webp",
+    "sha256": "a9ce38eb78faca49d20f138e17b0551c52e17c8950a77d187948d0b1262ddea1"
+  },
+  "make-some-music": {
+    "series": "Make Some Music",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/05/Make-Some-Music.webp",
+    "file": "make-some-music.webp",
+    "sha256": "c4b5333b1878855a300ecb6aac97891a595cb54190353baa554d18e7fa72970e"
+  },
+  "team-tiger-radio": {
+    "series": "Team Tiger Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/03/Team-Tiger-Radio.webp",
+    "file": "team-tiger-radio.webp",
+    "sha256": "4e83bb2a9412092016172925e1803b34b1ff26590f2c44507e9d93a0af50def0"
+  },
+  "dndradio": {
+    "series": "DNDRADIO",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/BIJOU-DNDRADIO.webp",
+    "file": "dndradio.webp",
+    "sha256": "109213a8cf44dd654968fc754be8dfd6a09fac3aadfd073357901ec8c28d0a44"
+  },
+  "dannic-presents-fonk-monthly-mix": {
+    "series": "Dannic presents Fonk Monthly Mix",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/01/Dannic-presents-Fonk-Monthly-Mix.webp",
+    "file": "dannic-presents-fonk-monthly-mix.webp",
+    "sha256": "5077a6a6e54d813ba477f62da2e6e188022a7c7e727a90f3309b2adca4bb626f"
+  },
+  "synthsonic-sessions": {
+    "series": "Synthsonic Sessions",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Synthsonic-Sessions.webp",
+    "file": "synthsonic-sessions.webp",
+    "sha256": "f16ee314a43fb556b0a0ef3d3476550f98ad95eba2d4754896f5d81fb59bfeba"
+  },
+  "the-night-is-calling-radio": {
+    "series": "The Night is Calling Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/04/The-Night-is-Calling-Radio.webp",
+    "file": "the-night-is-calling-radio.webp",
+    "sha256": "c0b53ae51523a2bc5b37398cedf66fbf53aa62f75f1b03bab9650e5ba8d60ed5"
+  },
+  "desire-radio": {
+    "series": "Desire Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/11/Desire-Radio.webp",
+    "file": "desire-radio.webp",
+    "sha256": "bd40eac7c95c8e06c3964d12815f992b655750a0befa9656aeb810af626a3afd"
+  },
+  "voyage-of-discovery": {
+    "series": "Voyage of Discovery",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Voyage-of-Discovery.webp",
+    "file": "voyage-of-discovery.webp",
+    "sha256": "d9c98ea3b2c74e6f4d22716cf787ea882a3676d09588c5dd5a23df551be429cd"
+  },
+  "toolroom-radio": {
+    "series": "Toolroom Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/02/Toolroom-Radio-1.webp",
+    "file": "toolroom-radio.webp",
+    "sha256": "6b1920efbeb6e18b1bc886981eff268e2092b18027d5cf762c4d03c8e596ebfc"
+  },
+  "flow": {
+    "series": "Flow",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/07/FLOW.webp",
+    "file": "flow.webp",
+    "sha256": "90e1d386ca9dc3793610a9bd8c8cf1fb775d024d5e6e1f8892baa2247c57d0f4"
+  },
+  "kris-kross-mixtape": {
+    "series": "Kris Kross Mixtape",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/08/Kris-Kross-Mixtape.webp",
+    "file": "kris-kross-mixtape.webp",
+    "sha256": "73118d7d06f614c18270c6bcb75fa555bafa675dcac8643f325f925ad4f73d0b"
+  },
+  "era-radio": {
+    "series": "Era Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/11/Era-Radio.webp",
+    "file": "era-radio.webp",
+    "sha256": "e71399e90c93814842fb84e401131ddd39b62cfcc8e585301fc911cdebe3f3a1"
+  },
+  "hardwell-presents-euphoria": {
+    "series": "Hardwell presents Euphoria",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/04/Hardwell-presents-Euphoria.webp",
+    "file": "hardwell-presents-euphoria.webp",
+    "sha256": "fd08511808f13f854da7fed215dc5c74a0eadb65ff886d6067c37c026440571c"
+  },
+  "experts-only-radio": {
+    "series": "Experts Only Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Experts-Only-Radio.webp",
+    "file": "experts-only-radio.webp",
+    "sha256": "94b5d30c777eaff57be7bead65d79828c821851b422958497e9bae6d3bc2603e"
+  },
+  "colourizon": {
+    "series": "Colourizon",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Colourizon.webp",
+    "file": "colourizon.webp",
+    "sha256": "22f824c4092b2591e2bcb894efdb662176c25c65c2f91bfd82a7d66d9816a207"
+  },
+  "in-session": {
+    "series": "In Session",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Sister-Bliss-In-Session.webp",
+    "file": "in-session.webp",
+    "sha256": "fe9aab81d8e08a50c6f54e581e7d4ab98261a1768ff7f7be9952df2f8c14e517"
+  },
+  "we-are-the-brave-radio": {
+    "series": "We Are The Brave Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/We-Are-The-Brave-Radio.webp",
+    "file": "we-are-the-brave-radio.webp",
+    "sha256": "29a7409f5842dd3c608cc10fa818178bdb28064802a6a0edc745ce3ccd17c55c"
+  },
+  "journeys": {
+    "series": "Journeys",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/01/Journeys.webp",
+    "file": "journeys.webp",
+    "sha256": "c53e38994f6da5aad61083c7016770b419e85df2571a989cb0ce8548271aa2be"
+  },
+  "mental-asylum-radio": {
+    "series": "Mental Asylum Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/11/Mental-Asylum-Radio.webp",
+    "file": "mental-asylum-radio.webp",
+    "sha256": "69e014de1d15edb8192c3fdeb20df717421c3bac5e4843713e55200f803c0d9d"
+  },
+  "trance-sanctuary-podcast": {
+    "series": "Trance Sanctuary Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/07/Trance-Sanctuary-Podcast.webp",
+    "file": "trance-sanctuary-podcast.webp",
+    "sha256": "a54422afcc931d48c8f1b6e20427a806ae8d3a3191f8c298b41206e8fb1aff8c"
+  },
+  "pure-hardstyle": {
+    "series": "Pure Hardstyle",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/Pure-Hardstyle.webp",
+    "file": "pure-hardstyle.webp",
+    "sha256": "afa514ceb35117efd380b04873122eb822be95a62ccc1d8f043a3a9bffc633c5"
+  },
+  "trance-paradise": {
+    "series": "Trance Paradise",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/Trance-Paradise.webp",
+    "file": "trance-paradise.webp",
+    "sha256": "830a6008209489f925bbf0f5e3f1d33958163f690c03a86109511703b93a9089"
+  },
+  "tronic-radio": {
+    "series": "Tronic Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/07/Tronic-Podcast.webp",
+    "file": "tronic-radio.webp",
+    "sha256": "200c2065f01aea3fb1b784013c907820bc08801882d5d04f07fc1b861d7f0461"
+  },
+  "hardstyle-sessions": {
+    "series": "Hardstyle Sessions",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Hardstyle-Sessions.webp",
+    "file": "hardstyle-sessions.webp",
+    "sha256": "06485ebde4967e2a9f09184bf30bef4dd6b4d026c2bcaec7aa422e402145f5b8"
+  },
+  "awakenings-podcast": {
+    "series": "Awakenings Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/10/Awakenings-Podcast.webp",
+    "file": "awakenings-podcast.webp",
+    "sha256": "fb8d2ada338b9c0b1f5106d1ab3825bd9b8bee896492869e45f2b7a1fb13989b"
+  },
+  "laidback-luke-selects": {
+    "series": "Laidback Luke Selects",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/04/Laidback-Luke-Selects.webp",
+    "file": "laidback-luke-selects.webp",
+    "sha256": "5b045a70350fc76f4ff9c8dab277471d825b59c9c7b427181ac70bc30116caea"
+  },
+  "funk-you-radio": {
+    "series": "Funk You Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/08/Funk-You-Radio.webp",
+    "file": "funk-you-radio.webp",
+    "sha256": "0c091d09da280a505d4ab0e343d6cf94a5eed731cedb330ddba3e10e8b9e4739"
+  },
+  "critical-exposure-radio": {
+    "series": "Critical Exposure Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Critical-Exposure-Radio.webp",
+    "file": "critical-exposure-radio.webp",
+    "sha256": "49bcea40afc940f833f0b5b4b47477b1a66dceb5e6e6358aac715db2905dd617"
+  },
+  "tracklistings-mixtape": {
+    "series": "Tracklistings Mixtape",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Tracklistings-Mixtape.webp",
+    "file": "tracklistings-mixtape.webp",
+    "sha256": "a09b9f640cbb1fda12383e19a7ec187042ad8dbbaca6f1ac7d0f01c211323fed"
+  },
+  "playground-radio": {
+    "series": "Playground Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Playground-Radio.webp",
+    "file": "playground-radio.webp",
+    "sha256": "4bcac2f6faaaf00f0fa74ca16a2c5c6424297d6a65e9f4b2cf273d9962b931c4"
+  },
+  "kd-music-radio-show": {
+    "series": "KD Music Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/05/KD-Music-Radio-Show.webp",
+    "file": "kd-music-radio-show.webp",
+    "sha256": "07082be110e31c598a664b5cdfd806d9cd97b6ac136c2a03e665d53bf39a4350"
+  },
+  "selectro-podcast": {
+    "series": "Selectro Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Selectro-Podcast.webp",
+    "file": "selectro-podcast.webp",
+    "sha256": "970dc1ffd9a757c5c026bd89a4275ca6fea85bc583d6eee2e37d654313131c0f"
+  },
+  "scorchin-radio": {
+    "series": "Scorchin' Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Scorchin-Radio-.webp",
+    "file": "scorchin-radio.webp",
+    "sha256": "f0f7fdf12fcb10b72764fe6c18c06467e4cd33d8bd6ccf17061a4749f5a62ff6"
+  },
+  "data-transmission-podcast": {
+    "series": "Data Transmission Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Data-Transmission-Podcast.webp",
+    "file": "data-transmission-podcast.webp",
+    "sha256": "790402a0f08485bcd8d90fc502940277b4ae1a724384dd5e0235985d0aa0cd4d"
+  },
+  "warmth": {
+    "series": "Warmth",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Warmth-1.webp",
+    "file": "warmth.webp",
+    "sha256": "594c36f67da37657caa17dea43f77094cb133939c8f153393df3e55baf4aefb6"
+  },
+  "cities": {
+    "series": "Cities",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/Cities.webp",
+    "file": "cities.webp",
+    "sha256": "e764365b2e3b8278987aa75afa6d535aec4ff9e8d3743e87948fa2bd012a5de5"
+  },
+  "run-it-red": {
+    "series": "Run It Red",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/05/Run-It-Red.webp",
+    "file": "run-it-red.webp",
+    "sha256": "7183dec7c671142e15a9ea69587882c8453f1b8be6c1239bc0d6ccb7a26bec1f"
+  },
+  "on-the-record": {
+    "series": "On The Record",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/On-The-Record.webp",
+    "file": "on-the-record.webp",
+    "sha256": "1bad2606a71934119036e63bebfaba4735205ed217c17ac640a0a4653fff1f0c"
+  },
+  "nude-techno-podcast": {
+    "series": "Nude Techno Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Nude-Techno-Podcast.webp",
+    "file": "nude-techno-podcast.webp",
+    "sha256": "7e673be29de918a74f188347090026a285f8cae2b87775a83a460271194e4dc1"
+  },
+  "vii-radio": {
+    "series": "VII Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/VII-Radio.webp",
+    "file": "vii-radio.webp",
+    "sha256": "e73dd3e9689ebd847f166b6213fe5299c96a110d6e87fdc7b73bb97bbca93a7c"
+  },
+  "transmissions-podcast": {
+    "series": "Transmissions Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Transmissions.webp",
+    "file": "transmissions-podcast.webp",
+    "sha256": "f4f00a009543ea3cefa20bed032e08a6f7f36d3adc9d0bd73d5c671cb0a76efe"
+  },
+  "world-of-rave": {
+    "series": "World Of Rave",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/World-Of-Rave.webp",
+    "file": "world-of-rave.webp",
+    "sha256": "3bb7ae92a06161c18ea42d61901f14182e85bc3bc17533ab9f34edef0ac65e12"
+  },
+  "monasterio-chamber-podcast": {
+    "series": "Monasterio Chamber Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/Monasterio-Chamber-Podcast.webp",
+    "file": "monasterio-chamber-podcast.webp",
+    "sha256": "07ba21e738d4229865e305dd9bc8eb2bc1b1106cc36e1a5cc7e84041135d9502"
+  },
+  "deep-soul-podcast": {
+    "series": "Deep & Soul Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Deep-Soul-Podcast.webp",
+    "file": "deep-soul-podcast.webp",
+    "sha256": "470161eb9da38d05c235942ba4e60ae320ed03f58758db0c627c87deca8751f0"
+  },
+  "club-beatz": {
+    "series": "Club Beatz",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Club-Beatz.webp",
+    "file": "club-beatz.webp",
+    "sha256": "3fd7a8f0529856f749c76459c19a12bd5b5abf5bffe9996e27a212dadc519f01"
+  },
+  "sekora-radio": {
+    "series": "Sekora Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Sekora-Radio.webp",
+    "file": "sekora-radio.webp",
+    "sha256": "87b7ccff30a3e369a91dd26cd89a447836a5b07b5455d1b9a45ff88ba8f66689"
+  },
+  "keeping-the-rave-alive": {
+    "series": "Keeping The Rave Alive",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Keeping-The-Rave-Alive.webp",
+    "file": "keeping-the-rave-alive.webp",
+    "sha256": "dbbcf1df1575d3a053cbb060e2d827752febd848842008e4ad41355cece5a223"
+  },
+  "manual-movement": {
+    "series": "Manual Movement",
+    "source_url": "https://www.edmliveset.com/wp-content/uploads/2024/04/Manual-Movement.webp",
+    "file": "manual-movement.webp",
+    "sha256": "133f22b115b3b1a369177feecb30dabdf731970c9ed42d84b658dc7638cf459c"
+  },
+  "joof-radio": {
+    "series": "JOOF Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/JOOF-Radio.webp",
+    "file": "joof-radio.webp",
+    "sha256": "10a4bfd30b94933d46bac8d212b793685b9949408fcfb3035db8d885a6d938d2"
+  },
+  "in-the-mood": {
+    "series": "In The Mood",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/12/In-The-Mood.jpg",
+    "file": "in-the-mood.jpg",
+    "sha256": "8ae878ab18e4798006edead05a0426e1b27e957be470170e1bbe1bac3ee31a4c"
+  },
+  "radio-intense": {
+    "series": "Radio Intense",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Radio-Intense.webp",
+    "file": "radio-intense.webp",
+    "sha256": "d4d04b6c071720915889e114aaab7369e749c5a6c73536fc21a9dd2263100dda"
+  },
+  "dance-tv-dj-mix": {
+    "series": "Dance TV DJ Mix",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/01/Dance-TV-DJ-Mix.webp",
+    "file": "dance-tv-dj-mix.webp",
+    "sha256": "7776db514c8d21356477534b4222140d24f3c18725dee59e224e5ab6ec46a39d"
+  },
+  "mindtrip-podcast": {
+    "series": "MindTrip Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/MindTrip-Podcast.webp",
+    "file": "mindtrip-podcast.webp",
+    "sha256": "ab15d1722ed40951ca7b47b0dbe253d96e7e5bc295f00f2162d0247f70b91a74"
+  },
+  "sh-n-radio": {
+    "series": "SHÈN Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/07/SHEN-Radio.webp",
+    "file": "sh-n-radio.webp",
+    "sha256": "69805eca198f536939fea755a9254df2fc1dd333ab5eb4772869405d30e9ce2c"
+  },
+  "turned-on": {
+    "series": "Turned On",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Turned-on.webp",
+    "file": "turned-on.webp",
+    "sha256": "95f79f19be018d2d8a162fa02ecdf1aa2066240e96d609853d8f4d4fd9fbfaa4"
+  },
+  "tritonia": {
+    "series": "Tritonia",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/11/Tritonia.webp",
+    "file": "tritonia.webp",
+    "sha256": "271c1bdfd8de1a6bee28efdf0407edaa1fde5864168d48b1cc6b8c2a9f912a59"
+  },
+  "mambo-radio": {
+    "series": "Mambo Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Mambo-Radio.webp",
+    "file": "mambo-radio.webp",
+    "sha256": "b0d073dc66a54fac51c13d86afc54286e458b08b8776554d08923533e22a32db"
+  },
+  "the-controversia-radio-show": {
+    "series": "The Controversia Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/The-Controversia-Radio-Show.webp",
+    "file": "the-controversia-radio-show.webp",
+    "sha256": "a23342e0decd17b427b6540a06dd8400c7986fff8057a5015e1c1aa14694c3ff"
+  },
+  "trance-all-over-the-world": {
+    "series": "Trance All Over The World",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/08/Trance-All-Over-The-World.webp",
+    "file": "trance-all-over-the-world.webp",
+    "sha256": "722322a806b6b8927f83bc33311401df7862f1ea700cd345bef42697a07052c5"
+  },
+  "jaytech-music-podcast": {
+    "series": "Jaytech Music Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/Jaytech-Music-Podcast.webp",
+    "file": "jaytech-music-podcast.webp",
+    "sha256": "16dfafc9f9a32bc869e8e6f3272c889f97febfe2b3760ebb352d9faa3d913a67"
+  },
+  "the-anjunadeep-edition": {
+    "series": "The Anjunadeep Edition",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/02/The-Anjunadeep-Edition.webp",
+    "file": "the-anjunadeep-edition.webp",
+    "sha256": "460a9a4e02dc3f5751e277028850536444970b389bc86ce55a345764da8a79e1"
+  },
+  "cartieradio": {
+    "series": "Cartieradio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Cartieradio.webp",
+    "file": "cartieradio.webp",
+    "sha256": "874c7a6affe9c56f634a86b4e772739486fe41013f332cb5eb4ef17e8edd8cd2"
+  },
+  "d-o-n-s-in-the-mix": {
+    "series": "D.O.N.S. In The Mix",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/D.O.N.S.-In-The-Mix.webp",
+    "file": "d-o-n-s-in-the-mix.webp",
+    "sha256": "90bc4a715509b876f211aab789a740a494172686067068e53c34c886f3710869"
+  },
+  "playlist": {
+    "series": "Playlist",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Playlist.webp",
+    "file": "playlist.webp",
+    "sha256": "8c338198a59de9bd3cdb9ad2b64822b900cd321daa4676fe35547e5d19fb352e"
+  },
+  "alleanza-radio-show": {
+    "series": "Alleanza Radio Show",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/11/Alleanza-RadioShow.webp",
+    "file": "alleanza-radio-show.webp",
+    "sha256": "5d00b2153ce826c606ed56b53ce3117a45853eed1d0e8d9bb7c4b0dd7c6eb4c7"
+  },
+  "motive-radio": {
+    "series": "Motive Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Motive-Radio.webp",
+    "file": "motive-radio.webp",
+    "sha256": "d93bbedc53b125c4e3471d897b33ee1efaa4018c5e424d4307626858ab3b9380"
+  },
+  "rejection": {
+    "series": "Rejection",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/02/Rejection.webp",
+    "file": "rejection.webp",
+    "sha256": "76ae7e1ccc79dd5f25cfc9f7de4881908f724bd33999b9b36a1f1d41ef0670f7"
+  },
+  "call-of-the-wild": {
+    "series": "Call of the Wild",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Monstercat-Call-of-the-Wild.webp",
+    "file": "call-of-the-wild.webp",
+    "sha256": "94a699438875c45ebc05971eade7e4521cc7a9e2db82f66398df675c9f58756e"
+  },
+  "lost-horizon": {
+    "series": "Lost Horizon",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Lost-Horizon.webp",
+    "file": "lost-horizon.webp",
+    "sha256": "6df6aa710ad20315bc6a0b1e26be7d3c313c7b40f1fd1aef72ea94a7db67dd12"
+  },
+  "altitude-radio": {
+    "series": "Altitude Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/11/Altitude-Radio-1.webp",
+    "file": "altitude-radio.webp",
+    "sha256": "1589a1593ea058d43ee6bfe617027e03202e4ad8d49a28637b41012b3e6b7053"
+  },
+  "stereo-productions-podcast": {
+    "series": "Stereo Productions Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/04/Stereo-Productions-Podcast.webp",
+    "file": "stereo-productions-podcast.webp",
+    "sha256": "c691d5c23a0897221a2ee0dd446089c739c01bcc83425183e07967c9ecea17cd"
+  },
+  "group-therapy": {
+    "series": "Group Therapy",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/11/Group-Therapy-2.webp",
+    "file": "group-therapy.webp",
+    "sha256": "d694647a1251999b23dfc1a253677483c30569240165e9985250c82340948c02"
+  },
+  "sutil-sensations": {
+    "series": "Sutil Sensations",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Sutil-Sensations.webp",
+    "file": "sutil-sensations.webp",
+    "sha256": "89ad767409786dc2a35611e8c9021a61f17edcfeeeaf270abc017ba76e3b5155"
+  },
+  "xxx-radio": {
+    "series": "XXX Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/08/XXX-Radio.webp",
+    "file": "xxx-radio.webp",
+    "sha256": "8fbbec151dda7dc19e4ae2364531fcb2ebc847d3e018e5094f657d2b8ad21f5a"
+  },
+  "hot-robot-radio": {
+    "series": "Hot Robot Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/09/Hot-Robot-Radio.webp",
+    "file": "hot-robot-radio.webp",
+    "sha256": "dc3fa533c92016e46c0966f2252a6ba7ed9cece69eb8ca1e502a202aad6daa9a"
+  },
+  "uplifting-only": {
+    "series": "Uplifting Only",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/06/Uplifting-Only.webp",
+    "file": "uplifting-only.webp",
+    "sha256": "2d529bc357329e5e0d11df50ad704b45d554cac83acc02399475ffb720320e60"
+  },
+  "hedkandi-radio": {
+    "series": "Hedkandi Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hedkandi-Radio.webp",
+    "file": "hedkandi-radio.webp",
+    "sha256": "f144d464b9b34066d42bc1a7bc822db7502b65673c0da1e75e08362906d21e00"
+  },
+  "gaincast": {
+    "series": "Gaincast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2020/06/Gaincast.jpg",
+    "file": "gaincast.jpg",
+    "sha256": "2143ac106cf783e8bd61a6dcd18fe1ac094d662c0a6cec5b948062886ed3dafa"
+  },
+  "dreamstate-radio": {
+    "series": "Dreamstate Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/02/Dreamstate-Radio.webp",
+    "file": "dreamstate-radio.webp",
+    "sha256": "1eb8f85514adfc29df566a385fc77c81e16a4ab7965e657e7b973ef26bbc9222"
+  },
+  "global-entry-radio": {
+    "series": "Global Entry Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Global-Entry-Radio.webp",
+    "file": "global-entry-radio.webp",
+    "sha256": "c662b456a7c44204f287c69663478c128e3ac721b40d18df92ee46984b920dc6"
+  },
+  "ren-radio": {
+    "series": "Ren' Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/08/Ren-Radio.webp",
+    "file": "ren-radio.webp",
+    "sha256": "41e172aeddf1380a288819396e4cec49f0792510ba35cee35061f72cae95b803"
+  },
+  "unleash-the-beat": {
+    "series": "Unleash The Beat",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/01/Unleash-The-Beat-Mixshow.webp",
+    "file": "unleash-the-beat.webp",
+    "sha256": "245d569f348fb59619a2a113546bdc654d252e3c63d3bd860654324a497f6997"
+  },
+  "intercell": {
+    "series": "Intercell",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/01/Intercell.jpg",
+    "file": "intercell.jpg",
+    "sha256": "467da9feef97b669d8b0163db7678b6637d58c4b552dc39c1d3c66c5b2ea459d"
+  },
+  "total-freedom": {
+    "series": "Total Freedom",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Total-Freedom.webp",
+    "file": "total-freedom.webp",
+    "sha256": "45270189bc2bc49e0e8cdbc542dbc186e080d3b979842ec3b4b063b2e7a1c7b0"
+  },
+  "smash-the-house-radio": {
+    "series": "Smash The House Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/05/Smash-The-House-Radio.webp",
+    "file": "smash-the-house-radio.webp",
+    "sha256": "55c4586e6ff1ab00de55135b31614a40f2a963871e304183efffe70cb90d9e80"
+  },
+  "the-official-trance-podcast": {
+    "series": "The Official Trance Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/The-Official-Trance-Podcast.webp",
+    "file": "the-official-trance-podcast.webp",
+    "sha256": "71e1ad2a8377b4703057d1507696bbcb135866fc3253db33b48c7bd9e34f4bc4"
+  },
+  "creamfields-radio": {
+    "series": "Creamfields Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Creamfields-Radio-with-Gareth-Wyn.webp",
+    "file": "creamfields-radio.webp",
+    "sha256": "13e2534cbc5d06273aed308685787aceba165922be49cc89aba552f3f2299ac9"
+  },
+  "femme-house-radio": {
+    "series": "Femme House Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/01/Femme-House-Radio.webp",
+    "file": "femme-house-radio.webp",
+    "sha256": "294fb3c59f2cea333ea5046be5d7c686d669c55decc81011b7d194986283fb69"
+  },
+  "redolence-radio": {
+    "series": "Redolence Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Redolent-Radio-1.webp",
+    "file": "redolence-radio.webp",
+    "sha256": "dd0a675bdc97407b805b829ebf88211d5d0573a1a8d947059d52e20f9da51f2a"
+  },
+  "clubsonica-radio": {
+    "series": "Clubsonica Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Clubsonica-Radio.webp",
+    "file": "clubsonica-radio.webp",
+    "sha256": "4f36828728a347f344b6634bc4f05963f8a94811383c02a80a3e768c17203d7b"
+  },
+  "get-twisted-radio": {
+    "series": "Get Twisted Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/10/Get-Twisted-Radio.webp",
+    "file": "get-twisted-radio.webp",
+    "sha256": "31833c89c8316a939b8b5ccbaea424a1147d2c2b2a37024edfc28dc3d8ab0694"
+  },
+  "dance-rituals": {
+    "series": "Dance Rituals",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Dance-Rituals.webp",
+    "file": "dance-rituals.webp",
+    "sha256": "4740edfaf2cc0cfa0b8b25528d90a0cdc50ed1f10ea9a7e88158bdf5b394cc89"
+  },
+  "club-mood-vibes-podcast": {
+    "series": "Club Mood Vibes Podcast",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Club-Mood-Vibes-Podcast.webp",
+    "file": "club-mood-vibes-podcast.webp",
+    "sha256": "9d20a0b650f12580c2b690c584a16d214e8b94dd09588e1e520f3a174509efb0"
+  },
+  "hed-kandi-japan": {
+    "series": "Hed Kandi Japan",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hed-Kandi-Japan-1.webp",
+    "file": "hed-kandi-japan.webp",
+    "sha256": "e13022f44d247eb2e5d17c3d0e8b0ea49201a177ed3f83a0164533de48d58868"
+  },
+  "onstage-radio": {
+    "series": "Onstage Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Onstage-Radio.webp",
+    "file": "onstage-radio.webp",
+    "sha256": "50774f94f7bca3b44b9f2510f9ac147d176f30ef6857491490d2d6c2b5f88a51"
+  },
+  "hotl-radio": {
+    "series": "HoTL Radio",
+    "source_url": "https://www.edmliveset.com/wp-content/uploads/2024/11/HoTL-Radio.webp",
+    "file": "hotl-radio.webp",
+    "sha256": "61746d14a20321f5fc921631b3bb7ac03c1e9ed0a2eee18f456755986c3b698e"
+  },
+  "elevated-radio": {
+    "series": "Elevated Radio",
+    "source_url": "https://www.edmliveset.com/wp-content/uploads/2023/05/Elevated-Radio.webp",
+    "file": "elevated-radio.webp",
+    "sha256": "29edd860c2f64d0249ea52ff908d2638baabbd84242915e6441fb6e167b532e2"
+  },
+  "personal-belongings": {
+    "series": "Personal Belongings",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Personal-Belongings.webp",
+    "file": "personal-belongings.webp",
+    "sha256": "0ac2b2fe8e87fcf05f8c17eb66b5c6bb13fa52c89eefa2ea5369407adae126be"
+  },
+  "smith-sessions-radioshow": {
+    "series": "Smith Sessions Radioshow",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Smith-Sessions-Radioshow.webp",
+    "file": "smith-sessions-radioshow.webp",
+    "sha256": "ab9caf2e1031c63950399ae3a5629ef94b9718e9669fd1417b4e055264f3fcbb"
+  },
+  "stashed-sessions": {
+    "series": "Stashed Sessions",
+    "source_url": "https://www.edmliveset.com/wp-content/uploads/2023/05/JOBA-Stashed-Sessions.webp",
+    "file": "stashed-sessions.webp",
+    "sha256": "ed9127e4d5611910a88905ca445f5df2c81b54dd824cda1c3d45d492267dfa7d"
+  },
+  "slam-radio": {
+    "series": "Slam Radio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/SlamRadio.webp",
+    "file": "slam-radio.webp",
+    "sha256": "dcf426657e27ae76c2d7fd2cb7122154a52dd6ed1319a71d1c81b651760d8fd0"
+  },
+  "atomar-audio": {
+    "series": "Atomar Audio",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Atomar-Audio.webp",
+    "file": "atomar-audio.webp",
+    "sha256": "7ee9b9c425ab15825c77749ef8c767b997958a2de2315e50fbcfba2f77c5dae3"
+  },
+  "electric-boom-boom": {
+    "series": "Electric Boom Boom",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2020/06/Electric-Boom-Boom.jpg",
+    "file": "electric-boom-boom.jpg",
+    "sha256": "416f953cea2fc0424c8e9838454836ab175ad888fdd98e062000dfff9079dcdb"
+  },
+  "area10-on-air": {
+    "series": "AREA10 ON AIR",
+    "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2025/03/AREA10-ON-AIR-.webp",
+    "file": "area10-on-air.webp",
+    "sha256": "dd261fa76b0cca95cec71aedb1fad9d9b3b02cdae2afce270ccfae2a8d70b9db"
   }
 }
