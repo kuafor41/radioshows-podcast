@@ -9,8 +9,6 @@ on:
         type: choice
         default: incremental
         options: [archive, incremental]
-  schedule:
-    - cron: "50 * * * *"
   push:
     branches: ["main"]
     paths: ["fetch_feed.py", "requirements.txt", "data/podcast-cover.jpg", ".github/workflows/update-feed.yml"]
@@ -22,7 +20,7 @@ permissions:
 
 concurrency:
   group: radioshows-podcast-feed
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
