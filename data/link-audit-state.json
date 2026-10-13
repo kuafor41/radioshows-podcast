@@ -358,5 +358,125 @@
     "status": "ok",
     "audio_url": "https://s385.podbean.com/pb/382fd1e1207b6ad5f60e068408e40bdc/6acde59b/data1/fs66/251801/uploads/hwnd576_premium_ntvssapsc86buuc6.mp3?pbss=4848c0a1-f992-5b59-8ef0-7de4e45f6e67",
     "error": ""
+  },
+  "https://www.edmliveset.com/radio/alison-wonderland-radio-wonderland-491/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://cdn.podtoo.com/syndication/2026/10/1790981306441full_episode_RADIO-WONDERLAND--491--WORLD-.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/fedde-le-grand-darklight-sessions-737/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://content.libsyn.com/p/f/2/0/f205a8593f334e8c/Fedde_Le_Grand_-_Darklight_Sessions_737_-_Global.mp3?c_id=207126048&cs_id=207126048&response-content-type=audio%2Fmpeg&Expires=1791894082&Signature=KN3qw1NUO9E415ID7-kVGtYQjGuYgvI2vGHY0qHGQrN4vH8qqa9h3dahZVXl89v2zFnV7f4XtlbSvChcQL2SxxfmA0-1hZKi5Swr8Gq9XHuyJch~0m~6zr30V0X2XFZjrD1Y9YyJ63RLOm~-w4ir-pXxvTZHvVuTC1SyYiOiIUPbj5I638yEWT-YlgfQIOfLj1IaXimex-k9OdoK8HFnf~ZYpuDucX9sTqig7YpcIcd8ls~6SbPrIF4Ad5DGmtqo8QWGBDweKo2R5Je2O-GsqVxfFFLXkgsXcskxZrdd8H83p9WpPiApbexu8MIbYoOZ8oj026fpCFKd55HX7cFzzA__&Key-Pair-Id=K1YS7LZGUP96OI",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml"
+  },
+  "https://www.edmliveset.com/radio/dombresky-process-radio-125/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://media3-dombresky.podtree.com/dombresky/media/podcast/Process_Radio_125.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/bassjackers-les-pays-bass-radio-089/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://stream76.hearthis.at/863e97c0c14316e3f7bbcac1f2f71559.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/alok-rave-the-world-radio-012/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Alok_Presents_Rave_The_World_Radio_012_ENGLISH_192-1790767823206335163-NDMxNjItODU2Mzc5NTU=.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/eelke-kleijn-days-like-nights-464-stereo-montreal-part-2/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/DQcamIbWcoF1?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vRFFjYW1JYldjb0YxKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTg4OTQ2MX19fV19&Signature=LeOULLurHLPftznx3QtLayoG8S0LoKOyc5H3TCFNYbgv6~AugbyG35-Df5UunLQxek0JgftrukixReufY1A8UcqviVgE7BT-MoOcFpOZt3OztJy3pPsZpjqWoz2M8xecAu7fSajPl0e1B4wD41fJM6emjMzu8VhHNOYeXctsEjSPbgNdBy8Dkz7UFxTl67yXySGIH6S15B-RkCQxagwzs~oUYBfVNBSbpFjmdwIwlSj2Y-sRlHAT2lwn3FSg7CPQBy~HaX9b2dLxfC7A~dgolFnfdZaXPcbrmdTMpd34PIVJPa7jUbXkMFvLrz81vjSr5J25gt8gWWEdFHA1JTHJ1Q__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/olivier-weiter-weiter-radio-092/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/XZbBASPStSTz.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vWFpiQkFTUFN0U1R6LjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODkzMDU5fX19XX0_&Signature=fttuXXBEQs2S8B5wG8PHoJe2I~lZK5p8Sz-KqCjNcQcIJC0lxujx477ZNe2pS7hj1~YXUwqFglgASk~P4AS6ZQnEZtkJy91d8SIOFpGqWuMG2Le4k-bPUh4amCsGg7XmllqZ0RFwX4edZkE4kYAH1XmAaUMCmazQesPT-cYx0T6apuOtS~urlzmv5niBFE--D0iAL7JvdQrK5eGL5D4cnh~pqzSD4362urjMJ5rDiWGfjp14RONNz9hAbRW2~WOVfy2RVNUbwz32N56P0UW1uL0-Zq9L8eyjeF-viRDTw6RSAJatDgiKrxaKP8XWza7KB~4ZTM6B4RUNCVCYUNPxXw__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/noisetalgia-podcast-099-lost-language/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/4jekSLU6f3Te?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vNGpla1NMVTZmM1RlKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTg4OTQ2NX19fV19&Signature=dFflzkRcOU0vMzMDrSlacGoJSgRtf~p9Dqic6IEDl2KVE6VYXCZsLFAeuw4JvAyx72a4g3j-hrPM-Ic-3d6XLGtWU-g1Lmos4xHwRBvA6cctpIEz7k48fMPjxvz1AR27MxOi4e8c4mpiG6WkpRhsCSuGuq88CNL7fvwsPyk10-6zmTzbA5u1E2LVeMziz7TUA3HLAhoafGpr7VyYLNNrGzlPK7k7e0k0zUye5VhDtFjGyc7meyMb865xDW~Dr3B44y2TuI7JFV5g7v6m7nMQk7olEsqDF0j128lLIM8d3PzBJJSFGYmySUPTQ63IhiamsgP0gChvwx913fGmFAztyQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/claptone-clapcast-584/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/CLAPCAST_584wID-1790152289669421278-NDMxMjctMTQ3NDkwNDgw.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/blasterjaxx-maxximize-on-air-642/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/DRDIeBqYe2Wa?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vRFJESWVCcVllMldhKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5MTg4OTQ2NX19fV19&Signature=Wp8eoQHqK2PT7eiyuFJolH-t1o-2zqbLRzJMBoBfcpIAFRMKAKTOBygjRD25BXUuK8blGlDJgqB9-QumOW2c8qLM4gGWpKe8yQ7R9SB7oj1lPHefNjhD67Hm8WdMwfzRCt30XXFcEFeI49hVlyPOpyALGNd0usSSQOrhJA9niDD4WM3Khe8eG~00PULOvVTBJD5Ve~w5r7~qTVdmXzD9Z-GVwokF3HIlpbf77hey9dLr-kCwYEoXWwer09PhC3ijftTVjIj3vt-IgiRBMGLqTKqQ03D2qTP6QiozNHnRoHUNd4RUL19cjgKCC~HQ4zBx8kSMBTwggpBIpzjZ2lpy-g__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/edx-no-xcuses-815/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://content.libsyn.com/p/0/5/5/055583499ab11a81/ENOX_815_Podcastfffgh.mp3?c_id=206739233&cs_id=206739233&response-content-type=audio%2Fmpeg&Expires=1791894299&Signature=aX0coSPpBgIcXMO~Br0g7LCEvreEKIsn2Fuo7aSS1k-DRN8EE-649gMX3wMZooO4OiRgqVD4A0P5BsfTze1-PhoVJFTremOReArZsf4wx~Uw3aqTXq96VhpBxojSa5izahT876wqL9BqHsVvn-W2zWUCnnA6tyGYeir9N1DWg7FBDrB5o-anCjxNMqEsBgCMund-zA0MVLnxWiJ2wGtq8OvvrSiTv0J65GqnrEjD7CUdQcp0BBJLe9FSSouyvWf8OTF2KCG3EQlT6Kuu8rP7ZtigLH9KjerWf6ilOmkgv9E11Uj6Eud9du53Y0zJ22dUUY~vi2n3KlUr2c9nxFBJyw__&Key-Pair-Id=K1YS7LZGUP96OI",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml"
+  },
+  "https://www.edmliveset.com/radio/r3hab-cyb3rpvnk-radio-731/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://cdn.simplecast.com/media/audio/transcoded/9b1a1ac5-9559-41b7-9002-84899aa479a5/4243b339-d947-4b0d-9e58-31999d1c5022/episodes/audio/group/2f7917c9-10d4-422f-ad63-1f38b8554cbe/group-item/c814ad75-a9b3-4266-96f3-d44d3692e86b/128_default_tc.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/nora-en-pure-purified-radio-528/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/NORA_528_Podcast-1790786686905665851-NDMxNjYtODc3NDI1ODg=.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/v-sessions-581/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://media3-yvesv.podtree.com/yvesv/media/podcast/V_Sessions_581.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/oliver-heldens-heldeep-radio-639/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://media3-oliverheldens.podtree.com/oliverheldens/media/podcast/Heldeep_Radio_639.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/paul-van-dyk-vonyc-sessions-1039/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Vonyc_Sessions_4th_Oct_2026_1_Hour_Mix_With_Jingels-1790933873348079910-NDMxNzctMTQ0MDAwNTIx.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/firebeatz-ignite-radio-460/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://content.libsyn.com/p/e/6/3/e6364331d4570f37/Ignite_Radio_460_.mp3?c_id=207083033&cs_id=207083033&response-content-type=audio%2Fmpeg&Expires=1791894151&Signature=A~Tlb5HjQ1a2s6B-Ui5WkqoxP5J4sjNkG8cR703w3~ubJbbZd0lZLtl6WQWcXu6jOuqr2cNnSqeKwtNbB4QOX53bi-h0z7WVkFgxH95FwokjRy5kNTHSh4pAtjEISzkrBJcK-7CVPY0wNS3-rkvI95vQ2KroldY5u9BfVSKR~AJzkktao6~rlMjiBpD9MoXQVK7N2GYM5nePtKv~hFIKdMevfgN1Vzmd4CROMkE93EDgxMCzycFPIDN5CzGTuustbVFW5hgWtqS1ZWsOfeI69D3ElNc4QhNpFHqlWblQwcYW4Ym6XlotP5nty3V41w1-zBB72KGmPSHvpu77N~OaAQ__&Key-Pair-Id=K1YS7LZGUP96OI",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml"
+  },
+  "https://www.edmliveset.com/radio/laura-van-dam-capture-radio-111/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://cf-media.sndcdn.com/c0SAKzx0aSkO.128.mp3?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vYzBTQUt6eDBhU2tPLjEyOC5tcDMqIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzkxODkzMDY4fX19XX0_&Signature=PvE8mx49N7lgzWatRMHE-LUziWbmQCDSPFOYImKDh5n63jzTfeFVchhWE3MQnkyrglLaNdJRpZeFEcjwgZWV1ug3qdAcm5Hj2~FFx3M7dcJuryvBBpZnPFiEtFYdXzkd0fkybQjxGzzRtRAWz3PhKkn2KczHoVSbY~WmyogIevBZCdMyYgvb-Q72PXK0HY4cmSEGW~pqkv-fCCr158YpLiOpwreP03ZhIcZsyZOVKI3n3FnNYS~KjpLcplvbHREX2Zj2~uTbGgCJNlAMDzlINky~nA5AxN3qjVMfuVXrKbId~evBqLuJZh40fSAsObbSiW8i4ZaRopPQbcMi~mjXHQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain"
+  },
+  "https://www.edmliveset.com/radio/martin-garrix-the-martin-garrix-show-630/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.buzzsprout.com/wvsfkv4w2o9a4oselrgqjxrcjhap?response-content-disposition=inline",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/steve-aoki-aokis-house-686/": {
+    "last_checked_at": "2026-10-13T16:48:12.164978+00:00",
+    "status": "failed",
+    "audio_url": "https://content.libsyn.com/p/2/1/b/21bbe5f49fa66d09/Aokis_House_Podcast_687_EP_765_Air_Date_9.30.26_-_Podcast.mp3?c_id=206788053&cs_id=206788053&response-content-type=audio%2Fmpeg&Expires=1791894131&Signature=eMBUZJ~Xp3kdvgndhNiLUMLX5~XX95d4VAxFuk3l-QC~HIxtyEpdHUi0KXHaeX1~bMWQh1UjqQy24d8Q7ozjvmXwUdCZ6OXOucDBCc~1UzqWnVZBs0DMnXAaqCsFAzdlwXAltggA65jmgUVu7Tz7BaM2KeWonaFuL2DdJFfstUlRw~g46-L8F2jzTxlm~iXdznuM843ppN0nTgdyWsjW7Wt~RwJUeg7f5EkFGnFT2XNt1sbMNks1VsSGurX~7NsGOM~6c~a1nAgU5uJgwR0hQ9JKWa5Ht0oQT3jm1nZ2ft0uzZ5-SGAAD9pNnOj~aSfIntNh4URK3C0Va4VpkMoCtg__&Key-Pair-Id=K1YS7LZGUP96OI",
+    "error": "Not confirmed audio: HTTP 403, type=text/xml"
   }
 }
