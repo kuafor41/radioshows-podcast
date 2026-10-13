@@ -1,6 +1,6 @@
 # RadioShows Podcast RSS
 
-Automated RSS feed for radio shows and DJ podcasts published on [EDMliveset.com](https://www.edmliveset.com/radio/).
+Automated RSS feed for radio shows and DJ podcasts.
 
 ## Production feed
 
