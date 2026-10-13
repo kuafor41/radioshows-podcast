@@ -25,7 +25,7 @@ jobs:
     env:
       FEED_MODE: incremental
       GITHUB_EVENT_NAME: ${{ github.event_name }}
-      HOURLY_REPORT_ENABLED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
+      HOURLY_REPORT_ENABLED: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v6
         with:
