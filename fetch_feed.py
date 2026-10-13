@@ -339,10 +339,14 @@ def build(items):
     ET.indent(root,space="  "); data=ET.tostring(root,encoding="utf-8",xml_declaration=True); ET.fromstring(data); return data
 
 def write_hourly_success_report(local_now, newly_added):
-    """Match GlobalDJMix: record successful scheduled checks, newest first."""
+    """Record successful scheduled checks and any other run that actually added episodes."""
     if os.getenv("HOURLY_REPORT_ENABLED", "").strip().lower() != "true":
         return
-    report_header = ["date_turkey", "time_turkey", "added_count", "episode_titles"]
+    # Do not add zero-episode rows for code pushes/manual runs; scheduled checks still get a row.
+    if not newly_added and os.getenv("GITHUB_EVENT_NAME") != "schedule":
+        return
+    # Keep the existing published CSV header so the history remains readable and compatible.
+    report_header = ["date_tr", "time_tr", "added_count", "episode_titles"]
     previous_rows = []
     if HOURLY_REPORT_FILE.exists() and HOURLY_REPORT_FILE.stat().st_size > 0:
         try:
@@ -350,7 +354,14 @@ def write_hourly_success_report(local_now, newly_added):
                 previous_rows = list(csv.reader(history_file))
         except (OSError, csv.Error):
             previous_rows = []
-    old_entries = previous_rows[1:] if previous_rows and previous_rows[0] == report_header else []
+    old_entries = []
+    if previous_rows:
+        old_header = previous_rows[0]
+        if old_header == report_header:
+            old_entries = previous_rows[1:]
+        elif old_header in (["date_turkey", "time_turkey", "added_count", "episode_titles"],
+                            ["date", "time", "added_count", "episode_titles"]):
+            old_entries = [row[:4] for row in previous_rows[1:]]
     new_entry = [
         local_now.strftime("%Y-%m-%d"),
         local_now.strftime("%H:%M:%S"),
@@ -687,7 +698,9 @@ def main():
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
     except (OSError,ValueError): previous=[]
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
-    # Refresh signed/expiring audio URLs and write the per-episode diagnostics report.\n    refresh_expiring_audio(previous_by_url)\n    local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
+    # Refresh signed/expiring audio URLs and write the per-episode diagnostics report.
+    refresh_expiring_audio(previous_by_url)
+    local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
     marker=DATA/"archive-backfill-complete.json"
     # Scheduled runs must never restart the backfill if the completion marker is absent.
     if os.getenv("GITHUB_EVENT_NAME") == "schedule" and not marker.exists():
