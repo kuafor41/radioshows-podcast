@@ -715,6 +715,8 @@ def main():
         urls=list(dict.fromkeys(urls+retry_candidates))
     else:
         print(f"[RETRY] archive_mode=true; active_queue={len(old_retry_by_url)}; expired_archived={expired_before_retry}",flush=True)
+    # Used by the end-of-run summary; all active queue entries are scheduled in incremental mode.
+    old_retry_attempted=set(old_retry_by_url) if not full_archive else set()
     attempted_urls=set(urls)
     rows=[]
     retry=[r for u,r in old_retry_by_url.items() if not full_archive and u not in attempted_urls]
