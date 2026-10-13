@@ -460,6 +460,19 @@ def main():
         if not isinstance(old_retry,list): old_retry=[]
     except (OSError,ValueError): old_retry=[]
     old_retry=[r for r in old_retry if isinstance(r,dict) and r.get("url")]
+    # Migrate queue entries created by earlier versions so every item has a backoff deadline.
+    migration_now=datetime.now(timezone.utc)
+    for entry in old_retry:
+        if not entry.get("error_type") or not entry.get("next_retry_at"):
+            error_text=str(entry.get("error",""))
+            is_404=bool(re.search(r"\b404\b|Not Found",error_text,re.I))
+            try: attempted=datetime.fromisoformat(str(entry.get("attempted_at","")).replace("Z","+00:00"))
+            except (ValueError,TypeError): attempted=migration_now
+            entry["error_type"]="not_found" if is_404 else "temporary_or_other"
+            entry["failure_count"]=max(1,int(entry.get("failure_count",1) or 1))
+            entry["first_failed_at"]=entry.get("first_failed_at") or attempted.isoformat()
+            delay=NOT_FOUND_RETRY_SECONDS if is_404 else TEMPORARY_RETRY_SECONDS
+            entry["next_retry_at"]=datetime.fromtimestamp(attempted.timestamp()+delay,timezone.utc).isoformat()
     old_retry_by_url={r["url"]:r for r in old_retry}
     now_utc=datetime.now(timezone.utc)
     def retry_is_due(entry):
