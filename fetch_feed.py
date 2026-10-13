@@ -432,7 +432,7 @@ def validate_rss(rss_bytes):
         if not href or parsed.scheme not in ("http","https") or not parsed.netloc or not enc.get("type","").lower().startswith("audio/"):
             bad.append(it.findtext("title") or "(untitled)")
     record("valid_audio_enclosures",not bad,f"invalid_enclosures={len(bad)}")
-    write_quality_csv(checks)
+    safe_report("RSS quality-check history CSV", write_quality_csv, checks)
     failures=[c for c in checks if c["status"]=="FAIL"]
     if failures: raise RuntimeError("RSS quality gate failed: "+"; ".join(c["check"]+": "+c["details"] for c in failures))
     print(f"[QUALITY] PASS: {len(xml_items)} items; unique GUIDs, non-empty titles, newest-first dates and HTTPS audio enclosures.",flush=True)
@@ -693,13 +693,22 @@ def refresh_expiring_audio(items_by_url):
           f"diagnostics_rows={len(rows)}; report={report_path}", flush=True)
     return refreshed
 
+
+def safe_report(label, writer, *args, **kwargs):
+    """Isolate a non-critical report: its failure must not stop RSS publication or other reports."""
+    try:
+        return writer(*args, **kwargs)
+    except Exception as exc:
+        print(f"::warning title=Report failure::{label} failed independently: {type(exc).__name__}: {exc}", flush=True)
+        return None
+
 def main():
     items_path=DATA/"items.json"
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
     except (OSError,ValueError): previous=[]
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
     # Refresh signed/expiring audio URLs and write the per-episode diagnostics report.
-    refresh_expiring_audio(previous_by_url)
+    safe_report("audio-link diagnostics / URL refresh", refresh_expiring_audio, previous_by_url)
     local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
     marker=DATA/"archive-backfill-complete.json"
     # Scheduled runs must never restart the backfill if the completion marker is absent.
@@ -851,7 +860,7 @@ def main():
     retry,moved_to_review=archive_expired_retries(retry)
     moved_to_review += expired_before_retry
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
-    write_retry_csv(retry)
+    safe_report("retry queue CSV", write_retry_csv, retry)
     report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"old_links_audited":len(audit_batch),"old_links_still_valid":audit_ok,"old_links_degraded":audit_failed,"moved_to_review":moved_to_review,"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
     report["new_episodes_added"] = sum(1 for x in items if x.get("url") and x.get("url") not in previous_by_url)
     retry_urls={r.get("url") for r in retry if r.get("url")}
@@ -870,7 +879,7 @@ def main():
     if oldest and (datetime.now(timezone.utc)-min(oldest)).total_seconds() >= LONG_QUEUE_SECONDS:
         print(f"::warning title=Long retry queue::Oldest unresolved episode is {report['oldest_retry_age_days']} days old; queue={len(retry)}",flush=True)
     report["quality_gate"]="PASS"
-    Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
+    safe_report("test report JSON", Path("data/test-report.json").write_text, json.dumps(report,ensure_ascii=False,indent=2), encoding="utf-8")
     csv_path=DATA/"episode-checks.csv"
     if not full_archive and csv_path.exists():
         try:
@@ -890,9 +899,9 @@ def main():
         write_hourly_success_report(local_now, newly_added)
     archive_complete = full_archive and DISCOVERY_STATS["pages_scanned"] == MAX_ARCHIVE_PAGES and not errors
     report["archive_complete"] = archive_complete
-    append_run_report(report)
-    write_summary_report(report,queue_before,len(retry))
-    Path("data/test-report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
+    safe_report("run report CSV", append_run_report, report)
+    safe_report("summary report CSV", write_summary_report, report, queue_before, len(retry))
+    safe_report("final test report JSON", Path("data/test-report.json").write_text, json.dumps(report,ensure_ascii=False,indent=2), encoding="utf-8")
     if archive_complete:
         marker.write_text(json.dumps({"completed_at":datetime.now(timezone.utc).isoformat(),"pages_scanned":DISCOVERY_STATS["pages_scanned"],"discovered":len(urls),"published":len(items),"audio_confirmed":report["audio_confirmed"],"deferred_audio_failures":len(retry),"retry_queue":"data/retry-queue.json","cover_failures":len(cover_stats.get("failed", [])),"sort_order":"Added date descending"},ensure_ascii=False,indent=2),encoding="utf-8")
         print("[ARCHIVE] COMPLETE: all 375 pages scanned; artwork passed; episodes without verified audio were omitted from RSS and saved to data/retry-queue.json for a later retry. Deferred audio failures="+str(len(retry)), flush=True)
