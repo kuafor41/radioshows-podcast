@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FEED_MODE: ${{ inputs.mode || 'incremental' }}
+      HOURLY_REPORT_ENABLED: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v6
         with:
