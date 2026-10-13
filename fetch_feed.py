@@ -23,7 +23,7 @@ OUT=Path("rss.xml"); LIMIT=50; TIMEOUT=25
 HOURLY_REPORT_FILE=DATA/"hourly-success-report.csv"
 CUTOFF=datetime(2025,1,1,tzinfo=timezone.utc)
 MAX_ARCHIVE_PAGES=375
-MAX_RETRIES_PER_RUN=30
+MAX_RETRIES_PER_RUN=0  # Unlimited: retry every active queue entry each hourly run.
 MAX_RETRY_QUEUE=1000
 OLD_LINK_AUDIT_BATCH=20
 OLD_LINK_AUDIT_INTERVAL_SECONDS=7*24*60*60
@@ -704,21 +704,17 @@ def main():
             entry["first_failed_at"]=entry.get("first_failed_at") or attempted.isoformat()
             delay=NOT_FOUND_RETRY_SECONDS if is_404 else TEMPORARY_RETRY_SECONDS
             entry["next_retry_at"]=datetime.fromtimestamp(attempted.timestamp()+delay,timezone.utc).isoformat()
+    # Age out entries BEFORE scheduling so nothing receives a retry after its own 45-day window.
+    old_retry, expired_before_retry = archive_expired_retries(old_retry)
     queue_before=len(old_retry)
     old_retry_by_url={r["url"]:r for r in old_retry}
-    now_utc=datetime.now(timezone.utc)
-    def retry_is_due(entry):
-        value=entry.get("next_retry_at")
-        if not value:return True
-        try:return datetime.fromisoformat(value.replace("Z","+00:00")) <= now_utc
-        except (ValueError,TypeError):return True
-    # Respect backoff even when a failed episode is still visible on a recent archive page.
+    # Retry every active queued failure on every hourly run; a newly added download can appear at any time.
     if not full_archive:
-        urls=[u for u in urls if u not in old_retry_by_url or retry_is_due(old_retry_by_url[u])]
-    retry_candidates=[u for u,entry in old_retry_by_url.items() if u not in urls and retry_is_due(entry)][:MAX_RETRIES_PER_RUN] if not full_archive else []
-    old_retry_attempted={u for u in urls if u in old_retry_by_url and retry_is_due(old_retry_by_url[u])} | set(retry_candidates)
-    print(f"[RETRY] queue_before={len(old_retry_by_url)}; eligible={sum(1 for e in old_retry_by_url.values() if retry_is_due(e))}; scheduled_now={len(retry_candidates)}",flush=True)
-    urls=list(dict.fromkeys(urls+retry_candidates))
+        retry_candidates=[u for u in old_retry_by_url if u not in urls]
+        print(f"[RETRY] active_queue={len(old_retry_by_url)}; retry_all_active=true; scheduled_from_queue={len(retry_candidates)}; expired_archived={expired_before_retry}",flush=True)
+        urls=list(dict.fromkeys(urls+retry_candidates))
+    else:
+        print(f"[RETRY] archive_mode=true; active_queue={len(old_retry_by_url)}; expired_archived={expired_before_retry}",flush=True)
     attempted_urls=set(urls)
     rows=[]
     retry=[r for u,r in old_retry_by_url.items() if not full_archive and u not in attempted_urls]
@@ -825,6 +821,7 @@ def main():
             retry_by_url[entry["url"]]=entry
     retry=list(retry_by_url.values())[:MAX_RETRY_QUEUE]
     retry,moved_to_review=archive_expired_retries(retry)
+    moved_to_review += expired_before_retry
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
     write_retry_csv(retry)
     report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"old_links_audited":len(audit_batch),"old_links_still_valid":audit_ok,"old_links_degraded":audit_failed,"moved_to_review":moved_to_review,"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
