@@ -29,7 +29,7 @@ OLD_LINK_AUDIT_BATCH=20
 OLD_LINK_AUDIT_INTERVAL_SECONDS=7*24*60*60
 RETRY_ARCHIVE_AFTER_DAYS=45
 TEMPORARY_RETRY_SECONDS=60*60
-NOT_FOUND_RETRY_SECONDS=7*24*60*60
+NOT_FOUND_RETRY_SECONDS=60*60  # Retry 404s hourly too; queue processing does not defer active entries.
 LONG_QUEUE_SECONDS=7*24*60*60
 RUN_REPORT_FILE=DATA/"run-report.csv"
 RETRY_CSV_FILE=DATA/"retry-queue.csv"
@@ -383,6 +383,7 @@ def retry_metadata(url_value, error, previous_entry=None):
     error_text = str(error or "Unknown error")
     is_not_found = bool(re.search(r"\b404\b|Not Found", error_text, re.I))
     failure_count = int(old.get("failure_count", 0) or 0) + 1
+    # All active queue entries are retried on every hourly run, regardless of error type.
     delay = NOT_FOUND_RETRY_SECONDS if is_not_found else TEMPORARY_RETRY_SECONDS
     return {
         "url": url_value,
@@ -726,24 +727,26 @@ def main():
         if not isinstance(old_retry,list): old_retry=[]
     except (OSError,ValueError): old_retry=[]
     old_retry=[r for r in old_retry if isinstance(r,dict) and r.get("url")]
-    # Migrate queue entries created by earlier versions so every item has a backoff deadline.
+    # Normalize legacy queue metadata to the actual policy: every active entry is retried hourly.
+    # Existing 7-day 404 deadlines are metadata only and must not imply a longer wait.
     migration_now=datetime.now(timezone.utc)
     for entry in old_retry:
-        if not entry.get("error_type") or not entry.get("next_retry_at"):
-            error_text=str(entry.get("error",""))
-            is_404=bool(re.search(r"\b404\b|Not Found",error_text,re.I))
-            try: attempted=datetime.fromisoformat(str(entry.get("attempted_at","")).replace("Z","+00:00"))
-            except (ValueError,TypeError): attempted=migration_now
+        error_text=str(entry.get("error",""))
+        is_404=bool(re.search(r"\b404\b|Not Found",error_text,re.I))
+        try: attempted=datetime.fromisoformat(str(entry.get("attempted_at","")).replace("Z","+00:00"))
+        except (ValueError,TypeError): attempted=migration_now
+        if attempted.tzinfo is None: attempted=attempted.replace(tzinfo=timezone.utc)
+        if entry.get("error_type") not in ("not_found","temporary_or_other"):
             entry["error_type"]="not_found" if is_404 else "temporary_or_other"
-            entry["failure_count"]=max(1,int(entry.get("failure_count",1) or 1))
-            entry["first_failed_at"]=entry.get("first_failed_at") or attempted.isoformat()
-            delay=NOT_FOUND_RETRY_SECONDS if is_404 else TEMPORARY_RETRY_SECONDS
-            entry["next_retry_at"]=datetime.fromtimestamp(attempted.timestamp()+delay,timezone.utc).isoformat()
+        entry["failure_count"]=max(1,int(entry.get("failure_count",1) or 1))
+        entry["first_failed_at"]=entry.get("first_failed_at") or attempted.isoformat()
+        delay=NOT_FOUND_RETRY_SECONDS if entry["error_type"]=="not_found" else TEMPORARY_RETRY_SECONDS
+        entry["next_retry_at"]=datetime.fromtimestamp(attempted.timestamp()+delay,timezone.utc).isoformat()
     # Age out entries BEFORE scheduling so nothing receives a retry after its own 45-day window.
     old_retry, expired_before_retry = archive_expired_retries(old_retry)
     queue_before=len(old_retry)
     old_retry_by_url={r["url"]:r for r in old_retry}
-    # Retry every active queued failure on every hourly run; a newly added download can appear at any time.
+    # Retry every active queued failure on every incremental run; next_retry_at is aligned to the hourly policy.
     if not full_archive:
         retry_candidates=[u for u in old_retry_by_url if u not in urls]
         print(f"[RETRY] active_queue={len(old_retry_by_url)}; retry_all_active=true; scheduled_from_queue={len(retry_candidates)}; expired_archived={expired_before_retry}",flush=True)
