@@ -495,12 +495,47 @@ def write_summary_report(report, queue_before, queue_after):
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerow(row); w.writerows(existing[:999])
     print("[SUMMARY] CSV updated: "+str(SUMMARY_REPORT_FILE),flush=True)
 
+def refresh_expiring_audio(items_by_url):
+    """Refresh short-lived signed media URLs before publishing the feed."""
+    refreshed = 0
+    checked = 0
+    signed_pattern = re.compile(r"(?:[?&](?:Expires|Signature|Policy|Key-Pair-Id|X-Amz-Expires|X-Amz-Signature|X-Amz-Credential|time)=)", re.I)
+    for page_url, item in list(items_by_url.items()):
+        current_audio = str(item.get("audio_url", ""))
+        if not current_audio or not signed_pattern.search(current_audio):
+            continue
+        checked += 1
+        try:
+            parsed = parse(page_url)
+            fresh_url = ""
+            fresh_size = 0
+            errors = []
+            for candidate in parsed.get("audio_candidates", []):
+                good, final_url, size, err = probe(candidate)
+                if good:
+                    fresh_url, fresh_size = final_url, size
+                    break
+                errors.append(err)
+            if fresh_url:
+                if fresh_url != current_audio:
+                    item["audio_url"] = fresh_url
+                    item["audio_length"] = fresh_size
+                    # Keep the article's original metadata and local cached artwork.
+                    refreshed += 1
+                    print(f"[AUDIO-REFRESH] Updated temporary media URL: {item.get('title', page_url)}", flush=True)
+            else:
+                print(f"[AUDIO-REFRESH] No fresh direct media URL verified; preserving existing URL: {page_url}; {errors[-1] if errors else 'no candidates'}", flush=True)
+        except Exception as exc:
+            print(f"[AUDIO-REFRESH] Could not refresh {page_url}: {type(exc).__name__}: {exc}", flush=True)
+    print(f"[AUDIO-REFRESH] checked={checked}; refreshed={refreshed}", flush=True)
+    return refreshed
+
 def main():
     items_path=DATA/"items.json"
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
     except (OSError,ValueError): previous=[]
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
-    local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
+    # Signed SoundCloud/Libsyn/HearThis URLs expire quickly; refresh them before rebuilding RSS.\n    refresh_expiring_audio(previous_by_url)\n    local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
     marker=DATA/"archive-backfill-complete.json"
     # Scheduled runs must never restart the backfill if the completion marker is absent.
     if os.getenv("GITHUB_EVENT_NAME") == "schedule" and not marker.exists():
