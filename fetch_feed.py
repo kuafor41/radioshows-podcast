@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import csv, hashlib, html, json, os, re, sys, time, xml.etree.ElementTree as ET
+import base64, binascii, csv, hashlib, html, json, os, re, sys, time, xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import format_datetime
@@ -451,7 +451,7 @@ def validate_rss(rss_bytes):
     return checks
 
 def append_run_report(report):
-    fields=["run_at","mode","discovered","newly_checked","published","retry_queue_remaining","old_links_retried","old_links_recovered","retry_failures","temporary_failures","not_found_failures","oldest_retry_age_days","quality_gate","archive_complete"]
+    fields=["run_at","mode","discovered","newly_checked","published","retry_queue_remaining","old_links_retried","old_links_recovered","retry_failures","temporary_failures","not_found_failures","oldest_retry_age_days","quality_gate","archive_complete","script_elapsed_seconds","audio_refresh_seconds","audio_urls_refreshed"]
     row={k:report.get(k,"") for k in fields}; existing=[]
     if RUN_REPORT_FILE.exists():
         try:
@@ -540,6 +540,37 @@ def audio_url_expiry(value):
             raw = query.get(key, "")
             if raw.isdigit() and int(raw) >= 1_000_000_000:
                 return datetime.fromtimestamp(int(raw), timezone.utc)
+        # CloudFront signed URLs (including SoundCloud cf-media.sndcdn.net) often
+        # carry their expiry only inside the base64-encoded Policy JSON.
+        # Decode conservatively and trust only DateLessThan/AWS:EpochTime.
+        policy = query.get("policy", "").strip().replace(" ", "+")
+        if policy:
+            try:
+                padded_policy = policy + ("=" * (-len(policy) % 4))
+                policy_json = base64.urlsafe_b64decode(padded_policy.encode("ascii"))
+                policy_doc = json.loads(policy_json.decode("utf-8"))
+                statements = policy_doc.get("Statement", [])
+                if isinstance(statements, dict):
+                    statements = [statements]
+                policy_expiries = []
+                for statement in statements if isinstance(statements, list) else []:
+                    condition = statement.get("Condition", {}) if isinstance(statement, dict) else {}
+                    if not isinstance(condition, dict):
+                        continue
+                    less_than = condition.get("DateLessThan", {})
+                    if not isinstance(less_than, dict):
+                        continue
+                    epoch = less_than.get("AWS:EpochTime")
+                    if isinstance(epoch, (int, float)) and not isinstance(epoch, bool):
+                        policy_expiries.append(datetime.fromtimestamp(epoch, timezone.utc))
+                    elif isinstance(epoch, str) and epoch.strip().isdigit():
+                        policy_expiries.append(datetime.fromtimestamp(int(epoch.strip()), timezone.utc))
+                if policy_expiries:
+                    # Earliest statement expiry is the conservative safe boundary.
+                    return min(policy_expiries)
+            except (ValueError, TypeError, OverflowError, OSError, UnicodeDecodeError, binascii.Error):
+                # Malformed/unrecognized Policy stays classified as signed-expiry-unknown.
+                pass
         # Some providers use e as a Unix expiry; only trust epoch-shaped values.
         raw = query.get("e", "")
         if raw.isdigit() and int(raw) >= 1_000_000_000:
@@ -813,12 +844,20 @@ def safe_report(label, writer, *args, **kwargs):
         return None
 
 def main():
+    run_started_monotonic = time.monotonic()
+    run_started_at_utc = datetime.now(timezone.utc)
     items_path=DATA/"items.json"
     try: previous=json.loads(items_path.read_text(encoding="utf-8"))
     except (OSError,ValueError): previous=[]
     previous_by_url={x.get("url"):x for x in previous if x.get("url")}
-    # Refresh signed/expiring audio URLs and write the per-episode diagnostics report.
-    safe_report("audio-link diagnostics / URL refresh", refresh_expiring_audio, previous_by_url)
+    # Measure this network-heavy phase independently; the workflow YAML also records
+    # end-to-end GitHub Actions duration, including setup, commit, and Pages deployment.
+    audio_refresh_started = time.monotonic()
+    audio_refresh_result = safe_report("audio-link diagnostics / URL refresh", refresh_expiring_audio, previous_by_url)
+    audio_refresh_duration_seconds = round(time.monotonic() - audio_refresh_started, 2)
+    print(f"[RUNTIME] audio_refresh_seconds={audio_refresh_duration_seconds}; "
+          f"audio_urls_refreshed={audio_refresh_result if isinstance(audio_refresh_result, (int, float)) else 'unknown'}; "
+          f"started_at_utc={run_started_at_utc.isoformat()}", flush=True)
     local_now=datetime.now(ZoneInfo("Europe/Istanbul"))
     marker=DATA/"archive-backfill-complete.json"
     # Scheduled runs must never restart the backfill if the completion marker is absent.
@@ -973,7 +1012,7 @@ def main():
     moved_to_review += expired_before_retry
     Path("data/retry-queue.json").write_text(json.dumps(retry,ensure_ascii=False,indent=2),encoding="utf-8")
     safe_report("retry queue CSV", write_retry_csv, retry)
-    report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"old_links_audited":len(audit_batch),"old_links_still_valid":audit_ok,"old_links_degraded":audit_failed,"moved_to_review":moved_to_review,"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
+    report={"mode":"archive-backfill" if full_archive else "incremental","source":ARCHIVE,"cutoff":"2025-01-01","run_at":datetime.now(timezone.utc).isoformat(),"script_started_at_utc":run_started_at_utc.isoformat(),"script_elapsed_seconds":round(time.monotonic()-run_started_monotonic,2),"audio_refresh_seconds":audio_refresh_duration_seconds,"audio_urls_refreshed":audio_refresh_result if isinstance(audio_refresh_result,(int,float)) else "","discovered":len(urls),"newly_checked":len(rows),"archived_total":len(items),"published":len(items),"audio_confirmed":sum(bool(x.get("audio_url")) for x in items),"old_links_audited":len(audit_batch),"old_links_still_valid":audit_ok,"old_links_degraded":audit_failed,"moved_to_review":moved_to_review,"tracklists_found":sum(bool(x.get("tracklist")) for x in items),"cover_cache":cover_stats,"discovery_errors":errors,"pages_scanned":DISCOVERY_STATS["pages_scanned"],"cutoff_reached":DISCOVERY_STATS["cutoff_reached"],"oldest_added_checked":DISCOVERY_STATS["oldest_added_checked"],"page_limit_reached":DISCOVERY_STATS["page_limit_reached"],"episodes":rows,"rss_xml_valid":True}
     report["new_episodes_added"] = sum(1 for x in items if x.get("url") and x.get("url") not in previous_by_url)
     retry_urls={r.get("url") for r in retry if r.get("url")}
     report["retry_queue_remaining"]=len(retry_urls)
@@ -1021,6 +1060,13 @@ def main():
         print("[ARCHIVE] COMPLETE: all 375 pages scanned; artwork passed; episodes without verified audio were omitted from RSS and saved to data/retry-queue.json for a later retry. Deferred audio failures="+str(len(retry)), flush=True)
     elif full_archive:
         print("[ARCHIVE] NOT COMPLETE: pages="+str(DISCOVERY_STATS["pages_scanned"])+"/"+str(MAX_ARCHIVE_PAGES)+"; discovered="+str(len(urls))+"; published="+str(len(items))+"; retry="+str(len(retry))+"; cover_failures="+str(len(cover_stats.get("failed", [])))+"; listing_errors="+str(len(errors))+". Marker was not written.", flush=True)
+    report["script_elapsed_seconds"] = round(time.monotonic() - run_started_monotonic, 2)
+    print(f"[RUNTIME] script_elapsed_seconds={report['script_elapsed_seconds']}; "
+          f"audio_refresh_seconds={audio_refresh_duration_seconds}; "
+          f"audio_urls_refreshed={audio_refresh_result if isinstance(audio_refresh_result, (int, float)) else 'unknown'}", flush=True)
+    # Keep the final JSON report in sync with the completed script-duration measurement.
+    safe_report("final runtime test report JSON", Path("data/test-report.json").write_text,
+                json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({k:report.get(k) for k in ("mode","discovered","newly_checked","archived_total","published","audio_confirmed","pages_scanned","archive_complete","page_limit_reached","rss_xml_valid")},ensure_ascii=False), flush=True)
 
 if __name__=="__main__":main()

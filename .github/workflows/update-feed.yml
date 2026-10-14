@@ -28,6 +28,10 @@ jobs:
       GITHUB_EVENT_NAME: ${{ github.event_name }}
       HOURLY_REPORT_ENABLED: ${{ (github.event_name == 'schedule' || github.event_name == 'push') && 'true' || 'false' }}
     steps:
+      - name: Start workflow runtime clock
+        run: |
+          echo "WORKFLOW_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+          echo "[RUNTIME] workflow_started_at_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
       - uses: actions/checkout@v6
         with:
           ref: main
@@ -112,3 +116,18 @@ jobs:
           path: "."
       - uses: actions/deploy-pages@v5
         id: deployment
+      - name: Report end-to-end workflow runtime
+        if: always()
+        run: |
+          finished_at=$(date +%s)
+          started_at="${WORKFLOW_STARTED_AT:-$finished_at}"
+          duration=$((finished_at - started_at))
+          finished_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          echo "[RUNTIME] workflow_duration_seconds=$duration"
+          echo "[RUNTIME] workflow_finished_at_utc=$finished_utc"
+          {
+            echo "### Workflow runtime"
+            echo "- Started (epoch seconds): ${WORKFLOW_STARTED_AT:-unknown}"
+            echo "- Finished (UTC): $finished_utc"
+            echo "- End-to-end duration: ${duration}s"
+          } >> "$GITHUB_STEP_SUMMARY"
