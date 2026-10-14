@@ -4,7 +4,8 @@ from collections import Counter
 from datetime import datetime, timezone
 from email.utils import format_datetime
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlparse, parse_qs
+import threading
 from zoneinfo import ZoneInfo
 import requests
 from concurrent.futures import ThreadPoolExecutor
@@ -45,8 +46,18 @@ def url(u,b=BASE):
     if not u:return ""
     u=urljoin(b,str(u).strip())
     return u.split("#",1)[0] if urlparse(u).scheme in ("http","https") and urlparse(u).netloc else ""
+# Keep network sessions isolated per worker when the audio refresh pool runs concurrently.
+_AUDIO_LOCAL = threading.local()
+def worker_session():
+    session = getattr(_AUDIO_LOCAL, "session", None)
+    if session is None:
+        session = requests.Session()
+        session.headers.update({"User-Agent":"Mozilla/5.0 (compatible; RadioShowsPodcastRSS/1.0)","Accept":"text/html,application/xhtml+xml,*/*;q=0.8"})
+        _AUDIO_LOCAL.session = session
+    return session
+
 def get(u,**kw):
-    r=S.get(u,timeout=TIMEOUT,**kw); r.raise_for_status(); return r
+    r=worker_session().get(u,timeout=TIMEOUT,**kw); r.raise_for_status(); return r
 def links_from(soup, page):
     out=[]
     for a in soup.select("a[href]"):
@@ -520,14 +531,67 @@ def write_summary_report(report, queue_before, queue_after):
         w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerow(row); w.writerows(existing[:999])
     print("[SUMMARY] CSV updated: "+str(SUMMARY_REPORT_FILE),flush=True)
 
+def audio_url_expiry(value):
+    """Return a trustworthy expiry timestamp only when the URL exposes an explicit expiry."""
+    try:
+        query = {str(k).lower(): v[-1] for k, v in parse_qs(urlparse(str(value or "")).query).items() if v}
+        # AWS S3 / CloudFront-style Unix expiry.
+        for key in ("expires", "expiry", "expire", "expiration"):
+            raw = query.get(key, "")
+            if raw.isdigit() and int(raw) >= 1_000_000_000:
+                return datetime.fromtimestamp(int(raw), timezone.utc)
+        # Some providers use e as a Unix expiry; only trust epoch-shaped values.
+        raw = query.get("e", "")
+        if raw.isdigit() and int(raw) >= 1_000_000_000:
+            return datetime.fromtimestamp(int(raw), timezone.utc)
+        # AWS Signature V4: X-Amz-Date + X-Amz-Expires.
+        stamp = query.get("x-amz-date", "")
+        seconds = query.get("x-amz-expires", "")
+        if stamp and seconds.isdigit():
+            issued = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
+            return datetime.fromtimestamp(issued.timestamp() + int(seconds), timezone.utc)
+        # Google signed URLs: X-Goog-Date + X-Goog-Expires.
+        stamp = query.get("x-goog-date", "")
+        seconds = query.get("x-goog-expires", "")
+        if stamp and seconds.isdigit():
+            issued = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
+            return datetime.fromtimestamp(issued.timestamp() + int(seconds), timezone.utc)
+        # Azure SAS se is an ISO-8601 expiry; do not treat it as a generic token.
+        raw = query.get("se", "")
+        if raw:
+            try:
+                parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+                return parsed.replace(tzinfo=timezone.utc) if parsed.tzinfo is None else parsed.astimezone(timezone.utc)
+            except ValueError:
+                pass
+    except (ValueError, TypeError, OverflowError, OSError):
+        return None
+    return None
+
+def audio_url_classification(value):
+    """Separate explicit expiry metadata from signature/token parameters with unknown lifetime."""
+    try:
+        query = {str(k).lower() for k in parse_qs(urlparse(str(value or "")).query)}
+        host = (urlparse(str(value or "")).hostname or "").lower()
+    except ValueError:
+        return "invalid_url", "(invalid host)"
+    expiry = audio_url_expiry(value)
+    if expiry:
+        return "explicit_expiry", host or "(no host)"
+    signed_keys = {
+        "signature", "policy", "key-pair-id", "sig", "jwt", "access_token",
+        "token", "auth_key", "hdnts", "x-amz-signature", "x-goog-signature"
+    }
+    if any(k in signed_keys or k.startswith("x-amz-") or k.startswith("x-goog-") for k in query):
+        return "signed_expiry_unknown", host or "(no host)"
+    if query:
+        return "query_params_no_expiry", host or "(no host)"
+    return "no_expiry_marker", host or "(no host)"
+
 def is_temporary_audio_url(value):
-    """Recognize common signed/expiring URL query parameters without assuming all URLs expire."""
-    return bool(re.search(
-        r"(?:[?&](?:Expires|Signature|Policy|Key-Pair-Id|X-Amz-[^=&]+|X-Goog-[^=&]+|"
-        r"se|sp|sv|sig|token|expires|expiry|expire|expiration|auth_key|hdnts|time|"
-        r"jwt|access_token|e)=)",
-        str(value or ""), re.I
-    ))
+    """Identify signed/tokenized URLs for cautious refresh; this is not proof they expire hourly."""
+    category, _ = audio_url_classification(value)
+    return category in ("explicit_expiry", "signed_expiry_unknown", "query_params_no_expiry")
 
 def inspect_audio_url(value):
     """Return real HTTP/audio diagnostics for a candidate URL."""
@@ -535,8 +599,8 @@ def inspect_audio_url(value):
         return {"ok": False, "status": "", "content_type": "", "final_url": "",
                 "length": 0, "error": "No audio URL"}
     try:
-        response = S.get(value, headers={"Range": "bytes=0-1023"}, timeout=TIMEOUT,
-                         stream=True, allow_redirects=True)
+        response = worker_session().get(value, headers={"Range": "bytes=0-1023"}, timeout=TIMEOUT,
+                                        stream=True, allow_redirects=True)
         status = response.status_code
         content_type = response.headers.get("Content-Type", "").split(";", 1)[0].lower()
         try:
@@ -561,12 +625,13 @@ def inspect_audio_url(value):
                 "length": 0, "error": f"{type(exc).__name__}: {exc}"[:1500]}
 
 def refresh_expiring_audio(items_by_url):
-    """Refresh expiring links and write per-episode audio-link diagnostics."""
+    """Classify signed URLs, skip safe long-lived links, and refresh only when needed."""
     report_path = DATA / "audio-link-diagnostics.csv"
     fieldnames = [
         "title", "source_page_url", "guid", "added_date", "current_audio_url",
         "last_checked_at_utc", "http_status", "content_type", "replacement_http_status",
-        "replacement_content_type", "temporary_url", "refresh_result", "verified_audio_url", "error"
+        "replacement_content_type", "temporary_url", "refresh_result", "verified_audio_url", "error",
+        "audio_host", "expiry_class", "expires_at_utc"
     ]
     old_rows = {}
     if report_path.exists():
@@ -574,14 +639,19 @@ def refresh_expiring_audio(items_by_url):
             with report_path.open("r", encoding="utf-8-sig", newline="") as f:
                 old_rows = {row.get("source_page_url", ""): row for row in csv.DictReader(f)
                             if row.get("source_page_url")}
-        except (OSError, csv.Error):
+        except (OSError, ValueError, csv.Error):
             old_rows = {}
-    now = datetime.now(timezone.utc).isoformat()
+    now_dt = datetime.now(timezone.utc)
+    now = now_dt.isoformat()
     rows = []
-    refreshed = checked = 0
+    counters = Counter()
+    host_counts = Counter()
+    refresh_candidates = []
+
     for page_url, item in list(items_by_url.items()):
         current_audio = str(item.get("audio_url", "") or "")
-        temporary = is_temporary_audio_url(current_audio)
+        category, host = audio_url_classification(current_audio)
+        expiry = audio_url_expiry(current_audio)
         previous_row = old_rows.get(page_url, {})
         row = {
             "title": item.get("title", ""),
@@ -594,36 +664,62 @@ def refresh_expiring_audio(items_by_url):
             "content_type": previous_row.get("content_type", ""),
             "replacement_http_status": previous_row.get("replacement_http_status", ""),
             "replacement_content_type": previous_row.get("replacement_content_type", ""),
-            "temporary_url": "yes" if temporary else "no",
+            "temporary_url": "yes" if category != "no_expiry_marker" else "no",
             "refresh_result": previous_row.get("refresh_result", "NOT_CHECKED_NON_TEMPORARY"),
             "verified_audio_url": previous_row.get("verified_audio_url", ""),
             "error": previous_row.get("error", ""),
+            "audio_host": host,
+            "expiry_class": category,
+            "expires_at_utc": expiry.isoformat() if expiry else ""
         }
         if not current_audio:
-            row.update({"last_checked_at_utc": now, "http_status": "",
-                        "content_type": "", "refresh_result": "NO_AUDIO_URL",
-                        "verified_audio_url": "", "error": item.get("error", "No audio URL")})
+            row.update({"last_checked_at_utc": now, "http_status": "", "content_type": "",
+                        "refresh_result": "NO_AUDIO_URL", "verified_audio_url": "",
+                        "error": item.get("error", "No audio URL")})
             rows.append(row)
+            counters["no_audio_url"] += 1
             continue
-        # Avoid thousands of hourly media requests. Actively re-check signed/expiring URLs;
-        # retain the last real check for ordinary URLs and make the policy explicit.
-        if not temporary:
-            row["current_audio_url"] = current_audio
+
+        counters[category] += 1
+        host_counts[(host, category)] += 1
+
+        # Ordinary URLs are not part of this signed-link refresh process.
+        if category == "no_expiry_marker":
             rows.append(row)
             continue
 
-        checked += 1
+        # Explicitly dated links with more than two hours left are safely retained.
+        # This is intentionally conservative for hourly runs: links near expiry are refreshed.
+        if expiry and (expiry - now_dt).total_seconds() > 2 * 60 * 60:
+            row["refresh_result"] = "SKIPPED_NOT_NEAR_EXPIRY"
+            rows.append(row)
+            counters["skipped_long_lived"] += 1
+            continue
+
+        # Unknown-expiry signed URLs and links near expiry are checked first.
+        # A working URL is retained; the source page is downloaded only if it is broken
+        # or its known expiry is close enough that the next hourly run could miss the window.
+        refresh_candidates.append((page_url, item, row, current_audio, expiry, category))
+
+    def process(candidate):
+        page_url, item, row, current_audio, expiry, category = candidate
         row["last_checked_at_utc"] = now
         current_check = inspect_audio_url(current_audio)
         row["http_status"] = str(current_check["status"])
         row["content_type"] = current_check["content_type"]
         row["verified_audio_url"] = current_check["final_url"] if current_check["ok"] else ""
         row["error"] = current_check["error"]
+        must_refresh = not current_check["ok"]
+        if expiry and expiry <= now_dt + __import__("datetime").timedelta(hours=1):
+            # Refresh even if the URL currently responds: it may expire before the next hourly run.
+            must_refresh = True
+        if not must_refresh:
+            row["refresh_result"] = "CHECKED_OK_NO_PAGE_FETCH"
+            return row, False, False
+
         try:
-            # Prefer a freshly extracted download/media URL over reusing the stale RSS URL.
             parsed = parse(page_url)
             candidates = list(parsed.get("audio_candidates", []))
-            # If page markup doesn't expose a usable direct URL, inspect embedded players too.
             for player_url in parsed.get("player_urls", []):
                 try:
                     player_response = get(player_url)
@@ -633,67 +729,80 @@ def refresh_expiring_audio(items_by_url):
                         "meta[property='og:audio'], meta[property='og:audio:url'], a[href]"
                     ):
                         raw = node.get("src") or node.get("content") or node.get("href")
-                        candidate = url(raw, player_response.url)
-                        if candidate and re.search(
-                            r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate, re.I
+                        candidate_url = url(raw, player_response.url)
+                        if candidate_url and re.search(
+                            r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate_url, re.I
                         ):
-                            candidates.append(candidate)
+                            candidates.append(candidate_url)
                 except Exception as player_exc:
                     row["error"] = (row["error"] + "; player: " + str(player_exc))[:1500]
             candidates = list(dict.fromkeys(candidates))
-            candidates.sort(key=lambda candidate: (
-                0 if re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate, re.I) else 1
+            candidates.sort(key=lambda candidate_url: (
+                0 if re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate_url, re.I) else 1
             ))
             chosen = None
             candidate_errors = []
-            for candidate in candidates:
-                result = inspect_audio_url(candidate)
+            for candidate_url in candidates:
+                result = inspect_audio_url(candidate_url)
                 if result["ok"]:
                     chosen = result
                     break
                 candidate_errors.append(
-                    f"{candidate}: HTTP {result['status'] or 'error'} "
+                    f"{candidate_url}: HTTP {result['status'] or 'error'} "
                     f"{result['content_type']} {result['error']}"
                 )
             if chosen:
                 new_url = chosen["final_url"]
-                if new_url != current_audio:
-                    # Only the enclosure changes; preserve GUID, Added date, title, artwork and ordering.
+                changed = new_url != current_audio
+                if changed:
                     item["audio_url"] = new_url
                     item["audio_length"] = chosen["length"]
-                    refreshed += 1
-                    row["refresh_result"] = "REFRESHED"
-                    print(f"[AUDIO-REFRESH] Updated temporary media URL: {item.get('title', page_url)}", flush=True)
-                else:
-                    row["refresh_result"] = "CHECKED_OK_NO_CHANGE"
+                row["refresh_result"] = "REFRESHED" if changed else "CHECKED_OK_NO_CHANGE"
                 row["replacement_http_status"] = str(chosen["status"])
                 row["replacement_content_type"] = chosen["content_type"]
                 row["verified_audio_url"] = new_url
                 row["error"] = ""
-            else:
-                row["refresh_result"] = "FAILED_REFRESH"
-                if candidate_errors:
-                    row["error"] = (row["error"] + "; candidates: " + " | ".join(candidate_errors[-3:]))[:1500]
-                elif not row["error"]:
-                    row["error"] = "No direct audio candidate found in Free Download/page/player"
-                print(f"[AUDIO-REFRESH] No verified replacement: {page_url}; {row['error']}", flush=True)
+                return row, changed, True
+            row["refresh_result"] = "FAILED_REFRESH"
+            if candidate_errors:
+                row["error"] = (row["error"] + "; candidates: " + " | ".join(candidate_errors[-3:]))[:1500]
+            elif not row["error"]:
+                row["error"] = "No direct audio candidate found in Free Download/page/player"
+            return row, False, True
         except Exception as exc:
             row["refresh_result"] = "FAILED_REFRESH"
             row["error"] = f"{type(exc).__name__}: {exc}"[:1500]
-            print(f"[AUDIO-REFRESH] Could not refresh {page_url}: {row['error']}", flush=True)
-        row["current_audio_url"] = item.get("audio_url", current_audio)
-        row["temporary_url"] = "yes" if is_temporary_audio_url(row["current_audio_url"]) else "no"
-        rows.append(row)
+            return row, False, True
 
-    # Include all archived episodes in the report, while clearly distinguishing URLs not probed hourly.
+    refreshed = page_fetches = 0
+    # Bound concurrency to eight independent sessions; avoids serial per-link network waits.
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        for row, changed, fetched_page in pool.map(process, refresh_candidates):
+            rows.append(row)
+            refreshed += int(changed)
+            page_fetches += int(fetched_page)
+            counters["current_url_checked"] += 1
+            counters["source_pages_fetched"] += int(fetched_page)
+            if changed:
+                print(f"[AUDIO-REFRESH] Updated temporary media URL: {row.get('title') or row.get('source_page_url')}", flush=True)
+
+    # Preserve diagnostics row order as items.json order for stable diffs and reporting.
+    rows_by_url = {r.get("source_page_url"): r for r in rows}
+    rows = [rows_by_url.get(page_url, {}) for page_url in items_by_url if page_url in rows_by_url]
     with report_path.open("w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
-    print(f"[AUDIO-REFRESH] checked_temporary={checked}; refreshed={refreshed}; "
+
+    print("[AUDIO-CLASSIFICATION] " + "; ".join(
+        f"{key}={value}" for key, value in sorted(counters.items())
+    ), flush=True)
+    for (host, category), count in sorted(host_counts.items(), key=lambda pair: (-pair[1], pair[0])):
+        print(f"[AUDIO-CLASSIFICATION] host={host}; class={category}; count={count}", flush=True)
+    print(f"[AUDIO-REFRESH] checked_signed={counters['current_url_checked']}; "
+          f"source_pages_fetched={page_fetches}; refreshed={refreshed}; "
           f"diagnostics_rows={len(rows)}; report={report_path}", flush=True)
     return refreshed
-
 
 def safe_report(label, writer, *args, **kwargs):
     """Isolate a non-critical report: its failure must not stop RSS publication or other reports."""
