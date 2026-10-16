@@ -1,1154 +1,1181 @@
 [
   {
-    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-416-tony-villacorta/",
+    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-419-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:15.379372+00:00",
-    "attempted_at": "2026-10-16T01:48:50.190623+00:00",
-    "next_retry_at": "2026-10-16T02:48:50.190623+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-402-2025-most-played/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:17:37.348836+00:00",
-    "attempted_at": "2026-10-16T01:48:50.255196+00:00",
-    "next_retry_at": "2026-10-16T02:48:50.255196+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:09.368314+00:00",
+    "attempted_at": "2026-10-16T06:32:31.111921+00:00",
+    "next_retry_at": "2026-10-16T07:32:31.111921+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-418-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:11.664519+00:00",
-    "attempted_at": "2026-10-16T01:48:50.270801+00:00",
-    "next_retry_at": "2026-10-16T02:48:50.270801+00:00"
+    "attempted_at": "2026-10-16T06:32:31.143314+00:00",
+    "next_retry_at": "2026-10-16T07:32:31.143314+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-402-2025-most-played/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:17:37.348836+00:00",
+    "attempted_at": "2026-10-16T06:32:31.179356+00:00",
+    "next_retry_at": "2026-10-16T07:32:31.179356+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-417-chris-campos/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:12.487033+00:00",
-    "attempted_at": "2026-10-16T01:48:51.859668+00:00",
-    "next_retry_at": "2026-10-16T02:48:51.859668+00:00"
+    "attempted_at": "2026-10-16T06:32:31.215677+00:00",
+    "next_retry_at": "2026-10-16T07:32:31.215677+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-419-carlos-manaca/",
+    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-416-tony-villacorta/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:09.368314+00:00",
-    "attempted_at": "2026-10-16T01:48:51.928613+00:00",
-    "next_retry_at": "2026-10-16T02:48:51.928613+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:15.379372+00:00",
+    "attempted_at": "2026-10-16T06:32:31.234009+00:00",
+    "next_retry_at": "2026-10-16T07:32:31.234009+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/schematic-sound-jan-03-2026/",
     "error": "Not confirmed audio: HTTP 404, type=",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:17:38.305384+00:00",
-    "attempted_at": "2026-10-16T01:48:52.568964+00:00",
-    "next_retry_at": "2026-10-16T02:48:52.568964+00:00"
+    "attempted_at": "2026-10-16T06:32:32.560293+00:00",
+    "next_retry_at": "2026-10-16T07:32:32.560293+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-033/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:39:24.348896+00:00",
-    "attempted_at": "2026-10-16T01:48:52.621602+00:00",
-    "next_retry_at": "2026-10-16T02:48:52.621602+00:00"
+    "attempted_at": "2026-10-16T06:32:32.582575+00:00",
+    "next_retry_at": "2026-10-16T07:32:32.582575+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/release-yourself-radio-show-1263-ones-to-watch-guest-mixes-of-2026/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:17:55.138213+00:00",
-    "attempted_at": "2026-10-16T01:48:52.622228+00:00",
-    "next_retry_at": "2026-10-16T02:48:52.622228+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/clublife-by-tiesto-001/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:17:14.833838+00:00",
-    "attempted_at": "2026-10-16T01:48:52.649086+00:00",
-    "next_retry_at": "2026-10-16T02:48:52.649086+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/clublife-by-tiesto-978-final-episode/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:17:50.418472+00:00",
-    "attempted_at": "2026-10-16T01:48:52.658714+00:00",
-    "next_retry_at": "2026-10-16T02:48:52.658714+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-487/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:17:35.089767+00:00",
-    "attempted_at": "2026-10-16T01:48:54.438220+00:00",
-    "next_retry_at": "2026-10-16T02:48:54.438220+00:00"
+    "attempted_at": "2026-10-16T06:32:32.640503+00:00",
+    "next_retry_at": "2026-10-16T07:32:32.640503+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-413-richard-c/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:02.785151+00:00",
-    "attempted_at": "2026-10-16T01:48:54.502706+00:00",
-    "next_retry_at": "2026-10-16T02:48:54.502706+00:00"
+    "attempted_at": "2026-10-16T06:32:33.208310+00:00",
+    "next_retry_at": "2026-10-16T07:32:33.208310+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/clublife-by-tiesto-001/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:17:14.833838+00:00",
+    "attempted_at": "2026-10-16T06:32:33.575956+00:00",
+    "next_retry_at": "2026-10-16T07:32:33.575956+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-022/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:39:36.632760+00:00",
-    "attempted_at": "2026-10-16T01:48:55.951907+00:00",
-    "next_retry_at": "2026-10-16T02:48:55.951907+00:00"
+    "attempted_at": "2026-10-16T06:32:34.428831+00:00",
+    "next_retry_at": "2026-10-16T07:32:34.428831+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-035/",
+    "url": "https://www.edmliveset.com/radio/clublife-by-tiesto-978-final-episode/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:24.316783+00:00",
-    "attempted_at": "2026-10-16T01:48:55.953480+00:00",
-    "next_retry_at": "2026-10-16T02:48:55.953480+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:17:50.418472+00:00",
+    "attempted_at": "2026-10-16T06:32:34.429914+00:00",
+    "next_retry_at": "2026-10-16T07:32:34.429914+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-030/",
+    "url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-487/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:28.116780+00:00",
-    "attempted_at": "2026-10-16T01:48:56.000466+00:00",
-    "next_retry_at": "2026-10-16T02:48:56.000466+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-027/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:30.185070+00:00",
-    "attempted_at": "2026-10-16T01:48:56.053323+00:00",
-    "next_retry_at": "2026-10-16T02:48:56.053323+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-032/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:24.360704+00:00",
-    "attempted_at": "2026-10-16T01:48:56.101354+00:00",
-    "next_retry_at": "2026-10-16T02:48:56.101354+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:17:35.089767+00:00",
+    "attempted_at": "2026-10-16T06:32:34.666518+00:00",
+    "next_retry_at": "2026-10-16T07:32:34.666518+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-412-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:05.080242+00:00",
-    "attempted_at": "2026-10-16T01:48:56.188313+00:00",
-    "next_retry_at": "2026-10-16T02:48:56.188313+00:00"
+    "attempted_at": "2026-10-16T06:32:35.389674+00:00",
+    "next_retry_at": "2026-10-16T07:32:35.389674+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-346-aman-anand/",
-    "error": "Not confirmed audio: HTTP 404, type=",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:24.419064+00:00",
-    "attempted_at": "2026-10-16T01:48:57.373957+00:00",
-    "next_retry_at": "2026-10-16T02:48:57.373957+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-031-ibiza-special/",
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-035/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:27.878370+00:00",
-    "attempted_at": "2026-10-16T01:48:57.672998+00:00",
-    "next_retry_at": "2026-10-16T02:48:57.672998+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:24.316783+00:00",
+    "attempted_at": "2026-10-16T06:32:35.669274+00:00",
+    "next_retry_at": "2026-10-16T07:32:35.669274+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-030/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:28.116780+00:00",
+    "attempted_at": "2026-10-16T06:32:35.684417+00:00",
+    "next_retry_at": "2026-10-16T07:32:35.684417+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-027/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:30.185070+00:00",
+    "attempted_at": "2026-10-16T06:32:35.703330+00:00",
+    "next_retry_at": "2026-10-16T07:32:35.703330+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-032/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:24.360704+00:00",
+    "attempted_at": "2026-10-16T06:32:35.747957+00:00",
+    "next_retry_at": "2026-10-16T07:32:35.747957+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-415-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:17.935077+00:00",
-    "attempted_at": "2026-10-16T01:48:57.802766+00:00",
-    "next_retry_at": "2026-10-16T02:48:57.802766+00:00"
+    "attempted_at": "2026-10-16T06:32:36.400644+00:00",
+    "next_retry_at": "2026-10-16T07:32:36.400644+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-411-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:05.475388+00:00",
-    "attempted_at": "2026-10-16T01:48:57.863793+00:00",
-    "next_retry_at": "2026-10-16T02:48:57.863793+00:00"
+    "attempted_at": "2026-10-16T06:32:37.127937+00:00",
+    "next_retry_at": "2026-10-16T07:32:37.127937+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-024/",
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-031-ibiza-special/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:32.943084+00:00",
-    "attempted_at": "2026-10-16T01:49:00.331705+00:00",
-    "next_retry_at": "2026-10-16T02:49:00.331705+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:27.878370+00:00",
+    "attempted_at": "2026-10-16T06:32:37.947000+00:00",
+    "next_retry_at": "2026-10-16T07:32:37.947000+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-028/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-346-aman-anand/",
+    "error": "Not confirmed audio: HTTP 404, type=",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:26.707031+00:00",
-    "attempted_at": "2026-10-16T01:49:00.351590+00:00",
-    "next_retry_at": "2026-10-16T02:49:00.351590+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:24.419064+00:00",
+    "attempted_at": "2026-10-16T06:32:37.998018+00:00",
+    "next_retry_at": "2026-10-16T07:32:37.998018+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-034/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:39:24.070506+00:00",
-    "attempted_at": "2026-10-16T01:49:00.354472+00:00",
-    "next_retry_at": "2026-10-16T02:49:00.354472+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-020/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:37.021629+00:00",
-    "attempted_at": "2026-10-16T01:49:00.476075+00:00",
-    "next_retry_at": "2026-10-16T02:49:00.476075+00:00"
+    "attempted_at": "2026-10-16T06:32:38.036586+00:00",
+    "next_retry_at": "2026-10-16T07:32:38.036586+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-408-xl-garcia-lisbon-portugal/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:12.564618+00:00",
-    "attempted_at": "2026-10-16T01:49:02.206990+00:00",
-    "next_retry_at": "2026-10-16T02:49:02.206990+00:00"
+    "attempted_at": "2026-10-16T06:32:38.044017+00:00",
+    "next_retry_at": "2026-10-16T07:32:38.044017+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-028/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:26.707031+00:00",
+    "attempted_at": "2026-10-16T06:32:38.096293+00:00",
+    "next_retry_at": "2026-10-16T07:32:38.096293+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-024/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:32.943084+00:00",
+    "attempted_at": "2026-10-16T06:32:38.108270+00:00",
+    "next_retry_at": "2026-10-16T07:32:38.108270+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-020/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:37.021629+00:00",
+    "attempted_at": "2026-10-16T06:32:38.164573+00:00",
+    "next_retry_at": "2026-10-16T07:32:38.164573+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-025/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:39:34.330705+00:00",
-    "attempted_at": "2026-10-16T01:49:02.692589+00:00",
-    "next_retry_at": "2026-10-16T02:49:02.692589+00:00"
+    "attempted_at": "2026-10-16T06:32:39.499336+00:00",
+    "next_retry_at": "2026-10-16T07:32:39.499336+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/terminal-v-podcast-119-emilija/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:39:32.020084+00:00",
-    "attempted_at": "2026-10-16T01:49:02.739450+00:00",
-    "next_retry_at": "2026-10-16T02:49:02.739450+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-023/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:35.059150+00:00",
-    "attempted_at": "2026-10-16T01:49:02.742044+00:00",
-    "next_retry_at": "2026-10-16T02:49:02.742044+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-026/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:31.510283+00:00",
-    "attempted_at": "2026-10-16T01:49:02.786579+00:00",
-    "next_retry_at": "2026-10-16T02:49:02.786579+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-204/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:28.350627+00:00",
-    "attempted_at": "2026-10-16T01:49:04.198553+00:00",
-    "next_retry_at": "2026-10-16T02:49:04.198553+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/romi-lux-escape-radio-038/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:30.500745+00:00",
-    "attempted_at": "2026-10-16T01:49:04.272618+00:00",
-    "next_retry_at": "2026-10-16T02:49:04.272618+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-029/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:27.993770+00:00",
-    "attempted_at": "2026-10-16T01:49:04.273833+00:00",
-    "next_retry_at": "2026-10-16T02:49:04.273833+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/night-owl-radio-561-the-zombie-apocalypse-megamix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:09.243957+00:00",
-    "attempted_at": "2026-10-16T01:49:05.807096+00:00",
-    "next_retry_at": "2026-10-16T02:49:05.807096+00:00"
+    "attempted_at": "2026-10-16T06:32:40.475498+00:00",
+    "next_retry_at": "2026-10-16T07:32:40.475498+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-409-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:11.656222+00:00",
-    "attempted_at": "2026-10-16T01:49:06.029321+00:00",
-    "next_retry_at": "2026-10-16T02:49:06.029321+00:00"
+    "attempted_at": "2026-10-16T06:32:41.291486+00:00",
+    "next_retry_at": "2026-10-16T07:32:41.291486+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-017/",
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-026/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:11.717781+00:00",
-    "attempted_at": "2026-10-16T01:49:06.787253+00:00",
-    "next_retry_at": "2026-10-16T02:49:06.787253+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:31.510283+00:00",
+    "attempted_at": "2026-10-16T06:32:41.534363+00:00",
+    "next_retry_at": "2026-10-16T07:32:41.534363+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-199/",
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-029/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:09.510679+00:00",
-    "attempted_at": "2026-10-16T01:49:06.804975+00:00",
-    "next_retry_at": "2026-10-16T02:49:06.804975+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:27.993770+00:00",
+    "attempted_at": "2026-10-16T06:32:41.555088+00:00",
+    "next_retry_at": "2026-10-16T07:32:41.555088+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-018/",
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-023/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:09.370139+00:00",
-    "attempted_at": "2026-10-16T01:49:06.865566+00:00",
-    "next_retry_at": "2026-10-16T02:49:06.865566+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:35.059150+00:00",
+    "attempted_at": "2026-10-16T06:32:41.556465+00:00",
+    "next_retry_at": "2026-10-16T07:32:41.556465+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-605-filthy-lad-guestmix/",
+    "url": "https://www.edmliveset.com/radio/night-owl-radio-561-the-zombie-apocalypse-megamix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:32.303702+00:00",
-    "attempted_at": "2026-10-16T01:49:07.028271+00:00",
-    "next_retry_at": "2026-10-16T02:49:07.028271+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:09.243957+00:00",
+    "attempted_at": "2026-10-16T06:32:41.708879+00:00",
+    "next_retry_at": "2026-10-16T07:32:41.708879+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-015/",
+    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-204/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:15.309485+00:00",
-    "attempted_at": "2026-10-16T01:49:07.430923+00:00",
-    "next_retry_at": "2026-10-16T02:49:07.430923+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:28.350627+00:00",
+    "attempted_at": "2026-10-16T06:32:41.715828+00:00",
+    "next_retry_at": "2026-10-16T07:32:41.715828+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-574-baddest-of-2025-mixed-by-bad-syntax/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "url": "https://www.edmliveset.com/radio/romi-lux-escape-radio-038/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:17:43.514491+00:00",
-    "attempted_at": "2026-10-16T01:49:08.025199+00:00",
-    "next_retry_at": "2026-10-16T02:49:08.025199+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:30.500745+00:00",
+    "attempted_at": "2026-10-16T06:32:41.765616+00:00",
+    "next_retry_at": "2026-10-16T07:32:41.765616+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/538-dance-department-by-armin-van-buuren-march-28-2026-tomorrowland-winter-special/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:02.311136+00:00",
-    "attempted_at": "2026-10-16T01:49:08.088230+00:00",
-    "next_retry_at": "2026-10-16T02:49:08.088230+00:00"
+    "attempted_at": "2026-10-16T06:32:43.561062+00:00",
+    "next_retry_at": "2026-10-16T07:32:43.561062+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-410-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:09.621283+00:00",
-    "attempted_at": "2026-10-16T01:49:08.816685+00:00",
-    "next_retry_at": "2026-10-16T02:49:08.816685+00:00"
+    "attempted_at": "2026-10-16T06:32:43.585244+00:00",
+    "next_retry_at": "2026-10-16T07:32:43.585244+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-407-carlos-manaca/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-015/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:14.518673+00:00",
-    "attempted_at": "2026-10-16T01:49:09.068692+00:00",
-    "next_retry_at": "2026-10-16T02:49:09.068692+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:15.309485+00:00",
+    "attempted_at": "2026-10-16T06:32:44.676105+00:00",
+    "next_retry_at": "2026-10-16T07:32:44.676105+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-018/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:09.370139+00:00",
+    "attempted_at": "2026-10-16T06:32:44.703530+00:00",
+    "next_retry_at": "2026-10-16T07:32:44.703530+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-199/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:09.510679+00:00",
+    "attempted_at": "2026-10-16T06:32:44.704046+00:00",
+    "next_retry_at": "2026-10-16T07:32:44.704046+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-017/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:11.717781+00:00",
+    "attempted_at": "2026-10-16T06:32:44.735291+00:00",
+    "next_retry_at": "2026-10-16T07:32:44.735291+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-444/",
     "error": "No direct audio URL found",
     "error_type": "temporary_or_other",
-    "failure_count": 26,
+    "failure_count": 27,
     "first_failed_at": "2026-10-13T11:39:34.053196+00:00",
-    "attempted_at": "2026-10-16T01:49:09.480105+00:00",
-    "next_retry_at": "2026-10-16T02:49:09.480105+00:00"
+    "attempted_at": "2026-10-16T06:32:44.762554+00:00",
+    "next_retry_at": "2026-10-16T07:32:44.762554+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-574-baddest-of-2025-mixed-by-bad-syntax/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:17:43.514491+00:00",
+    "attempted_at": "2026-10-16T06:32:44.779083+00:00",
+    "next_retry_at": "2026-10-16T07:32:44.779083+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-605-filthy-lad-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:32.303702+00:00",
+    "attempted_at": "2026-10-16T06:32:44.870201+00:00",
+    "next_retry_at": "2026-10-16T07:32:44.870201+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-407-carlos-manaca/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:14.518673+00:00",
+    "attempted_at": "2026-10-16T06:32:45.414964+00:00",
+    "next_retry_at": "2026-10-16T07:32:45.414964+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-406-tommy-myst/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:16.465028+00:00",
-    "attempted_at": "2026-10-16T01:49:09.822476+00:00",
-    "next_retry_at": "2026-10-16T02:49:09.822476+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-014/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:15.697222+00:00",
-    "attempted_at": "2026-10-16T01:49:10.819749+00:00",
-    "next_retry_at": "2026-10-16T02:49:10.819749+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-197/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:15.297504+00:00",
-    "attempted_at": "2026-10-16T01:49:10.879862+00:00",
-    "next_retry_at": "2026-10-16T02:49:10.879862+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-604-brijawi-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:37.303487+00:00",
-    "attempted_at": "2026-10-16T01:49:11.150951+00:00",
-    "next_retry_at": "2026-10-16T02:49:11.150951+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-596-binary-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:45.223946+00:00",
-    "attempted_at": "2026-10-16T01:49:11.162470+00:00",
-    "next_retry_at": "2026-10-16T02:49:11.162470+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-191-ollie-sindicate-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:46.198110+00:00",
-    "attempted_at": "2026-10-16T01:49:12.444752+00:00",
-    "next_retry_at": "2026-10-16T02:49:12.444752+00:00"
+    "attempted_at": "2026-10-16T06:32:46.625709+00:00",
+    "next_retry_at": "2026-10-16T07:32:46.625709+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-403-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:24.135119+00:00",
-    "attempted_at": "2026-10-16T01:49:12.903633+00:00",
-    "next_retry_at": "2026-10-16T02:49:12.903633+00:00"
+    "attempted_at": "2026-10-16T06:32:46.839551+00:00",
+    "next_retry_at": "2026-10-16T07:32:46.839551+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-596-binary-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:45.223946+00:00",
+    "attempted_at": "2026-10-16T06:32:47.697486+00:00",
+    "next_retry_at": "2026-10-16T07:32:47.697486+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-197/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:15.297504+00:00",
+    "attempted_at": "2026-10-16T06:32:47.773514+00:00",
+    "next_retry_at": "2026-10-16T07:32:47.773514+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-014/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:15.697222+00:00",
+    "attempted_at": "2026-10-16T06:32:47.799763+00:00",
+    "next_retry_at": "2026-10-16T07:32:47.799763+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-604-brijawi-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:37.303487+00:00",
+    "attempted_at": "2026-10-16T06:32:47.820024+00:00",
+    "next_retry_at": "2026-10-16T07:32:47.820024+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-191-ollie-sindicate-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:46.198110+00:00",
+    "attempted_at": "2026-10-16T06:32:47.849632+00:00",
+    "next_retry_at": "2026-10-16T07:32:47.849632+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/stonxcast-190-ollie/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:39:45.217116+00:00",
-    "attempted_at": "2026-10-16T01:49:14.136466+00:00",
-    "next_retry_at": "2026-10-16T02:49:14.136466+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-342-hassan-maroofi/",
-    "error": "Not confirmed audio: HTTP 404, type=",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:15.556938+00:00",
-    "attempted_at": "2026-10-16T01:49:14.152301+00:00",
-    "next_retry_at": "2026-10-16T02:49:14.152301+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-606-teniak-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:33.117853+00:00",
-    "attempted_at": "2026-10-16T01:49:14.162638+00:00",
-    "next_retry_at": "2026-10-16T02:49:14.162638+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-589/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:15.106392+00:00",
-    "attempted_at": "2026-10-16T01:49:14.209319+00:00",
-    "next_retry_at": "2026-10-16T02:49:14.209319+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-601-acidion-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:40.266124+00:00",
-    "attempted_at": "2026-10-16T01:49:14.517402+00:00",
-    "next_retry_at": "2026-10-16T02:49:14.517402+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-016/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:12.743925+00:00",
-    "attempted_at": "2026-10-16T01:49:14.582277+00:00",
-    "next_retry_at": "2026-10-16T02:49:14.582277+00:00"
+    "attempted_at": "2026-10-16T06:32:47.870164+00:00",
+    "next_retry_at": "2026-10-16T07:32:47.870164+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/tritonal-tritonia-531/",
     "error": "No direct audio URL found",
     "error_type": "temporary_or_other",
-    "failure_count": 25,
+    "failure_count": 26,
     "first_failed_at": "2026-10-13T11:47:00.515449+00:00",
-    "attempted_at": "2026-10-16T01:49:15.667286+00:00",
-    "next_retry_at": "2026-10-16T02:49:15.667286+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-343-fonarev/",
-    "error": "Not confirmed audio: HTTP 404, type=",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:09.595257+00:00",
-    "attempted_at": "2026-10-16T01:49:15.835266+00:00",
-    "next_retry_at": "2026-10-16T02:49:15.835266+00:00"
+    "attempted_at": "2026-10-16T06:32:48.927454+00:00",
+    "next_retry_at": "2026-10-16T07:32:48.927454+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/",
     "error": "No direct audio URL found",
     "error_type": "temporary_or_other",
-    "failure_count": 25,
+    "failure_count": 26,
     "first_failed_at": "2026-10-13T11:47:04.058565+00:00",
-    "attempted_at": "2026-10-16T01:49:15.940341+00:00",
-    "next_retry_at": "2026-10-16T02:49:15.940341+00:00"
+    "attempted_at": "2026-10-16T06:32:49.102542+00:00",
+    "next_retry_at": "2026-10-16T07:32:49.102542+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-342-hassan-maroofi/",
+    "error": "Not confirmed audio: HTTP 404, type=",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:15.556938+00:00",
+    "attempted_at": "2026-10-16T06:32:49.279174+00:00",
+    "next_retry_at": "2026-10-16T07:32:49.279174+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-606-teniak-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:33.117853+00:00",
+    "attempted_at": "2026-10-16T06:32:49.564488+00:00",
+    "next_retry_at": "2026-10-16T07:32:49.564488+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
     "error": "No direct audio URL found",
     "error_type": "temporary_or_other",
-    "failure_count": 26,
+    "failure_count": 27,
     "first_failed_at": "2026-10-13T11:39:21.123497+00:00",
-    "attempted_at": "2026-10-16T01:49:15.986963+00:00",
-    "next_retry_at": "2026-10-16T02:49:15.986963+00:00"
+    "attempted_at": "2026-10-16T06:32:50.145801+00:00",
+    "next_retry_at": "2026-10-16T07:32:50.145801+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-016/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:12.743925+00:00",
+    "attempted_at": "2026-10-16T06:32:51.914560+00:00",
+    "next_retry_at": "2026-10-16T07:32:51.914560+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-013/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:17.944493+00:00",
-    "attempted_at": "2026-10-16T01:49:16.306294+00:00",
-    "next_retry_at": "2026-10-16T02:49:16.306294+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-192-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:39:45.215994+00:00",
-    "attempted_at": "2026-10-16T01:49:17.883076+00:00",
-    "next_retry_at": "2026-10-16T02:49:17.883076+00:00"
+    "attempted_at": "2026-10-16T06:32:51.938387+00:00",
+    "next_retry_at": "2026-10-16T07:32:51.938387+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/stonxcast-186-ollie-2/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:10.001198+00:00",
-    "attempted_at": "2026-10-16T01:49:17.885853+00:00",
-    "next_retry_at": "2026-10-16T02:49:17.885853+00:00"
+    "attempted_at": "2026-10-16T06:32:52.062116+00:00",
+    "next_retry_at": "2026-10-16T07:32:52.062116+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-196/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:17.761056+00:00",
-    "attempted_at": "2026-10-16T01:49:18.914378+00:00",
-    "next_retry_at": "2026-10-16T02:49:18.914378+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-186-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:11.396456+00:00",
-    "attempted_at": "2026-10-16T01:49:19.067448+00:00",
-    "next_retry_at": "2026-10-16T02:49:19.067448+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-341-fleanger/",
+    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-343-fonarev/",
     "error": "Not confirmed audio: HTTP 404, type=",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:01.991586+00:00",
-    "attempted_at": "2026-10-16T01:49:19.155996+00:00",
-    "next_retry_at": "2026-10-16T02:49:19.155996+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:09.595257+00:00",
+    "attempted_at": "2026-10-16T06:32:52.076843+00:00",
+    "next_retry_at": "2026-10-16T07:32:52.076843+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/stonxcast-184-ollie/",
+    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-589/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:15.542366+00:00",
-    "attempted_at": "2026-10-16T01:49:19.452685+00:00",
-    "next_retry_at": "2026-10-16T02:49:19.452685+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:15.106392+00:00",
+    "attempted_at": "2026-10-16T06:32:52.104417+00:00",
+    "next_retry_at": "2026-10-16T07:32:52.104417+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/stonxcast-185-ollie/",
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-601-acidion-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:12.658242+00:00",
-    "attempted_at": "2026-10-16T01:49:19.538648+00:00",
-    "next_retry_at": "2026-10-16T02:49:19.538648+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:40.266124+00:00",
+    "attempted_at": "2026-10-16T06:32:52.115737+00:00",
+    "next_retry_at": "2026-10-16T07:32:52.115737+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-192-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:39:45.215994+00:00",
+    "attempted_at": "2026-10-16T06:32:52.125075+00:00",
+    "next_retry_at": "2026-10-16T07:32:52.125075+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1267-ferry-corsten-residency-mix/",
     "error": "Not confirmed audio: HTTP 200, type=text/html",
     "error_type": "temporary_or_other",
-    "failure_count": 25,
+    "failure_count": 26,
     "first_failed_at": "2026-10-13T11:47:08.412729+00:00",
-    "attempted_at": "2026-10-16T01:49:19.675297+00:00",
-    "next_retry_at": "2026-10-16T02:49:19.675297+00:00"
+    "attempted_at": "2026-10-16T06:32:53.379582+00:00",
+    "next_retry_at": "2026-10-16T07:32:53.379582+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-591-titanz-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-196/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:12.072761+00:00",
-    "attempted_at": "2026-10-16T01:49:19.873049+00:00",
-    "next_retry_at": "2026-10-16T02:49:19.873049+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:17.761056+00:00",
+    "attempted_at": "2026-10-16T06:32:53.488160+00:00",
+    "next_retry_at": "2026-10-16T07:32:53.488160+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-405-carlos-manaca/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:21.284889+00:00",
-    "attempted_at": "2026-10-16T01:49:20.852579+00:00",
-    "next_retry_at": "2026-10-16T02:49:20.852579+00:00"
+    "attempted_at": "2026-10-16T06:32:54.028355+00:00",
+    "next_retry_at": "2026-10-16T07:32:54.028355+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bloom-records-podcast-341-fleanger/",
+    "error": "Not confirmed audio: HTTP 404, type=",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:01.991586+00:00",
+    "attempted_at": "2026-10-16T06:32:54.377346+00:00",
+    "next_retry_at": "2026-10-16T07:32:54.377346+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-186-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:11.396456+00:00",
+    "attempted_at": "2026-10-16T06:32:54.534416+00:00",
+    "next_retry_at": "2026-10-16T07:32:54.534416+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-184-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:15.542366+00:00",
+    "attempted_at": "2026-10-16T06:32:54.721622+00:00",
+    "next_retry_at": "2026-10-16T07:32:54.721622+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-011/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:03.226411+00:00",
-    "attempted_at": "2026-10-16T01:49:21.131413+00:00",
-    "next_retry_at": "2026-10-16T02:49:21.131413+00:00"
+    "attempted_at": "2026-10-16T06:32:55.655672+00:00",
+    "next_retry_at": "2026-10-16T07:32:55.655672+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-592-mowf-guestmix/",
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-591-titanz-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:10.000238+00:00",
-    "attempted_at": "2026-10-16T01:49:21.399979+00:00",
-    "next_retry_at": "2026-10-16T02:49:21.399979+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:12.072761+00:00",
+    "attempted_at": "2026-10-16T06:32:55.667633+00:00",
+    "next_retry_at": "2026-10-16T07:32:55.667633+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-404-fabiotek-b2b-tomy-villacorta-pt-2-montreal-canada/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:22.150575+00:00",
-    "attempted_at": "2026-10-16T01:49:21.550692+00:00",
-    "next_retry_at": "2026-10-16T02:49:21.550692+00:00"
+    "attempted_at": "2026-10-16T06:32:55.770996+00:00",
+    "next_retry_at": "2026-10-16T07:32:55.770996+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/stonxcast-188-ollie/",
+    "url": "https://www.edmliveset.com/radio/stonxcast-185-ollie/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:10.837636+00:00",
-    "attempted_at": "2026-10-16T01:49:22.598284+00:00",
-    "next_retry_at": "2026-10-16T02:49:22.598284+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:12.658242+00:00",
+    "attempted_at": "2026-10-16T06:32:55.886238+00:00",
+    "next_retry_at": "2026-10-16T07:32:55.886238+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-010/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:05.751094+00:00",
-    "attempted_at": "2026-10-16T01:49:22.661346+00:00",
-    "next_retry_at": "2026-10-16T02:49:22.661346+00:00"
+    "attempted_at": "2026-10-16T06:32:56.884175+00:00",
+    "next_retry_at": "2026-10-16T07:32:56.884175+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-188-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:10.837636+00:00",
+    "attempted_at": "2026-10-16T06:32:56.898019+00:00",
+    "next_retry_at": "2026-10-16T07:32:56.898019+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-592-mowf-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:10.000238+00:00",
+    "attempted_at": "2026-10-16T06:32:57.003843+00:00",
+    "next_retry_at": "2026-10-16T07:32:57.003843+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-590-gen-code-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:12.367325+00:00",
-    "attempted_at": "2026-10-16T01:49:23.123053+00:00",
-    "next_retry_at": "2026-10-16T02:49:23.123053+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-585-protoss-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:02.695501+00:00",
-    "attempted_at": "2026-10-16T01:49:23.438338+00:00",
-    "next_retry_at": "2026-10-16T02:49:23.438338+00:00"
+    "attempted_at": "2026-10-16T06:32:57.225788+00:00",
+    "next_retry_at": "2026-10-16T07:32:57.225788+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/be-the-different-194/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:05.622721+00:00",
-    "attempted_at": "2026-10-16T01:49:24.161090+00:00",
-    "next_retry_at": "2026-10-16T02:49:24.161090+00:00"
+    "attempted_at": "2026-10-16T06:32:58.066228+00:00",
+    "next_retry_at": "2026-10-16T07:32:58.066228+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/nelver-proud-eagle-radio-show-618/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:17.950100+00:00",
-    "attempted_at": "2026-10-16T01:49:24.579289+00:00",
-    "next_retry_at": "2026-10-16T02:49:24.579289+00:00"
+    "attempted_at": "2026-10-16T06:32:58.126838+00:00",
+    "next_retry_at": "2026-10-16T07:32:58.126838+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-585-protoss-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:02.695501+00:00",
+    "attempted_at": "2026-10-16T06:32:58.291719+00:00",
+    "next_retry_at": "2026-10-16T07:32:58.291719+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-588-d_e_b_t-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:15.480642+00:00",
-    "attempted_at": "2026-10-16T01:49:24.733126+00:00",
-    "next_retry_at": "2026-10-16T02:49:24.733126+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-182-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:02.604006+00:00",
-    "attempted_at": "2026-10-16T01:49:24.987270+00:00",
-    "next_retry_at": "2026-10-16T02:49:24.987270+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-587-frydae-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:45:18.215295+00:00",
-    "attempted_at": "2026-10-16T01:49:26.122121+00:00",
-    "next_retry_at": "2026-10-16T02:49:26.122121+00:00"
+    "attempted_at": "2026-10-16T06:32:58.400118+00:00",
+    "next_retry_at": "2026-10-16T07:32:58.400118+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/stonxcast-183-ollie/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:45:18.214341+00:00",
-    "attempted_at": "2026-10-16T01:49:26.123973+00:00",
-    "next_retry_at": "2026-10-16T02:49:26.123973+00:00"
+    "attempted_at": "2026-10-16T06:32:59.448216+00:00",
+    "next_retry_at": "2026-10-16T07:32:59.448216+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-008/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:09.835468+00:00",
-    "attempted_at": "2026-10-16T01:49:26.182184+00:00",
-    "next_retry_at": "2026-10-16T02:49:26.182184+00:00"
+    "attempted_at": "2026-10-16T06:32:59.528184+00:00",
+    "next_retry_at": "2026-10-16T07:32:59.528184+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/stonxcast-179-ollie/",
+    "url": "https://www.edmliveset.com/radio/stonxcast-182-ollie/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:07.862735+00:00",
-    "attempted_at": "2026-10-16T01:49:27.026106+00:00",
-    "next_retry_at": "2026-10-16T02:49:27.026106+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:02.604006+00:00",
+    "attempted_at": "2026-10-16T06:32:59.534438+00:00",
+    "next_retry_at": "2026-10-16T07:32:59.534438+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-587-frydae-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:45:18.215295+00:00",
+    "attempted_at": "2026-10-16T06:32:59.598402+00:00",
+    "next_retry_at": "2026-10-16T07:32:59.598402+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/schematic-sound-jan-31-2026/",
     "error": "Not confirmed audio: HTTP 404, type=",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:18.231347+00:00",
-    "attempted_at": "2026-10-16T01:49:27.118238+00:00",
-    "next_retry_at": "2026-10-16T02:49:27.118238+00:00"
+    "attempted_at": "2026-10-16T06:33:00.539057+00:00",
+    "next_retry_at": "2026-10-16T07:33:00.539057+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/schematic-sound-feb-14-2026/",
     "error": "Not confirmed audio: HTTP 404, type=",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:12.278328+00:00",
-    "attempted_at": "2026-10-16T01:49:27.566599+00:00",
-    "next_retry_at": "2026-10-16T02:49:27.566599+00:00"
+    "attempted_at": "2026-10-16T06:33:01.657573+00:00",
+    "next_retry_at": "2026-10-16T07:33:01.657573+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-179-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:07.862735+00:00",
+    "attempted_at": "2026-10-16T06:33:01.694356+00:00",
+    "next_retry_at": "2026-10-16T07:33:01.694356+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-195/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:02.101620+00:00",
-    "attempted_at": "2026-10-16T01:49:27.882988+00:00",
-    "next_retry_at": "2026-10-16T02:49:27.882988+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-180-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:06.155571+00:00",
-    "attempted_at": "2026-10-16T01:49:28.500175+00:00",
-    "next_retry_at": "2026-10-16T02:49:28.500175+00:00"
+    "attempted_at": "2026-10-16T06:33:01.815002+00:00",
+    "next_retry_at": "2026-10-16T07:33:01.815002+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-007/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:11.854691+00:00",
-    "attempted_at": "2026-10-16T01:49:29.173288+00:00",
-    "next_retry_at": "2026-10-16T02:49:29.173288+00:00"
+    "attempted_at": "2026-10-16T06:33:01.818656+00:00",
+    "next_retry_at": "2026-10-16T07:33:01.818656+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-005/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "url": "https://www.edmliveset.com/radio/stonxcast-180-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:14.947898+00:00",
-    "attempted_at": "2026-10-16T01:49:29.241515+00:00",
-    "next_retry_at": "2026-10-16T02:49:29.241515+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:06.155571+00:00",
+    "attempted_at": "2026-10-16T06:33:01.876202+00:00",
+    "next_retry_at": "2026-10-16T07:33:01.876202+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-009/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:09.186294+00:00",
-    "attempted_at": "2026-10-16T01:49:30.739541+00:00",
-    "next_retry_at": "2026-10-16T02:49:30.739541+00:00"
+    "attempted_at": "2026-10-16T06:33:01.935651+00:00",
+    "next_retry_at": "2026-10-16T07:33:01.935651+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-005/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:14.947898+00:00",
+    "attempted_at": "2026-10-16T06:33:01.958150+00:00",
+    "next_retry_at": "2026-10-16T07:33:01.958150+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-006/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:15.131523+00:00",
-    "attempted_at": "2026-10-16T01:49:30.760583+00:00",
-    "next_retry_at": "2026-10-16T02:49:30.760583+00:00"
+    "attempted_at": "2026-10-16T06:33:03.993297+00:00",
+    "next_retry_at": "2026-10-16T07:33:03.993297+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-193/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:08.218646+00:00",
-    "attempted_at": "2026-10-16T01:49:30.816904+00:00",
-    "next_retry_at": "2026-10-16T02:49:30.816904+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-181-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:02.616345+00:00",
-    "attempted_at": "2026-10-16T01:49:30.973922+00:00",
-    "next_retry_at": "2026-10-16T02:49:30.973922+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-581-crackindomes-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:11.869671+00:00",
-    "attempted_at": "2026-10-16T01:49:31.337891+00:00",
-    "next_retry_at": "2026-10-16T02:49:31.337891+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-583-detrimental-konduct-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:07.633566+00:00",
-    "attempted_at": "2026-10-16T01:49:31.999298+00:00",
-    "next_retry_at": "2026-10-16T02:49:31.999298+00:00"
+    "attempted_at": "2026-10-16T06:33:04.154651+00:00",
+    "next_retry_at": "2026-10-16T07:33:04.154651+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/schematic-sound-jan-24-2026/",
     "error": "Not confirmed audio: HTTP 404, type=",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:19.310834+00:00",
-    "attempted_at": "2026-10-16T01:49:32.224116+00:00",
-    "next_retry_at": "2026-10-16T02:49:32.224116+00:00"
+    "attempted_at": "2026-10-16T06:33:04.247767+00:00",
+    "next_retry_at": "2026-10-16T07:33:04.247767+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-181-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:02.616345+00:00",
+    "attempted_at": "2026-10-16T06:33:04.337202+00:00",
+    "next_retry_at": "2026-10-16T07:33:04.337202+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-583-detrimental-konduct-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:07.633566+00:00",
+    "attempted_at": "2026-10-16T06:33:04.461444+00:00",
+    "next_retry_at": "2026-10-16T07:33:04.461444+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-581-crackindomes-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:11.869671+00:00",
+    "attempted_at": "2026-10-16T06:33:04.542881+00:00",
+    "next_retry_at": "2026-10-16T07:33:04.542881+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-584-dark-adaptation-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:47:06.146382+00:00",
-    "attempted_at": "2026-10-16T01:49:32.653580+00:00",
-    "next_retry_at": "2026-10-16T02:49:32.653580+00:00"
+    "attempted_at": "2026-10-16T06:33:04.627428+00:00",
+    "next_retry_at": "2026-10-16T07:33:04.627428+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/be-the-different-192/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:14.975375+00:00",
-    "attempted_at": "2026-10-16T01:49:34.093275+00:00",
-    "next_retry_at": "2026-10-16T02:49:34.093275+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-077-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:11.842252+00:00",
-    "attempted_at": "2026-10-16T01:49:34.252186+00:00",
-    "next_retry_at": "2026-10-16T02:49:34.252186+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-178-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T11:47:09.998372+00:00",
-    "attempted_at": "2026-10-16T01:49:34.316901+00:00",
-    "next_retry_at": "2026-10-16T02:49:34.316901+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-580-tally-g-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:15.918443+00:00",
-    "attempted_at": "2026-10-16T01:49:34.420983+00:00",
-    "next_retry_at": "2026-10-16T02:49:34.420983+00:00"
+    "attempted_at": "2026-10-16T06:33:04.641639+00:00",
+    "next_retry_at": "2026-10-16T07:33:04.641639+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/",
     "error": "Not confirmed audio: HTTP 206, type=text/html",
     "error_type": "temporary_or_other",
-    "failure_count": 26,
+    "failure_count": 27,
     "first_failed_at": "2026-10-13T11:39:24.366136+00:00",
-    "attempted_at": "2026-10-16T01:49:34.620733+00:00",
-    "next_retry_at": "2026-10-16T02:49:34.620733+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-176-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:16.357604+00:00",
-    "attempted_at": "2026-10-16T01:49:34.696353+00:00",
-    "next_retry_at": "2026-10-16T02:49:34.696353+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-491/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:17.096890+00:00",
-    "attempted_at": "2026-10-16T01:49:35.139514+00:00",
-    "next_retry_at": "2026-10-16T02:49:35.139514+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-004/",
-    "error": "Not confirmed audio: HTTP 404, type=text/plain",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:20.669613+00:00",
-    "attempted_at": "2026-10-16T01:49:35.808203+00:00",
-    "next_retry_at": "2026-10-16T02:49:35.808203+00:00"
+    "attempted_at": "2026-10-16T06:33:06.579001+00:00",
+    "next_retry_at": "2026-10-16T07:33:06.579001+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/be-the-different-190/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:23.768315+00:00",
-    "attempted_at": "2026-10-16T01:49:37.243697+00:00",
-    "next_retry_at": "2026-10-16T02:49:37.243697+00:00"
+    "attempted_at": "2026-10-16T06:33:07.456545+00:00",
+    "next_retry_at": "2026-10-16T07:33:07.456545+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-004/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:20.669613+00:00",
+    "attempted_at": "2026-10-16T06:33:07.474286+00:00",
+    "next_retry_at": "2026-10-16T07:33:07.474286+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-178-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:09.998372+00:00",
+    "attempted_at": "2026-10-16T06:33:07.589904+00:00",
+    "next_retry_at": "2026-10-16T07:33:07.589904+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-176-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:16.357604+00:00",
+    "attempted_at": "2026-10-16T06:33:07.594929+00:00",
+    "next_retry_at": "2026-10-16T07:33:07.594929+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-580-tally-g-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:15.918443+00:00",
+    "attempted_at": "2026-10-16T06:33:07.598619+00:00",
+    "next_retry_at": "2026-10-16T07:33:07.598619+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-077-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T11:47:11.842252+00:00",
+    "attempted_at": "2026-10-16T06:33:07.637787+00:00",
+    "next_retry_at": "2026-10-16T07:33:07.637787+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-491/",
+    "error": "Not confirmed audio: HTTP 404, type=text/plain",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:17.096890+00:00",
+    "attempted_at": "2026-10-16T06:33:07.828444+00:00",
+    "next_retry_at": "2026-10-16T07:33:07.828444+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-490/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:18.842371+00:00",
-    "attempted_at": "2026-10-16T01:49:37.565574+00:00",
-    "next_retry_at": "2026-10-16T02:49:37.565574+00:00"
+    "attempted_at": "2026-10-16T06:33:09.066834+00:00",
+    "next_retry_at": "2026-10-16T07:33:09.066834+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/smith-sessions-radio-489/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:22.120121+00:00",
-    "attempted_at": "2026-10-16T01:49:37.853800+00:00",
-    "next_retry_at": "2026-10-16T02:49:37.853800+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-579-nox-guestmix/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:16.155737+00:00",
-    "attempted_at": "2026-10-16T01:49:37.993463+00:00",
-    "next_retry_at": "2026-10-16T02:49:37.993463+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-172-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:22.833921+00:00",
-    "attempted_at": "2026-10-16T01:49:38.160754+00:00",
-    "next_retry_at": "2026-10-16T02:49:38.160754+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-174-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:18.626059+00:00",
-    "attempted_at": "2026-10-16T01:49:38.179579+00:00",
-    "next_retry_at": "2026-10-16T02:49:38.179579+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-175-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:17.455924+00:00",
-    "attempted_at": "2026-10-16T01:49:38.665827+00:00",
-    "next_retry_at": "2026-10-16T02:49:38.665827+00:00"
+    "attempted_at": "2026-10-16T06:33:09.850013+00:00",
+    "next_retry_at": "2026-10-16T07:33:09.850013+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/be-the-different-191/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:20.609782+00:00",
-    "attempted_at": "2026-10-16T01:49:40.383696+00:00",
-    "next_retry_at": "2026-10-16T02:49:40.383696+00:00"
+    "attempted_at": "2026-10-16T06:33:10.045425+00:00",
+    "next_retry_at": "2026-10-16T07:33:10.045425+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-579-nox-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:16.155737+00:00",
+    "attempted_at": "2026-10-16T06:33:10.048580+00:00",
+    "next_retry_at": "2026-10-16T07:33:10.048580+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-175-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:17.455924+00:00",
+    "attempted_at": "2026-10-16T06:33:10.215715+00:00",
+    "next_retry_at": "2026-10-16T07:33:10.215715+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-174-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:18.626059+00:00",
+    "attempted_at": "2026-10-16T06:33:10.228708+00:00",
+    "next_retry_at": "2026-10-16T07:33:10.228708+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/stonxcast-172-ollie/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:22.833921+00:00",
+    "attempted_at": "2026-10-16T06:33:10.260955+00:00",
+    "next_retry_at": "2026-10-16T07:33:10.260955+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-576-markum-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:24.421328+00:00",
-    "attempted_at": "2026-10-16T01:49:40.629479+00:00",
-    "next_retry_at": "2026-10-16T02:49:40.629479+00:00"
+    "attempted_at": "2026-10-16T06:33:10.299805+00:00",
+    "next_retry_at": "2026-10-16T07:33:10.299805+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-488/",
     "error": "Not confirmed audio: HTTP 404, type=text/plain",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:23.888710+00:00",
-    "attempted_at": "2026-10-16T01:49:42.069311+00:00",
-    "next_retry_at": "2026-10-16T02:49:42.069311+00:00"
+    "attempted_at": "2026-10-16T06:33:11.608148+00:00",
+    "next_retry_at": "2026-10-16T07:33:11.608148+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-575-jozef-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:25.676009+00:00",
-    "attempted_at": "2026-10-16T01:49:42.230309+00:00",
-    "next_retry_at": "2026-10-16T02:49:42.230309+00:00"
-  },
-  {
-    "url": "https://www.edmliveset.com/radio/stonxcast-171-ollie/",
-    "error": "Not confirmed audio: HTTP 404, type=text/html",
-    "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:24.923872+00:00",
-    "attempted_at": "2026-10-16T01:49:42.270944+00:00",
-    "next_retry_at": "2026-10-16T02:49:42.270944+00:00"
+    "attempted_at": "2026-10-16T06:33:12.683310+00:00",
+    "next_retry_at": "2026-10-16T07:33:12.683310+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-577-noisesmith-guestmix/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:22.675579+00:00",
-    "attempted_at": "2026-10-16T01:49:42.360036+00:00",
-    "next_retry_at": "2026-10-16T02:49:42.360036+00:00"
+    "attempted_at": "2026-10-16T06:33:12.717162+00:00",
+    "next_retry_at": "2026-10-16T07:33:12.717162+00:00"
   },
   {
-    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-578-diode-guestmix/",
+    "url": "https://www.edmliveset.com/radio/stonxcast-171-ollie/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
-    "first_failed_at": "2026-10-13T12:00:19.641069+00:00",
-    "attempted_at": "2026-10-16T01:49:42.375806+00:00",
-    "next_retry_at": "2026-10-16T02:49:42.375806+00:00"
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:24.923872+00:00",
+    "attempted_at": "2026-10-16T06:33:12.742495+00:00",
+    "next_retry_at": "2026-10-16T07:33:12.742495+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/stonxcast-173-ollie/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T12:00:22.807502+00:00",
-    "attempted_at": "2026-10-16T01:49:42.550177+00:00",
-    "next_retry_at": "2026-10-16T02:49:42.550177+00:00"
+    "attempted_at": "2026-10-16T06:33:12.766445+00:00",
+    "next_retry_at": "2026-10-16T07:33:12.766445+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-578-diode-guestmix/",
+    "error": "Not confirmed audio: HTTP 404, type=text/html",
+    "error_type": "not_found",
+    "failure_count": 24,
+    "first_failed_at": "2026-10-13T12:00:19.641069+00:00",
+    "attempted_at": "2026-10-16T06:33:12.886503+00:00",
+    "next_retry_at": "2026-10-16T07:33:12.886503+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/paul-oakenfold-planet-perfecto-podcast-802/",
     "error": "Not confirmed audio: HTTP 403, type=application/xml",
     "error_type": "temporary_or_other",
-    "failure_count": 25,
+    "failure_count": 26,
     "first_failed_at": "2026-10-13T11:47:05.767204+00:00",
-    "attempted_at": "2026-10-16T01:49:45.960744+00:00",
-    "next_retry_at": "2026-10-16T02:49:45.960744+00:00"
+    "attempted_at": "2026-10-16T06:33:13.086341+00:00",
+    "next_retry_at": "2026-10-16T07:33:13.086341+00:00"
   },
   {
     "url": "https://www.edmliveset.com/radio/stonebridge-hed-kandi-japan-670/",
     "error": "Not confirmed audio: HTTP 404, type=text/html",
     "error_type": "not_found",
-    "failure_count": 23,
+    "failure_count": 24,
     "first_failed_at": "2026-10-13T11:18:01.907538+00:00",
-    "attempted_at": "2026-10-16T01:49:52.135302+00:00",
-    "next_retry_at": "2026-10-16T02:49:52.135302+00:00"
+    "attempted_at": "2026-10-16T06:33:17.944600+00:00",
+    "next_retry_at": "2026-10-16T07:33:17.944600+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/lilly-palmer-spannung-radio-show-071/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-16T06:33:18.103124+00:00",
+    "attempted_at": "2026-10-16T06:33:19.169683+00:00",
+    "next_retry_at": "2026-10-16T07:33:19.169683+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/sam-feldt-heartfeldt-radio-556/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-16T06:33:18.103124+00:00",
+    "attempted_at": "2026-10-16T06:33:19.284751+00:00",
+    "next_retry_at": "2026-10-16T07:33:19.284751+00:00"
+  },
+  {
+    "url": "https://www.edmliveset.com/radio/scorchin-radio-319-super8-tab/",
+    "error": "Not confirmed audio: HTTP 403, type=text/plain",
+    "error_type": "temporary_or_other",
+    "failure_count": 1,
+    "first_failed_at": "2026-10-16T06:33:18.103124+00:00",
+    "attempted_at": "2026-10-16T06:33:23.799084+00:00",
+    "next_retry_at": "2026-10-16T07:33:23.799084+00:00"
   }
 ]
