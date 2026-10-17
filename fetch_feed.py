@@ -345,7 +345,7 @@ def build(items):
         # Podcast Addict can use item-level itunes:image as episode artwork.
         if x.get("image_url"):
             ET.SubElement(it,"{http://www.itunes.com/dtds/podcast-1.0.dtd}image",{"href":x["image_url"]})
-        ET.SubElement(it,"enclosure",{"url":x["audio_url"].replace(" ", "%20"),"length":str(x["audio_length"]),"type":x["audio_type"]})
+        ET.SubElement(it,"enclosure",{"url":x["audio_url"],"length":str(x["audio_length"]),"type":x["audio_type"]})
         if x["genre"]:ET.SubElement(it,"category").text=x["genre"]
     ET.indent(root,space="  "); data=ET.tostring(root,encoding="utf-8",xml_declaration=True); ET.fromstring(data); return data
 
