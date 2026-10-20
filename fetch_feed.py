@@ -114,6 +114,29 @@ def dateval(v):
         try:return datetime.strptime(v,f).replace(tzinfo=timezone.utc)
         except (ValueError,TypeError):pass
     return None
+def embedded_soundcloud_media_urls(source, base):
+    """Find SoundCloud CDN media URLs even when their path has no .mp3 suffix."""
+    if not source:
+        return []
+    source = html.unescape(str(source)).replace("\\/", "/")
+    found = []
+    # SoundCloud signs media URLs with query parameters; some embeds expose them
+    # only in serialized player data, where an extension-only regex misses them.
+    for raw in re.findall(r"""https?://[^"'\s<>]+""", source, re.I):
+        raw = raw.rstrip("),;]}'")
+        candidate = url(raw, base)
+        if not candidate:
+            continue
+        parsed = urlparse(candidate)
+        host = (parsed.hostname or "").lower()
+        if not (host.endswith("sndcdn.com") or host.endswith("sndcloud.com")):
+            continue
+        if "media" not in host and not any(k in parsed.query.lower() for k in ("policy=", "signature=", "key-pair-id=")):
+            continue
+        found.append(candidate)
+    return list(dict.fromkeys(found))
+
+
 def parse(u):
     r=get(u); soup=BeautifulSoup(r.text,"html.parser")
     can=soup.find("link",rel="canonical"); canonical=url(can.get("href"),r.url) if can else r.url
@@ -187,6 +210,8 @@ def parse(u):
     for raw in re.findall(r"""https?://[^"'\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\s<>]*)?""",r.text,re.I):
         u2=url(raw.replace("\\/", "/"),r.url)
         if u2:candidates.append(u2)
+    # SoundCloud signed media URLs may have no audio-file extension.
+    candidates.extend(embedded_soundcloud_media_urls(r.text, r.url))
     candidates=list(dict.fromkeys(candidates))
     # Try direct media links first, then player-provided sources and download redirects.
     candidates.sort(key=lambda x: (0 if re.search(media_ext,x,re.I) else 1))
@@ -766,6 +791,7 @@ def refresh_expiring_audio(items_by_url):
                             r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate_url, re.I
                         ):
                             candidates.append(candidate_url)
+                    candidates.extend(embedded_soundcloud_media_urls(player_response.text, player_response.url))
                 except Exception as player_exc:
                     row["error"] = (row["error"] + "; player: " + str(player_exc))[:1500]
             candidates = list(dict.fromkeys(candidates))
@@ -933,6 +959,12 @@ def main():
                             good,final_url,nbytes,candidate_err=probe(candidate)
                             if good: ok=True; final=final_url; size=nbytes; err=""; break
                             err=candidate_err
+                        if not ok:
+                            for candidate in embedded_soundcloud_media_urls(pr.text, pr.url):
+                                good,final_url,nbytes,candidate_err=probe(candidate)
+                                if good:
+                                    ok=True; final=final_url; size=nbytes; err=""; break
+                                err=candidate_err
                         if ok: break
                     except Exception as pe: err=f"Player fallback failed: {pe}"
             x["audio_url"]=final if ok else ""; x["audio_length"]=size; x["audio_type"]="audio/mpeg"
