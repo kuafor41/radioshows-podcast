@@ -137,6 +137,64 @@ def embedded_soundcloud_media_urls(source, base):
     return list(dict.fromkeys(found))
 
 
+def extract_player_audio_candidates(player_urls):
+    """Extract media from embedded players; this group is tried before download links."""
+    found = []
+    errors = []
+    media_ext = r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])"
+    for player_url in player_urls or []:
+        try:
+            response = get(player_url)
+            source = response.text or ""
+            soup = BeautifulSoup(source, "html.parser")
+            for node in soup.select(
+                "audio[src], audio source[src], source[src], "
+                "meta[property='og:audio'], meta[property='og:audio:url']"
+            ):
+                raw = node.get("src") or node.get("content")
+                candidate = url(raw, response.url)
+                if candidate:
+                    found.append(candidate)
+            for node in soup.select("a[href]"):
+                candidate = url(node.get("href"), response.url)
+                if not candidate:
+                    continue
+                parsed = urlparse(candidate)
+                host = (parsed.hostname or "").lower()
+                signed = any(key in parsed.query.lower() for key in
+                             ("policy=", "signature=", "key-pair-id="))
+                if re.search(media_ext, candidate, re.I) or (
+                    (host.endswith("sndcdn.com") or host.endswith("sndcloud.com"))
+                    and ("media" in host or signed)
+                ):
+                    found.append(candidate)
+            for raw in re.findall(
+                r"""https?://[^"'\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\s<>]*)?""",
+                source, re.I
+            ):
+                candidate = url(raw.replace("\\/", "/"), response.url)
+                if candidate:
+                    found.append(candidate)
+            found.extend(embedded_soundcloud_media_urls(source, response.url))
+        except Exception as exc:
+            errors.append(f"{player_url}: {type(exc).__name__}: {exc}")
+    # Prefer a stable SoundCloud stream endpoint when available. Direct signed CDN
+    # URLs are still tested as fallbacks, but should not replace a stable stream URL.
+    def priority(candidate):
+        parsed = urlparse(candidate)
+        host = (parsed.hostname or "").lower()
+        if host == "feeds.soundcloud.com" and parsed.path.startswith("/stream/"):
+            return 0
+        if host.endswith(("sndcdn.com", "sndcloud.com")) and any(
+            key in parsed.query.lower() for key in ("policy=", "signature=", "key-pair-id=")
+        ):
+            return 1
+        if re.search(media_ext, candidate, re.I):
+            return 2
+        return 3
+    return sorted(dict.fromkeys(found), key=priority), errors
+
+
 def parse(u):
     r=get(u); soup=BeautifulSoup(r.text,"html.parser")
     can=soup.find("link",rel="canonical"); canonical=url(can.get("href"),r.url) if can else r.url
@@ -190,8 +248,10 @@ def parse(u):
             if re.match(r"^Dive into the vibrant world of electronic dance music",t,re.I): break
             if t and "tracklist" not in t.lower() and t not in tracks:tracks.append(t)
     tracks=[t for t in tracks if not re.search(r"podcast.*embedded on this page|all files, descriptions",t,re.I)]
-    candidates=[]; player_urls=[]
+    candidates=[]; page_player_candidates=[]; player_urls=[]
     media_ext=r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])"
+    # Links/buttons are fallback candidates. They are intentionally kept separate
+    # from sources belonging to the page's embedded player.
     for a in soup.select("a[href]"):
         label=txt(a).lower(); u2=url(a.get("href"),r.url)
         if not u2: continue
@@ -199,28 +259,40 @@ def parse(u):
             candidates.append(u2)
         elif "download" in label:
             candidates.append(u2)
+    # HTML audio/source tags and media embedded in page scripts belong to the player group.
     for n in soup.select("audio[src],audio source[src],source[src],meta[property='og:audio'],meta[property='og:audio:url']"):
         u2=url(n.get("src") or n.get("content"),r.url)
-        if u2:candidates.append(u2)
+        if u2:page_player_candidates.append(u2)
     for n in soup.select("iframe[src]"):
         u2=url(n.get("src"),r.url)
         if u2: player_urls.append(u2)
-    # Some players keep the real media URL in inline JSON/JavaScript rather than
-    # in an <audio> element or a visible download link.
     for raw in re.findall(r"""https?://[^"'\s<>]+?\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:\?[^"'\s<>]*)?""",r.text,re.I):
         u2=url(raw.replace("\\/", "/"),r.url)
-        if u2:candidates.append(u2)
-    # SoundCloud signed media URLs may have no audio-file extension.
-    candidates.extend(embedded_soundcloud_media_urls(r.text, r.url))
+        if u2:page_player_candidates.append(u2)
+    # A SoundCloud player can expose a signed CDN media URL without an extension.
+    page_player_candidates.extend(embedded_soundcloud_media_urls(r.text, r.url))
     candidates=list(dict.fromkeys(candidates))
-    # Try direct media links first, then player-provided sources and download redirects.
     candidates.sort(key=lambda x: (0 if re.search(media_ext,x,re.I) else 1))
-    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":"","audio_candidates":candidates,"player_urls":list(dict.fromkeys(player_urls)),"body_lines":body_lines,"tracklist":tracks,"pubdate":(dateval(d["added"]) or datetime(1970,1,1,tzinfo=timezone.utc)).isoformat()}
+    page_player_candidates=list(dict.fromkeys(page_player_candidates))
+    # If present, prefer a renewable SoundCloud stream endpoint to its expiring CDN redirect.
+    def player_priority(candidate):
+        parsed=urlparse(candidate); host=(parsed.hostname or "").lower()
+        if host=="feeds.soundcloud.com" and parsed.path.startswith("/stream/"): return 0
+        if host.endswith(("sndcdn.com","sndcloud.com")) and any(k in parsed.query.lower() for k in ("policy=","signature=","key-pair-id=")): return 1
+        if re.search(media_ext,candidate,re.I): return 2
+        return 3
+    page_player_candidates.sort(key=player_priority)
+    return {"title":title,"url":canonical,"guid":canonical,**d,"image_url":image_url,"audio_url":"","audio_candidates":candidates,"page_player_candidates":page_player_candidates,"player_urls":list(dict.fromkeys(player_urls)),"body_lines":body_lines,"tracklist":tracks,"pubdate":(dateval(d["added"]) or datetime(1970,1,1,tzinfo=timezone.utc)).isoformat()}
 def probe(u):
     if not u:return False,u,0,"No direct audio URL found"
     try:
         r=S.get(u,headers={"Range":"bytes=0-1023"},timeout=TIMEOUT,stream=True,allow_redirects=True)
         typ=r.headers.get("Content-Type","").split(";")[0].lower(); size=int(r.headers.get("Content-Length","0") or 0); final=r.url; status=r.status_code
+        # feeds.soundcloud.com/stream/ is a stable resolver. Keep that URL in the
+        # enclosure so the client receives a fresh CDN signature when it downloads.
+        original=urlparse(u)
+        if (original.hostname or "").lower()=="feeds.soundcloud.com" and original.path.startswith("/stream/"):
+            final=u
         next(r.iter_content(1024),b""); r.close()
         ok=status in (200,206) and (typ.startswith("audio/") or "octet-stream" in typ or final.lower().split("?")[0].endswith((".mp3",".m4a",".aac",".ogg",".opus",".wav")))
         return ok,final,size,"" if ok else f"Not confirmed audio: HTTP {status}, type={typ}"
@@ -665,6 +737,11 @@ def inspect_audio_url(value):
         except (ValueError, TypeError):
             length = 0
         final_url = response.url
+        # Do not publish a one-time CloudFront redirect when the original URL is
+        # SoundCloud's stable stream endpoint; let the podcast client follow it at download time.
+        original = urlparse(value)
+        if (original.hostname or "").lower() == "feeds.soundcloud.com" and original.path.startswith("/stream/"):
+            final_url = value
         try:
             next(response.iter_content(1024), b"")
         finally:
@@ -776,39 +853,30 @@ def refresh_expiring_audio(items_by_url):
 
         try:
             parsed = parse(page_url)
-            candidates = list(parsed.get("audio_candidates", []))
-            for player_url in parsed.get("player_urls", []):
-                try:
-                    player_response = get(player_url)
-                    player_soup = BeautifulSoup(player_response.text, "html.parser")
-                    for node in player_soup.select(
-                        "audio[src], audio source[src], source[src], "
-                        "meta[property='og:audio'], meta[property='og:audio:url'], a[href]"
-                    ):
-                        raw = node.get("src") or node.get("content") or node.get("href")
-                        candidate_url = url(raw, player_response.url)
-                        if candidate_url and re.search(
-                            r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate_url, re.I
-                        ):
-                            candidates.append(candidate_url)
-                    candidates.extend(embedded_soundcloud_media_urls(player_response.text, player_response.url))
-                except Exception as player_exc:
-                    row["error"] = (row["error"] + "; player: " + str(player_exc))[:1500]
-            candidates = list(dict.fromkeys(candidates))
-            candidates.sort(key=lambda candidate_url: (
-                0 if re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])", candidate_url, re.I) else 1
-            ))
+            iframe_candidates, player_errors = extract_player_audio_candidates(parsed.get("player_urls", []))
+            if player_errors:
+                row["error"] = (row["error"] + "; player: " + "; ".join(player_errors[-2:]))[:1500]
+            # Strict source order: live embedded player first, then in-page player
+            # metadata/script sources, and only then Free Download/button links.
+            candidate_groups = [
+                iframe_candidates,
+                list(parsed.get("page_player_candidates", [])),
+                list(parsed.get("audio_candidates", [])),
+            ]
             chosen = None
             candidate_errors = []
-            for candidate_url in candidates:
-                result = inspect_audio_url(candidate_url)
-                if result["ok"]:
-                    chosen = result
+            for group in candidate_groups:
+                for candidate_url in group:
+                    result = inspect_audio_url(candidate_url)
+                    if result["ok"]:
+                        chosen = result
+                        break
+                    candidate_errors.append(
+                        f"{candidate_url}: HTTP {result['status'] or 'error'} "
+                        f"{result['content_type']} {result['error']}"
+                    )
+                if chosen:
                     break
-                candidate_errors.append(
-                    f"{candidate_url}: HTTP {result['status'] or 'error'} "
-                    f"{result['content_type']} {result['error']}"
-                )
             if chosen:
                 new_url = chosen["final_url"]
                 changed = new_url != current_audio
@@ -943,30 +1011,26 @@ def main():
                 print("[WARNING] Added date not parsed; retaining episode: "+x.get("title",u), flush=True)
             else:
                 x["pubdate"]=added.isoformat()
-            ok=False; final=""; size=0; err="No direct audio URL found"
-            for candidate in x.get("audio_candidates",[]):
-                good,final_url,nbytes,candidate_err=probe(candidate)
-                if good: ok=True; final=final_url; size=nbytes; err=""; break
-                err=candidate_err
-            if not ok:
-                for player_url in x.get("player_urls",[]):
-                    try:
-                        pr=get(player_url); ps=BeautifulSoup(pr.text,"html.parser"); candidates=[]
-                        for node in ps.select("audio[src],audio source[src],source[src],meta[property='og:audio'],meta[property='og:audio:url'],a[href]"):
-                            raw=node.get("src") or node.get("content") or node.get("href"); candidate=url(raw,pr.url)
-                            if candidate and re.search(r"\.(?:mp3|m4a|aac|ogg|opus|wav|flac)(?:$|[?#])",candidate,re.I): candidates.append(candidate)
-                        for candidate in dict.fromkeys(candidates):
-                            good,final_url,nbytes,candidate_err=probe(candidate)
-                            if good: ok=True; final=final_url; size=nbytes; err=""; break
-                            err=candidate_err
-                        if not ok:
-                            for candidate in embedded_soundcloud_media_urls(pr.text, pr.url):
-                                good,final_url,nbytes,candidate_err=probe(candidate)
-                                if good:
-                                    ok=True; final=final_url; size=nbytes; err=""; break
-                                err=candidate_err
-                        if ok: break
-                    except Exception as pe: err=f"Player fallback failed: {pe}"
+            ok=False; final=""; size=0; err="No direct audio URL found"; selected_source=""
+            iframe_candidates, player_errors = extract_player_audio_candidates(x.get("player_urls", []))
+            # The player is the authoritative source. The button/direct-download group
+            # is deliberately last because its signed URL may be stale while the player works.
+            candidate_groups = [
+                ("player_iframe", iframe_candidates),
+                ("page_player", x.get("page_player_candidates", [])),
+                ("free_download_fallback", x.get("audio_candidates", [])),
+            ]
+            for source_name, candidate_group in candidate_groups:
+                for candidate in candidate_group:
+                    good,final_url,nbytes,candidate_err=probe(candidate)
+                    if good:
+                        ok=True; final=final_url; size=nbytes; err=""; selected_source=source_name; break
+                    err=candidate_err
+                if ok: break
+            if not ok and player_errors:
+                err=("Player extraction failed: " + "; ".join(player_errors[-2:]) + "; " + err)[:1500]
+            if ok:
+                print(f"[AUDIO-SOURCE] selected={selected_source} | {x['title']}", flush=True)
             x["audio_url"]=final if ok else ""; x["audio_length"]=size; x["audio_type"]="audio/mpeg"
             x["status"]="success" if ok and x["tracklist"] else "warning"
             x["error"]=err or ("" if x["tracklist"] else "Tracklist not extracted")
