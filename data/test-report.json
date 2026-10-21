@@ -2,19 +2,19 @@
   "mode": "incremental",
   "source": "https://www.edmliveset.com/radio/",
   "cutoff": "2025-01-01",
-  "run_at": "2026-10-21T06:42:59.235005+00:00",
-  "script_started_at_utc": "2026-10-21T06:37:08.451623+00:00",
-  "script_elapsed_seconds": 350.86,
-  "audio_refresh_seconds": 215.35,
-  "audio_urls_refreshed": 686,
+  "run_at": "2026-10-21T12:30:18.192010+00:00",
+  "script_started_at_utc": "2026-10-21T12:28:00.842644+00:00",
+  "script_elapsed_seconds": 137.44,
+  "audio_refresh_seconds": 110.94,
+  "audio_urls_refreshed": 0,
   "discovered": 128,
   "newly_checked": 128,
   "archived_total": 4446,
   "published": 4446,
   "audio_confirmed": 4446,
   "old_links_audited": 20,
-  "old_links_still_valid": 20,
-  "old_links_degraded": 0,
+  "old_links_still_valid": 17,
+  "old_links_degraded": 3,
   "moved_to_review": 0,
   "tracklists_found": 4445,
   "cover_cache": {
@@ -25,1326 +25,1332 @@
       {
         "series": "Sorry For The Noise with Amber Broos – July, 2026",
         "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp",
-        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/radio/sorry-for-the-noise-with-amber-broos-july-2026/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://cdn.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
+        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/radio/sorry-for-the-noise-with-amber-broos-july-2026/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\"))); https://edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'edmliveset.com'. (_ssl.c:1010)\"))); https://cdn.edmliveset.com/wp-content/uploads/2026/03/Sorry-For-The-Noise-with-Amber-Broos.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
       },
       {
         "series": "Hardcore Will Never Di‪e",
         "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp",
-        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/radio/dj-ezc-hardcore-will-never-die-564/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
+        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/radio/dj-ezc-hardcore-will-never-die-564/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2023/05/Hardcore-Will-Never-Di%E2%80%AAe.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\"))); https://edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2023/05/Hardcore-Will-Never-Di%E2%80%AAe.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'edmliveset.com'. (_ssl.c:1010)\"))); https://cdn.edmliveset.com/wp-content/uploads/2023/05/Hardcore-Will-Never-Di‪e.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
       },
       {
         "series": "Colorcast , Kaiyan",
         "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp",
-        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/radio/colorcast-radio-show-radio-274-with-ophanim-b2b-kaiyan-road-to-day-of-light/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://cdn.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
+        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/radio/colorcast-radio-show-radio-274-with-ophanim-b2b-kaiyan-road-to-day-of-light/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2023/05/Colorcast-Radio-Show.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\"))); https://edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2023/05/Colorcast-Radio-Show.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'edmliveset.com'. (_ssl.c:1010)\"))); https://cdn.edmliveset.com/wp-content/uploads/2023/05/Colorcast-Radio-Show.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
       },
       {
         "series": "Anna Tur , Drumcode Live",
         "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp",
-        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/radio/drumcode-radio-813-anna-tur-live-from-ku-barcelona/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://cdn.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
+        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/radio/drumcode-radio-813-anna-tur-live-from-ku-barcelona/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2024/01/Drumcode-Radio.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\"))); https://edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2024/01/Drumcode-Radio.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'edmliveset.com'. (_ssl.c:1010)\"))); https://cdn.edmliveset.com/wp-content/uploads/2024/01/Drumcode-Radio.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
       },
       {
         "series": "V Podcast",
         "source_url": "https://cdn.edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp",
-        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/radio/v-podcast-174-bryan-gee/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://cdn.edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
+        "reason": "https://cdn.edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/radio/v-podcast-174-bryan-gee/]: Response matches a duplicated cached image (likely hotlink-warning placeholder); https://www.edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2026/01/V-Podcast.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\"))); https://edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/]: HTTPSConnectionPool(host='edmliveset.com', port=443): Max retries exceeded with url: /wp-content/uploads/2026/01/V-Podcast.webp (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'edmliveset.com'. (_ssl.c:1010)\"))); https://cdn.edmliveset.com/wp-content/uploads/2026/01/V-Podcast.webp [https://www.edmliveset.com/]: Response matches a duplicated cached image (likely hotlink-warning placeholder)"
       }
     ]
   },
-  "discovery_errors": [],
-  "pages_scanned": 3,
+  "discovery_errors": [
+    {
+      "page": 1,
+      "url": "https://www.edmliveset.com/radio/",
+      "error": "HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    }
+  ],
+  "pages_scanned": 0,
   "cutoff_reached": false,
   "oldest_added_checked": "",
   "page_limit_reached": false,
   "episodes": [
     {
-      "index": 2691,
-      "title": "Tritonal – Tritonia 531",
-      "page_url": "https://www.edmliveset.com/radio/tritonal-tritonia-531/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "No direct audio URL found"
-    },
-    {
-      "index": 2995,
-      "title": "MDLBEAST Radio Selects 174",
-      "page_url": "https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 3,
-      "status": "warning",
-      "error": "No direct audio URL found"
-    },
-    {
       "index": 274,
-      "title": "Firebeatz – Ignite Radio 458",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "No direct audio URL found"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/firebeatz-ignite-radio-458/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 2691,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/tritonal-tritonia-531/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/tritonal-tritonia-531/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 2995,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/mdlbeast-radio-selects-174/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1422,
-      "title": "Firebeatz – Ignite Radio 444",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-444/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "No direct audio URL found"
-    },
-    {
-      "index": 3142,
-      "title": "Armin van Buuren – A State of Trance 1267 (Ferry Corsten Residency Mix)",
-      "page_url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1267-ferry-corsten-residency-mix/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 200, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/firebeatz-ignite-radio-444/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2820,
-      "title": "Magna Recordings Radio Show 413 – Richard C",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-413-richard-c/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 17,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 2271,
-      "title": "Magna Recordings Radio Show 417 – Chris Campos",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-417-chris-campos/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 18,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-413-richard-c/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2038,
-      "title": "Magna Recordings Radio Show 419 – Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-419-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 14,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-419-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 3142,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1267-ferry-corsten-residency-mix/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/armin-van-buuren-a-state-of-trance-1267-ferry-corsten-residency-mix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 2271,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-417-chris-campos/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-417-chris-campos/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3261,
-      "title": "Magna Recordings Radio Show 410 – Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-410-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 2151,
-      "title": "Magna Recordings Radio Show 418 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-418-carlos-manaca/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 14,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-410-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3406,
-      "title": "Magna Recordings Radio Show 409 – Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-409-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-409-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 2151,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-418-carlos-manaca/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-418-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3034,
-      "title": "Magna Recordings Radio Show 411 – Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-411-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-411-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4365,
-      "title": "Magna Recordings Radio Show 402 – 2025 Most Played",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-402-2025-most-played/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-402-2025-most-played/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2588,
-      "title": "Magna Recordings Radio Show 415 – Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-415-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-415-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3814,
-      "title": "Magna Recordings Radio Show 406 – Tommy Myst",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-406-tommy-myst/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-406-tommy-myst/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3678,
-      "title": "Magna Recordings Radio Show 407 – Carlos Manaça.",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-407-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 3,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-407-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4092,
-      "title": "Magna Recordings Radio Show 404 – FabioTek b2b Tomy Villacorta Pt.2 (Montreal) Canada",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-404-fabiotek-b2b-tomy-villacorta-pt-2-montreal-canada/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 429, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-404-fabiotek-b2b-tomy-villacorta-pt-2-montreal-canada/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2447,
-      "title": "Magna Recordings Radio Show 416 – Tony Villacorta",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-416-tony-villacorta/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 16,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 429, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-416-tony-villacorta/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2946,
-      "title": "Magna Recordings Radio Show 412 – Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-412-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 429, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-412-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4231,
-      "title": "Magna Recordings Radio Show 403- Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-403-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 429, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-403-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3540,
-      "title": "Magna Recordings Radio Show 408 – XL Garcia (Lisbon) Portugal",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-408-xl-garcia-lisbon-portugal/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 22,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 429, type=text/html"
-    },
-    {
-      "index": 2701,
-      "title": "538 Dance Department by Armin van Buuren – March 28, 2026 (Tomorrowland Winter Special)",
-      "page_url": "https://www.edmliveset.com/radio/538-dance-department-by-armin-van-buuren-march-28-2026-tomorrowland-winter-special/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-408-xl-garcia-lisbon-portugal/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4252,
-      "title": "PRISMATIC by Tiësto 001",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/clublife-by-tiesto-001/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/clublife-by-tiesto-001/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 2701,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/538-dance-department-by-armin-van-buuren-march-28-2026-tomorrowland-winter-special/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/538-dance-department-by-armin-van-buuren-march-28-2026-tomorrowland-winter-special/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 408,
-      "title": "PRISMATIC by Tiësto 035",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-035/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-035/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2470,
-      "title": "PRISMATIC by Tiësto 014",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-014/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-014/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 602,
-      "title": "PRISMATIC by Tiësto 033",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-033/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-033/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4368,
-      "title": "Schematic Sound Jan 03 2026",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/schematic-sound-jan-03-2026/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/schematic-sound-jan-03-2026/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1058,
-      "title": "PRISMATIC by Tiësto 027",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-027/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-027/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1527,
-      "title": "PRISMATIC by Tiësto 022",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-022/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 4448,
-      "title": "Roger Sanchez – Release Yourself Radio Show 1263 (Ones To Watch Guest Mixes of 2026)",
-      "page_url": "https://www.edmliveset.com/radio/release-yourself-radio-show-1263-ones-to-watch-guest-mixes-of-2026/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 6,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 867,
-      "title": "PRISMATIC by Tiësto 030",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-030/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-022/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2192,
-      "title": "PRISMATIC by Tiësto 016",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-016/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-016/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 4448,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/release-yourself-radio-show-1263-ones-to-watch-guest-mixes-of-2026/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/release-yourself-radio-show-1263-ones-to-watch-guest-mixes-of-2026/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 867,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-030/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-030/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 500,
-      "title": "PRISMATIC by Tiësto 034",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-034/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-034/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4352,
-      "title": "Mr. Smith – Smith Sessions Radio 487",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-487/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/mr-smith-smith-sessions-radio-487/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 999,
-      "title": "PRISMATIC by Tiësto 028",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-028/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-028/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4426,
-      "title": "CLUBLIFE by Tiësto 978 (Final Episode)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/clublife-by-tiesto-978-final-episode/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/clublife-by-tiesto-978-final-episode/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 709,
-      "title": "PRISMATIC by Tiësto 032",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-032/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-032/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1941,
-      "title": "PRISMATIC by Tiësto 018",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-018/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 461,
-      "title": "Armin van Buuren – A State of Trance 1293 (Ferry Corsten Residency Mix)",
-      "page_url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 206, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-018/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 938,
-      "title": "PRISMATIC by Tiësto 029",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-029/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-029/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
-      "index": 775,
-      "title": "PRISMATIC by Tiësto 031 (Ibiza Special)",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-031-ibiza-special/",
+      "index": 461,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/armin-van-buuren-a-state-of-trance-1293-residency-mix-by-ferry-corsten/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1098,
-      "title": "Romi Lux – Escape Radio 038",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/romi-lux-escape-radio-038/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/romi-lux-escape-radio-038/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 775,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-031-ibiza-special/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-031-ibiza-special/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1413,
-      "title": "PRISMATIC by Tiësto 023",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-023/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-023/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1737,
-      "title": "PRISMATIC by Tiësto 020",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-020/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-020/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1332,
-      "title": "PRISMATIC by Tiësto 024",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-024/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-024/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1232,
-      "title": "PRISMATIC by Tiësto 025",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-025/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-025/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1161,
-      "title": "PRISMATIC by Tiësto 026",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-026/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-026/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3531,
-      "title": "Schematic Sound Feb 14 2026",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/schematic-sound-feb-14-2026/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/schematic-sound-feb-14-2026/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3951,
-      "title": "Schematic Sound Jan 24 2026",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/schematic-sound-jan-24-2026/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/schematic-sound-jan-24-2026/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2335,
-      "title": "PRISMATIC by Tiësto 015",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-015/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-015/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2325,
-      "title": "Dennis Graft – Be The Different 197",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-197/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/dennis-graft-be-the-different-197/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2062,
-      "title": "PRISMATIC by Tiësto 017",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-017/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-017/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2842,
-      "title": "PRISMATIC by Tiësto 011",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-011/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-011/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1228,
-      "title": "Terminal V Podcast 119 – Emilija",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/terminal-v-podcast-119-emilija/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 3,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/terminal-v-podcast-119-emilija/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2966,
-      "title": "PRISMATIC by Tiësto 010",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-010/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-010/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3811,
-      "title": "Schematic Sound Jan 31 2026",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/schematic-sound-jan-31-2026/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 1803,
-      "title": "Dennis Graft – Be The Different 199",
-      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-199/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/schematic-sound-jan-31-2026/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2602,
-      "title": "PRISMATIC by Tiësto 013",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-013/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-013/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 1803,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-199/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/dennis-graft-be-the-different-199/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2593,
-      "title": "Dennis Graft – Be The Different 196",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-196/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/dennis-graft-be-the-different-196/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 924,
-      "title": "Dennis Graft – Be The Different 204",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-204/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/dennis-graft-be-the-different-204/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2816,
-      "title": "Bloom Records Podcast 341 – FLEANGER",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-341-fleanger/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bloom-records-podcast-341-fleanger/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 588,
-      "title": "Bloom Records Podcast 346 – Aman Anand",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-346-aman-anand/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 1915,
-      "title": "Bloom Records Podcast 343 – Fonarev",
-      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-343-fonarev/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 8,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bloom-records-podcast-346-aman-anand/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2675,
-      "title": "Nelver – Proud Eagle Radio Show 618",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/nelver-proud-eagle-radio-show-618/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/nelver-proud-eagle-radio-show-618/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 1915,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-343-fonarev/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bloom-records-podcast-343-fonarev/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2577,
-      "title": "Bloom Records Podcast 342 – Hassan Maroofi",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-342-hassan-maroofi/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 7,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bloom-records-podcast-342-hassan-maroofi/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3826,
-      "title": "PRISMATIC by Tiësto 004",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-004/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-004/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1798,
-      "title": "Night Owl Radio 561 – The Zombie Apocalypse Megamix",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/night-owl-radio-561-the-zombie-apocalypse-megamix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 65,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/night-owl-radio-561-the-zombie-apocalypse-megamix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2061,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 591 (Titanz Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-591-titanz-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-591-titanz-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1526,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 596 (Binary Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-596-binary-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-596-binary-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 772,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 605 (Filthy Lad Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-605-filthy-lad-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 4393,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 574 (Baddest of 2025)",
-      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-574-baddest-of-2025-mixed-by-bad-syntax/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-605-filthy-lad-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3676,
-      "title": "PRISMATIC by Tiësto 005",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-005/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-005/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 4393,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-574-baddest-of-2025-mixed-by-bad-syntax/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-574-baddest-of-2025-mixed-by-bad-syntax/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3276,
-      "title": "PRISMATIC by Tiësto 008",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-008/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 871,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 604 (Brijawi Guestmix)",
-      "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-604-brijawi-guestmix/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-008/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2331,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 589",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-589/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-589/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 871,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-604-brijawi-guestmix/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-604-brijawi-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3092,
-      "title": "Dennis Graft – Be The Different 194",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/be-the-different-194/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/be-the-different-194/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3409,
-      "title": "PRISMATIC by Tiësto 007",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-007/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-007/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1937,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 592 (Mowf Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-592-mowf-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-592-mowf-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1621,
-      "title": "Stonxcast 191 – Ollie (Sindicate Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-191-ollie-sindicate-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-191-ollie-sindicate-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3118,
-      "title": "PRISMATIC by Tiësto 009",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-009/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-009/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2183,
-      "title": "Stonxcast 186 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-186-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 3557,
-      "title": "PRISMATIC by Tiësto 006",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-006/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-186-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1060,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 601 (Acidion Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-601-acidion-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-601-acidion-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 3557,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-006/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/prismatic-by-tiesto-006/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 697,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 606 (Teniak Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-606-teniak-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-606-teniak-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1516,
-      "title": "Stonxcast 192 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-192-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-192-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1931,
-      "title": "Stonxcast 188 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-188-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-188-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2052,
-      "title": "Stonxcast 186 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-186-ollie-2/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-186-ollie-2/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2833,
-      "title": "Dennis Graft – Be The Different 195",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-195/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/dennis-graft-be-the-different-195/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2318,
-      "title": "Stonxcast 185 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-185-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-185-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2189,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 590 (Gen.Code Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-590-gen-code-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-590-gen-code-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 1723,
-      "title": "Stonxcast 190 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-190-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-190-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2591,
-      "title": "Stonxcast 183 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-183-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-183-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2826,
-      "title": "Stonxcast 181 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-181-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-181-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2466,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 588 (D_E_B_T Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-588-d_e_b_t-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-588-d_e_b_t-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2453,
-      "title": "Stonxcast 184 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-184-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-184-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3104,
-      "title": "Stonxcast 179 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-179-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-179-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3658,
-      "title": "Dennis Graft – Be The Different 192",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/be-the-different-192/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/be-the-different-192/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3805,
-      "title": "Mr. Smith – Smith Sessions Radio 491",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-491/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 2841,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 585 (Protoss Guestmix)",
-      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-585-protoss-guestmix/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/mr-smith-smith-sessions-radio-491/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4215,
-      "title": "Dennis Graft – Be The Different 190",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/be-the-different-190/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/be-the-different-190/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 2841,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-585-protoss-guestmix/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-585-protoss-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2705,
-      "title": "Stonxcast 182 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-182-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-182-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3959,
-      "title": "Magna Recordings Radio Show 405 – Carlos Manaça",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-405-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 429, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/magna-recordings-radio-show-405-carlos-manaca/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3363,
-      "title": "Dennis Graft – Be The Different 193",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-193/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/dennis-graft-be-the-different-193/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3116,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 583 (Detrimental Konduct Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-583-detrimental-konduct-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-583-detrimental-konduct-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3542,
-      "title": "Stonxcast 176 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-176-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-176-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2968,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 584 (Dark Adaptation Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-584-dark-adaptation-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-584-dark-adaptation-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2958,
-      "title": "Stonxcast 180 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-180-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-180-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4216,
-      "title": "Mr. Smith – Smith Sessions Radio 488",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-488/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 3,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/mr-smith-smith-sessions-radio-488/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3940,
-      "title": "Mr. Smith – Smith Sessions Radio 490",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-490/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/mr-smith-smith-sessions-radio-490/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3960,
-      "title": "Dennis Graft – Be The Different 191",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/be-the-different-191/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 4079,
-      "title": "Mr. Smith – Smith Sessions Radio 489",
-      "page_url": "https://www.edmliveset.com/radio/smith-sessions-radio-489/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/be-the-different-191/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3830,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 578 (Diode Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-578-diode-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-578-diode-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 4079,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/smith-sessions-radio-489/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/smith-sessions-radio-489/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3412,
-      "title": "Stonxcast 077 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-077-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-077-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3680,
-      "title": "Stonxcast 175 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-175-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-175-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2600,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 587 (Frydae Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-587-frydae-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 3263,
-      "title": "Stonxcast 178 – Ollie",
-      "page_url": "https://www.edmliveset.com/radio/stonxcast-178-ollie/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-587-frydae-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3556,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 580 (Tally G Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-580-tally-g-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-580-tally-g-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
-      "index": 4112,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 576 (Markum Guestmix)",
-      "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-576-markum-guestmix/",
+      "index": 3263,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/stonxcast-178-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-178-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3822,
-      "title": "Stonxcast 174 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-174-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 59,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-174-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
+    },
+    {
+      "index": 4112,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-576-markum-guestmix/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-576-markum-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4091,
-      "title": "Stonxcast 172 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-172-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-172-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3972,
-      "title": "Stonxcast 173 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-173-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-173-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4245,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 575 (Jozef Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-575-jozef-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-575-jozef-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4236,
-      "title": "Stonxcast 171 – Ollie",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonxcast-171-ollie/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonxcast-171-ollie/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3688,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 579 (Nox Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-579-nox-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-579-nox-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3976,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 577 (Noisesmith Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-577-noisesmith-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/best-drum-and-bass-podcast-577-noisesmith-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 3424,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 581 (CrackinDomes Guestmix)",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-581-crackindomes-guestmix/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/bad-syntax-best-drum-and-bass-podcast-581-crackindomes-guestmix/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 2928,
-      "title": "Paul Oakenfold – Planet Perfecto Podcast 802",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/paul-oakenfold-planet-perfecto-podcast-802/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 14,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/paul-oakenfold-planet-perfecto-podcast-802/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     },
     {
       "index": 4479,
-      "title": "StoneBridge – Hed Kandi Japan 670",
+      "title": "",
       "page_url": "https://www.edmliveset.com/radio/stonebridge-hed-kandi-japan-670/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "track_count": 0,
+      "status": "failed",
+      "error": "SSLError: HTTPSConnectionPool(host='www.edmliveset.com', port=443): Max retries exceeded with url: /radio/stonebridge-hed-kandi-japan-670/ (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.edmliveset.com'. (_ssl.c:1010)\")))"
     }
   ],
   "rss_xml_valid": true,
   "new_episodes_added": 0,
-  "retry_queue_remaining": 128,
+  "retry_queue_remaining": 131,
   "old_links_retried": 128,
   "old_links_recovered": 0,
   "retry_failures": 128,
-  "temporary_failures": 12,
-  "not_found_failures": 116,
-  "oldest_retry_age_days": 7.81,
+  "temporary_failures": 130,
+  "not_found_failures": 1,
+  "oldest_retry_age_days": 8.05,
   "quality_gate": "PASS",
   "archive_complete": false
 }
