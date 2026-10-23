@@ -3,7 +3,8 @@ name: Update Radio Shows Podcast RSS
 on:
   workflow_dispatch:
   schedule:
-    - cron: "50 * * * *"
+    # Three runs daily at 03:50, 11:50, and 19:50 Europe/Istanbul (UTC+3).
+    - cron: "50 0,8,16 * * *"
   push:
     branches: ["main"]
     paths: ["fetch_feed.py", "requirements.txt", "README.md", "data/podcast-cover.jpg", ".github/workflows/update-feed.yml"]
