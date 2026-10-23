@@ -1,6 +1,6 @@
 ﻿check,status,details
-xml_parse,PASS,items=4458
-unique_guid,PASS,items=4458; duplicate_guids=0; empty_guids=0
+xml_parse,PASS,items=4466
+unique_guid,PASS,items=4466; duplicate_guids=0; empty_guids=0
 nonempty_titles,PASS,empty_titles=0
-pubdate_newest_first,PASS,items=4458; invalid_dates=0
+pubdate_newest_first,PASS,items=4466; invalid_dates=0
 valid_audio_enclosures,PASS,invalid_enclosures=0
