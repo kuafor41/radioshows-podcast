@@ -9478,5 +9478,125 @@
     "status": "ok",
     "audio_url": "https://feeds.soundcloud.com/stream/2332143662-capturerecords-capture-radio-094.mp3?_=1",
     "error": ""
+  },
+  "https://www.edmliveset.com/radio/mathys-lenne-hate-podcast-490/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2333988626-hate_music-mathys-lenne-hate-podcast-490.mp3?_=1",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/stonebridge-the-stonebridge-show-548/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://www.realstonebridge.com/podcast-mainframe/media/2026-06-07_SXM_548_POD.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/hernan-cattaneo-resident-787/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://s340.podbean.com/pb/e41f966887abd8c6a68e96a4291b87da/6adc1510/data1/fs80/274700/uploads/787-HernanCattaneo-2026-06-06.mp3?pbss=3b2b0a50-b754-518b-b9d7-53998b69e63c",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/balance-selections-373-qrion/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2334771974-balance-series-balance-selections-373-qrion.mp3?_=1",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/ryui-bossen-rejection-074/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "failed",
+    "audio_url": "https://cdn.mave.digital/storage/podcasts/7b156a43-dcac-42dc-a1d2-ab77eccb3e2b/episodes/4a9a3c7d-2e4a-4966-b0e1-93f7968e570e.mp3?v=1780819217237",
+    "error": "ConnectTimeout: HTTPSConnectionPool(host='cdn.mave.digital', port=443): Max retries exceeded with url: /storage/podcasts/7b156a43-dcac-42dc-a1d2-ab77eccb3e2b/episodes/4a9a3c7d-2e4a-4966-b0e1-93f7968e570e.mp3?v=1780819217237 (Caused by ConnectTimeoutError(<HTTPSConnection(host='cdn.mave.digital', port=443) at 0x7fa4fc1b5220>, 'Connection to cdn.mave.digital timed out. (connect timeout=25)'))"
+  },
+  "https://www.edmliveset.com/radio/538-dance-department-by-armin-van-buuren-june-6-2026-incl-hotmix-by-franc-fala/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://stream56.hearthis.at/506298fcbadbe8967ae7b73bde37165e.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/steve-aoki-aokis-house-669/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://content.libsyn.com/p/0/c/2/0c2e576d12b0df01/Aokis_House_Podcast_670_EP_748_Air_Date_6.03.26_-_Podcast.mp3?c_id=202532370&cs_id=202532370&response-content-type=audio%2Fmpeg&Expires=1792851468&Signature=J5Gf-LupDDa4ICGbBnQFOlAE4O9SH3jwKqaiQDK53EPNdAvj5yD2NjI7dbth0t1by6ghEbWSOhQwQIiqA7WssqeSG-Gqbw5QJHS8Lrg9RuHFFfGMegoXdePQRPynOwET0x7jAt14fdgeE6Rt-eM3XM~NfCRxTOkOQlrP7xpOKmyfZC5rtizCkw7id0nwr6shuCN-nAsZMZVbPgsMHNTF-UPyT80VSHbOx4NM2IBbMprImnNHmJWIPXWya7vQWIDmva7ngB-t-FsGsPkdgsoYtmQkxOkZkftr3dfaJ91o8xVWsqA2WaPdDAYOHLW6JqQjscALt8PjrOcMT9UgxAyk5Q__&Key-Pair-Id=K1YS7LZGUP96OI",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/daniel-nicoara-intake-radio-show-151/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2334572966-djdanielnicoara-intake-radio-show-151.mp3?_=1",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/lucas-steve-lucas-steve-radio-154/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://content.libsyn.com/p/3/1/2/312b9fe40bcc67b2/Lucas_and_Steve_Radio_154_ENG.mp3?c_id=202649390&cs_id=202649390&response-content-type=audio%2Fmpeg&Expires=1792851462&Signature=Ygy6wOjO~wQ~bI1R3YIxgC8EmK4u2-VqK~0b~l6~BJyqNUJAeBUspSVrgXk7WxzAZofHNpH94Sq-T7krbySuOzFbUy4vT1WN1xXBc6ujfiCP2eT29V89alt5kI5CgEYoIhVoayW5xm~mTpZW6RSNh44DKcbGbM2Z3-3mE8xJryls0O~J1jjjTWJkKOYwG7EyouCSHg0kCS1CFBUmdmJaeuu9VMATZHftyuJhlVLsuWf2GSS4Nd~yUvzJydfJYHggngS04Kd5Fca2Yg8dCJpFjuE45F~HCSNe7wxEgoB3gXJF1dYrgsfKnNLq1IKnJNZVZIHIxzsNrAE9jr66d84LEA__&Key-Pair-Id=K1YS7LZGUP96OI",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/night-owl-radio-564-ft-trace-kelland/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://cdn.podtoo.com/syndication/2026/06/1780527273487full_episode_NOR--564--WORLDWIDE-.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/afrojack-jacked-radio-763/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://cdn.podtoo.com/syndication/2026/06/1780502221773full_episode_JACKED-RADIO--763--WORLD-.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/yotto-odd-one-out-101/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://cdn.podtoo.com/syndication/2026/06/1780710319594full_episode_OOO--101--WORLDWIDE-.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/alleanza-radio-021-sam-supplier/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://audio.buzzsprout.com/ae669vbal3ybjcvi9avnj1cydlqu?response-content-disposition=inline",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/selectro-podcast-462-mo-mar/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2334149297-selectro-official-selectro-podcast-462.mp3?_=1",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/selectro-podcast-461-marc-spieler/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2334149270-selectro-official-selectro-podcast-461.mp3?_=1",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/selectro-podcast-460-sonophone/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2334149189-selectro-official-selectro-podcast-460.mp3?_=1",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/xijaro-pitch-chasing-dreams-225/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://episodes.castos.com/61d5a5bcd164d1-45037098/2484178/c1e-0706qu7v2ndij64m3-1p2jk60ga2r-yit59y.mp3",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/terminal-v-podcast-116-baron-von-trax/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2334004472-terminalvfest-baronvontrax.mp3?_=1",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/david-penn-urbana-podcast-741/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://www.music-zone.es/PodcastDP/UrbanaRS741.m4a",
+    "error": ""
+  },
+  "https://www.edmliveset.com/radio/lilly-palmer-spannung-radio-show-059/": {
+    "last_checked_at": "2026-10-24T13:03:04.858421+00:00",
+    "status": "ok",
+    "audio_url": "https://feeds.soundcloud.com/stream/2334028799-lilly_palmer-lilly-palmer-pres-spannung-radio-show-059.mp3?_=1",
+    "error": ""
   }
 }
