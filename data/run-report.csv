@@ -1,4 +1,5 @@
 ﻿run_at,mode,discovered,newly_checked,published,retry_queue_remaining,old_links_retried,old_links_recovered,retry_failures,temporary_failures,not_found_failures,oldest_retry_age_days,quality_gate,archive_complete,script_elapsed_seconds,audio_refresh_seconds,audio_urls_refreshed
+2026-11-07T06:43:39.344722+00:00,incremental,128,128,4629,129,128,0,128,11,118,24.81,PASS,False,277.23,193.12,579
 2026-11-06T21:52:02.203778+00:00,incremental,154,154,4629,128,129,1,128,8,120,24.44,PASS,False,322.02,226.97,779
 2026-11-06T16:27:36.456197+00:00,incremental,130,130,4604,129,130,2,128,12,117,24.22,PASS,False,404.27,187.79,574
 2026-11-06T07:31:16.216576+00:00,incremental,142,142,4604,130,130,0,130,14,116,23.84,PASS,False,268.7,186.83,800
