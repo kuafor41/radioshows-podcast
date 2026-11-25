@@ -2,24 +2,24 @@
   "mode": "incremental",
   "source": "https://www.edmliveset.com/radio/",
   "cutoff": "2025-01-01",
-  "run_at": "2026-11-24T10:34:07.510665+00:00",
-  "script_started_at_utc": "2026-11-24T10:28:54.536120+00:00",
-  "script_elapsed_seconds": 313.03,
-  "audio_refresh_seconds": 227.85,
-  "audio_urls_refreshed": 835,
-  "discovered": 130,
-  "newly_checked": 130,
-  "archived_total": 4832,
-  "published": 4832,
-  "audio_confirmed": 4832,
+  "run_at": "2026-11-25T01:13:24.480498+00:00",
+  "script_started_at_utc": "2026-11-25T01:08:16.150428+00:00",
+  "script_elapsed_seconds": 308.39,
+  "audio_refresh_seconds": 221.45,
+  "audio_urls_refreshed": 842,
+  "discovered": 137,
+  "newly_checked": 137,
+  "archived_total": 4840,
+  "published": 4840,
+  "audio_confirmed": 4840,
   "old_links_audited": 20,
-  "old_links_still_valid": 20,
-  "old_links_degraded": 0,
+  "old_links_still_valid": 19,
+  "old_links_degraded": 1,
   "moved_to_review": 0,
-  "tracklists_found": 4831,
+  "tracklists_found": 4839,
   "cover_cache": {
     "downloaded": 0,
-    "reused": 4826,
+    "reused": 4834,
     "series_cached": 220,
     "failed": [
       {
@@ -56,6 +56,96 @@
   "page_limit_reached": false,
   "episodes": [
     {
+      "index": 4961,
+      "title": "Fedde Le Grand – Darklight Sessions 744",
+      "page_url": "https://www.edmliveset.com/radio/fedde-le-grand-darklight-sessions-744/",
+      "audio_url": "https://content.libsyn.com/p/0/5/1/051d26c121d7bc53/Fedde_Le_Grand_-_Darklight_Sessions_744_-_Global.mp3?c_id=209200749&cs_id=209200749&response-content-type=audio%2Fmpeg&Expires=1795573863&Signature=CMMZrlo0hBEGKRirQOLyfW-fwUZML2vtjWuRkIpN1spQF5L7clWHAsUgyg~fPJ5mFXnO-hWUFku8avUraZaeNHcLMfpgPdyxx07zg9onLX46uqVd47qSoPWlnJ3YmbvoVeEuNZBuzsoFUv3dnpqPOwnhh6yuXGgG-W13DCkS5fofX49MYn-4QsWYuSWU5IKUOyanJhheCH7jdP1w~OWs2xhkKJHo2WqHzkBDHWftwt1Anp0tanGbR8dcZBchxzPC9Yt2nm9whAF1RMMJGhJVfdz3JPLPYB776wKCS43WobFDIX0lf8FFxi76~sFzdmp5ClcmEiIJgwxhY9SVr8CfMQ__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 3,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4962,
+      "title": "Joel Corry – DESIRE RADIO 082",
+      "page_url": "https://www.edmliveset.com/radio/joel-corry-desire-radio-082/",
+      "audio_url": "https://cdn.podtoo.com/syndication/2026/11/1795047773521full_episode_DESIRE-RADIO--082--WORLD-.mp3",
+      "audio_ok": true,
+      "track_count": 19,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4963,
+      "title": "Alison Wonderland – Radio Wonderland 498",
+      "page_url": "https://www.edmliveset.com/radio/alison-wonderland-radio-wonderland-498/",
+      "audio_url": "https://cdn.podtoo.com/syndication/2026/11/1795032429566full_episode_RADIO-WONDERLAND--498--WORLD-.mp3",
+      "audio_ok": true,
+      "track_count": 25,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4964,
+      "title": "Alok – Rave The World Radio 019",
+      "page_url": "https://www.edmliveset.com/radio/alok-rave-the-world-radio-019/",
+      "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Alok_Presents_Rave_The_World_Radio_019_ENGLISH_192-1795171783940556823-NDMzODctODYxMzE5ODI=.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4965,
+      "title": "Xabi Only – Journeys 491",
+      "page_url": "https://www.edmliveset.com/radio/xabi-only-journeys-491/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2443537089-xabionlyofficial-xabi-only-journeys-491.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4966,
+      "title": "Eelke Kleijn – DAYS like NIGHTS 471",
+      "page_url": "https://www.edmliveset.com/radio/eelke-kleijn-days-like-nights-471-red-ruby-bali-indonesia/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2443142379-eelke-kleijn-days-like-nights-471-red-ruby.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4967,
+      "title": "Franky Rizardo – FLOW 681",
+      "page_url": "https://www.edmliveset.com/radio/franky-rizardo-flow-681/",
+      "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/192FLOW_684_-1795164916368789057-NDMzODUtODUyOTQ3NzU=.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4968,
+      "title": "ON AIR With Anna Tur 325",
+      "page_url": "https://www.edmliveset.com/radio/on-air-with-anna-tur-325/",
+      "audio_url": "https://s358.podbean.com/pb/cbf4aa788f42d41cf2cc783534ac6ce0/6b05a942/data1/fs136/8796732/uploads/ON_AIR_-_ANNA_TUR_22_NOV79bzf.mp3?pbss=49703b87-d9bf-5b18-b5bb-9bad94307d12",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 2995,
+      "title": "",
+      "page_url": "https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 0,
+      "status": "failed",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/"
+    },
+    {
       "index": 1422,
       "title": "",
       "page_url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-444/",
@@ -74,16 +164,6 @@
       "track_count": 0,
       "status": "failed",
       "error": "HTTPError: 404 Client Error: Not Found for url: https://www.edmliveset.com/radio/tritonal-tritonia-531/"
-    },
-    {
-      "index": 2995,
-      "title": "",
-      "page_url": "https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 0,
-      "status": "failed",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://www.edmliveset.com/radio/mdlbeast-radio-selects-174/"
     },
     {
       "index": 274,
@@ -126,16 +206,6 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 3261,
-      "title": "Magna Recordings Radio Show 410 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-410-carlos-manaca/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
       "index": 2271,
       "title": "Magna Recordings Radio Show 417 – Chris Campos",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-417-chris-campos/",
@@ -166,12 +236,12 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2588,
-      "title": "Magna Recordings Radio Show 415 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-415-carlos-manaca/",
+      "index": 3261,
+      "title": "Magna Recordings Radio Show 410 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-410-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
+      "track_count": 2,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -189,6 +259,16 @@
       "index": 3034,
       "title": "Magna Recordings Radio Show 411 – Carlos Manaça",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-411-carlos-manaca/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 15,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 2588,
+      "title": "Magna Recordings Radio Show 415 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-415-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 15,
@@ -216,9 +296,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2946,
-      "title": "Magna Recordings Radio Show 412 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-412-carlos-manaca/",
+      "index": 4940,
+      "title": "Bad Syntax – Best Drum and Bass Podcast 620 (Procter Dre Guestmix)",
+      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-620-procter-dre-guestmix/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -236,9 +316,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4940,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 620 (Procter Dre Guestmix)",
-      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-620-procter-dre-guestmix/",
+      "index": 2946,
+      "title": "Magna Recordings Radio Show 412 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-412-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -276,16 +356,6 @@
       "error": "Not confirmed audio: HTTP 429, type=text/html"
     },
     {
-      "index": 2701,
-      "title": "538 Dance Department by Armin van Buuren – March 28, 2026 (Tomorrowland Winter Special)",
-      "page_url": "https://www.edmliveset.com/radio/538-dance-department-by-armin-van-buuren-march-28-2026-tomorrowland-winter-special/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
       "index": 2151,
       "title": "Magna Recordings Radio Show 418 – Carlos Manaça",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-418-carlos-manaca/",
@@ -294,6 +364,16 @@
       "track_count": 14,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 429, type=text/html"
+    },
+    {
+      "index": 2701,
+      "title": "538 Dance Department by Armin van Buuren – March 28, 2026 (Tomorrowland Winter Special)",
+      "page_url": "https://www.edmliveset.com/radio/538-dance-department-by-armin-van-buuren-march-28-2026-tomorrowland-winter-special/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 4,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
       "index": 461,
@@ -516,9 +596,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2966,
-      "title": "PRISMATIC by Tiësto 010",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-010/",
+      "index": 2602,
+      "title": "PRISMATIC by Tiësto 013",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-013/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -526,9 +606,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2602,
-      "title": "PRISMATIC by Tiësto 013",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-013/",
+      "index": 2966,
+      "title": "PRISMATIC by Tiësto 010",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-010/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -676,9 +756,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 1803,
-      "title": "Dennis Graft – Be The Different 199",
-      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-199/",
+      "index": 2675,
+      "title": "Nelver – Proud Eagle Radio Show 618",
+      "page_url": "https://www.edmliveset.com/radio/nelver-proud-eagle-radio-show-618/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -686,9 +766,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2675,
-      "title": "Nelver – Proud Eagle Radio Show 618",
-      "page_url": "https://www.edmliveset.com/radio/nelver-proud-eagle-radio-show-618/",
+      "index": 1803,
+      "title": "Dennis Graft – Be The Different 199",
+      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-199/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -746,6 +826,16 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
+      "index": 3805,
+      "title": "Mr. Smith – Smith Sessions Radio 491",
+      "page_url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-491/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 4,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
       "index": 588,
       "title": "Bloom Records Podcast 346 – Aman Anand",
       "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-346-aman-anand/",
@@ -762,16 +852,6 @@
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 3805,
-      "title": "Mr. Smith – Smith Sessions Radio 491",
-      "page_url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-491/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 4,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -796,16 +876,6 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4079,
-      "title": "Mr. Smith – Smith Sessions Radio 489",
-      "page_url": "https://www.edmliveset.com/radio/smith-sessions-radio-489/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 4,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
       "index": 3960,
       "title": "Dennis Graft – Be The Different 191",
       "page_url": "https://www.edmliveset.com/radio/be-the-different-191/",
@@ -816,19 +886,19 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4215,
-      "title": "Dennis Graft – Be The Different 190",
-      "page_url": "https://www.edmliveset.com/radio/be-the-different-190/",
+      "index": 4079,
+      "title": "Mr. Smith – Smith Sessions Radio 489",
+      "page_url": "https://www.edmliveset.com/radio/smith-sessions-radio-489/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
+      "track_count": 4,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2833,
-      "title": "Dennis Graft – Be The Different 195",
-      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-195/",
+      "index": 4215,
+      "title": "Dennis Graft – Be The Different 190",
+      "page_url": "https://www.edmliveset.com/radio/be-the-different-190/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -852,6 +922,16 @@
       "audio_url": "",
       "audio_ok": false,
       "track_count": 3,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 2833,
+      "title": "Dennis Graft – Be The Different 195",
+      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-195/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 2,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -1126,9 +1206,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 3680,
-      "title": "Stonxcast 175 – Ollie",
-      "page_url": "https://www.edmliveset.com/radio/stonxcast-175-ollie/",
+      "index": 4091,
+      "title": "Stonxcast 172 – Ollie",
+      "page_url": "https://www.edmliveset.com/radio/stonxcast-172-ollie/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -1136,9 +1216,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4091,
-      "title": "Stonxcast 172 – Ollie",
-      "page_url": "https://www.edmliveset.com/radio/stonxcast-172-ollie/",
+      "index": 3680,
+      "title": "Stonxcast 175 – Ollie",
+      "page_url": "https://www.edmliveset.com/radio/stonxcast-175-ollie/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -1286,16 +1366,6 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2800,
-      "title": "Ori Uplift – Uplifting Only 618",
-      "page_url": "https://www.edmliveset.com/radio/ori-uplift-uplifting-only-618/",
-      "audio_url": "https://cf-media.sndcdn.com/EqOe7ZUbB3XC?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vRXFPZTdaVWJCM1hDKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5NTUxNjU0M319fV19&Signature=Wn1AmvcUlwP7wA0NsYCddWBXsyO7-CUwijIM2wZCcj-QwqJaAkqM7pZQJ6SD1n8Wx577pDqYax1L6ulvzNGFUWlFZJkB6OP6up4Kb4mxHsHtNWSevz1SlTjRMC-JCquN59LNV3LpFBzFA9ZiZjOBbx18IeVeZyB3T4JSDlLWQhNNXpLom7EjT~tFneMoxbCSWxgSaImqVbDmMck-XDG1QK0rKaaQYR45SypX~ndMxVESsQEJc9yViz1bzPleO4~XPQIr2t0SXfFqWKqHSfjKGeG~HrHD1vXJF~ywdmMRHuSrP-KAfMyEH9LTon~TNNMqyUtNz8WYoalNfgxQAKHUiQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
-      "audio_ok": true,
-      "track_count": 3,
-      "status": "success",
-      "error": ""
-    },
-    {
       "index": 2600,
       "title": "Bad Syntax – Best Drum and Bass Podcast 587 (Frydae Guestmix)",
       "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-587-frydae-guestmix/",
@@ -1357,14 +1427,14 @@
     }
   ],
   "rss_xml_valid": true,
-  "new_episodes_added": 0,
-  "retry_queue_remaining": 129,
-  "old_links_retried": 130,
-  "old_links_recovered": 1,
+  "new_episodes_added": 8,
+  "retry_queue_remaining": 130,
+  "old_links_retried": 129,
+  "old_links_recovered": 0,
   "retry_failures": 129,
-  "temporary_failures": 6,
+  "temporary_failures": 7,
   "not_found_failures": 123,
-  "oldest_retry_age_days": 41.97,
+  "oldest_retry_age_days": 42.58,
   "quality_gate": "PASS",
   "archive_complete": false
 }
