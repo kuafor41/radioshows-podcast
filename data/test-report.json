@@ -2,24 +2,24 @@
   "mode": "incremental",
   "source": "https://www.edmliveset.com/radio/",
   "cutoff": "2025-01-01",
-  "run_at": "2026-11-26T09:04:07.736910+00:00",
-  "script_started_at_utc": "2026-11-26T08:56:46.035227+00:00",
-  "script_elapsed_seconds": 441.8,
-  "audio_refresh_seconds": 240.34,
-  "audio_urls_refreshed": 837,
-  "discovered": 134,
-  "newly_checked": 134,
-  "archived_total": 4851,
-  "published": 4851,
-  "audio_confirmed": 4851,
+  "run_at": "2026-11-27T00:55:52.755521+00:00",
+  "script_started_at_utc": "2026-11-27T00:50:45.469240+00:00",
+  "script_elapsed_seconds": 307.35,
+  "audio_refresh_seconds": 227.59,
+  "audio_urls_refreshed": 858,
+  "discovered": 146,
+  "newly_checked": 146,
+  "archived_total": 4867,
+  "published": 4867,
+  "audio_confirmed": 4867,
   "old_links_audited": 20,
-  "old_links_still_valid": 19,
-  "old_links_degraded": 1,
+  "old_links_still_valid": 20,
+  "old_links_degraded": 0,
   "moved_to_review": 0,
-  "tracklists_found": 4850,
+  "tracklists_found": 4866,
   "cover_cache": {
     "downloaded": 0,
-    "reused": 4845,
+    "reused": 4861,
     "series_cached": 220,
     "failed": [
       {
@@ -56,6 +56,166 @@
   "page_limit_reached": false,
   "episodes": [
     {
+      "index": 4980,
+      "title": "Paul Oakenfold – Planet Perfecto Podcast 839",
+      "page_url": "https://www.edmliveset.com/radio/paul-oakenfold-planet-perfecto-podcast-839/",
+      "audio_url": "https://content.libsyn.com/p/a/8/4/a84b21442c0464b2/PlanetPerfecto_PaulOakenfold_839.mp3?c_id=209189874&cs_id=209189874&response-content-type=audio%2Fmpeg&Expires=1795745506&Signature=JgwsNGXQiZNaO4JNAnIaLXkrqeogzBi5tx8zoG69EUfo1OzA9X09Ka5QB-t-lX6pfOcnH5qPyCZ4TL47jD2f0lCO7GONrzH2mjb9nnfzjBOnsoausgMUyirEJtiXG6JlMfXpUeOAOqaPhuJ-CEJw7yCgCFq-OhPZRKU1G5spktqwAG795eCmGSdEiAy2RE~Rr1DupDGGX89CrPM~n77qwXicXm0sgW-AsNr0i4-995kfQq6hF2zd4~nk4SfBJJYtJt4DLkojMUDxOfreY60pXQ2k6VLUV60tHTLhn8NI~L9vXoDlvwyklsEBrCeqS0wNsUR43NX-PreX3mGgpCb~MQ__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 16,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4981,
+      "title": "Joris Voorn – Spectrum Radio 500",
+      "page_url": "https://www.edmliveset.com/radio/joris-voorn-spectrum-radio-500/",
+      "audio_url": "https://content.libsyn.com/p/9/9/8/998b8bd7dad678dd/Spectrum_Radio_500_-_Joris_Voorn_sc_v2.mp3?c_id=209269244&cs_id=209269244&response-content-type=audio%2Fmpeg&Expires=1795749682&Signature=ZU7twy6SyJEkYFH3oc35dyz7Ls645GkfwOFsO7xRXTduLkCSi1aMKyAKShDy2JBGYbYxgn1DaupPor6n9cYrmXs2x824Pmr2wyAVC3WNqtKqKe9K5QyGA7SIgs7fA4rIWnVjRhHj1bJ1TUx1E-S5rkjOLgGvn8ngoE~onF1SEAcd3Vi~-iceJ8YdOgY1TWaX32TKeyo6qEeY3nNzPSMVrw6M0DrBvKlpLbGmPGWkFaewA5wW56nYgv~QPoRmv7PHy0WYixZBpMXeibqDAhUEU0xLBxvfXpMfEX4QtLrpqFb9ydl0ItxnQ0UX3CPd6NYBPJVhoZrmK6-P3617Ftnicw__&Key-Pair-Id=K1YS7LZGUP96OI",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4982,
+      "title": "Anja Schneider – Clubroom 446",
+      "page_url": "https://www.edmliveset.com/radio/anja-schneider-clubroom-446/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2444536152-anjaschneider-clubroom-446-with-anja.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 3,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4983,
+      "title": "Manuel Le Saux – Extrema 968",
+      "page_url": "https://www.edmliveset.com/radio/manuel-le-saux-extrema-968/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2443776654-manuellesaux-extrema-968.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4984,
+      "title": "Monstercat Call of the Wild 637 – AVIS Takeover",
+      "page_url": "https://www.edmliveset.com/radio/monstercat-call-of-the-wild-637-avis-takeover/",
+      "audio_url": "https://dcs-cached.megaphone.fm/MSC8320377812.mp3?key=355538d740cae409affab58894e7851e&request_event_id=b9cef1dd-cede-4314-b17a-2a316524491f&session_id=b9cef1dd-cede-4314-b17a-2a316524491f&timetoken=1795748077_6009FF46CEAA454EAED79ECBE823ADB3",
+      "audio_ok": true,
+      "track_count": 29,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4985,
+      "title": "Junior Jack – Adesso Music Radio Show 201 (Vito Natoli)",
+      "page_url": "https://www.edmliveset.com/radio/junior-jack-adesso-music-radio-show-201-vito-natoli/",
+      "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Adesso_Music_Radio_201_Music_+_Jingles_192k-1795092698167972232-NDMzNzktOTA4MDcxMTU=.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 3,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4986,
+      "title": "Robin Schulz – Sugar Radio Show 569",
+      "page_url": "https://www.edmliveset.com/radio/robin-schulz-sugar-radio-show-569/",
+      "audio_url": "https://app.syndicast.co.uk/download/itunes/uploads/audios/56/569-7.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4987,
+      "title": "Colorcast Radio Show Radio 294 with Guy Didden",
+      "page_url": "https://www.edmliveset.com/radio/colorcast-radio-show-radio-294-with-guy-didden/",
+      "audio_url": "https://app.syndicast.co.uk/download/itunes/uploads/audios/co/colorcast-radio-294-with-guy-didden-1.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4988,
+      "title": "Andrew Rayel – Find Your Harmony 519",
+      "page_url": "https://www.edmliveset.com/radio/andrew-rayel-find-your-harmony-519/",
+      "audio_url": "https://s392.podbean.com/pb/3021e6f52f0304ce4ba6c6b262aaefb1/6b0811d3/data1/fs124/683689/uploads/Andrew_Rayel_-_Find_Your_Harmoy_Episode_5198slft.mp3?pbss=335a35d7-798e-5d39-8fbb-6809dac9141f",
+      "audio_ok": true,
+      "track_count": 9,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4989,
+      "title": "Black Legend – The Legendary Radio Show 446",
+      "page_url": "https://www.edmliveset.com/radio/black-legend-the-legendary-radio-show-446/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2444752572-blacklegendproject-the-legendary-radio-show-446.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4990,
+      "title": "Nelver – Proud Eagle Radio Show 652",
+      "page_url": "https://www.edmliveset.com/radio/nelver-proud-eagle-radio-show-652/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2442905958-proudeagle_radioshow-nelver-proud-eagle-radio-show-652-pirate-station-online-25-11-2026.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4991,
+      "title": "Ferry Corsten – Resonation Radio 313",
+      "page_url": "https://www.edmliveset.com/radio/ferry-corsten-resonation-radio-313/",
+      "audio_url": "https://corstenscountdown.radiopush.net/resonation-radio-313.m4a?_=1",
+      "audio_ok": true,
+      "track_count": 18,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4992,
+      "title": "Romi Lux – Escape Radio 057",
+      "page_url": "https://www.edmliveset.com/radio/romi-lux-escape-radio-057/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2444703168-romiluxmusic-escape-radio-057.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4993,
+      "title": "Acraze – Paradox Radio 085",
+      "page_url": "https://www.edmliveset.com/radio/acraze-paradox-radio-085/",
+      "audio_url": "https://cdn.podtoo.com/syndication/2026/11/1795156466536full_episode_PARADOX-RADIO--085--WORLD-.mp3",
+      "audio_ok": true,
+      "track_count": 19,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4994,
+      "title": "Ruslan Radriges – Make Some Music 624",
+      "page_url": "https://www.edmliveset.com/radio/ruslan-radriges-make-some-music-624/",
+      "audio_url": "https://feeds.soundcloud.com/stream/2444690610-ruslanradriges-msm624.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
+      "index": 4995,
+      "title": "Christian Smith – Tronic Podcast 748 with apaull",
+      "page_url": "https://www.edmliveset.com/radio/christian-smith-tronic-podcast-748-with-apaull/",
+      "audio_url": "https://app.syndicast.co.uk/download/itunes/uploads/audios/74/748-2.mp3?_=1",
+      "audio_ok": true,
+      "track_count": 2,
+      "status": "success",
+      "error": ""
+    },
+    {
       "index": 274,
       "title": "",
       "page_url": "https://www.edmliveset.com/radio/firebeatz-ignite-radio-458/",
@@ -86,46 +246,6 @@
       "error": "HTTPError: 404 Client Error: Not Found for url: https://www.edmliveset.com/radio/firebeatz-ignite-radio-444/"
     },
     {
-      "index": 4975,
-      "title": "VISION Radio S06E47",
-      "page_url": "https://www.edmliveset.com/radio/vision-radio-s06e47/",
-      "audio_url": "https://episodes.castos.com/6138cb87d83982-66320119/2704318/c1e-5oqpguogpw2hm1702-8ddpwr1vsdxx-q7ucpt.mp3?_=1",
-      "audio_ok": true,
-      "track_count": 15,
-      "status": "success",
-      "error": ""
-    },
-    {
-      "index": 4976,
-      "title": "Andrew Rayel – Find Your Harmony 518",
-      "page_url": "https://www.edmliveset.com/radio/andrew-rayel-find-your-harmony-518/",
-      "audio_url": "https://s391.podbean.com/pb/25a1126160c7979c31f47711005ef6e7/6b07889c/data1/fs124/683689/uploads/Andrew_Rayel_-_Find_Your_Harmony_Episode_5187ncu6.mp3?pbss=43fbe259-57da-5765-a8eb-a2586adea643",
-      "audio_ok": true,
-      "track_count": 10,
-      "status": "success",
-      "error": ""
-    },
-    {
-      "index": 4977,
-      "title": "Pretty Pink – Deep Woods 388",
-      "page_url": "https://www.edmliveset.com/radio/pretty-pink-deep-woods-388/",
-      "audio_url": "https://feeds.soundcloud.com/stream/2443266243-prettypink-deep-woods-388-melodic-house.mp3?_=1",
-      "audio_ok": true,
-      "track_count": 3,
-      "status": "success",
-      "error": ""
-    },
-    {
-      "index": 4978,
-      "title": "Bingo Players – Hysteria Radio 556",
-      "page_url": "https://www.edmliveset.com/radio/bingo-players-hysteria-radio-556/",
-      "audio_url": "https://content.libsyn.com/p/3/2/c/32c31f448530a6ac/Hysteria_Radio_556.mp3?c_id=209255694&cs_id=209255694&response-content-type=audio%2Fmpeg&Expires=1795688441&Signature=g4IP5-io68Iuf1rDBnjPvlFzcJI8iG5MjWU2tSvFFVCX0RraTd5IPpvmj3rlpxd-GT6rhPYvfnebACXOgBYewIffaTDgyBnfX2d9DGTi~V1X62Nl3pYG9KxI3~Je8iWSerzPJL13mCv4CQUB5w7RtwS~qrEeZpeeCsx-Jt6xz5sqwTlNtN8JVWHIAtaA95sdswl3dFWmRkY8RsK2U0w3R-55RPFunaFHyeBw8vdNWI~05IzmXsTDnoA51zt2IBYPHl-tBS~pS9R6xRbJN0Javj91SzqXnqep3G4W2PlFvx-3XhPLuQD-HzqjMk60pi4XcD1QemzszGd6EZosh6MipQ__&Key-Pair-Id=K1YS7LZGUP96OI",
-      "audio_ok": true,
-      "track_count": 3,
-      "status": "success",
-      "error": ""
-    },
-    {
       "index": 2691,
       "title": "",
       "page_url": "https://www.edmliveset.com/radio/tritonal-tritonia-531/",
@@ -134,16 +254,6 @@
       "track_count": 0,
       "status": "failed",
       "error": "HTTPError: 404 Client Error: Not Found for url: https://www.edmliveset.com/radio/tritonal-tritonia-531/"
-    },
-    {
-      "index": 4979,
-      "title": "Don Diablo – Hexagon Radio 617",
-      "page_url": "https://www.edmliveset.com/radio/don-diablo-hexagon-radio-617/",
-      "audio_url": "https://audio.thisisdistorted.com/repository/audio/episodes/Hexagon_Radio_617_Podcast-1795526932619380415-NDMzOTgtODQ2MTYwNDQ=.mp3?_=1",
-      "audio_ok": true,
-      "track_count": 3,
-      "status": "success",
-      "error": ""
     },
     {
       "index": 3142,
@@ -186,9 +296,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 3406,
-      "title": "Magna Recordings Radio Show 409 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-409-carlos-manaca/",
+      "index": 3814,
+      "title": "Magna Recordings Radio Show 406 – Tommy Myst",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-406-tommy-myst/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 15,
@@ -196,12 +306,12 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 3814,
-      "title": "Magna Recordings Radio Show 406 – Tommy Myst",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-406-tommy-myst/",
+      "index": 3261,
+      "title": "Magna Recordings Radio Show 410 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-410-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
+      "track_count": 2,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -216,12 +326,12 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 3261,
-      "title": "Magna Recordings Radio Show 410 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-410-carlos-manaca/",
+      "index": 3406,
+      "title": "Magna Recordings Radio Show 409 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-409-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
+      "track_count": 15,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -246,22 +356,22 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4092,
-      "title": "Magna Recordings Radio Show 404 – FabioTek b2b Tomy Villacorta Pt.2 (Montreal) Canada",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-404-fabiotek-b2b-tomy-villacorta-pt-2-montreal-canada/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 15,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
       "index": 3678,
       "title": "Magna Recordings Radio Show 407 – Carlos Manaça.",
       "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-407-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 3,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 4092,
+      "title": "Magna Recordings Radio Show 404 – FabioTek b2b Tomy Villacorta Pt.2 (Montreal) Canada",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-404-fabiotek-b2b-tomy-villacorta-pt-2-montreal-canada/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 15,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -273,7 +383,7 @@
       "audio_ok": false,
       "track_count": 2,
       "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "error": "Not confirmed audio: HTTP 429, type=text/html"
     },
     {
       "index": 3540,
@@ -286,12 +396,12 @@
       "error": "Not confirmed audio: HTTP 429, type=text/html"
     },
     {
-      "index": 2588,
-      "title": "Magna Recordings Radio Show 415 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-415-carlos-manaca/",
+      "index": 3959,
+      "title": "Magna Recordings Radio Show 405 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-405-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 15,
+      "track_count": 2,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 429, type=text/html"
     },
@@ -306,12 +416,12 @@
       "error": "Not confirmed audio: HTTP 429, type=text/html"
     },
     {
-      "index": 3959,
-      "title": "Magna Recordings Radio Show 405 – Carlos Manaça",
-      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-405-carlos-manaca/",
+      "index": 2588,
+      "title": "Magna Recordings Radio Show 415 – Carlos Manaça",
+      "page_url": "https://www.edmliveset.com/radio/magna-recordings-radio-show-415-carlos-manaca/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 2,
+      "track_count": 15,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 429, type=text/html"
     },
@@ -356,9 +466,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4368,
-      "title": "Schematic Sound Jan 03 2026",
-      "page_url": "https://www.edmliveset.com/radio/schematic-sound-jan-03-2026/",
+      "index": 4940,
+      "title": "Bad Syntax – Best Drum and Bass Podcast 620 (Procter Dre Guestmix)",
+      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-620-procter-dre-guestmix/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -366,9 +476,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4940,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 620 (Procter Dre Guestmix)",
-      "page_url": "https://www.edmliveset.com/radio/bad-syntax-best-drum-and-bass-podcast-620-procter-dre-guestmix/",
+      "index": 4368,
+      "title": "Schematic Sound Jan 03 2026",
+      "page_url": "https://www.edmliveset.com/radio/schematic-sound-jan-03-2026/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -426,9 +536,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 408,
-      "title": "PRISMATIC by Tiësto 035",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-035/",
+      "index": 2470,
+      "title": "PRISMATIC by Tiësto 014",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-014/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -436,9 +546,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2470,
-      "title": "PRISMATIC by Tiësto 014",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-014/",
+      "index": 408,
+      "title": "PRISMATIC by Tiësto 035",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-035/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -516,9 +626,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 1161,
-      "title": "PRISMATIC by Tiësto 026",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-026/",
+      "index": 2842,
+      "title": "PRISMATIC by Tiësto 011",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-011/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -526,9 +636,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2842,
-      "title": "PRISMATIC by Tiësto 011",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-011/",
+      "index": 1161,
+      "title": "PRISMATIC by Tiësto 026",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-026/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -646,9 +756,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 1232,
-      "title": "PRISMATIC by Tiësto 025",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-025/",
+      "index": 3826,
+      "title": "PRISMATIC by Tiësto 004",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-004/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -656,9 +766,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 3826,
-      "title": "PRISMATIC by Tiësto 004",
-      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-004/",
+      "index": 1232,
+      "title": "PRISMATIC by Tiësto 025",
+      "page_url": "https://www.edmliveset.com/radio/prismatic-by-tiesto-025/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -726,9 +836,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2593,
-      "title": "Dennis Graft – Be The Different 196",
-      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-196/",
+      "index": 2675,
+      "title": "Nelver – Proud Eagle Radio Show 618",
+      "page_url": "https://www.edmliveset.com/radio/nelver-proud-eagle-radio-show-618/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -736,9 +846,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2675,
-      "title": "Nelver – Proud Eagle Radio Show 618",
-      "page_url": "https://www.edmliveset.com/radio/nelver-proud-eagle-radio-show-618/",
+      "index": 2593,
+      "title": "Dennis Graft – Be The Different 196",
+      "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-196/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -806,16 +916,6 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 588,
-      "title": "Bloom Records Podcast 346 – Aman Anand",
-      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-346-aman-anand/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
       "index": 924,
       "title": "Dennis Graft – Be The Different 204",
       "page_url": "https://www.edmliveset.com/radio/dennis-graft-be-the-different-204/",
@@ -826,19 +926,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 1915,
-      "title": "Bloom Records Podcast 343 – Fonarev",
-      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-343-fonarev/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 8,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 3960,
-      "title": "Dennis Graft – Be The Different 191",
-      "page_url": "https://www.edmliveset.com/radio/be-the-different-191/",
+      "index": 588,
+      "title": "Bloom Records Podcast 346 – Aman Anand",
+      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-346-aman-anand/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -856,12 +946,22 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2816,
-      "title": "Bloom Records Podcast 341 – FLEANGER",
-      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-341-fleanger/",
+      "index": 3960,
+      "title": "Dennis Graft – Be The Different 191",
+      "page_url": "https://www.edmliveset.com/radio/be-the-different-191/",
       "audio_url": "",
       "audio_ok": false,
-      "track_count": 4,
+      "track_count": 2,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 1915,
+      "title": "Bloom Records Podcast 343 – Fonarev",
+      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-343-fonarev/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 8,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -882,6 +982,16 @@
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 2816,
+      "title": "Bloom Records Podcast 341 – FLEANGER",
+      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-341-fleanger/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 4,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -916,16 +1026,6 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2577,
-      "title": "Bloom Records Podcast 342 – Hassan Maroofi",
-      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-342-hassan-maroofi/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 7,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
       "index": 3940,
       "title": "Mr. Smith – Smith Sessions Radio 490",
       "page_url": "https://www.edmliveset.com/radio/mr-smith-smith-sessions-radio-490/",
@@ -942,6 +1042,16 @@
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 2577,
+      "title": "Bloom Records Podcast 342 – Hassan Maroofi",
+      "page_url": "https://www.edmliveset.com/radio/bloom-records-podcast-342-hassan-maroofi/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 7,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -1086,9 +1196,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 2318,
-      "title": "Stonxcast 185 – Ollie",
-      "page_url": "https://www.edmliveset.com/radio/stonxcast-185-ollie/",
+      "index": 2466,
+      "title": "Bad Syntax – Best Drum and Bass Podcast 588 (D_E_B_T Guestmix)",
+      "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-588-d_e_b_t-guestmix/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -1096,19 +1206,9 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 1798,
-      "title": "Night Owl Radio 561 – The Zombie Apocalypse Megamix",
-      "page_url": "https://www.edmliveset.com/radio/night-owl-radio-561-the-zombie-apocalypse-megamix/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 65,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
-    },
-    {
-      "index": 2466,
-      "title": "Bad Syntax – Best Drum and Bass Podcast 588 (D_E_B_T Guestmix)",
-      "page_url": "https://www.edmliveset.com/radio/best-drum-and-bass-podcast-588-d_e_b_t-guestmix/",
+      "index": 2318,
+      "title": "Stonxcast 185 – Ollie",
+      "page_url": "https://www.edmliveset.com/radio/stonxcast-185-ollie/",
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
@@ -1122,6 +1222,16 @@
       "audio_url": "",
       "audio_ok": false,
       "track_count": 2,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 1798,
+      "title": "Night Owl Radio 561 – The Zombie Apocalypse Megamix",
+      "page_url": "https://www.edmliveset.com/radio/night-owl-radio-561-the-zombie-apocalypse-megamix/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 65,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
@@ -1376,14 +1486,14 @@
       "error": "Not confirmed audio: HTTP 404, type=text/html"
     },
     {
-      "index": 4479,
-      "title": "StoneBridge – Hed Kandi Japan 670",
-      "page_url": "https://www.edmliveset.com/radio/stonebridge-hed-kandi-japan-670/",
-      "audio_url": "",
-      "audio_ok": false,
-      "track_count": 2,
-      "status": "warning",
-      "error": "Not confirmed audio: HTTP 404, type=text/html"
+      "index": 4971,
+      "title": "DJ Phalanx – Uplifting Trance Sessions 827",
+      "page_url": "https://www.edmliveset.com/radio/dj-phalanx-uplifting-trance-sessions-827/",
+      "audio_url": "https://cf-media.sndcdn.com/qwa8OfqDXfTS?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiKjovL2NmLW1lZGlhLnNuZGNkbi5jb20vcXdhOE9mcURYZlRTKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5NTc0MTA1MX19fV19&Signature=Fa~X4oGmZ3Y44g2ieXhGLjvoH5LYA0s6Ac4HN-ZiQaJGK-ZnZQ~nUCS19FaNW6UpSbmT5c6J9C1qOToEh7E~aDVHKAJyuwd8hu~x6PX4BP5UgcBdipltJtGx48xKHv0lWrqewWR6bDArAMgWJPyT4E7D~-R78wF863EVJML6vBeRjPu-R6exrENTrg5wLa3VZYyViDHKH9XvXnV4Q6nrIEPPsBTxu9awH6cGYuz4xr2jS2RGGKoiraMLoHC7-AyKIIFmHQ1UJbrJfe7xsZ6g66La0B5R4rQ2VsLimG0ZQ21AyhG9v28jVH4~RimEvYh5hCPb8Gf7MV7KYP9mj-QcsQ__&Key-Pair-Id=APKAI6TU7MMXM5DG6EPQ",
+      "audio_ok": true,
+      "track_count": 4,
+      "status": "success",
+      "error": ""
     },
     {
       "index": 4236,
@@ -1394,17 +1504,27 @@
       "track_count": 2,
       "status": "warning",
       "error": "Not confirmed audio: HTTP 404, type=text/html"
+    },
+    {
+      "index": 4479,
+      "title": "StoneBridge – Hed Kandi Japan 670",
+      "page_url": "https://www.edmliveset.com/radio/stonebridge-hed-kandi-japan-670/",
+      "audio_url": "",
+      "audio_ok": false,
+      "track_count": 2,
+      "status": "warning",
+      "error": "Not confirmed audio: HTTP 404, type=text/html"
     }
   ],
   "rss_xml_valid": true,
-  "new_episodes_added": 5,
-  "retry_queue_remaining": 130,
-  "old_links_retried": 129,
-  "old_links_recovered": 0,
+  "new_episodes_added": 16,
+  "retry_queue_remaining": 129,
+  "old_links_retried": 130,
+  "old_links_recovered": 1,
   "retry_failures": 129,
   "temporary_failures": 8,
-  "not_found_failures": 122,
-  "oldest_retry_age_days": 43.91,
+  "not_found_failures": 121,
+  "oldest_retry_age_days": 44.57,
   "quality_gate": "PASS",
   "archive_complete": false
 }
